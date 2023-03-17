@@ -21,7 +21,7 @@
   <entry>
     <title>LeetCode 707.设计链表</title>
     <url>/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h1 id="LeetCode-707-设计链表-mid"><a href="#LeetCode-707-设计链表-mid" class="headerlink" title="LeetCode 707.设计链表(mid)"></a>LeetCode 707.设计链表(mid)</h1><h1 id="707-设计链表（20220923每日一题）"><a href="#707-设计链表（20220923每日一题）" class="headerlink" title="707 设计链表（20220923每日一题）"></a>707 设计链表（20220923每日一题）</h1><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png" alt="Problem Description"></p>
+    <content><![CDATA[<h1 id="LeetCode-707-设计链表-mid"><a href="#LeetCode-707-设计链表-mid" class="headerlink" title="LeetCode 707.设计链表(mid)"></a>LeetCode 707.设计链表(mid)</h1><h1 id="707-设计链表（20220923每日一题）"><a href="#707-设计链表（20220923每日一题）" class="headerlink" title="707 设计链表（20220923每日一题）"></a>707 设计链表（20220923每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png" alt="Problem Description"></p>
 <p>从题目中我们可以看到本题有以下几个功能：</p>
 <ol>
 <li>获取链表中位列index的值</li>
