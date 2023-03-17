@@ -60,6 +60,7 @@
       </categories>
       <tags>
         <tag>链表</tag>
+        <tag>LeetCode每日一题</tag>
       </tags>
   </entry>
   <entry>
@@ -71,6 +72,9 @@
       <categories>
         <category>LeetCode</category>
       </categories>
+      <tags>
+        <tag>LeetCode每日一题</tag>
+      </tags>
   </entry>
   <entry>
     <title>同向双指针 滑动窗口</title>
