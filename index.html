@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -160,7 +160,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -181,6 +181,106 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/20/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9817-09-%E7%AC%ACk%E4%B8%AA%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/20/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9817-09-%E7%AC%ACk%E4%B8%AA%E6%95%B0/" class="post-title-link" itemprop="url">LeetCode 面试题17.09. 第k个数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-20 11:57:50 / 修改时间：12:01:12" itemprop="dateCreated datePublished" datetime="2023-03-20T11:57:50+08:00">2023-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="LeetCode-面试题17-09-第k个数"><a href="#LeetCode-面试题17-09-第k个数" class="headerlink" title="LeetCode 面试题17.09. 第k个数"></a>LeetCode 面试题17.09. 第k个数</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1709.png" alt="Problem Description"></p>
+<p>这道题让我们从一个只包含质因子3，5，7数字的数组中，根据从小到大排序，获取第k个数。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>刚开始的想法，就是根据一个优先队列，让较小的数优先弹出，但是这种做法比较麻烦的就是你的优先队列需要维护的长度是k*3，而优先队列的复杂度是O(log n)，再结合需要经过3k次的插入以及多次弹出，复杂度不够理想。</p>
+<p>后面看了一个大佬的做法，利用三指针，用三个指针p3,p5,p7分别记录上次乘以质因子3、5、7的数组index，然后比较num[p3] * 3, num[p5] * 5, num[p7] * 7三者的大小，谁最小就更新哪个质因子的指针。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getKthMagicNumber</span><span class="params">(<span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> *nums = <span class="keyword">new</span> <span class="type">int</span>[k + <span class="number">1</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> p3 = <span class="number">0</span>, p5 = <span class="number">0</span>, p7 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; k; i++)&#123;</span><br><span class="line">            nums[i] = <span class="built_in">min</span>(nums[p3] * <span class="number">3</span>, <span class="built_in">min</span>(nums[p5] * <span class="number">5</span>, nums[p7] * <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p3] * <span class="number">3</span>) p3++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == nums[p5] * <span class="number">5</span>) p5++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == nums[p7] * <span class="number">7</span>) p7++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[k - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这里出现了一个问题，当时我没有考虑到去重，这边的顺序是1,3,5,7,9,15,15,21,21,….。会有重复的数字，我们在每次比较中，要将每个最小值的质因子的指针更新。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getKthMagicNumber</span><span class="params">(<span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> *nums = <span class="keyword">new</span> <span class="type">int</span>[k + <span class="number">1</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> p3 = <span class="number">0</span>, p5 = <span class="number">0</span>, p7 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; k; i++)&#123;</span><br><span class="line">            nums[i] = <span class="built_in">min</span>(nums[p3] * <span class="number">3</span>, <span class="built_in">min</span>(nums[p5] * <span class="number">5</span>, nums[p7] * <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p3] * <span class="number">3</span>) p3++;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p5] * <span class="number">5</span>) p5++;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p7] * <span class="number">7</span>) p7++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[k - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -770,14 +870,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">9k</span>
+    <span title="站点总字数">10k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">16 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
