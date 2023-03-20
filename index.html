@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -160,7 +160,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -181,6 +181,311 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/20/LeetCode-481-%E7%A5%9E%E5%A5%87%E6%95%B0%E5%AD%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/20/LeetCode-481-%E7%A5%9E%E5%A5%87%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">LeetCode 481.神奇数字</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-20 14:43:09 / 修改时间：14:45:06" itemprop="dateCreated datePublished" datetime="2023-03-20T14:43:09+08:00">2023-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>785</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="481-神奇字符串-20221031每日一题"><a href="#481-神奇字符串-20221031每日一题" class="headerlink" title="481. 神奇字符串(20221031每日一题)"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/magical-string/">481. 神奇字符串</a>(20221031每日一题)</h1><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/481-1.png" alt="Problem Description"></p>
+<h1 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这道题给出一个一维数组，后面的数会根据前面的数而定值，那么我们只需要模拟一下即可，那么怎么模拟呢？</p>
+<p>定义这个一维数组为<code>arr</code>，那么我们可以看到。<code>arr[2]</code>的数字要根据<code>arr[1]</code>来定值，<code>arr[3]</code>的数字要根据<code>arr[2]</code>来定值，因为<code>arr[0]</code>为<code>1</code>，<code>arr[1]</code>为<code>2</code>，而因为<code>arr[1]</code>为<code>2</code>，那么<code>arr[1]</code>和<code>arr[2]</code>需要相同的数字，即<code>arr[2] = arr[1]</code>，之后<code>arr[3]</code>的值不能与<code>arr[2]</code>相等，否则就成为了<code>arr[1]=arr[2]=arr[3]</code>，这个时候<code>arr[1]</code>的值需要为<code>3</code>才能解释的通，但是<code>arr</code>的值只能是<code>1</code>或者<code>2</code>，那么我们就要将改变<code>arr[3]</code>的值与前面的值不同。</p>
+<p>因此我们需要定义一个索引值<code>idx</code>，来表示当前相同数字所需要的连贯个数，用一个变量<code>f</code>来表示当前数组的数字，每加入一个数字时，我们就对<code>arr[idx]</code>进行减一操作，当<code>arr[idx]</code>为<code>0</code>时，我们就需要对<code>idx</code>进行<code>++</code>操作，并且改变<code>f</code>的值，使得数字之间不相同。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">magicalString</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">3</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(n)</span></span>;</span><br><span class="line">        arr[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        arr[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">        arr[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> ones = <span class="number">1</span>, idx = <span class="number">2</span>, f = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(f == <span class="number">1</span>) ones++;</span><br><span class="line">            arr[i] = f;</span><br><span class="line">            arr[idx]--;</span><br><span class="line">            <span class="keyword">if</span>(arr[idx] == <span class="number">0</span>) &#123;</span><br><span class="line">                f = <span class="number">3</span> - f;</span><br><span class="line">                idx++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ones;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/481-2.png" alt="Result"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/20/LeetCode-915-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/20/LeetCode-915-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">LeetCode 915.分割数组</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-20 14:38:34 / 修改时间：14:40:57" itemprop="dateCreated datePublished" datetime="2023-03-20T14:38:34+08:00">2023-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>635</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="LeetCode-915-分割数组（Medium）"><a href="#LeetCode-915-分割数组（Medium）" class="headerlink" title="LeetCode 915.分割数组（Medium）"></a>LeetCode 915.分割数组（Medium）</h1><h1 id="915-分割数组（20221024每日一题）"><a href="#915-分割数组（20221024每日一题）" class="headerlink" title="915. 分割数组（20221024每日一题）"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/partition-array-into-disjoint-intervals/">915. 分割数组</a>（20221024每日一题）</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-1.png" alt="Problem Description"></p>
+<h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">5</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目要求我们将一个数组分为左右两部分，并且左半边的最大值要小于等于右半边的最小值，那么我们需要用两个数组 $b, s$来维护这个最大值喝最小值， $b[i]$代表我维护的是在<code>[1,i</code>]之间的最大值，<code>s[i]</code>代表我维护的是在<code>[i,]</code>的最小值，之后我们只要遍历一次数组，当<code>b[i]&gt;s[i + 1]</code>的时候我们就能找到我们想要找到的分界点。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">partitionDisjoint</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">b</span><span class="params">(len, <span class="number">0</span>)</span>, <span class="title">s</span><span class="params">(len, <span class="number">0</span>)</span></span>;</span><br><span class="line">        b[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; len; i++) b[i] = <span class="built_in">max</span>(b[i - <span class="number">1</span>], nums[i]);</span><br><span class="line">        s[len - <span class="number">1</span>] = nums[len - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) s[i] = <span class="built_in">min</span>(s[i + <span class="number">1</span>], nums[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(b[i] &lt;= s[i + <span class="number">1</span>]) <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-2.png" alt="Result"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/20/LeetCode-904-%E6%B0%B4%E6%9E%9C%E6%88%90%E7%AF%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/20/LeetCode-904-%E6%B0%B4%E6%9E%9C%E6%88%90%E7%AF%AE/" class="post-title-link" itemprop="url">LeetCode 904. 水果成篮</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-20 14:23:33 / 修改时间：14:27:54" itemprop="dateCreated datePublished" datetime="2023-03-20T14:23:33+08:00">2023-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>658</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="904-水果成篮-20221017-每日一题"><a href="#904-水果成篮-20221017-每日一题" class="headerlink" title="904. 水果成篮(20221017 每日一题)"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fruit-into-baskets/">904. 水果成篮</a>(20221017 每日一题)</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-1.png" alt="Problem Description"></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目给我们一个数组，让我们找到最长的子串，使得这个子串中所包含的数字种类最多只有两个。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>解决这种题，简单的就是利用双指针，一个在前，一个在后，在前的指针负责往队列里加数字，如果加完数字之后发现队列里的数字种类大于两种，那么我们就用后指针来弹出队列的数字，直到队列的数字种类小于等于2。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">totalFruit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; fruits)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> first = <span class="number">0</span>, last = <span class="number">1</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        hash[fruits[<span class="number">0</span>]]++;</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">1</span>, res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(last &lt; fruits.<span class="built_in">size</span>())&#123;</span><br><span class="line">            hash[fruits[last]]++;</span><br><span class="line">            <span class="keyword">if</span>(hash[fruits[last]] == <span class="number">1</span>)&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">                sum++;</span><br><span class="line">                <span class="keyword">while</span>(sum &gt; <span class="number">2</span>)&#123;</span><br><span class="line">                    hash[fruits[first]]--;</span><br><span class="line">                    <span class="keyword">if</span>(hash[fruits[first]] == <span class="number">0</span>)&#123;</span><br><span class="line">                        sum--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    first++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            last++;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-2.png" alt="Result"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -941,330 +1246,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/17/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Zyf">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="好难想标题">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 好难想标题">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/17/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">LeetCode 788.旋转数字</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-03-17 19:35:32 / 修改时间：20:03:17" itemprop="dateCreated datePublished" datetime="2023-03-17T19:35:32+08:00">2023-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>637</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="LeetCode-788-旋转数字-Mid"><a href="#LeetCode-788-旋转数字-Mid" class="headerlink" title="LeetCode 788.旋转数字(Mid)"></a>LeetCode 788.旋转数字(Mid)</h1><h1 id="788-旋转数字（20220925每日一题）"><a href="#788-旋转数字（20220925每日一题）" class="headerlink" title="788 旋转数字（20220925每日一题）"></a>788 旋转数字（20220925每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1.png" alt="Problem Description"></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目中已经给出了大致意思，要想数字每个位上的数都旋转后还能成为数字，那么这个数字必须包含且只能包含数字0，1，2，5，6，8，9。那么为什么前十个数中1，2，8，10不包含在旋转数字中呢？因为这4个数字旋转之后还是1，2，8，10，数值不变，这违反了旋转数字的定义。从这我们可以看出，要想数字旋转之后数值要改变，不能只包含1，2，8，0，还必须至少包含2，5，6，9中的一个，那么我们只要判断从1到n中的数字中有几个数是由上述8个数字组成，并且至少包含一个2，5，6，9.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rotatedDigits</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">f</span><span class="params">(<span class="number">10</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        f[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">5</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">9</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        f[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">8</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="type">int</span> t = i;</span><br><span class="line">            <span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(t)&#123;</span><br><span class="line">                <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">1</span>) a = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">2</span>) b = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                t /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!t &amp;&amp; a) res++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Zyf">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="好难想标题">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 好难想标题">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">LeetCode 707.设计链表</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-03-17 15:46:54 / 修改时间：20:03:16" itemprop="dateCreated datePublished" datetime="2023-03-17T15:46:54+08:00">2023-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="LeetCode-707-设计链表-mid"><a href="#LeetCode-707-设计链表-mid" class="headerlink" title="LeetCode 707.设计链表(mid)"></a>LeetCode 707.设计链表(mid)</h1><h1 id="707-设计链表（20220923每日一题）"><a href="#707-设计链表（20220923每日一题）" class="headerlink" title="707 设计链表（20220923每日一题）"></a>707 设计链表（20220923每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png" alt="Problem Description"></p>
-<p>从题目中我们可以看到本题有以下几个功能：</p>
-<ol>
-<li>获取链表中位列index的值</li>
-<li>在链表的头部添加节点</li>
-<li>在链表的尾部添加节点</li>
-<li>在链表中的指定索引地添加节点</li>
-<li>删除指定索引的节点</li>
-</ol>
-<p>题目让我们不能使用内置的LinkedList库，那么我们可以用数组和链表来维护。由于该题有频繁的增加节点和删除节点，那么用数组来维护需要耗费大量的时间来维护index，因此我们选择链表来维护本题的“链表”。</p>
-<h2 id="链表的构造"><a href="#链表的构造" class="headerlink" title="链表的构造"></a>链表的构造</h2><p>由于是一个链表，那么节点中所需要的元素至少有两个，一个值val，和一个指向下一个节点的*next，最好就是添加一个构造函数，这样方便快速生成新节点</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">List</span>&#123;</span><br><span class="line">        <span class="type">int</span> val;</span><br><span class="line">        List *next;</span><br><span class="line">        <span class="built_in">List</span>(<span class="type">int</span> val) : <span class="built_in">val</span>(val), <span class="built_in">next</span>(<span class="literal">NULL</span>)&#123;&#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="链表的初始化"><a href="#链表的初始化" class="headerlink" title="链表的初始化"></a>链表的初始化</h2><p>当我们创建一个链表的时候，我们需要对其进行初始化，即构造函数，我们要对其成员进行一系列的初始化，在本题中我们需要初始化的元素只有结构体List，以及一个链表的长度，这个长度方便我们之后判断是否可以删除某个节点或者是否可以将节点加入指定的index</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MyLinkedList</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;root = <span class="keyword">new</span> <span class="built_in">List</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们创建的链表是自带头节点的链表，这类链表方便进行头插法（但是这题我的思路还是尾插法）</p>
-<h2 id="获取值"><a href="#获取值" class="headerlink" title="获取值"></a>获取值</h2><p>提供一个索引值index，返回索引所在的节点的val值，首先我们要先判断这个索引值index是否有效，如果无效则直接返回-1。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt;= <span class="keyword">this</span>-&gt;len || index &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> head-&gt;val;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="在链表头部添加节点"><a href="#在链表头部添加节点" class="headerlink" title="在链表头部添加节点"></a>在链表头部添加节点</h2><p>在添加节点的三个功能中，添加头部节点是最方便的，因为相比于其他两个，头部添加节点不需要找位置，可以直接添加。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">addAtHead</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        node-&gt;next = <span class="keyword">this</span>-&gt;root-&gt;next;</span><br><span class="line">        <span class="keyword">this</span>-&gt;root-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="在链表尾部添加节点"><a href="#在链表尾部添加节点" class="headerlink" title="在链表尾部添加节点"></a>在链表尾部添加节点</h2><p>添加尾部节点，如果我们用一个尾部标记tail来维护尾部节点，那么这个我们也能够快速添加，但是我没有用tail来维护，那么我们就要遍历到最后链表的最后一位以便于添加节点。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">addAtTail</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(head-&gt;next != <span class="literal">NULL</span>) head = head-&gt;next;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="在给定索引值前添加节点"><a href="#在给定索引值前添加节点" class="headerlink" title="在给定索引值前添加节点"></a>在给定索引值前添加节点</h2><p>这部分内容相比于前两个来说，只能够通过遍历来获取要添加的位置。</p>
-<p>题目中对给定索引值添加节点指定了要求，首先，如果这个索引值大于链表的长度，那么我们将取消这次添加节点。如果这个索引值小于0，那么我们就将这个节点添加在头部，其余的我们需要遍历来获取节点添加的位置。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">addAtIndex</span><span class="params">(<span class="type">int</span> index, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt; <span class="keyword">this</span>-&gt;len) <span class="keyword">return</span>;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        node-&gt;next = head-&gt;next;</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="删除指定索引值的节点"><a href="#删除指定索引值的节点" class="headerlink" title="删除指定索引值的节点"></a>删除指定索引值的节点</h2><p>题目中对删除节点指定了要求，如果索引值index有效，那么我们可以顺利删除，否则，我们将因为没有对应的节点可以删除而退出这个删除函数</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">deleteAtIndex</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= <span class="keyword">this</span>-&gt;len) <span class="keyword">return</span>;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        List *tmp = head-&gt;next;</span><br><span class="line">        head-&gt;next = head-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> tmp;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len--;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="完整的代码"><a href="#完整的代码" class="headerlink" title="完整的代码"></a>完整的代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyLinkedList</span> &#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">List</span>&#123;</span><br><span class="line">        <span class="type">int</span> val;</span><br><span class="line">        List *next;</span><br><span class="line">        <span class="built_in">List</span>(<span class="type">int</span> val) : <span class="built_in">val</span>(val), <span class="built_in">next</span>(<span class="literal">NULL</span>)&#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    List *root;</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyLinkedList</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;root = <span class="keyword">new</span> <span class="built_in">List</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt;= <span class="keyword">this</span>-&gt;len || index &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> head-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtHead</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        node-&gt;next = <span class="keyword">this</span>-&gt;root-&gt;next;</span><br><span class="line">        <span class="keyword">this</span>-&gt;root-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtTail</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(head-&gt;next != <span class="literal">NULL</span>) head = head-&gt;next;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtIndex</span><span class="params">(<span class="type">int</span> index, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt; <span class="keyword">this</span>-&gt;len) <span class="keyword">return</span>;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        node-&gt;next = head-&gt;next;</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteAtIndex</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= <span class="keyword">this</span>-&gt;len) <span class="keyword">return</span>;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        List *tmp = head-&gt;next;</span><br><span class="line">        head-&gt;next = head-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> tmp;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyLinkedList object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyLinkedList* obj = new MyLinkedList();</span></span><br><span class="line"><span class="comment"> * int param_1 = obj-&gt;get(index);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtHead(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtTail(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtIndex(index,val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;deleteAtIndex(index);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Zyf">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="好难想标题">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 好难想标题">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-16 19:40:35" itemprop="dateCreated datePublished" datetime="2023-03-16T19:40:35+08:00">2023-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-17 19:19:56" itemprop="dateModified" datetime="2023-03-17T19:19:56+08:00">2023-03-17</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>373</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ test</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>
@@ -1287,14 +1271,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">17k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">28 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

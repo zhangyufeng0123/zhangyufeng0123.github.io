@@ -265,4 +265,66 @@
         <tag>每日一题</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 481.神奇数字</title>
+    <url>/2023/03/20/LeetCode-481-%E7%A5%9E%E5%A5%87%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<h1 id="481-神奇字符串-20221031每日一题"><a href="#481-神奇字符串-20221031每日一题" class="headerlink" title="481. 神奇字符串(20221031每日一题)"></a><a href="https://leetcode.cn/problems/magical-string/">481. 神奇字符串</a>(20221031每日一题)</h1><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/481-1.png" alt="Problem Description"></p>
+<h1 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这道题给出一个一维数组，后面的数会根据前面的数而定值，那么我们只需要模拟一下即可，那么怎么模拟呢？</p>
+<p>定义这个一维数组为<code>arr</code>，那么我们可以看到。<code>arr[2]</code>的数字要根据<code>arr[1]</code>来定值，<code>arr[3]</code>的数字要根据<code>arr[2]</code>来定值，因为<code>arr[0]</code>为<code>1</code>，<code>arr[1]</code>为<code>2</code>，而因为<code>arr[1]</code>为<code>2</code>，那么<code>arr[1]</code>和<code>arr[2]</code>需要相同的数字，即<code>arr[2] = arr[1]</code>，之后<code>arr[3]</code>的值不能与<code>arr[2]</code>相等，否则就成为了<code>arr[1]=arr[2]=arr[3]</code>，这个时候<code>arr[1]</code>的值需要为<code>3</code>才能解释的通，但是<code>arr</code>的值只能是<code>1</code>或者<code>2</code>，那么我们就要将改变<code>arr[3]</code>的值与前面的值不同。</p>
+<p>因此我们需要定义一个索引值<code>idx</code>，来表示当前相同数字所需要的连贯个数，用一个变量<code>f</code>来表示当前数组的数字，每加入一个数字时，我们就对<code>arr[idx]</code>进行减一操作，当<code>arr[idx]</code>为<code>0</code>时，我们就需要对<code>idx</code>进行<code>++</code>操作，并且改变<code>f</code>的值，使得数字之间不相同。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">magicalString</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">3</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(n)</span></span>;</span><br><span class="line">        arr[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        arr[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">        arr[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> ones = <span class="number">1</span>, idx = <span class="number">2</span>, f = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(f == <span class="number">1</span>) ones++;</span><br><span class="line">            arr[i] = f;</span><br><span class="line">            arr[idx]--;</span><br><span class="line">            <span class="keyword">if</span>(arr[idx] == <span class="number">0</span>) &#123;</span><br><span class="line">                f = <span class="number">3</span> - f;</span><br><span class="line">                idx++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ones;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/481-2.png" alt="Result"></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+        <tag>模拟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 915.分割数组</title>
+    <url>/2023/03/20/LeetCode-915-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<h1 id="LeetCode-915-分割数组（Medium）"><a href="#LeetCode-915-分割数组（Medium）" class="headerlink" title="LeetCode 915.分割数组（Medium）"></a>LeetCode 915.分割数组（Medium）</h1><h1 id="915-分割数组（20221024每日一题）"><a href="#915-分割数组（20221024每日一题）" class="headerlink" title="915. 分割数组（20221024每日一题）"></a><a href="https://leetcode.cn/problems/partition-array-into-disjoint-intervals/">915. 分割数组</a>（20221024每日一题）</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-1.png" alt="Problem Description"></p>
+<h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">5</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目要求我们将一个数组分为左右两部分，并且左半边的最大值要小于等于右半边的最小值，那么我们需要用两个数组 $b, s$来维护这个最大值喝最小值， $b[i]$代表我维护的是在<code>[1,i</code>]之间的最大值，<code>s[i]</code>代表我维护的是在<code>[i,]</code>的最小值，之后我们只要遍历一次数组，当<code>b[i]&gt;s[i + 1]</code>的时候我们就能找到我们想要找到的分界点。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">partitionDisjoint</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">b</span><span class="params">(len, <span class="number">0</span>)</span>, <span class="title">s</span><span class="params">(len, <span class="number">0</span>)</span></span>;</span><br><span class="line">        b[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; len; i++) b[i] = <span class="built_in">max</span>(b[i - <span class="number">1</span>], nums[i]);</span><br><span class="line">        s[len - <span class="number">1</span>] = nums[len - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) s[i] = <span class="built_in">min</span>(s[i + <span class="number">1</span>], nums[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(b[i] &lt;= s[i + <span class="number">1</span>]) <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-2.png" alt="Result"></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 904. 水果成篮</title>
+    <url>/2023/03/20/LeetCode-904-%E6%B0%B4%E6%9E%9C%E6%88%90%E7%AF%AE/</url>
+    <content><![CDATA[<h1 id="904-水果成篮-20221017-每日一题"><a href="#904-水果成篮-20221017-每日一题" class="headerlink" title="904. 水果成篮(20221017 每日一题)"></a><a href="https://leetcode.cn/problems/fruit-into-baskets/">904. 水果成篮</a>(20221017 每日一题)</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-1.png" alt="Problem Description"></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目给我们一个数组，让我们找到最长的子串，使得这个子串中所包含的数字种类最多只有两个。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>解决这种题，简单的就是利用双指针，一个在前，一个在后，在前的指针负责往队列里加数字，如果加完数字之后发现队列里的数字种类大于两种，那么我们就用后指针来弹出队列的数字，直到队列的数字种类小于等于2。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">totalFruit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; fruits)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> first = <span class="number">0</span>, last = <span class="number">1</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        hash[fruits[<span class="number">0</span>]]++;</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">1</span>, res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(last &lt; fruits.<span class="built_in">size</span>())&#123;</span><br><span class="line">            hash[fruits[last]]++;</span><br><span class="line">            <span class="keyword">if</span>(hash[fruits[last]] == <span class="number">1</span>)&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">                sum++;</span><br><span class="line">                <span class="keyword">while</span>(sum &gt; <span class="number">2</span>)&#123;</span><br><span class="line">                    hash[fruits[first]]--;</span><br><span class="line">                    <span class="keyword">if</span>(hash[fruits[first]] == <span class="number">0</span>)&#123;</span><br><span class="line">                        sum--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    first++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            last++;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-2.png" alt="Result"></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
 </search>

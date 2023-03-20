@@ -20,31 +20,25 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhangyufeng0123.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="LeetCode 707.设计链表(mid)707 设计链表（20220923每日一题） 从题目中我们可以看到本题有以下几个功能：  获取链表中位列index的值 在链表的头部添加节点 在链表的尾部添加节点 在链表中的指定索引地添加节点 删除指定索引的节点  题目让我们不能使用内置的LinkedList库，那么我们可以用数组和链表来维护。由于该题有频繁的增加节点和删除节点，那么用数组来维护需要耗费">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 707.设计链表">
-<meta property="og:url" content="http://zhangyufeng0123.github.io/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/index.html">
+    <meta name="description" content="sharing blogs">
+<meta property="og:type" content="website">
+<meta property="og:title" content="好难想标题">
+<meta property="og:url" content="http://zhangyufeng0123.github.io/page/2/index.html">
 <meta property="og:site_name" content="好难想标题">
-<meta property="og:description" content="LeetCode 707.设计链表(mid)707 设计链表（20220923每日一题） 从题目中我们可以看到本题有以下几个功能：  获取链表中位列index的值 在链表的头部添加节点 在链表的尾部添加节点 在链表中的指定索引地添加节点 删除指定索引的节点  题目让我们不能使用内置的LinkedList库，那么我们可以用数组和链表来维护。由于该题有频繁的增加节点和删除节点，那么用数组来维护需要耗费">
+<meta property="og:description" content="sharing blogs">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png">
-<meta property="article:published_time" content="2023-03-17T07:46:54.000Z">
-<meta property="article:modified_time" content="2023-03-17T12:03:16.418Z">
 <meta property="article:author" content="Zyf">
-<meta property="article:tag" content="链表">
-<meta property="article:tag" content="LeetCode每日一题">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png">
 
 
-<link rel="canonical" href="http://zhangyufeng0123.github.io/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/">
+<link rel="canonical" href="http://zhangyufeng0123.github.io/page/2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://zhangyufeng0123.github.io/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/","path":"2023/03/17/LeetCode-707-设计链表/","title":"LeetCode 707.设计链表"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LeetCode 707.设计链表 | 好难想标题</title>
+<title>好难想标题</title>
   
 
 
@@ -77,7 +71,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">好难想标题</p>
+      <h1 class="site-title">好难想标题</h1>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -130,7 +124,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -143,7 +137,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8-mid"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 707.设计链表(mid)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8%EF%BC%8820220923%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">707 设计链表（20220923每日一题）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-number">2.1.</span> <span class="nav-text">链表的构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.2.</span> <span class="nav-text">链表的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="nav-number">2.3.</span> <span class="nav-text">获取值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E9%93%BE%E8%A1%A8%E5%A4%B4%E9%83%A8%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="nav-number">2.4.</span> <span class="nav-text">在链表头部添加节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E9%93%BE%E8%A1%A8%E5%B0%BE%E9%83%A8%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="nav-number">2.5.</span> <span class="nav-text">在链表尾部添加节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BB%99%E5%AE%9A%E7%B4%A2%E5%BC%95%E5%80%BC%E5%89%8D%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="nav-number">2.6.</span> <span class="nav-text">在给定索引值前添加节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E7%B4%A2%E5%BC%95%E5%80%BC%E7%9A%84%E8%8A%82%E7%82%B9"><span class="nav-number">2.7.</span> <span class="nav-text">删除指定索引值的节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">2.8.</span> <span class="nav-text">完整的代码</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -187,17 +180,111 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner index posts-expand">
 
-
-  
+    
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/17/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/17/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">LeetCode 788.旋转数字</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-17 19:35:32 / 修改时间：20:03:17" itemprop="dateCreated datePublished" datetime="2023-03-17T19:35:32+08:00">2023-03-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>637</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="LeetCode-788-旋转数字-Mid"><a href="#LeetCode-788-旋转数字-Mid" class="headerlink" title="LeetCode 788.旋转数字(Mid)"></a>LeetCode 788.旋转数字(Mid)</h1><h1 id="788-旋转数字（20220925每日一题）"><a href="#788-旋转数字（20220925每日一题）" class="headerlink" title="788 旋转数字（20220925每日一题）"></a>788 旋转数字（20220925每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1.png" alt="Problem Description"></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目中已经给出了大致意思，要想数字每个位上的数都旋转后还能成为数字，那么这个数字必须包含且只能包含数字0，1，2，5，6，8，9。那么为什么前十个数中1，2，8，10不包含在旋转数字中呢？因为这4个数字旋转之后还是1，2，8，10，数值不变，这违反了旋转数字的定义。从这我们可以看出，要想数字旋转之后数值要改变，不能只包含1，2，8，0，还必须至少包含2，5，6，9中的一个，那么我们只要判断从1到n中的数字中有几个数是由上述8个数字组成，并且至少包含一个2，5，6，9.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rotatedDigits</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">f</span><span class="params">(<span class="number">10</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        f[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">5</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">9</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        f[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">8</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="type">int</span> t = i;</span><br><span class="line">            <span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(t)&#123;</span><br><span class="line">                <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">1</span>) a = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">2</span>) b = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                t /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!t &amp;&amp; a) res++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -211,13 +298,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="LeetCode 707.设计链表 | 好难想标题">
+      <meta itemprop="name" content="undefined | 好难想标题">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          LeetCode 707.设计链表
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/17/LeetCode-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">LeetCode 707.设计链表</a>
+        </h2>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -241,13 +328,6 @@
     </span>
 
   
-    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="busuanzi_value_page_pv"></span>
-    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
@@ -272,7 +352,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="LeetCode-707-设计链表-mid"><a href="#LeetCode-707-设计链表-mid" class="headerlink" title="LeetCode 707.设计链表(mid)"></a>LeetCode 707.设计链表(mid)</h1><h1 id="707-设计链表（20220923每日一题）"><a href="#707-设计链表（20220923每日一题）" class="headerlink" title="707 设计链表（20220923每日一题）"></a>707 设计链表（20220923每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png" alt="Problem Description"></p>
+          <h1 id="LeetCode-707-设计链表-mid"><a href="#LeetCode-707-设计链表-mid" class="headerlink" title="LeetCode 707.设计链表(mid)"></a>LeetCode 707.设计链表(mid)</h1><h1 id="707-设计链表（20220923每日一题）"><a href="#707-设计链表（20220923每日一题）" class="headerlink" title="707 设计链表（20220923每日一题）"></a>707 设计链表（20220923每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png" alt="Problem Description"></p>
 <p>从题目中我们可以看到本题有以下几个功能：</p>
 <ol>
 <li>获取链表中位列index的值</li>
@@ -306,6 +386,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">deleteAtIndex</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= <span class="keyword">this</span>-&gt;len) <span class="keyword">return</span>;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        List *tmp = head-&gt;next;</span><br><span class="line">        head-&gt;next = head-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> tmp;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len--;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完整的代码"><a href="#完整的代码" class="headerlink" title="完整的代码"></a>完整的代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyLinkedList</span> &#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">List</span>&#123;</span><br><span class="line">        <span class="type">int</span> val;</span><br><span class="line">        List *next;</span><br><span class="line">        <span class="built_in">List</span>(<span class="type">int</span> val) : <span class="built_in">val</span>(val), <span class="built_in">next</span>(<span class="literal">NULL</span>)&#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    List *root;</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyLinkedList</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;root = <span class="keyword">new</span> <span class="built_in">List</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt;= <span class="keyword">this</span>-&gt;len || index &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> head-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtHead</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        node-&gt;next = <span class="keyword">this</span>-&gt;root-&gt;next;</span><br><span class="line">        <span class="keyword">this</span>-&gt;root-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtTail</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(head-&gt;next != <span class="literal">NULL</span>) head = head-&gt;next;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtIndex</span><span class="params">(<span class="type">int</span> index, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt; <span class="keyword">this</span>-&gt;len) <span class="keyword">return</span>;</span><br><span class="line">        List *node = <span class="keyword">new</span> <span class="built_in">List</span>(val);</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        node-&gt;next = head-&gt;next;</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteAtIndex</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= <span class="keyword">this</span>-&gt;len) <span class="keyword">return</span>;</span><br><span class="line">        List *head = <span class="keyword">this</span>-&gt;root;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        List *tmp = head-&gt;next;</span><br><span class="line">        head-&gt;next = head-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> tmp;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyLinkedList object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyLinkedList* obj = new MyLinkedList();</span></span><br><span class="line"><span class="comment"> * int param_1 = obj-&gt;get(index);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtHead(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtTail(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAtIndex(index,val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;deleteAtIndex(index);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+      
     </div>
 
     
@@ -313,25 +394,8 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag"># 链表</a>
-              <a href="/tags/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag"># LeetCode每日一题</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2023/03/16/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2023/03/17/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/" rel="next" title="LeetCode 788.旋转数字">
-                  LeetCode 788.旋转数字 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        <div class="post-eof"></div>
+      
     </footer>
   </article>
 </div>
@@ -339,7 +403,112 @@
 
 
 
+    
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/16/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-03-16 19:40:35" itemprop="dateCreated datePublished" datetime="2023-03-16T19:40:35+08:00">2023-03-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-17 19:19:56" itemprop="dateModified" datetime="2023-03-17T19:19:56+08:00">2023-03-17</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>373</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ test</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </div>
   </main>
