@@ -149,18 +149,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -181,6 +181,112 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/20/Java-%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/20/Java-%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="post-title-link" itemprop="url">Java 运行机制</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-20 16:16:26 / 修改时间：16:17:10" itemprop="dateCreated datePublished" datetime="2023-03-20T16:16:26+08:00">2023-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>318</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Java运行机制"><a href="#Java运行机制" class="headerlink" title="Java运行机制"></a>Java运行机制</h1><h2 id="Java运行的一般步骤是"><a href="#Java运行的一般步骤是" class="headerlink" title="Java运行的一般步骤是"></a>Java运行的一般步骤是</h2><ol>
+<li>Java首先利用文本编辑器编写Java源程序，源文件的后缀名为.java;</li>
+<li>再利用编译器（javac）将源程序编译成字节码，字节码文件的后缀名为.class;</li>
+<li>最后利用虚拟机（解释器，Java）解释执行。如下图所示</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png"></p>
+<h2 id="JVM、JRE和JDK三者的不同"><a href="#JVM、JRE和JDK三者的不同" class="headerlink" title="JVM、JRE和JDK三者的不同"></a>JVM、JRE和JDK三者的不同</h2><p><strong>JVM</strong>(Java Virtual Machine):用于执行bytecode字节码的“虚拟计算机”；</p>
+<p>不同的操作系统有不同版本的JVM，屏蔽了底层运行平台的差别，是实现跨平台的核心。</p>
+<p><strong>JRE</strong>(Java Runtime Environment),它包含了Java虚拟机(JVM)、库函数等。</p>
+<p><strong>JDK</strong>(Java Development Kit)包含了JRE，编译器和调试器等。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1263,110 +1369,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://zhangyufeng0123.github.io/2023/03/20/LeetCode-809-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Zyf">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="好难想标题">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 好难想标题">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/20/LeetCode-809-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/" class="post-title-link" itemprop="url">LeetCode 809. 情感丰富的文字</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-03-20 14:54:54 / 修改时间：14:55:57" itemprop="dateCreated datePublished" datetime="2023-03-20T14:54:54+08:00">2023-03-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="809-情感丰富的文字"><a href="#809-情感丰富的文字" class="headerlink" title="809. 情感丰富的文字"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/expressive-words/description/">809. 情感丰富的文字</a></h1><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>有时候人们会用重复写一些字母来表示额外的感受，比如 <code>&quot;hello&quot; -&gt; &quot;heeellooo&quot;</code>, <code>&quot;hi&quot; -&gt; &quot;hiii&quot;</code>。我们将相邻字母都相同的一串字符定义为相同字母组，例如：”h”, “eee”, “ll”, “ooo”。对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 <code>c</code> ），然后往其中添加相同的字母 <code>c</code> 使其长度达到 3 或以上。</p>
-<p>例如，以 “hello” 为例，我们可以对字母组 “o” 扩张得到 “hellooo”，但是无法以同样的方法得到 “helloo” 因为字母组 “oo” 长度小于 3。此外，我们可以进行另一种扩张 “ll” -&gt; “lllll” 以获得 “helllllooo”。如果 <code>s = &quot;helllllooo&quot;</code>，那么查询词 “hello” 是可扩张的，因为可以对它执行这两种扩张操作使得 <code>query = &quot;hello&quot; -&gt; &quot;hellooo&quot; -&gt; &quot;helllllooo&quot; = s</code>。</p>
-<p>输入一组查询单词，输出其中可扩张的单词数量。</p>
-<h1 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;heeellooo&quot;</span></span><br><span class="line">words = [<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;hi&quot;</span>, <span class="string">&quot;helo&quot;</span>]</span><br></pre></td></tr></table></figure>
-
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>第一想法是利用双指针，但是双指针在这题代码写着比较麻烦我就放弃了，之后就打算用暴力的方法。首先我先记录字符串<code>s</code>中的连续字符以及个数，然后分别记录words中每个字符串中的连续字符以及个数，把他们分别存储到各自的数组中，如果两个数组的长度不一样，说明这words中的字符串不能扩充为字符串<code>s</code>。那么当数组长度一样时，我们就比较相同索引下的字符是否相等以及字符个数的比较。</p>
-<p>如果字符不相等，说明该字符串不能扩充为<code>s</code>。假设<code>s</code>为<code>”aaabbb”</code>，这个时候存储<code>s</code>的数组为<code>[&#123;’a’, 3&#125;, &#123;’b’, 3&#125;]</code>，<code>words</code>中存在一个字符串为<code>”aaaccc”</code>，那么存储该字符串的数组为<code>[&#123;’a’, 3&#125;, &#123;’c’, 3&#125;]</code>。虽然两个字符串对应的数组相同，但是第二个字符串的第二个字符为<code>’c’</code>，不能变为<code>’b’</code>，因此该字符串不能转变为<code>s</code>。</p>
-<p>再者，题目中有对扩张的要求。扩张的操作：选择一个字幕组（包含字母<code>c</code>），然后往其中添加相同的字母<code>c</code>使其长度达到3或以上。那么我们就可以的出，<code>”o”</code>不能转换成<code>”oo”</code>，因为<code>”oo”</code>的字符串长度小于3。但是<code>”oo”</code>可以转变成<code>”ooo&quot;</code>，因为<code>“ooo”</code>的长度等于3，这符合扩张的操作。因此我们可以得出如果<code>s</code>中相同的字符的长度大于3，并且这个长度大于<code>words</code>对应字符串对应索引的字符长度，那么就可以被扩张，反之，有一个特例，即上述提到的<code>”o”</code>和<code>”oo”</code>之间的转化。</p>
-<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><p>首先我们对<code>s</code>进行操作，即用数组记录每一个连续字符的字符以及他的长度。之后我们对<code>words</code>中的每一个字符串进行相同的操作，然后比较两个数组。如果符合上述要求，那么<code>words</code>中的字符串就可以扩充为<code>s</code>，反之，不能。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">expressiveWords</span><span class="params">(string s, vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        vector&lt;pair&lt;<span class="type">char</span>, <span class="type">int</span>&gt; &gt; str, tmp;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(str.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                str.<span class="built_in">emplace_back</span>(pair&lt;<span class="type">char</span>, <span class="type">int</span>&gt; &#123;s[i], <span class="number">1</span>&#125;);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s[i] == str.<span class="built_in">back</span>().first)&#123;</span><br><span class="line">                str.<span class="built_in">back</span>().second++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                str.<span class="built_in">emplace_back</span>(pair&lt;<span class="type">char</span>, <span class="type">int</span>&gt; &#123;s[i], <span class="number">1</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> word : words)&#123;</span><br><span class="line">            tmp.<span class="built_in">clear</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; word.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(tmp.<span class="built_in">empty</span>() || word[i] != tmp.<span class="built_in">back</span>().first)&#123;</span><br><span class="line">                    tmp.<span class="built_in">emplace_back</span>(pair&lt;<span class="type">char</span>, <span class="type">int</span>&gt; &#123;word[i], <span class="number">1</span>&#125;);</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    tmp.<span class="built_in">back</span>().second++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(tmp.<span class="built_in">size</span>() != str.<span class="built_in">size</span>()) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="type">int</span> flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; str.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(str[i].first != tmp[i].first || ((str[i].second - tmp[i].second) == <span class="number">1</span> &amp;&amp; str[i].second &lt; <span class="number">3</span>) || str[i].second - tmp[i].second &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                    flag = <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!flag) &#123;</span><br><span class="line">                res++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1392,14 +1394,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">41k</span>
+    <span title="站点总字数">42k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:15</span>
+    <span title="站点阅读时长">1:16</span>
   </span>
 </div>
 <div class="busuanzi-count">
