@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java 运行机制</title>
+    <url>/posts/840dc5ee.html</url>
+    <content><![CDATA[<h1 id="Java运行机制"><a href="#Java运行机制" class="headerlink" title="Java运行机制"></a>Java运行机制</h1><h2 id="Java运行的一般步骤是"><a href="#Java运行的一般步骤是" class="headerlink" title="Java运行的一般步骤是"></a>Java运行的一般步骤是</h2><ol>
+<li>Java首先利用文本编辑器编写Java源程序，源文件的后缀名为.java;</li>
+<li>再利用编译器（javac）将源程序编译成字节码，字节码文件的后缀名为.class;</li>
+<li>最后利用虚拟机（解释器，Java）解释执行。如下图所示</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png"></p>
+<h2 id="JVM、JRE和JDK三者的不同"><a href="#JVM、JRE和JDK三者的不同" class="headerlink" title="JVM、JRE和JDK三者的不同"></a>JVM、JRE和JDK三者的不同</h2><p><strong>JVM</strong>(Java Virtual Machine):用于执行bytecode字节码的“虚拟计算机”；</p>
+<p>不同的操作系统有不同版本的JVM，屏蔽了底层运行平台的差别，是实现跨平台的核心。</p>
+<p><strong>JRE</strong>(Java Runtime Environment),它包含了Java虚拟机(JVM)、库函数等。</p>
+<p><strong>JDK</strong>(Java Development Kit)包含了JRE，编译器和调试器等。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png"></p>
+]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 1326.灌溉花园的最少水龙头数目</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/3f55d95f.html</url>
     <content><![CDATA[<h1 id="1326-灌溉花园的最少水龙头数目-20230221每日一题"><a href="#1326-灌溉花园的最少水龙头数目-20230221每日一题" class="headerlink" title="1326. 灌溉花园的最少水龙头数目(20230221每日一题)"></a><strong><a href="https://leetcode.cn/problems/minimum-number-of-taps-to-open-to-water-a-garden/description/">1326. 灌溉花园的最少水龙头数目</a>(20230221每日一题)</strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>在 x 轴上有一个一维的花园。花园长度为 <code>n</code>，从点 <code>0</code> 开始，到点 <code>n</code> 结束。</p>
 <p>花园里总共有 <code>n + 1</code> 个水龙头，分别位于 <code>[0, 1, ..., n]</code> 。</p>
 <p>给你一个整数 <code>n</code> 和一个长度为 <code>n + 1</code> 的整数数组 <code>ranges</code> ，其中 <code>ranges[i]</code> （下标从 0 开始）表示：如果打开点 <code>i</code> 处的水龙头，可以灌溉的区域为 <code>[i -  ranges[i], i + ranges[i]]</code> 。</p>
@@ -26,7 +50,7 @@
   </entry>
   <entry>
     <title>LeetCode 1616.分割两个字符串得到回文串</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/b55ae9ab.html</url>
     <content><![CDATA[<h1 id="1616-分割两个字符串得到回文串-Medium"><a href="#1616-分割两个字符串得到回文串-Medium" class="headerlink" title="1616. 分割两个字符串得到回文串(Medium)"></a><strong><a href="https://leetcode.cn/problems/split-two-strings-to-make-palindrome/">1616. 分割两个字符串得到回文串</a>(Medium)</strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1616.png"></p>
 <h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">a = <span class="string">&quot;ulacfd&quot;</span>, b = <span class="string">&quot;jizalu&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -55,32 +79,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Java 运行机制</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="Java运行机制"><a href="#Java运行机制" class="headerlink" title="Java运行机制"></a>Java运行机制</h1><h2 id="Java运行的一般步骤是"><a href="#Java运行的一般步骤是" class="headerlink" title="Java运行的一般步骤是"></a>Java运行的一般步骤是</h2><ol>
-<li>Java首先利用文本编辑器编写Java源程序，源文件的后缀名为.java;</li>
-<li>再利用编译器（javac）将源程序编译成字节码，字节码文件的后缀名为.class;</li>
-<li>最后利用虚拟机（解释器，Java）解释执行。如下图所示</li>
-</ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png"></p>
-<h2 id="JVM、JRE和JDK三者的不同"><a href="#JVM、JRE和JDK三者的不同" class="headerlink" title="JVM、JRE和JDK三者的不同"></a>JVM、JRE和JDK三者的不同</h2><p><strong>JVM</strong>(Java Virtual Machine):用于执行bytecode字节码的“虚拟计算机”；</p>
-<p>不同的操作系统有不同版本的JVM，屏蔽了底层运行平台的差别，是实现跨平台的核心。</p>
-<p><strong>JRE</strong>(Java Runtime Environment),它包含了Java虚拟机(JVM)、库函数等。</p>
-<p><strong>JDK</strong>(Java Development Kit)包含了JRE，编译器和调试器等。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png"></p>
-]]></content>
-      <categories>
-        <category>Java基础</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 1769.移动所有球到每个盒子所需的最小操作数</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/53590df.html</url>
     <content><![CDATA[<h1 id="1769-移动所有球到每个盒子所需的最小操作数-20221202每日一题"><a href="#1769-移动所有球到每个盒子所需的最小操作数-20221202每日一题" class="headerlink" title="1769. 移动所有球到每个盒子所需的最小操作数(20221202每日一题)"></a><strong><a href="https://leetcode.cn/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/description/">1769. 移动所有球到每个盒子所需的最小操作数</a>(20221202每日一题)</strong></h1><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>有 <code>n</code> 个盒子。给你一个长度为 <code>n</code> 的二进制字符串 <code>boxes</code> ，其中 <code>boxes[i]</code> 的值为 <code>&#39;0&#39;</code> 表示第 <code>i</code> 个盒子是 <strong>空</strong> 的，而 <code>boxes[i]</code> 的值为 <code>&#39;1&#39;</code> 表示盒子里有 <strong>一个</strong> 小球。</p>
 <p>在一步操作中，你可以将 <strong>一个</strong> 小球从某个盒子移动到一个与之相邻的盒子中。第 <code>i</code> 个盒子和第 <code>j</code> 个盒子相邻需满足 <code>abs(i - j) == 1</code> 。注意，操作执行后，某些盒子中可能会存在不止一个小球。</p>
 <p>返回一个长度为 <code>n</code> 的数组 <code>answer</code> ，其中 <code>answer[i]</code> 是将所有小球移动到第 <code>i</code> 个盒子所需的 <strong>最小</strong> 操作数。</p>
@@ -105,8 +105,30 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 209.长度最小的子数组</title>
+    <url>/posts/598a88dc.html</url>
+    <content><![CDATA[<h1 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209. 长度最小的子数组"></a><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/">209. 长度最小的子数组</a></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/209.png" alt="Problem Description"></p>
+<h2 id="Sample1"><a href="#Sample1" class="headerlink" title="Sample1"></a>Sample1</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input:"></a>Input:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">target = <span class="number">7</span>, nums = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output:"></a>Output:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Sample2"><a href="#Sample2" class="headerlink" title="Sample2"></a>Sample2</h2><h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input:"></a>Input:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">target = <span class="number">4</span>, nums = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output:"></a>Output:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看到这个题目的数组长度范围是<code>[1,1e5]</code>，如果使用暴力的方法，也就是遍历所有的子数组，此时的时间复杂度是 $O(n^2)$，这个时候是有可能超时的，那么我们怎么来降低耗时呢？这个时候我们就可以利用滑动窗口的思路，即先记录一段子数组的总和，如果总和大于<code>target</code>，那么我们就可以慢慢减去这个子数组的最前面的数字，直到子数组的和小于<code>target</code>，在减的过程中我们统计这个子数组的长度与当前最优解进行比较，如果子数组的长度优于当前最优解时，我们就替换当前最优解。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们先用一个<code>idx</code>变量来记录这个数组的左端，然后遍历数组。在遍历数组的时候，我们用一个变量<code>sum</code>来记录从<code>idx</code>到<code>i</code>子数组总和。当这个总和<code>sum</code>的值大于等于<code>target</code>时，我们就慢慢删减<code>idx</code>上的数，同时把<code>idx</code>后移一位，直到<code>sum</code>小于<code>target</code>，在删减的同时更新最优解。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = nums.<span class="built_in">size</span>() + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> idx = <span class="number">-1</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= target)&#123;</span><br><span class="line">                res = <span class="built_in">min</span>(i - idx, res);</span><br><span class="line">                idx++;</span><br><span class="line">                sum -= nums[idx];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(res == nums.<span class="built_in">size</span>() + <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 2389. 和有限的最长子序列</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/25b2a3da.html</url>
     <content><![CDATA[<h1 id="LeetCode-2389-和有限的最长子序列"><a href="#LeetCode-2389-和有限的最长子序列" class="headerlink" title="LeetCode 2389. 和有限的最长子序列"></a>LeetCode 2389. 和有限的最长子序列</h1><h1 id="2389-和有限的最长子序列"><a href="#2389-和有限的最长子序列" class="headerlink" title="2389. 和有限的最长子序列"></a><strong><a href="https://leetcode.cn/problems/longest-subsequence-with-limited-sum/description/">2389. 和有限的最长子序列</a></strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/2.png" alt="Problem Description"></p>
 <h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">nums <span class="operator">=</span> [<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>], queries <span class="operator">=</span> [<span class="number">3</span>,<span class="number">10</span>,<span class="number">21</span>]</span><br></pre></td></tr></table></figure>
 
@@ -146,30 +168,8 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 209.长度最小的子数组</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209. 长度最小的子数组"></a><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/">209. 长度最小的子数组</a></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/209.png" alt="Problem Description"></p>
-<h2 id="Sample1"><a href="#Sample1" class="headerlink" title="Sample1"></a>Sample1</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input:"></a>Input:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">target = <span class="number">7</span>, nums = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output:"></a>Output:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Sample2"><a href="#Sample2" class="headerlink" title="Sample2"></a>Sample2</h2><h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input:"></a>Input:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">target = <span class="number">4</span>, nums = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output:"></a>Output:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看到这个题目的数组长度范围是<code>[1,1e5]</code>，如果使用暴力的方法，也就是遍历所有的子数组，此时的时间复杂度是 $O(n^2)$，这个时候是有可能超时的，那么我们怎么来降低耗时呢？这个时候我们就可以利用滑动窗口的思路，即先记录一段子数组的总和，如果总和大于<code>target</code>，那么我们就可以慢慢减去这个子数组的最前面的数字，直到子数组的和小于<code>target</code>，在减的过程中我们统计这个子数组的长度与当前最优解进行比较，如果子数组的长度优于当前最优解时，我们就替换当前最优解。</p>
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们先用一个<code>idx</code>变量来记录这个数组的左端，然后遍历数组。在遍历数组的时候，我们用一个变量<code>sum</code>来记录从<code>idx</code>到<code>i</code>子数组总和。当这个总和<code>sum</code>的值大于等于<code>target</code>时，我们就慢慢删减<code>idx</code>上的数，同时把<code>idx</code>后移一位，直到<code>sum</code>小于<code>target</code>，在删减的同时更新最优解。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = nums.<span class="built_in">size</span>() + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> idx = <span class="number">-1</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= target)&#123;</span><br><span class="line">                res = <span class="built_in">min</span>(i - idx, res);</span><br><span class="line">                idx++;</span><br><span class="line">                sum -= nums[idx];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(res == nums.<span class="built_in">size</span>() + <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>双指针</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 481.神奇数字</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/16343545.html</url>
     <content><![CDATA[<h1 id="481-神奇字符串-20221031每日一题"><a href="#481-神奇字符串-20221031每日一题" class="headerlink" title="481. 神奇字符串(20221031每日一题)"></a><a href="https://leetcode.cn/problems/magical-string/">481. 神奇字符串</a>(20221031每日一题)</h1><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/481-1.png" alt="Problem Description"></p>
 <h1 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure>
 
@@ -191,8 +191,26 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 2469. 温度转换</title>
+    <url>/posts/e80ecef2.html</url>
+    <content><![CDATA[<h2 id="2469-温度转换"><a href="#2469-温度转换" class="headerlink" title="2469. 温度转换"></a><strong><a href="https://leetcode.cn/problems/convert-the-temperature/description/">2469. 温度转换</a></strong></h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230321132248.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">celsius = <span class="number">36.50</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">[<span class="number">309.65000</span>,<span class="number">97.70000</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>• <code>0 &lt;= celsius &lt;= 1000</code></p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>单纯的输入输出</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">convertTemperature</span><span class="params">(<span class="type">double</span> celsius)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">res</span><span class="params">(<span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = celsius + <span class="number">273.15</span>;</span><br><span class="line">        res[<span class="number">1</span>] = celsius * <span class="number">1.80</span> + <span class="number">32.00</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 707.设计链表</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/9ad52be0.html</url>
     <content><![CDATA[<h1 id="LeetCode-707-设计链表-mid"><a href="#LeetCode-707-设计链表-mid" class="headerlink" title="LeetCode 707.设计链表(mid)"></a>LeetCode 707.设计链表(mid)</h1><h1 id="707-设计链表（20220923每日一题）"><a href="#707-设计链表（20220923每日一题）" class="headerlink" title="707 设计链表（20220923每日一题）"></a>707 设计链表（20220923每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/Untitled.png" alt="Problem Description"></p>
 <p>从题目中我们可以看到本题有以下几个功能：</p>
 <ol>
@@ -236,26 +254,36 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 2469. 温度转换</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h2 id="2469-温度转换"><a href="#2469-温度转换" class="headerlink" title="2469. 温度转换"></a><strong><a href="https://leetcode.cn/problems/convert-the-temperature/description/">2469. 温度转换</a></strong></h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230321132248.png"></p>
-<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">celsius = <span class="number">36.50</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">[<span class="number">309.65000</span>,<span class="number">97.70000</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>• <code>0 &lt;= celsius &lt;= 1000</code></p>
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>单纯的输入输出</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">convertTemperature</span><span class="params">(<span class="type">double</span> celsius)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">res</span><span class="params">(<span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = celsius + <span class="number">273.15</span>;</span><br><span class="line">        res[<span class="number">1</span>] = celsius * <span class="number">1.80</span> + <span class="number">32.00</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>LeetCode 77. 组合</title>
+    <url>/posts/d1540be5.html</url>
+    <content><![CDATA[<h1 id="LeetCode-77-组合"><a href="#LeetCode-77-组合" class="headerlink" title="LeetCode 77. 组合"></a>LeetCode 77. 组合</h1><h1 id="77-组合"><a href="#77-组合" class="headerlink" title="77. 组合"></a><strong><strong><a href="https://leetcode.cn/problems/combinations/">77. 组合</a></strong></strong></h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/77.png" alt="Problem Description"></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>这道题的意思就是一道排列组合的问题，即求 $C^k_n$这种数学问题，但是我们不是求值，而是求排列组合中每一种的组合。这样的题显然是一种枚举问题，遇到枚举问题 $一般$是用dfs和bfs的方法。在这道题中，我用了一个剪枝策略来加速寻找每一种组合。</p>
+<p>如果剩下的数字个数加上当前数组大小小于要求值k，则返回</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> index, <span class="type">int</span> n, <span class="type">int</span> sum, <span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(sum == k)&#123;</span><br><span class="line">            <span class="keyword">this</span>-&gt;res.<span class="built_in">emplace_back</span>(arr);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(index &gt; n) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span>(sum + n - index + <span class="number">1</span> &lt; k) <span class="keyword">return</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(arr, index + <span class="number">1</span>, n, sum, k);</span><br><span class="line">        arr.<span class="built_in">emplace_back</span>(index);</span><br><span class="line">        <span class="built_in">dfs</span>(arr, index + <span class="number">1</span>, n, sum + <span class="number">1</span>, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">combine</span>(<span class="type">int</span> n, <span class="type">int</span> k) &#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; arr;</span><br><span class="line">        <span class="built_in">dfs</span>(arr, <span class="number">1</span>, n, <span class="number">0</span>, k);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>-&gt;res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>每日一题</tag>
+        <tag>排列组合</tag>
+        <tag>Dfs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 788.旋转数字</title>
+    <url>/posts/28252a46.html</url>
+    <content><![CDATA[<h1 id="LeetCode-788-旋转数字-Mid"><a href="#LeetCode-788-旋转数字-Mid" class="headerlink" title="LeetCode 788.旋转数字(Mid)"></a>LeetCode 788.旋转数字(Mid)</h1><h1 id="788-旋转数字（20220925每日一题）"><a href="#788-旋转数字（20220925每日一题）" class="headerlink" title="788 旋转数字（20220925每日一题）"></a>788 旋转数字（20220925每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1.png" alt="Problem Description"></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目中已经给出了大致意思，要想数字每个位上的数都旋转后还能成为数字，那么这个数字必须包含且只能包含数字0，1，2，5，6，8，9。那么为什么前十个数中1，2，8，10不包含在旋转数字中呢？因为这4个数字旋转之后还是1，2，8，10，数值不变，这违反了旋转数字的定义。从这我们可以看出，要想数字旋转之后数值要改变，不能只包含1，2，8，0，还必须至少包含2，5，6，9中的一个，那么我们只要判断从1到n中的数字中有几个数是由上述8个数字组成，并且至少包含一个2，5，6，9.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rotatedDigits</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">f</span><span class="params">(<span class="number">10</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        f[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">5</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">9</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        f[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">8</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="type">int</span> t = i;</span><br><span class="line">            <span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(t)&#123;</span><br><span class="line">                <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">1</span>) a = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">2</span>) b = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                t /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!t &amp;&amp; a) res++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode每日一题</tag>
       </tags>
   </entry>
   <entry>
     <title>LeetCode 791. 自定义字符串排序</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/375eda24.html</url>
     <content><![CDATA[<h1 id="791-自定义字符串排序-20221113-每日一题"><a href="#791-自定义字符串排序-20221113-每日一题" class="headerlink" title="791. 自定义字符串排序(20221113 每日一题)"></a><strong><a href="https://leetcode.cn/problems/custom-sort-string/">791. 自定义字符串排序</a>(20221113 每日一题)</strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给定两个字符串 <code>order</code> 和 <code>s</code> 。<code>order</code> 的所有单词都是 <strong>唯一</strong> 的，并且以前按照一些自定义的顺序排序。对 <code>s</code> 的字符进行置换，使其与排序的 <code>order</code> 相匹配。更具体地说，如果在 <code>order</code> 中的字符 <code>x</code> 出现字符 <code>y</code> 之前，那么在排列后的字符串中， <code>x</code> 也应该出现在 <code>y</code> 之前。返回 <em>满足这个性质的 <code>s</code> 的任意排列</em> 。</p>
 <h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">order = <span class="string">&quot;cba&quot;</span>, s = <span class="string">&quot;abcd&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -273,23 +301,8 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 77. 组合</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="LeetCode-77-组合"><a href="#LeetCode-77-组合" class="headerlink" title="LeetCode 77. 组合"></a>LeetCode 77. 组合</h1><h1 id="77-组合"><a href="#77-组合" class="headerlink" title="77. 组合"></a><strong><strong><a href="https://leetcode.cn/problems/combinations/">77. 组合</a></strong></strong></h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/77.png" alt="Problem Description"></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>这道题的意思就是一道排列组合的问题，即求 $C^k_n$这种数学问题，但是我们不是求值，而是求排列组合中每一种的组合。这样的题显然是一种枚举问题，遇到枚举问题 $一般$是用dfs和bfs的方法。在这道题中，我用了一个剪枝策略来加速寻找每一种组合。</p>
-<p>如果剩下的数字个数加上当前数组大小小于要求值k，则返回</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> index, <span class="type">int</span> n, <span class="type">int</span> sum, <span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(sum == k)&#123;</span><br><span class="line">            <span class="keyword">this</span>-&gt;res.<span class="built_in">emplace_back</span>(arr);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(index &gt; n) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span>(sum + n - index + <span class="number">1</span> &lt; k) <span class="keyword">return</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(arr, index + <span class="number">1</span>, n, sum, k);</span><br><span class="line">        arr.<span class="built_in">emplace_back</span>(index);</span><br><span class="line">        <span class="built_in">dfs</span>(arr, index + <span class="number">1</span>, n, sum + <span class="number">1</span>, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">combine</span>(<span class="type">int</span> n, <span class="type">int</span> k) &#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; arr;</span><br><span class="line">        <span class="built_in">dfs</span>(arr, <span class="number">1</span>, n, <span class="number">0</span>, k);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>-&gt;res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>排列组合</tag>
-        <tag>Dfs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 809. 情感丰富的文字</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/c10480a9.html</url>
     <content><![CDATA[<h1 id="809-情感丰富的文字"><a href="#809-情感丰富的文字" class="headerlink" title="809. 情感丰富的文字"></a><a href="https://leetcode.cn/problems/expressive-words/description/">809. 情感丰富的文字</a></h1><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>有时候人们会用重复写一些字母来表示额外的感受，比如 <code>&quot;hello&quot; -&gt; &quot;heeellooo&quot;</code>, <code>&quot;hi&quot; -&gt; &quot;hiii&quot;</code>。我们将相邻字母都相同的一串字符定义为相同字母组，例如：”h”, “eee”, “ll”, “ooo”。对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 <code>c</code> ），然后往其中添加相同的字母 <code>c</code> 使其长度达到 3 或以上。</p>
 <p>例如，以 “hello” 为例，我们可以对字母组 “o” 扩张得到 “hellooo”，但是无法以同样的方法得到 “helloo” 因为字母组 “oo” 长度小于 3。此外，我们可以进行另一种扩张 “ll” -&gt; “lllll” 以获得 “helllllooo”。如果 <code>s = &quot;helllllooo&quot;</code>，那么查询词 “hello” 是可扩张的，因为可以对它执行这两种扩张操作使得 <code>query = &quot;hello&quot; -&gt; &quot;hellooo&quot; -&gt; &quot;helllllooo&quot; = s</code>。</p>
 <p>输入一组查询单词，输出其中可扩张的单词数量。</p>
@@ -311,7 +324,7 @@
   </entry>
   <entry>
     <title>LeetCode 811. 子域名访问计数</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/57efb66a.html</url>
     <content><![CDATA[<h1 id="LeetCode-811-子域名访问计数"><a href="#LeetCode-811-子域名访问计数" class="headerlink" title="LeetCode 811. 子域名访问计数"></a>LeetCode 811. 子域名访问计数</h1><h1 id="811-子域名访问计数-20221005每日一题"><a href="#811-子域名访问计数-20221005每日一题" class="headerlink" title="****811. 子域名访问计数(20221005每日一题)**"></a>****<a href="https://leetcode.cn/problems/subdomain-visit-count/">811. 子域名访问计数</a>(20221005每日一题)**</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/811.png" alt="ProblemDescription"></p>
 <p>网站域名 “<a href="http://discuss.leetcode.com/">discuss.leetcode.com</a>“ 由多个子域名组成。顶级域名为 “com” ，二级域名为 “<a href="http://leetcode.com/">leetcode.com</a>“ ，最低一级为 “<a href="http://discuss.leetcode.com/">discuss.leetcode.com</a>“。当访问域名 <code>&quot;discuss.leetcode.com&quot;</code>时，同时也会隐式访问其父域名 <code>&quot;leetcode.com&quot;</code> 以及 <code>&quot;com&quot;</code>。</p>
 <p>计数配对域名 是遵循 “rep d1.d2.d3” 或 “rep d1.d2” 格式的一个域名表示，其中 rep 表示访问域名的次数，d1.d2.d3 为域名本身。</p>
@@ -329,39 +342,34 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 788.旋转数字</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="LeetCode-788-旋转数字-Mid"><a href="#LeetCode-788-旋转数字-Mid" class="headerlink" title="LeetCode 788.旋转数字(Mid)"></a>LeetCode 788.旋转数字(Mid)</h1><h1 id="788-旋转数字（20220925每日一题）"><a href="#788-旋转数字（20220925每日一题）" class="headerlink" title="788 旋转数字（20220925每日一题）"></a>788 旋转数字（20220925每日一题）</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1.png" alt="Problem Description"></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目中已经给出了大致意思，要想数字每个位上的数都旋转后还能成为数字，那么这个数字必须包含且只能包含数字0，1，2，5，6，8，9。那么为什么前十个数中1，2，8，10不包含在旋转数字中呢？因为这4个数字旋转之后还是1，2，8，10，数值不变，这违反了旋转数字的定义。从这我们可以看出，要想数字旋转之后数值要改变，不能只包含1，2，8，0，还必须至少包含2，5，6，9中的一个，那么我们只要判断从1到n中的数字中有几个数是由上述8个数字组成，并且至少包含一个2，5，6，9.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rotatedDigits</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">f</span><span class="params">(<span class="number">10</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        f[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">5</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line">        f[<span class="number">9</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        f[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">        f[<span class="number">8</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="type">int</span> t = i;</span><br><span class="line">            <span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(t)&#123;</span><br><span class="line">                <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">1</span>) a = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(f[t % <span class="number">10</span>] == <span class="number">2</span>) b = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                t /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!t &amp;&amp; a) res++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 904. 水果成篮</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="904-水果成篮-20221017-每日一题"><a href="#904-水果成篮-20221017-每日一题" class="headerlink" title="904. 水果成篮(20221017 每日一题)"></a><a href="https://leetcode.cn/problems/fruit-into-baskets/">904. 水果成篮</a>(20221017 每日一题)</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-1.png" alt="Problem Description"></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目给我们一个数组，让我们找到最长的子串，使得这个子串中所包含的数字种类最多只有两个。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>解决这种题，简单的就是利用双指针，一个在前，一个在后，在前的指针负责往队列里加数字，如果加完数字之后发现队列里的数字种类大于两种，那么我们就用后指针来弹出队列的数字，直到队列的数字种类小于等于2。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">totalFruit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; fruits)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> first = <span class="number">0</span>, last = <span class="number">1</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        hash[fruits[<span class="number">0</span>]]++;</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">1</span>, res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(last &lt; fruits.<span class="built_in">size</span>())&#123;</span><br><span class="line">            hash[fruits[last]]++;</span><br><span class="line">            <span class="keyword">if</span>(hash[fruits[last]] == <span class="number">1</span>)&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">                sum++;</span><br><span class="line">                <span class="keyword">while</span>(sum &gt; <span class="number">2</span>)&#123;</span><br><span class="line">                    hash[fruits[first]]--;</span><br><span class="line">                    <span class="keyword">if</span>(hash[fruits[first]] == <span class="number">0</span>)&#123;</span><br><span class="line">                        sum--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    first++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            last++;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    <title>LeetCode 870. 优势洗牌</title>
+    <url>/posts/672638a9.html</url>
+    <content><![CDATA[<h1 id="870-优势洗牌-20221008每日一题"><a href="#870-优势洗牌-20221008每日一题" class="headerlink" title="870. 优势洗牌 (20221008每日一题)"></a><a href="https://leetcode.cn/problems/advantage-shuffle/">870. 优势洗牌</a> (20221008每日一题)</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/870.png" alt="Problem Description"></p>
+<p>给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums 的优势可以用满足 nums1[i] &gt; nums2[i] 的索引 i 的数目来描述。</p>
+<p>返回 nums1的<strong>任意</strong>排列，使其相对于 <code>nums2</code>的优势最大化。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我们重排序<code>nums1</code>数组里的数字，使得<code>nums1</code>与<code>nums2</code>相同下标下<code>nums1</code>中的数比<code>nums2</code>中的数大，我们要求的是最大化情况下<code>nums1</code>数组中数字的排列情况。</p>
+<p>这道题类似于田忌赛马，田忌赛马中有下等马、中等马、上等马，我们用我方的中等马配对对方的下等马，用上等马配对对方的中等马，用下等马配对对方的上等马。</p>
+<p>在这里我们可以把数字看作马匹的好坏，我们需要用<code>nums1</code>中的较好的马匹配<code>nums2</code>中较差的马，用<code>nums1</code>中较差的马匹配nums2中最好的马。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>首先我们需要先排序，将<code>nums1</code>和<code>nums2</code>分别进行从小到大的顺序进行排序，其中<code>nums2</code>排序之后我们要记录每个数原来的索引值。这样方便将<code>nums1</code>的数放到对应的位置。</p>
+<p>我们依次从<code>nums1</code>和<code>nums2</code>拿出<code>n1</code>和<code>n2</code></p>
+<ul>
+<li>如果<code>n1&gt;n2</code>，那么<code>n1</code>就相当于上等马，<code>n2</code>相等于中等马或者下等马，这个时候我们就在<code>n2</code>对应的索引值上放入<code>n1</code>的值。</li>
+<li>如果<code>n1≤n2</code>，那么<code>n1</code>就相当于下等马，我们将其与<code>nums2</code>中的最优秀的马进行对比。</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">bool</span> <span class="title">cmp</span><span class="params">(pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &amp;A, pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &amp;B)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> A.first &lt; B.first;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">advantageCount</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = nums1.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt; <span class="built_in">arr</span>(len);</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">res</span><span class="params">(len)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            arr[i] = pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &#123;nums2[i], i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums1.<span class="built_in">begin</span>(), nums1.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="keyword">this</span>-&gt;cmp);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> idx = <span class="number">0</span>, index = len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums1[i] &gt; arr[idx].first)&#123;</span><br><span class="line">                res[arr[idx].second] = nums1[i];</span><br><span class="line">                idx++;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                res[arr[index].second] = nums1[i];</span><br><span class="line">                index--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-2.png" alt="Result"></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/870-1.png" alt="Result"></p>
 ]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
       <tags>
         <tag>每日一题</tag>
-        <tag>双指针</tag>
       </tags>
   </entry>
   <entry>
     <title>LeetCode 895. 最大频率栈</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/b7832ff7.html</url>
     <content><![CDATA[<h1 id="895-最大频率栈-20221130每日一题"><a href="#895-最大频率栈-20221130每日一题" class="headerlink" title="895. 最大频率栈(20221130每日一题)"></a><strong><a href="https://leetcode.cn/problems/maximum-frequency-stack/description/">895. 最大频率栈</a>(20221130每日一题)</strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>设计一个类似堆栈的数据结构，将元素推入堆栈，并从堆栈中弹出<strong>出现频率</strong>最高的元素。</p>
 <p>实现 <code>FreqStack</code> 类:</p>
 <ul>
@@ -394,34 +402,26 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 870. 优势洗牌</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="870-优势洗牌-20221008每日一题"><a href="#870-优势洗牌-20221008每日一题" class="headerlink" title="870. 优势洗牌 (20221008每日一题)"></a><a href="https://leetcode.cn/problems/advantage-shuffle/">870. 优势洗牌</a> (20221008每日一题)</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/870.png" alt="Problem Description"></p>
-<p>给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums 的优势可以用满足 nums1[i] &gt; nums2[i] 的索引 i 的数目来描述。</p>
-<p>返回 nums1的<strong>任意</strong>排列，使其相对于 <code>nums2</code>的优势最大化。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我们重排序<code>nums1</code>数组里的数字，使得<code>nums1</code>与<code>nums2</code>相同下标下<code>nums1</code>中的数比<code>nums2</code>中的数大，我们要求的是最大化情况下<code>nums1</code>数组中数字的排列情况。</p>
-<p>这道题类似于田忌赛马，田忌赛马中有下等马、中等马、上等马，我们用我方的中等马配对对方的下等马，用上等马配对对方的中等马，用下等马配对对方的上等马。</p>
-<p>在这里我们可以把数字看作马匹的好坏，我们需要用<code>nums1</code>中的较好的马匹配<code>nums2</code>中较差的马，用<code>nums1</code>中较差的马匹配nums2中最好的马。</p>
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>首先我们需要先排序，将<code>nums1</code>和<code>nums2</code>分别进行从小到大的顺序进行排序，其中<code>nums2</code>排序之后我们要记录每个数原来的索引值。这样方便将<code>nums1</code>的数放到对应的位置。</p>
-<p>我们依次从<code>nums1</code>和<code>nums2</code>拿出<code>n1</code>和<code>n2</code></p>
-<ul>
-<li>如果<code>n1&gt;n2</code>，那么<code>n1</code>就相当于上等马，<code>n2</code>相等于中等马或者下等马，这个时候我们就在<code>n2</code>对应的索引值上放入<code>n1</code>的值。</li>
-<li>如果<code>n1≤n2</code>，那么<code>n1</code>就相当于下等马，我们将其与<code>nums2</code>中的最优秀的马进行对比。</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">bool</span> <span class="title">cmp</span><span class="params">(pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &amp;A, pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &amp;B)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> A.first &lt; B.first;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">advantageCount</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = nums1.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt; <span class="built_in">arr</span>(len);</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">res</span><span class="params">(len)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            arr[i] = pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &#123;nums2[i], i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums1.<span class="built_in">begin</span>(), nums1.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="keyword">this</span>-&gt;cmp);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> idx = <span class="number">0</span>, index = len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums1[i] &gt; arr[idx].first)&#123;</span><br><span class="line">                res[arr[idx].second] = nums1[i];</span><br><span class="line">                idx++;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                res[arr[index].second] = nums1[i];</span><br><span class="line">                index--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    <title>LeetCode 904. 水果成篮</title>
+    <url>/posts/f4d40e11.html</url>
+    <content><![CDATA[<h1 id="904-水果成篮-20221017-每日一题"><a href="#904-水果成篮-20221017-每日一题" class="headerlink" title="904. 水果成篮(20221017 每日一题)"></a><a href="https://leetcode.cn/problems/fruit-into-baskets/">904. 水果成篮</a>(20221017 每日一题)</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-1.png" alt="Problem Description"></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>题目给我们一个数组，让我们找到最长的子串，使得这个子串中所包含的数字种类最多只有两个。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>解决这种题，简单的就是利用双指针，一个在前，一个在后，在前的指针负责往队列里加数字，如果加完数字之后发现队列里的数字种类大于两种，那么我们就用后指针来弹出队列的数字，直到队列的数字种类小于等于2。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">totalFruit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; fruits)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> first = <span class="number">0</span>, last = <span class="number">1</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        hash[fruits[<span class="number">0</span>]]++;</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">1</span>, res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(last &lt; fruits.<span class="built_in">size</span>())&#123;</span><br><span class="line">            hash[fruits[last]]++;</span><br><span class="line">            <span class="keyword">if</span>(hash[fruits[last]] == <span class="number">1</span>)&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">                sum++;</span><br><span class="line">                <span class="keyword">while</span>(sum &gt; <span class="number">2</span>)&#123;</span><br><span class="line">                    hash[fruits[first]]--;</span><br><span class="line">                    <span class="keyword">if</span>(hash[fruits[first]] == <span class="number">0</span>)&#123;</span><br><span class="line">                        sum--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    first++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            last++;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res, last - first);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/870-1.png" alt="Result"></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/904-2.png" alt="Result"></p>
 ]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
       <tags>
         <tag>每日一题</tag>
+        <tag>双指针</tag>
       </tags>
   </entry>
   <entry>
     <title>LeetCode 915.分割数组</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/2acaafb0.html</url>
     <content><![CDATA[<h1 id="LeetCode-915-分割数组（Medium）"><a href="#LeetCode-915-分割数组（Medium）" class="headerlink" title="LeetCode 915.分割数组（Medium）"></a>LeetCode 915.分割数组（Medium）</h1><h1 id="915-分割数组（20221024每日一题）"><a href="#915-分割数组（20221024每日一题）" class="headerlink" title="915. 分割数组（20221024每日一题）"></a><a href="https://leetcode.cn/problems/partition-array-into-disjoint-intervals/">915. 分割数组</a>（20221024每日一题）</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-1.png" alt="Problem Description"></p>
 <h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">5</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
 
@@ -442,7 +442,7 @@
   </entry>
   <entry>
     <title>LeetCode 927. 三等分</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/88c35860.html</url>
     <content><![CDATA[<h1 id="LeetCode-927-三等分"><a href="#LeetCode-927-三等分" class="headerlink" title="LeetCode 927. 三等分"></a>LeetCode 927. 三等分</h1><h1 id="927-三等分-20221006每日一题"><a href="#927-三等分-20221006每日一题" class="headerlink" title="****927. 三等分 (20221006每日一题)**"></a>****<a href="https://leetcode.cn/problems/three-equal-parts/">927. 三等分</a> (20221006每日一题)**</h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/927.png" alt="Problem Description"></p>
 <p>给定一个由 <code>0</code>和 <code>1</code>组成的数组 <code>arr</code> ，将数组分成  <strong>3 个非空的部分</strong>，使得所有这些部分表示相同的二进制值。</p>
 <p>如果可以做到，请返回<strong>任何</strong><code>[i, j]</code>，其中 <code>i+1 &lt; j</code>，这样一来：</p>
@@ -473,7 +473,7 @@
   </entry>
   <entry>
     <title>LeetCode 周赛321</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/edf0bb09.html</url>
     <content><![CDATA[<h1 id="LeetCode-周赛321"><a href="#LeetCode-周赛321" class="headerlink" title="LeetCode 周赛321"></a>LeetCode 周赛321</h1><h1 id="6245-找出中枢整数-Easy"><a href="#6245-找出中枢整数-Easy" class="headerlink" title="6245. 找出中枢整数(Easy)"></a><strong><a href="https://leetcode.cn/problems/find-the-pivot-integer/">6245. 找出中枢整数</a>(Easy)</strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给你一个正整数 <code>n</code> ，找出满足下述条件的 <strong>中枢整数</strong> <code>x</code> ：</p>
 <ul>
 <li><code>1</code> 和 <code>x</code> 之间的所有元素之和等于 <code>x</code> 和 <code>n</code> 之间所有元素之和。</li>
@@ -555,83 +555,8 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 面试题17.09. 第k个数</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="LeetCode-面试题17-09-第k个数"><a href="#LeetCode-面试题17-09-第k个数" class="headerlink" title="LeetCode 面试题17.09. 第k个数"></a>LeetCode 面试题17.09. 第k个数</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1709.png" alt="Problem Description"></p>
-<p>这道题让我们从一个只包含质因子3，5，7数字的数组中，根据从小到大排序，获取第k个数。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>刚开始的想法，就是根据一个优先队列，让较小的数优先弹出，但是这种做法比较麻烦的就是你的优先队列需要维护的长度是k*3，而优先队列的复杂度是O(log n)，再结合需要经过3k次的插入以及多次弹出，复杂度不够理想。</p>
-<p>后面看了一个大佬的做法，利用三指针，用三个指针p3,p5,p7分别记录上次乘以质因子3、5、7的数组index，然后比较num[p3] * 3, num[p5] * 5, num[p7] * 7三者的大小，谁最小就更新哪个质因子的指针。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getKthMagicNumber</span><span class="params">(<span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> *nums = <span class="keyword">new</span> <span class="type">int</span>[k + <span class="number">1</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> p3 = <span class="number">0</span>, p5 = <span class="number">0</span>, p7 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; k; i++)&#123;</span><br><span class="line">            nums[i] = <span class="built_in">min</span>(nums[p3] * <span class="number">3</span>, <span class="built_in">min</span>(nums[p5] * <span class="number">5</span>, nums[p7] * <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p3] * <span class="number">3</span>) p3++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == nums[p5] * <span class="number">5</span>) p5++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == nums[p7] * <span class="number">7</span>) p7++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[k - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>这里出现了一个问题，当时我没有考虑到去重，这边的顺序是1,3,5,7,9,15,15,21,21,….。会有重复的数字，我们在每次比较中，要将每个最小值的质因子的指针更新。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getKthMagicNumber</span><span class="params">(<span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> *nums = <span class="keyword">new</span> <span class="type">int</span>[k + <span class="number">1</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> p3 = <span class="number">0</span>, p5 = <span class="number">0</span>, p7 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; k; i++)&#123;</span><br><span class="line">            nums[i] = <span class="built_in">min</span>(nums[p3] * <span class="number">3</span>, <span class="built_in">min</span>(nums[p5] * <span class="number">5</span>, nums[p7] * <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p3] * <span class="number">3</span>) p3++;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p5] * <span class="number">5</span>) p5++;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p7] * <span class="number">7</span>) p7++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[k - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>多指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>两数之和 三数之和</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="两数之和-三数之和"><a href="#两数之和-三数之和" class="headerlink" title="两数之和 三数之和"></a>两数之和 三数之和</h1><h1 id="167-两数之和-II-输入有序数组"><a href="#167-两数之和-II-输入有序数组" class="headerlink" title="167. 两数之和 II - 输入有序数组"></a><strong><a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/">167. 两数之和 II - 输入有序数组</a></strong></h1><p>双指针的具体原理可以看<a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/solutions/87919/yi-zhang-tu-gao-su-ni-on-de-shuang-zhi-zhen-jie-fa/">大佬的题解</a>。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; numbers, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = numbers.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">if</span>(numbers[left] + numbers[right] == target)&#123;</span><br><span class="line">                res[<span class="number">0</span>] = left + <span class="number">1</span>;</span><br><span class="line">                res[<span class="number">1</span>] = right + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(numbers[left] + numbers[right] &lt; target) left++;</span><br><span class="line">            <span class="keyword">else</span> right--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="15-三数之和"><a href="#15-三数之和" class="headerlink" title="15. 三数之和"></a><strong><a href="https://leetcode.cn/problems/3sum/">15. 三数之和</a></strong></h1><p>这道题就是让我们求在给定数组中是否有两个数之和等于第三个数</p>
-<p>一般做法是嵌套三层for循环分别来代表a,b,c三个数然后求得有多少个abc三元组。这样的时间复杂度为 $O(n^3)$，当n很大时是不理想的。这个时候我们就要换一种思路。</p>
-<p>为了方便后面的操作，我们先对数组进行排序。</p>
-<p>然后从头往后遍历，每次遍历时先确定三元组中的一个数，另外两个数就在该数的后面选。选后面两个数的操作就不用嵌套两层for循环，而是使用双指针的方法，双指针分别指针可选数范围的一头一尾，然后要使得双指针所指的数之和等于一个定值。这样我们就把问题转换成了上面的题目**.** 之后我们只需要保证不会有重复即可。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threeSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">tmp</span><span class="params">(<span class="number">3</span>, <span class="number">100001</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            tmp[<span class="number">0</span>] = nums[i];</span><br><span class="line">            <span class="type">int</span> left = i + <span class="number">1</span>, right = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[left] + nums[right] == <span class="number">0</span> - nums[i])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(tmp[<span class="number">1</span>] == nums[left] &amp;&amp; tmp[<span class="number">2</span>] == nums[right]) &#123;</span><br><span class="line">                        left++;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        tmp[<span class="number">1</span>] = nums[left];</span><br><span class="line">                        tmp[<span class="number">2</span>] = nums[right];</span><br><span class="line">                        res.<span class="built_in">emplace_back</span>(tmp);</span><br><span class="line">                        left++;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[left] + nums[right] &gt; <span class="number">0</span> - nums[i]) right--;</span><br><span class="line">                <span class="keyword">else</span> left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>灵茶山艾府学习笔记</category>
-      </categories>
-      <tags>
-        <tag>双指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>同向双指针 滑动窗口</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<h1 id="同向双指针-滑动窗口"><a href="#同向双指针-滑动窗口" class="headerlink" title="同向双指针 滑动窗口"></a>同向双指针 滑动窗口</h1><h1 id="209-长度最小的子数组-Medium"><a href="#209-长度最小的子数组-Medium" class="headerlink" title="209. 长度最小的子数组(Medium)"></a><strong><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209. 长度最小的子数组</a>(Medium)</strong></h1><p>这道题的目标是在给定数组上求最短连续数组的和大于给定的k值</p>
-<p>一般思路：用两个for循环来遍历所有可能的子串和，这种方法的时间复杂度是 $O(n^2)$</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">				<span class="type">int</span> len = nums.<span class="built_in">size</span>();</span><br><span class="line">				<span class="type">int</span> res = len;</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">					<span class="type">int</span> tmp = nums[i];</span><br><span class="line">					<span class="keyword">if</span>(tmp &gt;= target) len = <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; len; j++)&#123;</span><br><span class="line">						tmp += nums[j];</span><br><span class="line">						<span class="keyword">if</span>(tmp &gt;= target) &#123;</span><br><span class="line">							len = <span class="built_in">min</span>(len, j - i + <span class="number">1</span>);</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>另一种方法就是使用双指针，之前我们用到的双指针一般都是指向一头一尾，然后通过不断向中间位移来压缩长度。</p>
-<p>这道题的双指针是同向双指针，类似于队列的头指针和尾指针。我们先移动头指针，直到头指针和尾指针之间的数之和大于等于给定值。当和大于等于给定值时，我们就开始移动尾指针，知道头指针和尾指针之间的数之和小于给定值，在移动尾指针的时候我们要实时更新最短长度，这个最短长度就是头指针和尾指针的距离。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = nums.<span class="built_in">size</span>() + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> idx = <span class="number">-1</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= target)&#123;</span><br><span class="line">                res = <span class="built_in">min</span>(i - idx, res);</span><br><span class="line">                idx++;</span><br><span class="line">                sum -= nums[idx];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(res == nums.<span class="built_in">size</span>() + <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="713-乘积小于-K-的子数组-Medium"><a href="#713-乘积小于-K-的子数组-Medium" class="headerlink" title="713. 乘积小于 K 的子数组(Medium)"></a><strong><a href="https://leetcode.cn/problems/subarray-product-less-than-k/">713. 乘积小于 K 的子数组</a>(Medium)</strong></h1><p>这道题和上面类似，只不过上面是求最大的长度，这里是要枚举数量。</p>
-<p>但是No.713和No.209类似，都是需要用到双指针，而且是同向双指针，双指针维护的是双指针之间的乘积。</p>
-<p>那么重点来了，双指针维护的是乘积，我们怎么获取个数呢？因为双指针之间的数的乘积是小于K的，当他大于K时，我们也只要更新左指针来保证双指针之间的数的乘积小于K。从这我们可以看出双指针的右指针在一次操作中是不动的，那么我们就可以在每次确立右指针之后，查看是否要更新左指针，之后我们在这个双指针的基础上，以右指针为数组的右端点，枚举左端点，查看最后有多少个以右指针为数组端点的子数组。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numSubarrayProductLessThanK</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> idx = <span class="number">-1</span>, sum = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            sum *= nums[i];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= k &amp;&amp; idx &lt; i) sum /= nums[++idx];</span><br><span class="line">            res += (i - idx);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-无重复字符的最长子串-Meduim"><a href="#3-无重复字符的最长子串-Meduim" class="headerlink" title="3. 无重复字符的最长子串[Meduim]"></a><strong><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/">3. 无重复字符的最长子串</a>[Meduim]</strong></h1><p>这道题利用双指针怎么做呢？</p>
-<p>我们利用同向双指针，右指针每往右移一个时，我们判断这个新加入的元素在左右指针中是否已经出现过。如果没出现过，那么我们就继续右移右指针，如果出现过，那么我们就要开始移动左指针，直到左右指针之间的所有元素都只出现一次。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>, idx = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!hash[s[i]])&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(res, i - idx);</span><br><span class="line">                hash[s[i]] = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(s[++idx] != s[i])&#123;</span><br><span class="line">                    hash[s[idx]] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总的来说，同向双指针重要的是维护双指针之间的数，如果满足条件，一般移动右指针，当不满足时，右移左指针。</p>
-<p>一般操作：</p>
-<ol>
-<li>右移右指针直到末尾</li>
-<li>判断左右指针之间的数是否满足条件<ol>
-<li>如果满足，回到步骤1</li>
-<li>如果不满足，移动左指针，回到步骤2</li>
-</ol>
-</li>
-<li>结束</li>
-</ol>
-]]></content>
-      <categories>
-        <category>灵茶山艾府学习笔记</category>
-      </categories>
-      <tags>
-        <tag>双指针</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 周赛336</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/6a8f1feb.html</url>
     <content><![CDATA[<h1 id="LeetCode周赛336"><a href="#LeetCode周赛336" class="headerlink" title="LeetCode周赛336"></a>LeetCode周赛336</h1><h1 id="6315-统计范围内的元音字符串数-Easy"><a href="#6315-统计范围内的元音字符串数-Easy" class="headerlink" title="6315. 统计范围内的元音字符串数(Easy)"></a><strong><a href="https://leetcode.cn/problems/count-the-number-of-vowel-strings-in-range/description/">6315. 统计范围内的元音字符串数</a>(Easy)</strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给你一个下标从 <strong>0</strong> 开始的字符串数组 <code>words</code> 和两个整数：<code>left</code> 和 <code>right</code> 。</p>
 <p>如果字符串以元音字母开头并以元音字母结尾，那么该字符串就是一个 <strong>元音字符串</strong> ，其中元音字母是 <code>&#39;a&#39;</code>、<code>&#39;e&#39;</code>、<code>&#39;i&#39;</code>、<code>&#39;o&#39;</code>、<code>&#39;u&#39;</code> 。</p>
 <p>返回 **<code>words[i]</code> 是元音字符串的数目，其中 **<code>i</code> 在闭区间 <code>[left, right]</code> 内。</p>
@@ -724,8 +649,62 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 面试题17.09. 第k个数</title>
+    <url>/posts/478d69b2.html</url>
+    <content><![CDATA[<h1 id="LeetCode-面试题17-09-第k个数"><a href="#LeetCode-面试题17-09-第k个数" class="headerlink" title="LeetCode 面试题17.09. 第k个数"></a>LeetCode 面试题17.09. 第k个数</h1><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/1709.png" alt="Problem Description"></p>
+<p>这道题让我们从一个只包含质因子3，5，7数字的数组中，根据从小到大排序，获取第k个数。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>刚开始的想法，就是根据一个优先队列，让较小的数优先弹出，但是这种做法比较麻烦的就是你的优先队列需要维护的长度是k*3，而优先队列的复杂度是O(log n)，再结合需要经过3k次的插入以及多次弹出，复杂度不够理想。</p>
+<p>后面看了一个大佬的做法，利用三指针，用三个指针p3,p5,p7分别记录上次乘以质因子3、5、7的数组index，然后比较num[p3] * 3, num[p5] * 5, num[p7] * 7三者的大小，谁最小就更新哪个质因子的指针。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getKthMagicNumber</span><span class="params">(<span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> *nums = <span class="keyword">new</span> <span class="type">int</span>[k + <span class="number">1</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> p3 = <span class="number">0</span>, p5 = <span class="number">0</span>, p7 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; k; i++)&#123;</span><br><span class="line">            nums[i] = <span class="built_in">min</span>(nums[p3] * <span class="number">3</span>, <span class="built_in">min</span>(nums[p5] * <span class="number">5</span>, nums[p7] * <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p3] * <span class="number">3</span>) p3++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == nums[p5] * <span class="number">5</span>) p5++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == nums[p7] * <span class="number">7</span>) p7++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[k - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这里出现了一个问题，当时我没有考虑到去重，这边的顺序是1,3,5,7,9,15,15,21,21,….。会有重复的数字，我们在每次比较中，要将每个最小值的质因子的指针更新。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getKthMagicNumber</span><span class="params">(<span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> *nums = <span class="keyword">new</span> <span class="type">int</span>[k + <span class="number">1</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> p3 = <span class="number">0</span>, p5 = <span class="number">0</span>, p7 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; k; i++)&#123;</span><br><span class="line">            nums[i] = <span class="built_in">min</span>(nums[p3] * <span class="number">3</span>, <span class="built_in">min</span>(nums[p5] * <span class="number">5</span>, nums[p7] * <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p3] * <span class="number">3</span>) p3++;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p5] * <span class="number">5</span>) p5++;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[p7] * <span class="number">7</span>) p7++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[k - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>多指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ test</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>两数之和 三数之和</title>
+    <url>/posts/34f50de6.html</url>
+    <content><![CDATA[<h1 id="两数之和-三数之和"><a href="#两数之和-三数之和" class="headerlink" title="两数之和 三数之和"></a>两数之和 三数之和</h1><h1 id="167-两数之和-II-输入有序数组"><a href="#167-两数之和-II-输入有序数组" class="headerlink" title="167. 两数之和 II - 输入有序数组"></a><strong><a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/">167. 两数之和 II - 输入有序数组</a></strong></h1><p>双指针的具体原理可以看<a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/solutions/87919/yi-zhang-tu-gao-su-ni-on-de-shuang-zhi-zhen-jie-fa/">大佬的题解</a>。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; numbers, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = numbers.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">if</span>(numbers[left] + numbers[right] == target)&#123;</span><br><span class="line">                res[<span class="number">0</span>] = left + <span class="number">1</span>;</span><br><span class="line">                res[<span class="number">1</span>] = right + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(numbers[left] + numbers[right] &lt; target) left++;</span><br><span class="line">            <span class="keyword">else</span> right--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="15-三数之和"><a href="#15-三数之和" class="headerlink" title="15. 三数之和"></a><strong><a href="https://leetcode.cn/problems/3sum/">15. 三数之和</a></strong></h1><p>这道题就是让我们求在给定数组中是否有两个数之和等于第三个数</p>
+<p>一般做法是嵌套三层for循环分别来代表a,b,c三个数然后求得有多少个abc三元组。这样的时间复杂度为 $O(n^3)$，当n很大时是不理想的。这个时候我们就要换一种思路。</p>
+<p>为了方便后面的操作，我们先对数组进行排序。</p>
+<p>然后从头往后遍历，每次遍历时先确定三元组中的一个数，另外两个数就在该数的后面选。选后面两个数的操作就不用嵌套两层for循环，而是使用双指针的方法，双指针分别指针可选数范围的一头一尾，然后要使得双指针所指的数之和等于一个定值。这样我们就把问题转换成了上面的题目**.** 之后我们只需要保证不会有重复即可。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threeSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">tmp</span><span class="params">(<span class="number">3</span>, <span class="number">100001</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            tmp[<span class="number">0</span>] = nums[i];</span><br><span class="line">            <span class="type">int</span> left = i + <span class="number">1</span>, right = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[left] + nums[right] == <span class="number">0</span> - nums[i])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(tmp[<span class="number">1</span>] == nums[left] &amp;&amp; tmp[<span class="number">2</span>] == nums[right]) &#123;</span><br><span class="line">                        left++;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        tmp[<span class="number">1</span>] = nums[left];</span><br><span class="line">                        tmp[<span class="number">2</span>] = nums[right];</span><br><span class="line">                        res.<span class="built_in">emplace_back</span>(tmp);</span><br><span class="line">                        left++;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[left] + nums[right] &gt; <span class="number">0</span> - nums[i]) right--;</span><br><span class="line">                <span class="keyword">else</span> left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>灵茶山艾府学习笔记</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二分查找</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/e8eb0481.html</url>
     <content><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><p>变种的二分查找主要分为区间变种和范围变种</p>
 <p>区间变种主要是[],(),[)</p>
 <p>范围变种主要是≥,&gt;,≤,&lt;</p>
@@ -744,26 +723,47 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/archives/undefined.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>同向双指针 滑动窗口</title>
+    <url>/posts/137e18a2.html</url>
+    <content><![CDATA[<h1 id="同向双指针-滑动窗口"><a href="#同向双指针-滑动窗口" class="headerlink" title="同向双指针 滑动窗口"></a>同向双指针 滑动窗口</h1><h1 id="209-长度最小的子数组-Medium"><a href="#209-长度最小的子数组-Medium" class="headerlink" title="209. 长度最小的子数组(Medium)"></a><strong><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209. 长度最小的子数组</a>(Medium)</strong></h1><p>这道题的目标是在给定数组上求最短连续数组的和大于给定的k值</p>
+<p>一般思路：用两个for循环来遍历所有可能的子串和，这种方法的时间复杂度是 $O(n^2)$</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">				<span class="type">int</span> len = nums.<span class="built_in">size</span>();</span><br><span class="line">				<span class="type">int</span> res = len;</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">					<span class="type">int</span> tmp = nums[i];</span><br><span class="line">					<span class="keyword">if</span>(tmp &gt;= target) len = <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; len; j++)&#123;</span><br><span class="line">						tmp += nums[j];</span><br><span class="line">						<span class="keyword">if</span>(tmp &gt;= target) &#123;</span><br><span class="line">							len = <span class="built_in">min</span>(len, j - i + <span class="number">1</span>);</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>另一种方法就是使用双指针，之前我们用到的双指针一般都是指向一头一尾，然后通过不断向中间位移来压缩长度。</p>
+<p>这道题的双指针是同向双指针，类似于队列的头指针和尾指针。我们先移动头指针，直到头指针和尾指针之间的数之和大于等于给定值。当和大于等于给定值时，我们就开始移动尾指针，知道头指针和尾指针之间的数之和小于给定值，在移动尾指针的时候我们要实时更新最短长度，这个最短长度就是头指针和尾指针的距离。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = nums.<span class="built_in">size</span>() + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> idx = <span class="number">-1</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= target)&#123;</span><br><span class="line">                res = <span class="built_in">min</span>(i - idx, res);</span><br><span class="line">                idx++;</span><br><span class="line">                sum -= nums[idx];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(res == nums.<span class="built_in">size</span>() + <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h1 id="713-乘积小于-K-的子数组-Medium"><a href="#713-乘积小于-K-的子数组-Medium" class="headerlink" title="713. 乘积小于 K 的子数组(Medium)"></a><strong><a href="https://leetcode.cn/problems/subarray-product-less-than-k/">713. 乘积小于 K 的子数组</a>(Medium)</strong></h1><p>这道题和上面类似，只不过上面是求最大的长度，这里是要枚举数量。</p>
+<p>但是No.713和No.209类似，都是需要用到双指针，而且是同向双指针，双指针维护的是双指针之间的乘积。</p>
+<p>那么重点来了，双指针维护的是乘积，我们怎么获取个数呢？因为双指针之间的数的乘积是小于K的，当他大于K时，我们也只要更新左指针来保证双指针之间的数的乘积小于K。从这我们可以看出双指针的右指针在一次操作中是不动的，那么我们就可以在每次确立右指针之后，查看是否要更新左指针，之后我们在这个双指针的基础上，以右指针为数组的右端点，枚举左端点，查看最后有多少个以右指针为数组端点的子数组。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numSubarrayProductLessThanK</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> idx = <span class="number">-1</span>, sum = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            sum *= nums[i];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= k &amp;&amp; idx &lt; i) sum /= nums[++idx];</span><br><span class="line">            res += (i - idx);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h1 id="3-无重复字符的最长子串-Meduim"><a href="#3-无重复字符的最长子串-Meduim" class="headerlink" title="3. 无重复字符的最长子串[Meduim]"></a><strong><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/">3. 无重复字符的最长子串</a>[Meduim]</strong></h1><p>这道题利用双指针怎么做呢？</p>
+<p>我们利用同向双指针，右指针每往右移一个时，我们判断这个新加入的元素在左右指针中是否已经出现过。如果没出现过，那么我们就继续右移右指针，如果出现过，那么我们就要开始移动左指针，直到左右指针之间的所有元素都只出现一次。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>, idx = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!hash[s[i]])&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(res, i - idx);</span><br><span class="line">                hash[s[i]] = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(s[++idx] != s[i])&#123;</span><br><span class="line">                    hash[s[idx]] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ test</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总的来说，同向双指针重要的是维护双指针之间的数，如果满足条件，一般移动右指针，当不满足时，右移左指针。</p>
+<p>一般操作：</p>
+<ol>
+<li>右移右指针直到末尾</li>
+<li>判断左右指针之间的数是否满足条件<ol>
+<li>如果满足，回到步骤1</li>
+<li>如果不满足，移动左指针，回到步骤2</li>
+</ol>
+</li>
+<li>结束</li>
+</ol>
+]]></content>
+      <categories>
+        <category>灵茶山艾府学习笔记</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+      </tags>
   </entry>
   <entry>
     <title>盛最多水的容器 接雨水</title>
-    <url>/archives/undefined.html</url>
+    <url>/posts/a055a13d.html</url>
     <content><![CDATA[<h1 id="盛最多水的容器-接雨水"><a href="#盛最多水的容器-接雨水" class="headerlink" title="盛最多水的容器 接雨水"></a>盛最多水的容器 接雨水</h1><h1 id="11-盛最多水的容器-Medium"><a href="#11-盛最多水的容器-Medium" class="headerlink" title="11. 盛最多水的容器(Medium)"></a><strong><a href="https://leetcode.cn/problems/container-with-most-water/description/">11. 盛最多水的容器</a>(Medium)</strong></h1><p>这道题的双指针刚开始用着很迷茫，因为不知道怎么验证这个双指针的正确性，然后我在题解中找到了一篇有关他的<a href="https://leetcode.cn/problems/container-with-most-water/solutions/11491/container-with-most-water-shuang-zhi-zhen-fa-yi-do/">正确性验证</a>。大佬讲的很细致！</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/lcsszz.png"></p>
 <p>这道题用的双指针做法，我们用两个指针来表示区间的一头一尾，比较头尾指针的挡板高度之后再决定调整哪块挡板。调整的时候我们会消去一些状态，之前我就一直迷惑万一这些状态会不会有隐藏最大值，但是通过上面的证明的时候我才解开疑惑。每次更新头尾指针之后消去的状态他们所包含的最大值肯定是小于等于当前状态的，比如上面图片中因为S(i,j)→S(i+1,j)而消去的S(i,j-1),S(i,j-2),…,S(i,i+1)，他们所表示的面积时小于S(i,j)的，因为他们的短板要么是h[i],如果不是h[i]那就说明短板比h[i]更小，那么决定面积的短板高度因素就能排除在外了，之后再看底边宽度，因为原来的宽度时j-i，而后面的底边宽度范围时[1,j-i-1]，两者都比S(i,j)要小，因此S(i,j-1),S(i,j-2),…,S(i,i+1)这些都是小于S(i,j)的，我们最后只要比较S(i,j)和其他组合的比较即可。</p>
