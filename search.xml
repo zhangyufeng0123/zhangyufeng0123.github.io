@@ -764,4 +764,22 @@
         <tag>Java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 2469. 温度转换</title>
+    <url>/2023/03/21/LeetCode-2469-%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h2 id="2469-温度转换"><a href="#2469-温度转换" class="headerlink" title="2469. 温度转换"></a><strong><a href="https://leetcode.cn/problems/convert-the-temperature/description/">2469. 温度转换</a></strong></h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230321132248.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">celsius = <span class="number">36.50</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">[<span class="number">309.65000</span>,<span class="number">97.70000</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>• <code>0 &lt;= celsius &lt;= 1000</code></p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>单纯的输入输出</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">convertTemperature</span><span class="params">(<span class="type">double</span> celsius)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">res</span><span class="params">(<span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = celsius + <span class="number">273.15</span>;</span><br><span class="line">        res[<span class="number">1</span>] = celsius * <span class="number">1.80</span> + <span class="number">32.00</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
 </search>
