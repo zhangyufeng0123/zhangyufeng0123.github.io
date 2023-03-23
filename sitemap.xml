@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.zyfblogs.xyz/posts/6a30773a.html</loc>
+    <loc>https://www.zyfblogs.xyz/posts/c5ac4b34.html</loc>
     
     <lastmod>2023-03-23</lastmod>
     
@@ -21,6 +21,15 @@
   
   <url>
     <loc>https://www.zyfblogs.xyz/posts/fdb0b5f8.html</loc>
+    
+    <lastmod>2023-03-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.zyfblogs.xyz/posts/6a30773a.html</loc>
     
     <lastmod>2023-03-23</lastmod>
     
@@ -405,6 +414,13 @@
   
   <url>
     <loc>https://www.zyfblogs.xyz/tags/%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2023-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.zyfblogs.xyz/tags/%E4%BA%8C%E5%88%86/</loc>
     <lastmod>2023-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
