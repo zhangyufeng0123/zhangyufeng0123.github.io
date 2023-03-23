@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145304.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145525.png">
 <meta property="article:published_time" content="2023-03-23T06:57:11.000Z">
-<meta property="article:modified_time" content="2023-03-23T06:59:21.350Z">
+<meta property="article:modified_time" content="2023-03-23T07:26:03.808Z">
 <meta property="article:author" content="Zyf">
 <meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
@@ -159,18 +159,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -231,7 +231,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-03-23 14:57:11 / 修改时间：14:59:21" itemprop="dateCreated datePublished" datetime="2023-03-23T14:57:11+08:00">2023-03-23</time>
+      <time title="创建时间：2023-03-23 14:57:11 / 修改时间：15:26:03" itemprop="dateCreated datePublished" datetime="2023-03-23T14:57:11+08:00">2023-03-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -285,17 +285,17 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="type">int</span> findMin(vector<span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span><span class="operator">&amp;</span> nums) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="keyword">left</span> <span class="operator">=</span> <span class="number">-1</span>, <span class="keyword">right</span> <span class="operator">=</span> nums.size() <span class="operator">-</span> <span class="number">1</span>;</span><br><span class="line">        while(<span class="keyword">left</span> <span class="operator">+</span> <span class="number">1</span> <span class="operator">&lt;</span> <span class="keyword">right</span>)&#123;</span><br><span class="line">            <span class="type">int</span> mid <span class="operator">=</span> <span class="keyword">left</span> <span class="operator">+</span> (<span class="keyword">right</span> <span class="operator">-</span> <span class="keyword">left</span>) <span class="operator">/</span> <span class="number">2</span>;</span><br><span class="line">            if(nums[mid] <span class="operator">&gt;</span> nums[<span class="keyword">right</span>])&#123;</span><br><span class="line">                <span class="keyword">left</span> <span class="operator">=</span> mid;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">right</span> <span class="operator">=</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="keyword">right</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h1 id="33-搜索旋转排序数组"><a href="#33-搜索旋转排序数组" class="headerlink" title="33. 搜索旋转排序数组"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/search-in-rotated-sorted-array/description/">33. 搜索旋转排序数组</a></strong></h1><p>有两种做法：</p>
-<p>一种是根据这个旋转排序数组的性质将数组分为两段有序数组，然后在有序数组中寻找到target，但是这样就需要用到两次二分</p>
+<p>一种是根据这个旋转排序数组的性质将数组分为两段有序数组，然后在有序数组中寻找到<code>target</code>，但是这样就需要用到两次二分</p>
 <p>另一种是直接寻找，但是要根据这个旋转排序数组的性质来判断红蓝区域。</p>
 <p>我们只讨论右边为蓝的情况</p>
-<p>第一种，mid在右侧递增位，这个时候我们要想右边为蓝色区域，那就需要判断target在左侧。左侧分为两个有序数组，所以我们要分两种情况</p>
+<p>第一种，<code>mid</code>在右侧递增位，这个时候我们要想右边为蓝色区域，那就需要判断<code>target</code>在左侧。左侧分为两个有序数组，所以我们要分两种情况</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145043.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145043.png"></p>
-<p>第一种情况就是target在最初的两个有序数组的左边的数组，这个时候我们只要保证target &gt; nums.back()即可。</p>
+<p>第一种情况就是<code>target</code>在最初的两个有序数组的左边的数组，这个时候我们只要保证<code>target &gt; nums.back()</code>即可。</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145304.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145304.png"></p>
-<p>第二种情况就是target在灰色数组的左侧，这个时候我们只要保证target &lt; nums[mid]即可。</p>
-<p>还有另外一种情况，即mid的位置是蓝色数组的情况，这个时候我们要想让左边的区域是蓝色，那就得让target在左侧的蓝色数组内。</p>
+<p>第二种情况就是<code>target</code>在灰色数组的左侧，这个时候我们只要保证<code>target &lt; nums[mid]</code>即可。</p>
+<p>还有另外一种情况，即<code>mid</code>的位置是蓝色数组的情况，这个时候我们要想让左边的区域是蓝色，那就得让<code>target</code>在左侧的蓝色数组内。</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145525.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323145525.png"></p>
-<p>这种情况我们只需要判断target是否在[nums.back(),mid]之间即可。</p>
+<p>这种情况我们只需要判断<code>target</code>是否在<code>[nums.back(),mid]</code>之间即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, <span class="type">int</span> target, <span class="type">int</span> mid)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[mid] &gt; nums.<span class="built_in">back</span>())&#123;</span><br><span class="line">            <span class="keyword">return</span> nums.<span class="built_in">back</span>() &lt; target &amp;&amp; target &lt;= nums[mid];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> target &lt;= nums[mid] || target &gt; nums.<span class="built_in">back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">search</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">-1</span>, right = (<span class="type">int</span>)(nums.<span class="built_in">size</span>());</span><br><span class="line">        <span class="keyword">while</span>(left + <span class="number">1</span> &lt; right)&#123;</span><br><span class="line">            <span class="type">int</span> mid = (left + right) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">check</span>(nums, target, mid))&#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                left = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; right &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">if</span>(right == (<span class="type">int</span>)nums.<span class="built_in">size</span>() || nums[right] != target) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
@@ -317,6 +317,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/735e5788.html" rel="next" title="排序算法">
+                  排序算法 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -349,14 +352,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">54k</span>
+    <span title="站点总字数">58k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:38</span>
+    <span title="站点阅读时长">1:45</span>
   </span>
 </div>
 <div class="busuanzi-count">
