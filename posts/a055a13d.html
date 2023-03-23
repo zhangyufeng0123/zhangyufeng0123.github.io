@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/lcsszz.png">
 <meta property="article:published_time" content="2023-03-20T07:22:47.000Z">
-<meta property="article:modified_time" content="2023-03-20T07:45:47.270Z">
+<meta property="article:modified_time" content="2023-03-21T08:46:29.503Z">
 <meta property="article:author" content="Zyf">
 <meta property="article:tag" content="双指针">
 <meta name="twitter:card" content="summary">
@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -227,9 +227,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-03-20 15:22:47 / 修改时间：15:45:47" itemprop="dateCreated datePublished" datetime="2023-03-20T15:22:47+08:00">2023-03-20</time>
+      <time title="创建时间：2023-03-20 15:22:47" itemprop="dateCreated datePublished" datetime="2023-03-20T15:22:47+08:00">2023-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-21 16:46:29" itemprop="dateModified" datetime="2023-03-21T16:46:29+08:00">2023-03-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -273,12 +279,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="盛最多水的容器-接雨水"><a href="#盛最多水的容器-接雨水" class="headerlink" title="盛最多水的容器 接雨水"></a>盛最多水的容器 接雨水</h1><h1 id="11-盛最多水的容器-Medium"><a href="#11-盛最多水的容器-Medium" class="headerlink" title="11. 盛最多水的容器(Medium)"></a><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/container-with-most-water/description/">11. 盛最多水的容器</a>(Medium)</strong></h1><p>这道题的双指针刚开始用着很迷茫，因为不知道怎么验证这个双指针的正确性，然后我在题解中找到了一篇有关他的<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/container-with-most-water/solutions/11491/container-with-most-water-shuang-zhi-zhen-fa-yi-do/">正确性验证</a>。大佬讲的很细致！</p>
+        <h1 id="盛最多水的容器-接雨水"><a href="#盛最多水的容器-接雨水" class="headerlink" title="盛最多水的容器 接雨水"></a>盛最多水的容器 接雨水</h1><h1 id="11-盛最多水的容器-Medium"><a href="#11-盛最多水的容器-Medium" class="headerlink" title="11. 盛最多水的容器(Medium)"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/container-with-most-water/description/">11. 盛最多水的容器</a>(Medium)</strong></h1><p>这道题的双指针刚开始用着很迷茫，因为不知道怎么验证这个双指针的正确性，然后我在题解中找到了一篇有关他的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/container-with-most-water/solutions/11491/container-with-most-water-shuang-zhi-zhen-fa-yi-do/">正确性验证</a>。大佬讲的很细致！</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/lcsszz.png"></p>
 <p>这道题用的双指针做法，我们用两个指针来表示区间的一头一尾，比较头尾指针的挡板高度之后再决定调整哪块挡板。调整的时候我们会消去一些状态，之前我就一直迷惑万一这些状态会不会有隐藏最大值，但是通过上面的证明的时候我才解开疑惑。每次更新头尾指针之后消去的状态他们所包含的最大值肯定是小于等于当前状态的，比如上面图片中因为S(i,j)→S(i+1,j)而消去的S(i,j-1),S(i,j-2),…,S(i,i+1)，他们所表示的面积时小于S(i,j)的，因为他们的短板要么是h[i],如果不是h[i]那就说明短板比h[i]更小，那么决定面积的短板高度因素就能排除在外了，之后再看底边宽度，因为原来的宽度时j-i，而后面的底边宽度范围时[1,j-i-1]，两者都比S(i,j)要小，因此S(i,j-1),S(i,j-2),…,S(i,i+1)这些都是小于S(i,j)的，我们最后只要比较S(i,j)和其他组合的比较即可。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="type">int</span> maxArea(vector<span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span><span class="operator">&amp;</span> height) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="keyword">left</span> <span class="operator">=</span> <span class="number">0</span>, <span class="keyword">right</span> <span class="operator">=</span> height.size() <span class="operator">-</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> res <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        while(<span class="keyword">right</span> <span class="operator">&gt;</span> <span class="keyword">left</span>)&#123;</span><br><span class="line">            res <span class="operator">=</span> <span class="built_in">max</span>(res, (<span class="keyword">right</span> <span class="operator">-</span> <span class="keyword">left</span>) <span class="operator">*</span> <span class="built_in">min</span>(height[<span class="keyword">right</span>], height[<span class="keyword">left</span>]));</span><br><span class="line">            if(height[<span class="keyword">right</span>] <span class="operator">&lt;</span> height[<span class="keyword">left</span>]) <span class="keyword">right</span><span class="comment">--;</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">left</span><span class="operator">+</span><span class="operator">+</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h1 id="42-接雨水-Hard"><a href="#42-接雨水-Hard" class="headerlink" title="42. 接雨水(Hard)"></a><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/description/">42. 接雨水</a>(Hard)</strong></h1><p>这道题有两种做法，一种就是前后缀，另一种是双指针。</p>
+<h1 id="42-接雨水-Hard"><a href="#42-接雨水-Hard" class="headerlink" title="42. 接雨水(Hard)"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/trapping-rain-water/description/">42. 接雨水</a>(Hard)</strong></h1><p>这道题有两种做法，一种就是前后缀，另一种是双指针。</p>
 <h2 id="前后缀"><a href="#前后缀" class="headerlink" title="前后缀"></a>前后缀</h2><p>这里的前缀是指从头往后当前遇到的最高的高度，比如说如果高度数组是<code>[0,1,0,2,1,0,1,3,2,1,2,1]</code>，那么前缀数组就是<code>[0,1,1,2,2,2,2,3,3,3,3,3]</code>，这个数组中的数字代表从起始点到当前点所遇到的圆柱最高点，后缀数组是<code>[3,3,3,3,3,3,3,3,2,2,2,1]</code>，这两个数组有什么作用呢？我们根据索引依次遍历数组，当遍历到索引为<code>0</code>的时候，前缀数组是<code>0</code>，后缀数组是<code>3</code>，根据短板原理，我们这时只能取到<code>0</code>，当遍历到索引为<code>6</code>时，前缀数组是<code>2</code>，后缀数组是<code>3</code>，这时候根据短板原理水深应该是<code>2</code>，但是这个索引下高度本身就是<code>1</code>，那么水深就是<code>1</code>.根据这个思想我们统计所有索引值下的水深。</p>
 <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">trap</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> height_len = height.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(!height_len)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; max_left, max_right;</span><br><span class="line">        max_left.<span class="built_in">emplace_back</span>(height[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; height_len; i++)&#123;</span><br><span class="line">            max_left.<span class="built_in">emplace_back</span>(<span class="built_in">max</span>(height[i], max_left[i - <span class="number">1</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        max_right.<span class="built_in">emplace_back</span>(height[height_len - <span class="number">1</span>]);</span><br><span class="line">        <span class="type">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = height_len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            max_right.<span class="built_in">emplace_back</span>(<span class="built_in">max</span>(height[i], max_right[k++]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; height_len - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            ans += <span class="built_in">min</span>(max_left[i], max_right[height_len - i - <span class="number">1</span>]) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -339,14 +345,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">42k</span>
+    <span title="站点总字数">52k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:16</span>
+    <span title="站点阅读时长">1:34</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -367,7 +373,7 @@
       </span>
     </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
     </div>
