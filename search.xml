@@ -2459,4 +2459,52 @@
         <tag>基础</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 1574.删除最短的子数组使剩余数组有序</title>
+    <url>/posts/54f14d01.html</url>
+    <content><![CDATA[<p><strong><a href="https://leetcode.cn/problems/shortest-subarray-to-be-removed-to-make-array-sorted/description/">1574.删除最短的子数组使剩余数组有序</a></strong></p>
+<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325131830.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325131830.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">我们需要删除的最短子数组是 [<span class="number">10</span>,<span class="number">4</span>,<span class="number">2</span>] ，长度为 <span class="number">3</span> 。剩余元素形成非递减数组 [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>] 。</span><br><span class="line">另一个正确的解为删除子数组 [<span class="number">3</span>,<span class="number">10</span>,<span class="number">4</span>] 。</span><br></pre></td></tr></table></figure>
+
+<h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><ul>
+<li><code>1 &lt;= arr.length &lt;= 10^5</code></li>
+<li><code>0 &lt;= arr[i] &lt;= 10^9</code></li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目中也说了，要删除的是连续子数组，不然可以用最长上升子数组的做法来做。</p>
+<p>删除子数组不外乎有三种删法能使得剩下的数组是有序的。</p>
+<ul>
+<li>删除前面的</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132852.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132852.png"></p>
+<ul>
+<li>删除中间的</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132937.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132937.png"></p>
+<ul>
+<li>删除后面的</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325133020.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325133020.png"></p>
+<p>只有这三种删法才能使得剩下的是有序的。</p>
+<p>那怎么删呢？</p>
+<p>我的思路是用到双指针，且先找好右边的有序数组，然后开始枚举左边的数，如果左边的数是有序的，那么我们就根据左边的数来寻找右边相应的索引。这样的时间复杂度是$O(n)$。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><ol>
+<li>首先我们得找先找右边最长的有序数组，并标记这个有序数组的起始索引<code>j</code></li>
+<li>如果<code>j=0</code>，那么说明这个数组本就是有序数组，不用删减</li>
+<li>如果<code>j≠0</code>，那么我们就得从头遍历这个数组</li>
+<li>在我们遍历的过程中如果发现前面的数组不是有序的，那么立马停止遍历，因为继续遍历也没有用处，已经是无序的再怎么删也还是无序的</li>
+<li>我们每遍历一个数<code>num</code>就把这个数和刚刚我们标记的索引的值进行比较，如果<code>num</code>较小或相等，那么我们可以将之前最优解和当前最优解进行比较，当前最优解就是<code>j-num的索引-1</code></li>
+<li>如果<code>num</code>较大，那么我们就将<code>j</code>往后推，直到<code>num</code>较小或者<code>j</code>推到末尾，这时再进行计算当前最优解</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findLengthOfShortestSubarray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = arr.<span class="built_in">size</span>(), j = len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(j &amp;&amp; arr[j -  <span class="number">1</span>] &lt;= arr[j]) j--;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> res = j;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; j; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &amp;&amp; arr[i] &lt; arr[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                res = <span class="built_in">min</span>(res, len - i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(j != len &amp;&amp; arr[i] &lt;= arr[j])&#123;</span><br><span class="line">                res = <span class="built_in">min</span>(res, j - i - <span class="number">1</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; len &amp;&amp; arr[i] &gt; arr[j]) j++;</span><br><span class="line">                res = <span class="built_in">min</span>(res , j - i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
 </search>
