@@ -350,9 +350,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-03-23 14:57:11 / 修改时间：15:26:03" itemprop="dateCreated datePublished" datetime="2023-03-23T14:57:11+08:00">2023-03-23</time>
+      <time title="创建时间：2023-03-23 14:57:11" itemprop="dateCreated datePublished" datetime="2023-03-23T14:57:11+08:00">2023-03-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-25 15:59:39" itemprop="dateModified" datetime="2023-03-25T15:59:39+08:00">2023-03-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -389,7 +395,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="162-寻找峰值"><a href="#162-寻找峰值" class="headerlink" title="162. 寻找峰值"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/find-peak-element/description/">162. 寻找峰值</a></h1><p>根据之前灵神对于二分的理解，我们可以这样理解二分，把整个数组看成一个着色区间，其中红色代表不可能存在峰顶的区间，蓝色代表峰顶及其右边；</p>
+          <h1 id="162-寻找峰值"><a href="#162-寻找峰值" class="headerlink" title="162. 寻找峰值"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/find-peak-element/description/">162. 寻找峰值</a></h1><p>根据之前灵神对于二分的理解，我们可以这样理解二分，<strong>把整个数组看成一个着色区间，其中红色代表不可能存在峰顶的区间，蓝色代表峰顶及其右边</strong>；</p>
 <p>那么我们的范围是<code>[0,n-2]</code>，为什么呢？因为最后一位要么是峰顶要么在峰顶的右侧，因此最后一个位置的颜色就是蓝色。</p>
 <p>刚开始我们是不知道<code>[0,n-2]</code>这个区间的颜色，因此我们要用开区间来写，那么开区间的范围就是<code>(-1, n-1)</code>，其中<code>-1</code>位置是红色，<code>n-1</code>位置是蓝色(为了区分才区分红蓝色，其实这两个位置在搜索中是没有的)。</p>
 <p>那么我们定好区间之后，就开始确定<code>check</code>方法，我们在取到中间值<code>mid</code>之后，如果<code>nums[mid]&gt;nums[mid+1]</code>，那么说明<code>mid</code>要么是峰值，要么在峰值的右侧，因此我们可以把<code>[mid,right]</code>之间都着色蓝色。反之，说明<code>mid</code>在峰值的左侧，因此我们把区间<code>[left,mid]</code>着色红色。最后我们获取<code>right</code>位置上的索引，因为<code>right</code>及其右边是峰值及其右侧。</p>
