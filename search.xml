@@ -2540,4 +2540,79 @@
         <tag>链表</tag>
       </tags>
   </entry>
+  <entry>
+    <title>环形链表II</title>
+    <url>/posts/7ad2c734.html</url>
+    <content><![CDATA[<h2 id="876-链表的中间结点"><a href="#876-链表的中间结点" class="headerlink" title="876.链表的中间结点"></a><strong><a href="https://leetcode.cn/problems/middle-of-the-linked-list/description/">876.链表的中间结点</a></strong></h2><p>这道题就是一道典型的快慢指针的问题，让我们找一串链表的中间位置。</p>
+<p>暴力的做法是先扫一遍，看看这个链表的长度，然后根据长度找到目标值。</p>
+<p>有没有更巧妙的做法呢？有，就是快慢指针，因为我们要求链表的中间节点，那么我们设置两个指针，一个指针一次走两格，另一个指针一次走一格。这样我们就能保证走一格的指针始终是走两格的指针的中间，当走得快的指针走到终点的时候返回走得慢的指针即可。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">middleNode</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;next != <span class="literal">NULL</span> &amp;&amp; p-&gt;next-&gt;next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            p = p-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;next == <span class="literal">NULL</span>) <span class="keyword">return</span> head;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="141-环形链表"><a href="#141-环形链表" class="headerlink" title="141.环形链表"></a><strong><a href="https://leetcode.cn/problems/linked-list-cycle/description/">141.环形链表</a></strong></h2><p>证明链表是否有环，我们只要根据链表的next指针一直往下走就行，如果遇到空指针，那么说明没有环，但是我们什么时候推出寻找next呢？万一有环不是得一直寻找下去吗？所以这个方法不行。</p>
+<p>我们可以用快慢指针来解决这个问题。</p>
+<p>快指针还是一次走两格，满指针一次走一格。</p>
+<p>用递归法证明，快慢指针一定会相遇：</p>
+<ol>
+<li>快指针与慢指针之间差一步。此时继续往后走，满指针前进一步，快指针前进两步，两者相遇。</li>
+<li>快指针与满指针之间差两步。此时继续往后走，慢指针前进一步，快指针前进两步，两者之间相差一步，转化为第一种情况。</li>
+<li>快指针与慢指针之间差N步。此时继续往后走，慢指针前进一步，快指针前进两步，两者之间相差（N+1-2）即N-2步。重复这个过程，直到快指针和慢指针相遇。</li>
+</ol>
+<ul>
+<li><p>推导：慢指针进入环后，快指针最多多绕一个圈</p>
+<p>  快指针F先进环，慢指针S后进</p>
+<p>  假设慢指针进环那一刻快指针差m步能追上（0≤m≤Length环），根据上边的结论，两个指针走m次就会相遇了</p>
+<p>  因为m&lt;Length环，所以快指针在慢指针进环那一刻最多比慢指针多绕一个圈。</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;next != <span class="literal">NULL</span> &amp;&amp; p-&gt;next-&gt;next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            p = p-&gt;next-&gt;next;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(p == head) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="142-环形链表-II"><a href="#142-环形链表-II" class="headerlink" title="142.环形链表 II"></a><strong><a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">142.环形链表 II</a></strong></h2><p>这道题有一个证明：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326144715.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326144715.png"></p>
+<p>其中a是head到入口的距离，b是入口到快慢指针相遇的距离，c是相遇点到入口的长度。</p>
+<p>这样我们就能知道3个关系式</p>
+<ol>
+<li>环长:b+c</li>
+<li>慢指针移动距离:a+b</li>
+<li>快指针移动距离:a+b+k(b+c)</li>
+</ol>
+<p>因为快指针移动速度是慢指针移动速度的两倍</p>
+<p>所以: a+b+k(b+c) &#x3D; 2(a+b)</p>
+<p>⇒a+b+b+c+(k-1)(b+c)&#x3D;a+a+b+b</p>
+<p>⇒a&#x3D;(k-1)(b+c)-c</p>
+<p>⇒a&#x3D;(k-1)*Length环+c</p>
+<p>因此当快慢指针相遇后，一个一次只移动一格的指针到达入口时，慢指针也刚好从相遇点到入口。这时两个指针就相遇了。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">detectCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span>) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode *p = head, *ans = head;</span><br><span class="line">        <span class="keyword">while</span>(head-&gt;next != <span class="literal">NULL</span> &amp;&amp; head-&gt;next-&gt;next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            head = head-&gt;next-&gt;next;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(head == p) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(head-&gt;next == <span class="literal">NULL</span> || head-&gt;next-&gt;next == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">while</span>(ans != p)&#123;</span><br><span class="line">            ans = ans-&gt;next;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="143-重排链表"><a href="#143-重排链表" class="headerlink" title="143.重排链表"></a><strong><a href="https://leetcode.cn/problems/reorder-list/description/">143.重排链表</a></strong></h2><p>看到题目的要求，让我们将前面一半的链表以及后面一般的链表倒置进行合并。</p>
+<p>这样我们就需要用到上一篇用到的反转链表的方法，之后再进行合并。</p>
+<p>合并的具体步骤如下：</p>
+<ol>
+<li>两个初始链表，head1、head2是两个链表的头指针，s记录合并链表的当前位置</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152438.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152438.png"></p>
+<ol>
+<li>第一个链表的头指针向后移动一位</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152510.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152510.png"></p>
+<ol>
+<li>我们更改当前节点的next指针，将next指针指向另外一条链表的头指针</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152738.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152738.png"></p>
+<ol>
+<li>移动s指针，将s移到s的next位置，再将head2指针往后移一个</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153033.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153033.png"></p>
+<ol>
+<li>继续移动s指针，再回到第一步</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153129.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153129.png"></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">revserseList</span><span class="params">(ListNode* head)</span></span>&#123;</span><br><span class="line">        ListNode *t = <span class="literal">NULL</span>, *p = head;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            p-&gt;next = t;</span><br><span class="line">            t = p;</span><br><span class="line">            p = head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reorderList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head-&gt;next == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">        ListNode* f = head, *s = head, *t = head;</span><br><span class="line">        <span class="keyword">while</span>(f-&gt;next != <span class="literal">NULL</span> &amp;&amp; f-&gt;next-&gt;next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            f = f-&gt;next-&gt;next;</span><br><span class="line">            t = s;</span><br><span class="line">            s = s-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *list1;</span><br><span class="line">        <span class="keyword">if</span>(f-&gt;next == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            t-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">            list1 = <span class="built_in">revserseList</span>(s);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            t = s;</span><br><span class="line">            s = s-&gt;next;</span><br><span class="line">            t-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">            list1 = <span class="built_in">revserseList</span>(s);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        f = head, s = head, t = head;</span><br><span class="line">        ListNode *ans = head;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            s = head;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            s-&gt;next = list1;</span><br><span class="line">            s = s-&gt;next;</span><br><span class="line">            list1 = list1-&gt;next;</span><br><span class="line">            s-&gt;next = head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(list1)&#123;</span><br><span class="line">            s-&gt;next = list1;</span><br><span class="line">        &#125;</span><br><span class="line">        head = ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>灵茶山艾府学习笔记</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+        <tag>快慢指针</tag>
+      </tags>
+  </entry>
 </search>
