@@ -943,7 +943,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -1801,7 +1801,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -1964,7 +1964,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2035,7 +2035,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2121,7 +2121,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2218,7 +2218,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2290,7 +2290,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2346,7 +2346,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2413,7 +2413,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2456,7 +2456,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>基础</tag>
+        <tag>C++基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2681,7 +2681,7 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>核心</tag>
+        <tag>C++核心</tag>
       </tags>
   </entry>
   <entry>
@@ -2732,7 +2732,52 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>核心</tag>
+        <tag>C++核心</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>函数提高</title>
+    <url>/posts/dbf73455.html</url>
+    <content><![CDATA[<p>在C++中，函数的形参列表中的形参是可以有默认值的</p>
+<p>语法：<code>返回值类型 函数名 (参数 = 默认值)&#123;&#125;</code></p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">func</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b = <span class="number">10</span>, <span class="type">int</span> c = <span class="number">10</span>)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 如果某个位置参数有默认值，那么从这个位置往后，从左向右，必须都要有默认值</span></span><br><span class="line"><span class="comment">//2. 如果函数声明有默认值，函数实现的时候就不能有默认参数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a = <span class="number">10</span>, <span class="type">int</span> b = <span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;ret = &quot;</span> &lt;&lt; <span class="built_in">func</span>(<span class="number">20</span>, <span class="number">20</span>) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;ret = &quot;</span> &lt;&lt; <span class="built_in">func</span>(<span class="number">100</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170604.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170604.png"></p>
+<h2 id="函数占位参数"><a href="#函数占位参数" class="headerlink" title="函数占位参数"></a>函数占位参数</h2><p>C++中函数的形参列表里可以有占位参数，用来做占位，调用函数时必须填补该位置</p>
+<p><strong>语法</strong>：</p>
+<p><code>返回值类型 函数名 (数据类型)&#123;&#125;</code></p>
+<p>在现阶段函数的占位参数存在意义不大，但是后面的课程中会用到该技术</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数占位参数 ，占位参数也可以有默认参数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span>)</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;this is func&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">func</span>(<span class="number">10</span>,<span class="number">10</span>); <span class="comment">//占位参数必须填补</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170633.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170633.png"></p>
+<h2 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h2><h3 id="函数重载概述"><a href="#函数重载概述" class="headerlink" title="函数重载概述"></a>函数重载概述</h3><p><strong>作用</strong>：函数名可以相同，提高复用性</p>
+<p><strong>函数重载满足条件</strong>：</p>
+<ul>
+<li>同一个作用域下</li>
+<li>函数名称相同</li>
+<li>函数参数 <strong>类型不同</strong> 或者 <strong>个数不同</strong> 或者 <strong>顺序不同</strong></li>
+</ul>
+<p><strong>注意</strong>：函数的返回值不可以作为函数重载的条件，因为函数类型可以强转</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数重载需要函数都在同一个作用域下</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func 的调用！&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func (int a) 的调用！&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">double</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func (double a)的调用！&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> a ,<span class="type">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func (int a ,double b) 的调用！&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">double</span> a ,<span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func (double a ,int b)的调用！&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数返回值不可以作为函数重载条件</span></span><br><span class="line"><span class="comment">//int func(double a, int b)</span></span><br><span class="line"><span class="comment">//&#123;</span></span><br><span class="line"><span class="comment">//	cout &lt;&lt; &quot;func (double a ,int b)的调用！&quot; &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">func</span>();</span><br><span class="line">	<span class="built_in">func</span>(<span class="number">10</span>);</span><br><span class="line">	<span class="built_in">func</span>(<span class="number">3.14</span>);</span><br><span class="line">	<span class="built_in">func</span>(<span class="number">10</span>,<span class="number">3.14</span>);</span><br><span class="line">	<span class="built_in">func</span>(<span class="number">3.14</span> , <span class="number">10</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170708.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170708.png"></p>
+<h3 id="函数重载注意事项"><a href="#函数重载注意事项" class="headerlink" title="函数重载注意事项"></a>函数重载注意事项</h3><ul>
+<li>引用作为重载条件</li>
+<li>函数重载碰到函数默认参数</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数重载注意事项</span></span><br><span class="line"><span class="comment">//1、引用作为重载条件</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> &amp;a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func (int &amp;a) 调用 &quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">const</span> <span class="type">int</span> &amp;a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func (const int &amp;a) 调用 &quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2、函数重载碰到函数默认参数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b = <span class="number">10</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func2(int a, int b = 10) 调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func2(int a) 调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">func</span>(a); <span class="comment">//调用无const</span></span><br><span class="line">	<span class="built_in">func</span>(<span class="number">10</span>);<span class="comment">//调用有const</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//func2(10); //碰到默认参数产生歧义，需要避免</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170800.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230327170800.png"></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++核心</tag>
       </tags>
   </entry>
 </search>
