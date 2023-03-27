@@ -3,7 +3,7 @@ title: C++数据类型
 categories:
   - C++
 tags:
-  - 基础
+  - C++基础
 abbrlink: 1b32398c
 date: 2023-03-23 13:19:45
 ---

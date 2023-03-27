@@ -3,7 +3,7 @@ title: C++初识
 categories:
   - C++
 tags:
-  - 基础
+  - C++基础
 abbrlink: 6a30773a
 date: 2023-03-23 13:15:12
 ---
