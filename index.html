@@ -151,13 +151,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -183,6 +183,110 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/3ab82e9f.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zyf">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好难想标题">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 好难想标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/3ab82e9f.html" class="post-title-link" itemprop="url">删除链表重复节点</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-28 13:04:05 / 修改时间：13:04:41" itemprop="dateCreated datePublished" datetime="2023-03-28T13:04:05+08:00">2023-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%81%B5%E8%8C%B6%E5%B1%B1%E8%89%BE%E5%BA%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">灵茶山艾府学习笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="237-删除链表中的节点"><a href="#237-删除链表中的节点" class="headerlink" title="237.删除链表中的节点"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/delete-node-in-a-linked-list/description/">237.删除链表中的节点</a></strong></h2><p>题目让我们删除提供的节点，但是我们不知道这个节点的前面位置，那应该怎么删除呢？我们看到这个链表的标识是<code>val</code>值，那么我们可以把要删除的后面的节点的值移到要删除的节点，再删除后面这个节点，返回的链表的<code>val</code>值顺序是不变的，只是地址会有不同。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;next == <span class="literal">NULL</span>) &#123;</span><br><span class="line">            <span class="keyword">delete</span> node;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *root = node-&gt;next;</span><br><span class="line">        node-&gt;val = root-&gt;val;</span><br><span class="line">        node-&gt;next = root-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="19-删除链表的倒数第-N-个结点"><a href="#19-删除链表的倒数第-N-个结点" class="headerlink" title="19.删除链表的倒数第 N 个结点"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/">19.删除链表的倒数第 N 个结点</a></strong></h2><p>这道题我原本想的是先跑一遍看这个链表的长度是多少，但是有一个更巧妙的方法</p>
+<p>我不是要找到倒数第<code>N</code>个节点嘛，那我先让节点往前位移<code>N</code>个节点，再让一个新的指针从头出发，这样先出发的节点到达终点的时候，后一个出发的指针刚好指向倒数第<code>N</code>个节点，再删除那个节点即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>, head), *p = root;</span><br><span class="line">        <span class="type">int</span> e = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            e++;</span><br><span class="line">            <span class="keyword">if</span>(e &gt;= n) p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* q = p-&gt;next;</span><br><span class="line">        p-&gt;next = p-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> q;</span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="83-删除排序链表中的重复元素"><a href="#83-删除排序链表中的重复元素" class="headerlink" title="83.删除排序链表中的重复元素"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/">83.删除排序链表中的重复元素</a></strong></h2><p>我们从头开始遍历，用一个变量来记录上一个节点的数，如果相同，则删除当前节点，如果不同，更新变量并移动指针到下一个节点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span>) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>, head), *p = head;</span><br><span class="line">        <span class="type">int</span> val = head-&gt;val;</span><br><span class="line">        <span class="keyword">while</span>(head-&gt;next)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(head-&gt;val == val)&#123;</span><br><span class="line">                p-&gt;next = head-&gt;next;</span><br><span class="line">                <span class="keyword">delete</span> head;</span><br><span class="line">                head = p;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                val = head-&gt;val;</span><br><span class="line">                p = head;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="82-删除排序链表中的重复元素-II"><a href="#82-删除排序链表中的重复元素-II" class="headerlink" title="82.删除排序链表中的重复元素 II"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/">82.删除排序链表中的重复元素 II</a></strong></h2><p>这道题我们只要记录要删除链表的起点的上一个节点<code>prev</code>和终点的下一个节点<code>next</code>就可以了，因此我们要实时维护<code>prev</code>指针的位置</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode *root = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>, head), *p = root, *q = root, *t = root;</span><br><span class="line">        <span class="type">int</span> val = head-&gt;val;</span><br><span class="line">        <span class="keyword">while</span>(head-&gt;next)&#123;</span><br><span class="line">            t = head;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(head-&gt;val != val)&#123;</span><br><span class="line">                val = head-&gt;val;</span><br><span class="line">                p = t;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(head &amp;&amp; head-&gt;val == val) head = head-&gt;next;</span><br><span class="line">                p-&gt;next = head;</span><br><span class="line">                <span class="keyword">while</span>(t != head)&#123;</span><br><span class="line">                    q = t;</span><br><span class="line">                    t = t-&gt;next;</span><br><span class="line">                    <span class="keyword">delete</span> q;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(head == <span class="literal">NULL</span>) <span class="keyword">break</span>;</span><br><span class="line">                val = head-&gt;val;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -222,7 +326,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-03-27 17:22:28 / 修改时间：17:22:52" itemprop="dateCreated datePublished" datetime="2023-03-27T17:22:28+08:00">2023-03-27</time>
+      <time title="创建时间：2023-03-27 17:22:28 / 修改时间：17:23:06" itemprop="dateCreated datePublished" datetime="2023-03-27T17:22:28+08:00">2023-03-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1447,144 +1551,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/54f14d01.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Zyf">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="好难想标题">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 好难想标题">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/54f14d01.html" class="post-title-link" itemprop="url">LeetCode 1574.删除最短的子数组使剩余数组有序</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-25 13:41:05" itemprop="dateCreated datePublished" datetime="2023-03-25T13:41:05+08:00">2023-03-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-26 15:39:05" itemprop="dateModified" datetime="2023-03-26T15:39:05+08:00">2023-03-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/shortest-subarray-to-be-removed-to-make-array-sorted/description/">1574.删除最短的子数组使剩余数组有序</a></strong></p>
-<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325131830.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325131830.png"></p>
-<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我们需要删除的最短子数组是 [<span class="number">10</span>,<span class="number">4</span>,<span class="number">2</span>] ，长度为 <span class="number">3</span> 。剩余元素形成非递减数组 [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>] 。</span><br><span class="line">另一个正确的解为删除子数组 [<span class="number">3</span>,<span class="number">10</span>,<span class="number">4</span>] 。</span><br></pre></td></tr></table></figure>
-
-<h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><ul>
-<li><code>1 &lt;= arr.length &lt;= 10^5</code></li>
-<li><code>0 &lt;= arr[i] &lt;= 10^9</code></li>
-</ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目中也说了，要删除的是连续子数组，不然可以用最长上升子数组的做法来做。</p>
-<p>删除子数组不外乎有三种删法能使得剩下的数组是有序的。</p>
-<ul>
-<li>删除前面的</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132852.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132852.png"></p>
-<ul>
-<li>删除中间的</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132937.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325132937.png"></p>
-<ul>
-<li>删除后面的</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325133020.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230325133020.png"></p>
-<p>只有这三种删法才能使得剩下的是有序的。</p>
-<p>那怎么删呢？</p>
-<p>我的思路是用到双指针，且先找好右边的有序数组，然后开始枚举左边的数，如果左边的数是有序的，那么我们就根据左边的数来寻找右边相应的索引。这样的时间复杂度是$O(n)$。</p>
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><ol>
-<li>首先我们得找先找右边最长的有序数组，并标记这个有序数组的起始索引<code>j</code></li>
-<li>如果<code>j=0</code>，那么说明这个数组本就是有序数组，不用删减</li>
-<li>如果<code>j≠0</code>，那么我们就得从头遍历这个数组</li>
-<li>在我们遍历的过程中如果发现前面的数组不是有序的，那么立马停止遍历，因为继续遍历也没有用处，已经是无序的再怎么删也还是无序的</li>
-<li>我们每遍历一个数<code>num</code>就把这个数和刚刚我们标记的索引的值进行比较，如果<code>num</code>较小或相等，那么我们可以将之前最优解和当前最优解进行比较，当前最优解就是<code>j-num的索引-1</code></li>
-<li>如果<code>num</code>较大，那么我们就将<code>j</code>往后推，直到<code>num</code>较小或者<code>j</code>推到末尾，这时再进行计算当前最优解</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findLengthOfShortestSubarray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = arr.<span class="built_in">size</span>(), j = len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(j &amp;&amp; arr[j -  <span class="number">1</span>] &lt;= arr[j]) j--;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> res = j;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; j; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &amp;&amp; arr[i] &lt; arr[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                res = <span class="built_in">min</span>(res, len - i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(j != len &amp;&amp; arr[i] &lt;= arr[j])&#123;</span><br><span class="line">                res = <span class="built_in">min</span>(res, j - i - <span class="number">1</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; len &amp;&amp; arr[i] &gt; arr[j]) j++;</span><br><span class="line">                res = <span class="built_in">min</span>(res , j - i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1608,14 +1576,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">114k</span>
+    <span title="站点总字数">117k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:32</span>
   </span>
 </div>
 <div class="busuanzi-count">
