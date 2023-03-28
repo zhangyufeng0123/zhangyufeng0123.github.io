@@ -1797,10 +1797,8 @@
 ]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>搜索旋转数组</title>
@@ -1960,10 +1958,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main函数文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;swap.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> a = <span class="number">100</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">200</span>;</span><br><span class="line">	<span class="built_in">swap</span>(a, b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>数组—一维数组</title>
@@ -2031,10 +2027,8 @@
 ]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>指针</title>
@@ -2117,10 +2111,8 @@
 ]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>程序流程结构(一)—选择结构</title>
@@ -2214,10 +2206,8 @@
 ]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>数组—二维数组</title>
@@ -2286,10 +2276,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> scores[<span class="number">3</span>][<span class="number">3</span>] = &#123;</span><br><span class="line">		&#123;<span class="number">100</span>,<span class="number">100</span>,<span class="number">100</span>&#125;,</span><br><span class="line">		&#123;<span class="number">90</span>,<span class="number">50</span>,<span class="number">100</span>&#125;,</span><br><span class="line">		&#123;<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>&#125;,</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	string names[<span class="number">3</span>] = &#123; <span class="string">&quot;张三&quot;</span>,<span class="string">&quot;李四&quot;</span>,<span class="string">&quot;王五&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)	&#123;</span><br><span class="line">		<span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)		&#123;</span><br><span class="line">			sum += scores[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; names[i] &lt;&lt; <span class="string">&quot;同学总成绩为： &quot;</span> &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>程序流程结构(二)—循环结构</title>
@@ -2342,10 +2330,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//外层循环执行1次，内层循环执行1轮</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)	&#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;*&quot;</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>结构体</title>
@@ -2409,10 +2395,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//学生结构体定义</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">student</span>&#123;</span><br><span class="line">	<span class="comment">//成员列表</span></span><br><span class="line">	string name;  <span class="comment">//姓名</span></span><br><span class="line">	<span class="type">int</span> age;      <span class="comment">//年龄</span></span><br><span class="line">	<span class="type">int</span> score;    <span class="comment">//分数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//const使用场景</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printStudent</span><span class="params">(<span class="type">const</span> student *stu)</span> </span>&#123;<span class="comment">//加const防止函数体中的误操作</span></span><br><span class="line">	<span class="comment">//stu-&gt;age = 100; //操作失败，因为加了const修饰</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;姓名：&quot;</span> &lt;&lt; stu-&gt;name &lt;&lt; <span class="string">&quot; 年龄：&quot;</span> &lt;&lt; stu-&gt;age &lt;&lt; <span class="string">&quot; 分数：&quot;</span> &lt;&lt; stu-&gt;score &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	student stu = &#123; <span class="string">&quot;张三&quot;</span>,<span class="number">18</span>,<span class="number">100</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printStudent</span>(&amp;stu);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>程序流程结构(三)—跳转语句</title>
@@ -2452,10 +2436,8 @@
 ]]></content>
       <categories>
         <category>C++</category>
+        <category>C++基础</category>
       </categories>
-      <tags>
-        <tag>C++基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>LeetCode 1574.删除最短的子数组使剩余数组有序</title>
@@ -2677,10 +2659,8 @@
 ]]></content>
       <categories>
         <category>C++</category>
+        <category>C++核心</category>
       </categories>
-      <tags>
-        <tag>C++核心</tag>
-      </tags>
   </entry>
   <entry>
     <title>引用</title>
@@ -2728,10 +2708,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引用使用的场景，通常用来修饰形参</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showValue</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; v)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//v += 10;</span></span><br><span class="line">	cout &lt;&lt; v &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//int&amp; ref = 10;  引用本身需要一个合法的内存空间，因此这行错误</span></span><br><span class="line">	<span class="comment">//加入const就可以了，编译器优化代码，int temp = 10; const int&amp; ref = temp;</span></span><br><span class="line">	<span class="type">const</span> <span class="type">int</span>&amp; ref = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//ref = 100;  //加入const后不可以修改变量</span></span><br><span class="line">	cout &lt;&lt; ref &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//函数中利用常量引用防止误操作修改实参</span></span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">showValue</span>(a);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++核心</category>
       </categories>
-      <tags>
-        <tag>C++核心</tag>
-      </tags>
   </entry>
   <entry>
     <title>函数提高</title>
@@ -2773,10 +2751,8 @@
 ]]></content>
       <categories>
         <category>C++</category>
+        <category>C++核心</category>
       </categories>
-      <tags>
-        <tag>C++核心</tag>
-      </tags>
   </entry>
   <entry>
     <title>面向对象三大特性之一——封装</title>
@@ -2829,10 +2805,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//姓名设置可读可写</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">setName</span><span class="params">(string name)</span> </span>&#123;</span><br><span class="line">		m_Name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">string <span class="title">getName</span><span class="params">()</span>	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> m_Name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获取年龄 </span></span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> m_Age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//设置年龄</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">setAge</span><span class="params">(<span class="type">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (age &lt; <span class="number">0</span> || age &gt; <span class="number">150</span>) &#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;你个老妖精!&quot;</span> &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		m_Age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//情人设置为只写</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">setLover</span><span class="params">(string lover)</span> </span>&#123;</span><br><span class="line">		m_Lover = lover;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_Name; <span class="comment">//可读可写  姓名</span></span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> m_Age; <span class="comment">//只读  年龄</span></span><br><span class="line"></span><br><span class="line">	string m_Lover; <span class="comment">//只写  情人</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	Person p;</span><br><span class="line">	<span class="comment">//姓名设置</span></span><br><span class="line">	p.<span class="built_in">setName</span>(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;姓名： &quot;</span> &lt;&lt; p.<span class="built_in">getName</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//年龄设置</span></span><br><span class="line">	p.<span class="built_in">setAge</span>(<span class="number">50</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;年龄： &quot;</span> &lt;&lt; p.<span class="built_in">getAge</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//情人设置</span></span><br><span class="line">	p.<span class="built_in">setLover</span>(<span class="string">&quot;苍井&quot;</span>);</span><br><span class="line">	<span class="comment">//cout &lt;&lt; &quot;情人： &quot; &lt;&lt; p.m_Lover &lt;&lt; endl;  //只写属性，不可以读取</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++核心</category>
       </categories>
-      <tags>
-        <tag>C++核心</tag>
-      </tags>
   </entry>
   <entry>
     <title>对象的初始化和清理</title>
@@ -2957,10 +2931,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//静态成员函数特点：</span></span><br><span class="line">	<span class="comment">//1 程序共享一个函数</span></span><br><span class="line">	<span class="comment">//2 静态成员函数只能访问静态成员变量</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">func</span><span class="params">()</span>	</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;func调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">		m_A = <span class="number">100</span>;</span><br><span class="line">		<span class="comment">//m_B = 100; //错误，不可以访问非静态成员变量</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="type">static</span> <span class="type">int</span> m_A; <span class="comment">//静态成员变量</span></span><br><span class="line">	<span class="type">int</span> m_B; <span class="comment">// </span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//静态成员函数也是有访问权限的</span></span><br><span class="line">	<span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">func2</span><span class="params">()</span>	</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;func2调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> Person::m_A = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//静态成员变量两种访问方式</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//1、通过对象</span></span><br><span class="line">	Person p1;</span><br><span class="line">	p1.<span class="built_in">func</span>();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2、通过类名</span></span><br><span class="line">	Person::<span class="built_in">func</span>();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//Person::func2(); //私有权限访问不到</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++核心</category>
       </categories>
-      <tags>
-        <tag>C++核心</tag>
-      </tags>
   </entry>
   <entry>
     <title>C++对象模型和this指针</title>
@@ -3000,10 +2972,8 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Person</span>() &#123;</span><br><span class="line">		m_A = <span class="number">0</span>;</span><br><span class="line">		m_B = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//this指针的本质是一个指针常量，指针的指向不可修改</span></span><br><span class="line">	<span class="comment">//如果想让指针指向的值也不可以修改，需要声明常函数</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">ShowPerson</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">		<span class="comment">//const Type* const pointer;</span></span><br><span class="line">		<span class="comment">//this = NULL; //不能修改指针的指向 Person* const this;</span></span><br><span class="line">		<span class="comment">//this-&gt;mA = 100; //但是this指针指向的对象的数据是可以修改的</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//const修饰成员函数，表示指针指向的内存空间的数据不能修改，除了mutable修饰的变量</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;m_B = <span class="number">100</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">MyFunc</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">		<span class="comment">//mA = 10000;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span> m_A;</span><br><span class="line">	<span class="keyword">mutable</span> <span class="type">int</span> m_B; <span class="comment">//可修改 可变的</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//const修饰对象  常对象</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">const</span> Person person; <span class="comment">//常量对象  </span></span><br><span class="line">	cout &lt;&lt; person.m_A &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//person.mA = 100; //常对象不能修改成员变量的值,但是可以访问</span></span><br><span class="line">	person.m_B = <span class="number">100</span>; <span class="comment">//但是常对象可以修改mutable修饰成员变量</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//常对象访问成员函数</span></span><br><span class="line">	person.<span class="built_in">MyFunc</span>(); <span class="comment">//常对象不能调用const的函数</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++核心</category>
       </categories>
-      <tags>
-        <tag>C++核心</tag>
-      </tags>
   </entry>
   <entry>
     <title>友元</title>
@@ -3027,10 +2997,8 @@
 <h2 id="成员函数做友元"><a href="#成员函数做友元" class="headerlink" title="成员函数做友元"></a>成员函数做友元</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Building</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">goodGay</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">goodGay</span>();</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">()</span></span>; <span class="comment">//只让visit函数作为Building的好朋友，可以发访问Building中私有内容</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">visit2</span><span class="params">()</span></span>; </span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Building *building;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Building</span>&#123;</span><br><span class="line">	<span class="comment">//告诉编译器  goodGay类中的visit成员函数 是Building好朋友，可以访问私有内容</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">goodGay::visit</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Building</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_SittingRoom; <span class="comment">//客厅</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_BedRoom;<span class="comment">//卧室</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Building::<span class="built_in">Building</span>()&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_SittingRoom = <span class="string">&quot;客厅&quot;</span>;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_BedRoom = <span class="string">&quot;卧室&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">goodGay::<span class="built_in">goodGay</span>()&#123;</span><br><span class="line">	building = <span class="keyword">new</span> Building;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">goodGay::visit</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_SittingRoom &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_BedRoom &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">goodGay::visit2</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_SittingRoom &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//cout &lt;&lt; &quot;好基友正在访问&quot; &lt;&lt; building-&gt;m_BedRoom &lt;&lt; endl;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">	goodGay  gg;</span><br><span class="line">	gg.<span class="built_in">visit</span>();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>C++</category>
+        <category>C++核心</category>
       </categories>
-      <tags>
-        <tag>C++核心</tag>
-      </tags>
   </entry>
   <entry>
     <title>删除链表重复节点</title>
