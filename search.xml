@@ -3022,4 +3022,26 @@
         <tag>链表</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 1641.统计字典序元音字符串的数目</title>
+    <url>/posts/9207185a.html</url>
+    <content><![CDATA[<h2 id="1641-统计字典序元音字符串的数目"><a href="#1641-统计字典序元音字符串的数目" class="headerlink" title="1641.统计字典序元音字符串的数目"></a><a href="https://leetcode.cn/problems/count-sorted-vowel-strings/description/">1641.<strong>统计字典序元音字符串的数目</strong></a></h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230329150717.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230329150717.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">n = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">15</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">仅由元音组成的 <span class="number">15</span> 个字典序字符串为</span><br><span class="line">[<span class="string">&quot;aa&quot;</span>,<span class="string">&quot;ae&quot;</span>,<span class="string">&quot;ai&quot;</span>,<span class="string">&quot;ao&quot;</span>,<span class="string">&quot;au&quot;</span>,<span class="string">&quot;ee&quot;</span>,<span class="string">&quot;ei&quot;</span>,<span class="string">&quot;eo&quot;</span>,<span class="string">&quot;eu&quot;</span>,<span class="string">&quot;ii&quot;</span>,<span class="string">&quot;io&quot;</span>,<span class="string">&quot;iu&quot;</span>,<span class="string">&quot;oo&quot;</span>,<span class="string">&quot;ou&quot;</span>,<span class="string">&quot;uu&quot;</span>]</span><br><span class="line">注意，<span class="string">&quot;ea&quot;</span> 不是符合题意的字符串，因为 <span class="string">&#x27;e&#x27;</span> 在字母表中的位置比 <span class="string">&#x27;a&#x27;</span> 靠后</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><p>• <code>1 &lt;= n &lt;= 50</code></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看这道题，第一眼是一道中等题，不太好暴力，再看数据范围，好像又可以暴力，毕竟范围是<code>[1,50]</code>。暴力的做法就是用<code>dfs</code>搜索所有可能，但事后面自己列了一下数组，发现有一种更简单的方法</p>
+<p>首先，如果<code>m=1</code>，那么数组就是<code>[1,1,1,1,1]</code>，那如果<code>m=2</code>的时候，字母<code>’a’</code>后面能跟的就是<code>m-1</code>数组中的所有组合，因为题目前要求是相同或者小，因此<code>’a’</code>字母后面能跟<code>m-1</code>数组的所有组合，那么<code>’e’</code>字母的后面就只能跟<code>n-1</code>数组中的除了<code>’a’</code>开头的其他组合。以此类推，我们不断更新<code>m</code>直到<code>m=n</code>，这个时候的数组就是以每一种元音字母作为开头它的种数。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countVowelStrings</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)&#123;</span><br><span class="line">                res[j] = <span class="built_in">accumulate</span>(res.<span class="built_in">begin</span>() + j, res.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">accumulate</span>(res.<span class="built_in">begin</span>(), res.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+        <tag>数学推导</tag>
+      </tags>
+  </entry>
 </search>
