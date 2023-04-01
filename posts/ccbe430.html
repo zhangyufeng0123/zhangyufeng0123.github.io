@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="j_rl1fPa6H1312ggKmYdh8iewr9_U8gvyoP6yI9nnaU">
+  <meta name="baidu-site-verification" content="codeva-S87KHGfNCp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zyfblogs.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="831.隐藏个人信息题面  SampleInput11s &#x3D; &quot;LeetCode@LeetCode.com&quot;  Output11&quot;l*****e@leetcode.com&quot;  Input21s &#x3D; &quot;1(234)567-890&quot;  Output21&quot;***-***-7890&quot;  提示 s 是一个 有效 的电子邮件或者电">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 831.隐藏个人信息">
+<meta property="og:url" content="https://www.zyfblogs.xyz/posts/ccbe430.html">
+<meta property="og:site_name" content="G.M. Blog">
+<meta property="og:description" content="831.隐藏个人信息题面  SampleInput11s &#x3D; &quot;LeetCode@LeetCode.com&quot;  Output11&quot;l*****e@leetcode.com&quot;  Input21s &#x3D; &quot;1(234)567-890&quot;  Output21&quot;***-***-7890&quot;  提示 s 是一个 有效 的电子邮件或者电">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png">
+<meta property="article:published_time" content="2023-04-01T13:03:37.000Z">
+<meta property="article:modified_time" content="2023-04-01T13:04:10.872Z">
+<meta property="article:author" content="GotoMove">
+<meta property="article:tag" content="构造">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png">
+
+
+<link rel="canonical" href="https://www.zyfblogs.xyz/posts/ccbe430.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zyfblogs.xyz/posts/ccbe430.html","path":"posts/ccbe430.html","title":"LeetCode 831.隐藏个人信息"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LeetCode 831.隐藏个人信息 | G.M. Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">G.M. Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">You juan, I juan</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#831-%E9%9A%90%E8%97%8F%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">831.隐藏个人信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample"><span class="nav-number">3.</span> <span class="nav-text">Sample</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input1"><span class="nav-number">3.1.</span> <span class="nav-text">Input1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output1"><span class="nav-number">3.2.</span> <span class="nav-text">Output1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input2"><span class="nav-number">3.3.</span> <span class="nav-text">Input2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output2"><span class="nav-number">3.4.</span> <span class="nav-text">Output2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">3.5.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">代码</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="GotoMove"
+      src="/images/main.jpg">
+  <p class="site-author-name" itemprop="name">GotoMove</p>
+  <div class="site-description" itemprop="description">sharing blogs</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhangyufeng0123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhangyufeng0123" rel="noopener me external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/ccbe430.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LeetCode 831.隐藏个人信息 | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode 831.隐藏个人信息
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-01 21:03:37 / 修改时间：21:04:10" itemprop="dateCreated datePublished" datetime="2023-04-01T21:03:37+08:00">2023-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="831-隐藏个人信息"><a href="#831-隐藏个人信息" class="headerlink" title="831.隐藏个人信息"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/masking-personal-information/">831.隐藏个人信息</a></strong></h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input1"><a href="#Input1" class="headerlink" title="Input1"></a>Input1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;LeetCode@LeetCode.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output1"><a href="#Output1" class="headerlink" title="Output1"></a>Output1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;l*****e@leetcode.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Input2"><a href="#Input2" class="headerlink" title="Input2"></a>Input2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;1(234)567-890&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output2"><a href="#Output2" class="headerlink" title="Output2"></a>Output2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;***-***-7890&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li><code>s</code> 是一个 <strong>有效</strong> 的电子邮件或者电话号码</li>
+<li>如果 <code>s</code> 是一个电子邮件：<ul>
+<li><code>8 &lt;= s.length &lt;= 40</code></li>
+<li><code>s</code> 是由大小写英文字母，恰好一个 <code>&#39;@&#39;</code> 字符，以及 <code>&#39;.&#39;</code> 字符组成</li>
+</ul>
+</li>
+<li>如果 <code>s</code> 是一个电话号码：<ul>
+<li><code>10 &lt;= s.length &lt;= 20</code></li>
+<li><code>s</code> 是由数字、空格、字符 <code>&#39;(&#39;</code>、<code>&#39;)&#39;</code>、<code>&#39;-&#39;</code> 和 <code>&#39;+&#39;</code> 组成</li>
+</ul>
+</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这是一道很简单的构造体，那么现在的问题就是应该怎么构造了。</p>
+<p>首先，这个构造主要分为两种，一种是电子邮件，另一种是电话号码。</p>
+<p>那么我们先来谈论怎么构造电子邮件：</p>
+<p>题目的要求是让我们隐藏个人信息，即域名前面的自定义昵称给隐藏了。具体的是保留昵称的一头一尾，且要变成小写引文字母，其它位置都用“<em><strong><strong>”表示，不管其头尾之间有多少个字符都用“</strong></strong></em>”表示。处理完电子邮件的昵称部分，剩下的部分就简单了。我们只要将剩下的部分的大写字母变成小写字母即可，其它位置的字符不变。</p>
+<p>构造电话号码：</p>
+<p>题目的要求是根据电话号码的不同位数制定不同的开头，因此我们得先知道电话号码的位数。解决了位数我们就已经解决了隐藏完个人信息之后的电话号码的开头部分，末尾部分就是电话号码的后四位，这是固定的。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>这道题分为两种构造，我们得对不同的个人信息构造出不同的结果。因此<strong>第一步</strong>，我们得先判断这个个人信息是电子邮箱还是电话号码。根据提示我们得知，电话号码没有字母以及‘@’这个字符，因此我们只要根据所给字符串有没有’@’即可。这样我们既能判断是否是电子邮箱，也能确定‘@’的位置。</p>
+<p>如果字符串存在‘@’，那么说明这个字符串是电子邮箱。由上面可知，我们确定了是电子邮箱的话我们就确定了‘@’字符的位置，这样我们就能确定昵称的一头一尾，那么我们就解决了构造隐藏个人信息字符串的昵称部分，注意将这一头一尾的字符大写变小写（如果字符是大写字母的话）。剩下部分我们只要遍历一遍即可，边遍历边判断是否是大写字母，如果是大写字母，那就把它变成小写，否则不变。</p>
+<p>如果字符串不存在‘@’，那么说明这个字符串是电话号码。由上面可知，隐藏个人信息后的电话号码的开头部分是根据电话号码的位数而决定的，因此第一步就是确定电话号码的位数。确定完电话位数之后就确定目标字符串的开头，之后我们从后往前遍历个人信息字符串，获取最后<strong>四个数字字符</strong>，并把这四个数字字符加到末尾即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">maskPII</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> flag = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i] == <span class="string">&#x27;@&#x27;</span>) &#123;</span><br><span class="line">                flag = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        string res;</span><br><span class="line">        <span class="keyword">if</span>(flag != <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[<span class="number">0</span>] &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; s[<span class="number">0</span>] &lt;= <span class="string">&#x27;Z&#x27;</span>) res += s[<span class="number">0</span>] + <span class="number">32</span>;</span><br><span class="line">            <span class="keyword">else</span> res += s[<span class="number">0</span>];</span><br><span class="line">            res += <span class="string">&quot;*****&quot;</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = flag - <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;Z&#x27;</span>) res += s[i] + <span class="number">32</span>;</span><br><span class="line">                <span class="keyword">else</span> res += s[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="type">int</span> nums = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;9&#x27;</span>) nums++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">switch</span>(nums)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                    res += <span class="string">&quot;+*-&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                    res += <span class="string">&quot;+**-&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">13</span>:</span><br><span class="line">                    res += <span class="string">&quot;+***-&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            res += <span class="string">&quot;***-***-&quot;</span>;</span><br><span class="line">            string ans;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = s.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;9&#x27;</span> &amp;&amp; ans.<span class="built_in">size</span>() &lt; <span class="number">4</span>)&#123;</span><br><span class="line">                    ans += s[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">reverse</span>(ans.<span class="built_in">begin</span>(), ans.<span class="built_in">end</span>());</span><br><span class="line">            res += ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9E%84%E9%80%A0/" rel="tag"># 构造</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/b27c37e9.html" rel="prev" title="STL-vector 下">
+                  <i class="fa fa-chevron-left"></i> STL-vector 下
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GotoMove</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">161k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:53</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

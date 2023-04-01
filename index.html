@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -192,6 +192,131 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/ccbe430.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/ccbe430.html" class="post-title-link" itemprop="url">LeetCode 831.隐藏个人信息</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-01 21:03:37 / 修改时间：21:04:10" itemprop="dateCreated datePublished" datetime="2023-04-01T21:03:37+08:00">2023-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="831-隐藏个人信息"><a href="#831-隐藏个人信息" class="headerlink" title="831.隐藏个人信息"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/masking-personal-information/">831.隐藏个人信息</a></strong></h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input1"><a href="#Input1" class="headerlink" title="Input1"></a>Input1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;LeetCode@LeetCode.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output1"><a href="#Output1" class="headerlink" title="Output1"></a>Output1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;l*****e@leetcode.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Input2"><a href="#Input2" class="headerlink" title="Input2"></a>Input2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;1(234)567-890&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output2"><a href="#Output2" class="headerlink" title="Output2"></a>Output2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;***-***-7890&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li><code>s</code> 是一个 <strong>有效</strong> 的电子邮件或者电话号码</li>
+<li>如果 <code>s</code> 是一个电子邮件：<ul>
+<li><code>8 &lt;= s.length &lt;= 40</code></li>
+<li><code>s</code> 是由大小写英文字母，恰好一个 <code>&#39;@&#39;</code> 字符，以及 <code>&#39;.&#39;</code> 字符组成</li>
+</ul>
+</li>
+<li>如果 <code>s</code> 是一个电话号码：<ul>
+<li><code>10 &lt;= s.length &lt;= 20</code></li>
+<li><code>s</code> 是由数字、空格、字符 <code>&#39;(&#39;</code>、<code>&#39;)&#39;</code>、<code>&#39;-&#39;</code> 和 <code>&#39;+&#39;</code> 组成</li>
+</ul>
+</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这是一道很简单的构造体，那么现在的问题就是应该怎么构造了。</p>
+<p>首先，这个构造主要分为两种，一种是电子邮件，另一种是电话号码。</p>
+<p>那么我们先来谈论怎么构造电子邮件：</p>
+<p>题目的要求是让我们隐藏个人信息，即域名前面的自定义昵称给隐藏了。具体的是保留昵称的一头一尾，且要变成小写引文字母，其它位置都用“<em><strong><strong>”表示，不管其头尾之间有多少个字符都用“</strong></strong></em>”表示。处理完电子邮件的昵称部分，剩下的部分就简单了。我们只要将剩下的部分的大写字母变成小写字母即可，其它位置的字符不变。</p>
+<p>构造电话号码：</p>
+<p>题目的要求是根据电话号码的不同位数制定不同的开头，因此我们得先知道电话号码的位数。解决了位数我们就已经解决了隐藏完个人信息之后的电话号码的开头部分，末尾部分就是电话号码的后四位，这是固定的。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>这道题分为两种构造，我们得对不同的个人信息构造出不同的结果。因此<strong>第一步</strong>，我们得先判断这个个人信息是电子邮箱还是电话号码。根据提示我们得知，电话号码没有字母以及‘@’这个字符，因此我们只要根据所给字符串有没有’@’即可。这样我们既能判断是否是电子邮箱，也能确定‘@’的位置。</p>
+<p>如果字符串存在‘@’，那么说明这个字符串是电子邮箱。由上面可知，我们确定了是电子邮箱的话我们就确定了‘@’字符的位置，这样我们就能确定昵称的一头一尾，那么我们就解决了构造隐藏个人信息字符串的昵称部分，注意将这一头一尾的字符大写变小写（如果字符是大写字母的话）。剩下部分我们只要遍历一遍即可，边遍历边判断是否是大写字母，如果是大写字母，那就把它变成小写，否则不变。</p>
+<p>如果字符串不存在‘@’，那么说明这个字符串是电话号码。由上面可知，隐藏个人信息后的电话号码的开头部分是根据电话号码的位数而决定的，因此第一步就是确定电话号码的位数。确定完电话位数之后就确定目标字符串的开头，之后我们从后往前遍历个人信息字符串，获取最后<strong>四个数字字符</strong>，并把这四个数字字符加到末尾即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">maskPII</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> flag = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i] == <span class="string">&#x27;@&#x27;</span>) &#123;</span><br><span class="line">                flag = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        string res;</span><br><span class="line">        <span class="keyword">if</span>(flag != <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[<span class="number">0</span>] &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; s[<span class="number">0</span>] &lt;= <span class="string">&#x27;Z&#x27;</span>) res += s[<span class="number">0</span>] + <span class="number">32</span>;</span><br><span class="line">            <span class="keyword">else</span> res += s[<span class="number">0</span>];</span><br><span class="line">            res += <span class="string">&quot;*****&quot;</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = flag - <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;Z&#x27;</span>) res += s[i] + <span class="number">32</span>;</span><br><span class="line">                <span class="keyword">else</span> res += s[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="type">int</span> nums = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;9&#x27;</span>) nums++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">switch</span>(nums)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                    res += <span class="string">&quot;+*-&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                    res += <span class="string">&quot;+**-&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">13</span>:</span><br><span class="line">                    res += <span class="string">&quot;+***-&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            res += <span class="string">&quot;***-***-&quot;</span>;</span><br><span class="line">            string ans;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = s.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;9&#x27;</span> &amp;&amp; ans.<span class="built_in">size</span>() &lt; <span class="number">4</span>)&#123;</span><br><span class="line">                    ans += s[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">reverse</span>(ans.<span class="built_in">begin</span>(), ans.<span class="built_in">end</span>());</span><br><span class="line">            res += ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -231,7 +356,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-03-31 13:36:49 / 修改时间：13:37:06" itemprop="dateCreated datePublished" datetime="2023-03-31T13:36:49+08:00">2023-03-31</time>
+      <time title="创建时间：2023-03-31 13:36:49 / 修改时间：13:37:16" itemprop="dateCreated datePublished" datetime="2023-03-31T13:36:49+08:00">2023-03-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1687,125 +1812,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/63c99134.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/63c99134.html" class="post-title-link" itemprop="url">友元</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-27 17:22:28" itemprop="dateCreated datePublished" datetime="2023-03-27T17:22:28+08:00">2023-03-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-28 13:09:34" itemprop="dateModified" datetime="2023-03-28T13:09:34+08:00">2023-03-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/C/C-%E6%A0%B8%E5%BF%83/" itemprop="url" rel="index"><span itemprop="name">C++核心</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>生活中你的家有客厅(Public)，有你的卧室(Private)</p>
-<p>客厅所有来的客人都可以进去，但是你的卧室是私有的，也就是说只有你能进去</p>
-<p>但是呢，你也可以允许你的好闺蜜好基友进去。</p>
-<p>在程序里，有些私有属性 也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术</p>
-<p>友元的目的就是让一个函数或者类 访问另一个类中私有成员</p>
-<p>友元的关键字为 <em>friend</em></p>
-<p>友元的三种实现</p>
-<ul>
-<li>全局函数做友元</li>
-<li>类做友元</li>
-<li>成员函数做友元</li>
-</ul>
-<h2 id="全局函数做友元"><a href="#全局函数做友元" class="headerlink" title="全局函数做友元"></a>全局函数做友元</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Building</span>&#123;</span><br><span class="line">	<span class="comment">//告诉编译器 goodGay全局函数 是 Building类的好朋友，可以访问类中的私有内容</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">goodGay</span><span class="params">(Building * building)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="built_in">Building</span>()	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_SittingRoom = <span class="string">&quot;客厅&quot;</span>;</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_BedRoom = <span class="string">&quot;卧室&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_SittingRoom; <span class="comment">//客厅</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_BedRoom; <span class="comment">//卧室</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">goodGay</span><span class="params">(Building * building)</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问： &quot;</span> &lt;&lt; building-&gt;m_SittingRoom &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问： &quot;</span> &lt;&lt; building-&gt;m_BedRoom &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Building b;</span><br><span class="line">	<span class="built_in">goodGay</span>(&amp;b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="类做友元"><a href="#类做友元" class="headerlink" title="类做友元"></a>类做友元</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Building</span>;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">goodGay</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="built_in">goodGay</span>();</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Building *building;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Building</span>&#123;</span><br><span class="line">	<span class="comment">//告诉编译器 goodGay类是Building类的好朋友，可以访问到Building类中私有内容</span></span><br><span class="line">	<span class="keyword">friend</span> <span class="keyword">class</span> <span class="title class_">goodGay</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Building</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_SittingRoom; <span class="comment">//客厅</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_BedRoom;<span class="comment">//卧室</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Building::<span class="built_in">Building</span>()&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_SittingRoom = <span class="string">&quot;客厅&quot;</span>;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_BedRoom = <span class="string">&quot;卧室&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">goodGay::<span class="built_in">goodGay</span>()&#123;</span><br><span class="line">	building = <span class="keyword">new</span> Building;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">goodGay::visit</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_SittingRoom &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_BedRoom &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">	goodGay gg;</span><br><span class="line">	gg.<span class="built_in">visit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="成员函数做友元"><a href="#成员函数做友元" class="headerlink" title="成员函数做友元"></a>成员函数做友元</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Building</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">goodGay</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">goodGay</span>();</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">()</span></span>; <span class="comment">//只让visit函数作为Building的好朋友，可以发访问Building中私有内容</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">visit2</span><span class="params">()</span></span>; </span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Building *building;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Building</span>&#123;</span><br><span class="line">	<span class="comment">//告诉编译器  goodGay类中的visit成员函数 是Building好朋友，可以访问私有内容</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">goodGay::visit</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Building</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_SittingRoom; <span class="comment">//客厅</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_BedRoom;<span class="comment">//卧室</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Building::<span class="built_in">Building</span>()&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_SittingRoom = <span class="string">&quot;客厅&quot;</span>;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_BedRoom = <span class="string">&quot;卧室&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">goodGay::<span class="built_in">goodGay</span>()&#123;</span><br><span class="line">	building = <span class="keyword">new</span> Building;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">goodGay::visit</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_SittingRoom &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_BedRoom &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">goodGay::visit2</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;好基友正在访问&quot;</span> &lt;&lt; building-&gt;m_SittingRoom &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//cout &lt;&lt; &quot;好基友正在访问&quot; &lt;&lt; building-&gt;m_BedRoom &lt;&lt; endl;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">	goodGay  gg;</span><br><span class="line">	gg.<span class="built_in">visit</span>();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1831,14 +1837,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">159k</span>
+    <span title="站点总字数">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:49</span>
+    <span title="站点阅读时长">4:53</span>
   </span>
 </div>
 <div class="busuanzi-count">
