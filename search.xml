@@ -3764,4 +3764,37 @@
         <tag>构造</tag>
       </tags>
   </entry>
+  <entry>
+    <title>二叉树公共祖先</title>
+    <url>/posts/ee93e3cf.html</url>
+    <content><![CDATA[<h1 id="二叉树公共祖先"><a href="#二叉树公共祖先" class="headerlink" title="二叉树公共祖先"></a>二叉树公共祖先</h1><p>对于这种题，我们首先得明确一点。</p>
+<blockquote>
+<p>什么是公共祖先？</p>
+</blockquote>
+<p><a href="https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834?fr=aladdin">百度百科</a>中最近公共祖先的定义为：”对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong><br>）。“</p>
+<h1 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236.二叉树的最近公共祖先"></a><strong><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236.二叉树的最近公共祖先</a></strong></h1><p>对于这一题，题目提供了一个二叉树以及两个节点。这里有几个特殊样例，如果<code>root</code>刚好等于<code>q</code>或者<code>root</code>刚好等于<code>q</code>，那么直接返回<code>root</code>即可，因为这个时候<code>root</code>就刚好是最近公共祖先，如果<code>root</code>为空，那么就返回空。</p>
+<p>如果不是，那么我们就要递归遍历左右子树。</p>
+<p>在每一轮的遍历中，我们根据左右子树返回的节点是否为空做了以下几个判断：</p>
+<ol>
+<li>如果<code>root</code>的左子树和右子树都不为空，说明左右子树各有一个目标节点，那么<code>p</code>和<code>q</code>的最近公共祖先就是<code>root</code></li>
+<li>如果<code>root</code>的左子树为空，那么说明两个目标节点都在右子树上，那么我们就直接返回右子树给我们的最近公共祖先的节点即可</li>
+<li>如果<code>root</code>的右子树为空，那么说明两个目标节点都在左子树上，那么我们就直接返回左子树给我们的最近公共祖先的节点即可</li>
+<li>如果<code>root</code>的左右子树都为空，直接返回空即可</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span> || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">        TreeNode *left = <span class="built_in">lowestCommonAncestor</span>(root-&gt;left, p, q);</span><br><span class="line">        TreeNode *right = <span class="built_in">lowestCommonAncestor</span>(root-&gt;right, p, q);</span><br><span class="line">        <span class="keyword">if</span>(left &amp;&amp; right) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(left) <span class="keyword">return</span> left;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(right) <span class="keyword">return</span> right;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="235-二叉搜索树的最近公共祖先"><a href="#235-二叉搜索树的最近公共祖先" class="headerlink" title="235.二叉搜索树的最近公共祖先"></a><strong><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/">235.二叉搜索树的最近公共祖先</a></strong></h1><p>这道题相比于上一题有一个好处，那就是可以进行剪枝，我们可以根据二叉搜索树的特性来减少不必要的搜索。</p>
+<p>二叉搜索树的特性能够帮我们判断<code>p</code>、<code>q</code>节点在<code>root</code>节点的哪个子树上。</p>
+<p>如果<code>root</code>节点的值大于<code>p</code>、<code>q</code>节点的值，那么就只要递归右子树即可，因为<code>p</code>和<code>q</code>都只能在<code>root</code>的右子树，这样我们就节省了递归左子树的开销。</p>
+<p>如果<code>root</code>节点的值小于<code>p</code>、<code>q</code>节点的值，那么就只要递归左子树即可，因为<code>p</code>和<code>q</code>都只能在<code>root</code>的左子树，这样我们就节省了递归右子树的开销。</p>
+<p>如果<code>root</code>节点的值小于<code>p</code>、<code>q</code>中的一个，大于另外一个，这就说明<code>p</code>、<code>q</code>两个节点在<code>root</code>节点的左右两边，这种情况我们直接返回<code>root</code>节点即可。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span> || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;val &gt; p-&gt;val &amp;&amp; root-&gt;val &gt; q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">lowestCommonAncestor</span>(root-&gt;left, p, q);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(root-&gt;val &lt; p-&gt;val &amp;&amp; root-&gt;val &lt; q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">lowestCommonAncestor</span>(root-&gt;right, p, q);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>灵茶山艾府学习笔记</category>
+      </categories>
+      <tags>
+        <tag>二叉树</tag>
+        <tag>递归</tag>
+      </tags>
+  </entry>
 </search>

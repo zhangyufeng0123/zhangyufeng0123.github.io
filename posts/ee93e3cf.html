@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="j_rl1fPa6H1312ggKmYdh8iewr9_U8gvyoP6yI9nnaU">
+  <meta name="baidu-site-verification" content="codeva-S87KHGfNCp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zyfblogs.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="二叉树公共祖先对于这种题，我们首先得明确一点。  什么是公共祖先？  百度百科中最近公共祖先的定义为：”对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。“ 236.二叉树的最近公共祖先对于这一题，题目提供了一个二叉树以及两个节点。这里有几个特殊样例，如果root刚好等于q或者root刚好等于q，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树公共祖先">
+<meta property="og:url" content="https://www.zyfblogs.xyz/posts/ee93e3cf.html">
+<meta property="og:site_name" content="G.M. Blog">
+<meta property="og:description" content="二叉树公共祖先对于这种题，我们首先得明确一点。  什么是公共祖先？  百度百科中最近公共祖先的定义为：”对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。“ 236.二叉树的最近公共祖先对于这一题，题目提供了一个二叉树以及两个节点。这里有几个特殊样例，如果root刚好等于q或者root刚好等于q，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-01T13:43:20.000Z">
+<meta property="article:modified_time" content="2023-04-01T13:43:42.619Z">
+<meta property="article:author" content="GotoMove">
+<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="递归">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zyfblogs.xyz/posts/ee93e3cf.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zyfblogs.xyz/posts/ee93e3cf.html","path":"posts/ee93e3cf.html","title":"二叉树公共祖先"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>二叉树公共祖先 | G.M. Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">G.M. Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">You juan, I juan</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88"><span class="nav-number">1.</span> <span class="nav-text">二叉树公共祖先</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#236-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88"><span class="nav-number">2.</span> <span class="nav-text">236.二叉树的最近公共祖先</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#235-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88"><span class="nav-number">3.</span> <span class="nav-text">235.二叉搜索树的最近公共祖先</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="GotoMove"
+      src="/images/main.jpg">
+  <p class="site-author-name" itemprop="name">GotoMove</p>
+  <div class="site-description" itemprop="description">sharing blogs</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhangyufeng0123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhangyufeng0123" rel="noopener me external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/ee93e3cf.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="二叉树公共祖先 | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          二叉树公共祖先
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-01 21:43:20 / 修改时间：21:43:42" itemprop="dateCreated datePublished" datetime="2023-04-01T21:43:20+08:00">2023-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%81%B5%E8%8C%B6%E5%B1%B1%E8%89%BE%E5%BA%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">灵茶山艾府学习笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="二叉树公共祖先"><a href="#二叉树公共祖先" class="headerlink" title="二叉树公共祖先"></a>二叉树公共祖先</h1><p>对于这种题，我们首先得明确一点。</p>
+<blockquote>
+<p>什么是公共祖先？</p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834?fr=aladdin">百度百科</a>中最近公共祖先的定义为：”对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong><br>）。“</p>
+<h1 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236.二叉树的最近公共祖先"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236.二叉树的最近公共祖先</a></strong></h1><p>对于这一题，题目提供了一个二叉树以及两个节点。这里有几个特殊样例，如果<code>root</code>刚好等于<code>q</code>或者<code>root</code>刚好等于<code>q</code>，那么直接返回<code>root</code>即可，因为这个时候<code>root</code>就刚好是最近公共祖先，如果<code>root</code>为空，那么就返回空。</p>
+<p>如果不是，那么我们就要递归遍历左右子树。</p>
+<p>在每一轮的遍历中，我们根据左右子树返回的节点是否为空做了以下几个判断：</p>
+<ol>
+<li>如果<code>root</code>的左子树和右子树都不为空，说明左右子树各有一个目标节点，那么<code>p</code>和<code>q</code>的最近公共祖先就是<code>root</code></li>
+<li>如果<code>root</code>的左子树为空，那么说明两个目标节点都在右子树上，那么我们就直接返回右子树给我们的最近公共祖先的节点即可</li>
+<li>如果<code>root</code>的右子树为空，那么说明两个目标节点都在左子树上，那么我们就直接返回左子树给我们的最近公共祖先的节点即可</li>
+<li>如果<code>root</code>的左右子树都为空，直接返回空即可</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span> || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">        TreeNode *left = <span class="built_in">lowestCommonAncestor</span>(root-&gt;left, p, q);</span><br><span class="line">        TreeNode *right = <span class="built_in">lowestCommonAncestor</span>(root-&gt;right, p, q);</span><br><span class="line">        <span class="keyword">if</span>(left &amp;&amp; right) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(left) <span class="keyword">return</span> left;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(right) <span class="keyword">return</span> right;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="235-二叉搜索树的最近公共祖先"><a href="#235-二叉搜索树的最近公共祖先" class="headerlink" title="235.二叉搜索树的最近公共祖先"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/">235.二叉搜索树的最近公共祖先</a></strong></h1><p>这道题相比于上一题有一个好处，那就是可以进行剪枝，我们可以根据二叉搜索树的特性来减少不必要的搜索。</p>
+<p>二叉搜索树的特性能够帮我们判断<code>p</code>、<code>q</code>节点在<code>root</code>节点的哪个子树上。</p>
+<p>如果<code>root</code>节点的值大于<code>p</code>、<code>q</code>节点的值，那么就只要递归右子树即可，因为<code>p</code>和<code>q</code>都只能在<code>root</code>的右子树，这样我们就节省了递归左子树的开销。</p>
+<p>如果<code>root</code>节点的值小于<code>p</code>、<code>q</code>节点的值，那么就只要递归左子树即可，因为<code>p</code>和<code>q</code>都只能在<code>root</code>的左子树，这样我们就节省了递归右子树的开销。</p>
+<p>如果<code>root</code>节点的值小于<code>p</code>、<code>q</code>中的一个，大于另外一个，这就说明<code>p</code>、<code>q</code>两个节点在<code>root</code>节点的左右两边，这种情况我们直接返回<code>root</code>节点即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span> || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;val &gt; p-&gt;val &amp;&amp; root-&gt;val &gt; q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">lowestCommonAncestor</span>(root-&gt;left, p, q);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(root-&gt;val &lt; p-&gt;val &amp;&amp; root-&gt;val &lt; q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">lowestCommonAncestor</span>(root-&gt;right, p, q);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"># 二叉树</a>
+              <a href="/tags/%E9%80%92%E5%BD%92/" rel="tag"># 递归</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/ccbe430.html" rel="prev" title="LeetCode 831.隐藏个人信息">
+                  <i class="fa fa-chevron-left"></i> LeetCode 831.隐藏个人信息
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GotoMove</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">163k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:56</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
