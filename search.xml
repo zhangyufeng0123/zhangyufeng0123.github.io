@@ -3886,4 +3886,30 @@
         <tag>模拟</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 1023.驼峰式匹配</title>
+    <url>/posts/3effc393.html</url>
+    <content><![CDATA[<h1 id="1023-驼峰式匹配"><a href="#1023-驼峰式匹配" class="headerlink" title="1023.驼峰式匹配"></a><strong><strong><a href="https://leetcode.cn/problems/camelcase-matching/description/">1023.驼峰式匹配</a></strong></strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230414105634.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230414105634.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queries = [<span class="string">&quot;FooBar&quot;</span>,<span class="string">&quot;FooBarTest&quot;</span>,<span class="string">&quot;FootBall&quot;</span>,<span class="string">&quot;FrameBuffer&quot;</span>,<span class="string">&quot;ForceFeedBack&quot;</span>], pattern = <span class="string">&quot;FB&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">[<span class="literal">true</span>,<span class="literal">false</span>,<span class="literal">true</span>,<span class="literal">true</span>,<span class="literal">false</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;FooBar&quot;</span> 可以这样生成：<span class="string">&quot;F&quot;</span> + <span class="string">&quot;oo&quot;</span> + <span class="string">&quot;B&quot;</span> + <span class="string">&quot;ar&quot;</span>。</span><br><span class="line"><span class="string">&quot;FootBall&quot;</span> 可以这样生成：<span class="string">&quot;F&quot;</span> + <span class="string">&quot;oot&quot;</span> + <span class="string">&quot;B&quot;</span> + <span class="string">&quot;all&quot;</span>.</span><br><span class="line"><span class="string">&quot;FrameBuffer&quot;</span> 可以这样生成：<span class="string">&quot;F&quot;</span> + <span class="string">&quot;rame&quot;</span> + <span class="string">&quot;B&quot;</span> + <span class="string">&quot;uffer&quot;</span>.</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ol>
+<li><code>1 &lt;= queries.length &lt;= 100</code></li>
+<li><code>1 &lt;= queries[i].length &lt;= 100</code></li>
+<li><code>1 &lt;= pattern.length &lt;= 100</code></li>
+<li>所有字符串都仅由大写和小写英文字母组成。</li>
+</ol>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>注意题目中，只能将小写字母插入模式串<code>pattern</code>，如果是大写的，那么说明不能匹配，返回<code>false</code>。那我们需要先扫一遍比较两个字符串的大写字母是否相同吗？答案是不需要，我们只要扫一遍就好了。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们将<code>queries</code>中的字符串与<code>pattern</code>进行一一比较，如果两个字符串对应的索引的字符相同，那么<code>pattern</code>的索引就<code>+1</code>，如果遇到字符不相同且<code>queries[i]</code>上的字符是大写字母时，那就返回<code>false</code>。注意，还有一种情况也是要返回<code>false</code>，即扫完一边<code>queries[i]</code>之后，我们的<code>pattern</code>字符串没有扫到最后一位，那么说明不管怎么在<code>pattern</code>中插入字符，都不可能变成<code>queries[i]</code>。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">camelMatch</span><span class="params">(vector&lt;string&gt;&amp; queries, string pattern)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = queries.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">res</span><span class="params">(len)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="type">int</span> idx = <span class="number">0</span>;</span><br><span class="line">            <span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; queries[i].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(idx &lt; pattern.<span class="built_in">size</span>() &amp;&amp; queries[i][j] == pattern[idx]) ++idx;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(queries[i][j] &lt;= <span class="string">&#x27;Z&#x27;</span>) flag = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(idx != pattern.<span class="built_in">size</span>()) flag = <span class="literal">false</span>;</span><br><span class="line">            res[i] = flag;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
 </search>
