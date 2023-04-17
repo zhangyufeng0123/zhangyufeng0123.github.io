@@ -155,13 +155,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -192,6 +192,171 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/c3f7601e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/c3f7601e.html" class="post-title-link" itemprop="url">tmux常用命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-17 23:59:27" itemprop="dateCreated datePublished" datetime="2023-04-17T23:59:27+08:00">2023-04-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-18 00:00:10" itemprop="dateModified" datetime="2023-04-18T00:00:10+08:00">2023-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+<li>分屏</li>
+<li>允许断开terminal连接后，继续运行进程</li>
+</ol>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane</p>
+<p>示例：</p>
+<p>tmux:</p>
+<p>session0:</p>
+<p>window0:</p>
+<p>pane0</p>
+<p>pane1</p>
+<p>pane2</p>
+<p>…</p>
+<p>window1:</p>
+<p>window2:</p>
+<p>…</p>
+<p>session1</p>
+<p>session2</p>
+<p>…</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li><p>tmux：新建一个session，其中包含一个window，window包含一个pane，pane里打开了一个shell对话框</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>%</code>:将当前pane左右平分成两个pane</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>”</code>:将当前pane上下平分成两个pane</p>
+</li>
+<li><p><code>Ctrl + d</code>: 关闭当前pane；如果当前window的所有pane均已关闭，则自动关闭window；瑞国当前session的所有window均已关闭，则自动关闭session</p>
+</li>
+<li><p>鼠标点集可以选pane</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按下方向键：选择相邻的pane</p>
+</li>
+<li><p>鼠标拖动pane之间的分割线，可以调整分割线的位置</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>的同时按方向键，可以调整pane之间分割线的位置（鼠标按着分界线也可以位置）</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>d</code>：挂起当前session</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>z</code>：将当前pane全屏&#x2F;取消全屏</p>
+</li>
+<li><p><code>tmux a</code>: 打开之前挂起的session</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>s</code>：选择其他session</p>
+<p>方向键 ——— 上：选择上一项 session&#x2F;window&#x2F;pane</p>
+<p>方向键 ——— 下：选择下一项 session&#x2F;window&#x2F;pane</p>
+<p>方向键 ——— 右：展开当前项 session&#x2F;window</p>
+<p>方向键 ——— 左：闭合当前项 session&#x2F;window</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>c</code>：在当前session种创建一个新的window</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>w</code>：选择其他window，操作方法与（12）完全相同</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>PageUp</code>：翻阅当前pane的内容</p>
+</li>
+<li><p>鼠标滚轮：翻阅当前pane内的内容</p>
+</li>
+<li><p>在tmux中选中文本时，需要按住<code>shift</code>键</p>
+</li>
+<li><p>tmux中复制&#x2F;粘贴文本的通用方式</p>
+<ol>
+<li>按下<code>Ctrl + a</code>后松开手指，然后按<code>[</code></li>
+<li>用鼠标选中文本，被选中的文本会被自动复制到tmux的剪贴板</li>
+<li>按下<code>Ctrl + a</code>后松开手指，然后按<code>]</code>，会将剪贴板中的内容粘贴到光标处</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1559,114 +1724,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/8e39a6b9.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/8e39a6b9.html" class="post-title-link" itemprop="url">LeetCode 1637.两点之间不包含任何点的最宽垂直区域</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-03-30 18:33:44 / 修改时间：18:34:30" itemprop="dateCreated datePublished" datetime="2023-03-30T18:33:44+08:00">2023-03-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>600</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="1637-两点之间不包含任何点的最宽垂直区域"><a href="#1637-两点之间不包含任何点的最宽垂直区域" class="headerlink" title="1637. 两点之间不包含任何点的最宽垂直区域"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/widest-vertical-area-between-two-points-containing-no-points/description/">1637. 两点之间不包含任何点的最宽垂直区域</a></strong></h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182639.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182639.png"></p>
-<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">8</span>,<span class="number">7</span>],[<span class="number">9</span>,<span class="number">9</span>],[<span class="number">7</span>,<span class="number">4</span>],[<span class="number">9</span>,<span class="number">7</span>]]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182733.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182733.png"></p>
-<h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><ul>
-<li><code>n == points.length</code></li>
-<li><code>2 &lt;= n &lt;= 1e5</code></li>
-<li><code>points[i].length == 2</code></li>
-<li><code>0 &lt;= xi, yi &lt;= 1e9</code></li>
-</ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题乍看是一道中等题，但其实是一道简单题。</p>
-<p><strong>最宽垂直区域</strong>用另一种说法就是两个点的横坐标的差。题意这样一转换，难度就降低了。</p>
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>将点根据横坐标进行从大到小进行排序，然后遍历一边即可。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxWidthOfVerticalArea</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(points.<span class="built_in">begin</span>(), points.<span class="built_in">end</span>(), [&amp;](vector&lt;<span class="type">int</span>&gt; &amp;A, vector&lt;<span class="type">int</span>&gt; &amp;B)&#123;</span><br><span class="line">            <span class="keyword">return</span> A[<span class="number">0</span>] &lt; B[<span class="number">0</span>];</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; points.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            res = <span class="built_in">max</span>(res, points[i][<span class="number">0</span>] - points[i - <span class="number">1</span>][<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1692,14 +1749,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">169k</span>
+    <span title="站点总字数">170k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:06</span>
+    <span title="站点阅读时长">5:08</span>
   </span>
 </div>
 <div class="busuanzi-count">

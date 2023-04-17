@@ -3935,4 +3935,78 @@
         <tag>哈希</tag>
       </tags>
   </entry>
+  <entry>
+    <title>tmux常用命令</title>
+    <url>/posts/c3f7601e.html</url>
+    <content><![CDATA[<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+<li>分屏</li>
+<li>允许断开terminal连接后，继续运行进程</li>
+</ol>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane</p>
+<p>示例：</p>
+<p>tmux:</p>
+<p>session0:</p>
+<p>window0:</p>
+<p>pane0</p>
+<p>pane1</p>
+<p>pane2</p>
+<p>…</p>
+<p>window1:</p>
+<p>window2:</p>
+<p>…</p>
+<p>session1</p>
+<p>session2</p>
+<p>…</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li><p>tmux：新建一个session，其中包含一个window，window包含一个pane，pane里打开了一个shell对话框</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>%</code>:将当前pane左右平分成两个pane</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>”</code>:将当前pane上下平分成两个pane</p>
+</li>
+<li><p><code>Ctrl + d</code>: 关闭当前pane；如果当前window的所有pane均已关闭，则自动关闭window；瑞国当前session的所有window均已关闭，则自动关闭session</p>
+</li>
+<li><p>鼠标点集可以选pane</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按下方向键：选择相邻的pane</p>
+</li>
+<li><p>鼠标拖动pane之间的分割线，可以调整分割线的位置</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>的同时按方向键，可以调整pane之间分割线的位置（鼠标按着分界线也可以位置）</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>d</code>：挂起当前session</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>z</code>：将当前pane全屏&#x2F;取消全屏</p>
+</li>
+<li><p><code>tmux a</code>: 打开之前挂起的session</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>s</code>：选择其他session</p>
+<p>方向键 ——— 上：选择上一项 session&#x2F;window&#x2F;pane</p>
+<p>方向键 ——— 下：选择下一项 session&#x2F;window&#x2F;pane</p>
+<p>方向键 ——— 右：展开当前项 session&#x2F;window</p>
+<p>方向键 ——— 左：闭合当前项 session&#x2F;window</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>c</code>：在当前session种创建一个新的window</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>w</code>：选择其他window，操作方法与（12）完全相同</p>
+</li>
+<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>PageUp</code>：翻阅当前pane的内容</p>
+</li>
+<li><p>鼠标滚轮：翻阅当前pane内的内容</p>
+</li>
+<li><p>在tmux中选中文本时，需要按住<code>shift</code>键</p>
+</li>
+<li><p>tmux中复制&#x2F;粘贴文本的通用方式</p>
+<ol>
+<li>按下<code>Ctrl + a</code>后松开手指，然后按<code>[</code></li>
+<li>用鼠标选中文本，被选中的文本会被自动复制到tmux的剪贴板</li>
+<li>按下<code>Ctrl + a</code>后松开手指，然后按<code>]</code>，会将剪贴板中的内容粘贴到光标处</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
 </search>

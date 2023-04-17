@@ -155,13 +155,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -192,6 +192,169 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/c0086366.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/c0086366.html" class="post-title-link" itemprop="url">数组—一维数组</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-03-25 13:12:12" itemprop="dateCreated datePublished" datetime="2023-03-25T13:12:12+08:00">2023-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-28 13:10:11" itemprop="dateModified" datetime="2023-03-28T13:10:11+08:00">2023-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/C-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>所谓数组，就是一个集合，里面存放了相同类型的数据元素。</p>
+<p>特点：</p>
+<ol>
+<li>数组中的每个<em>数据元素都是相同的数据类型</em></li>
+<li>数组是由<em>连续的内存</em>位置组成的</li>
+</ol>
+<h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="一维数组定义的三种方式："><a href="#一维数组定义的三种方式：" class="headerlink" title="一维数组定义的三种方式："></a>一维数组定义的三种方式：</h3><ol>
+<li><code>数据类型 数组名[数组长度];</code></li>
+<li><code>数据类型 数组名[数组长度] = &#123;值1,值2,...&#125;;</code></li>
+<li><code>数据类型 数组名[] = &#123;值1,值2,...&#125;;</code></li>
+</ol>
+<p>示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//定义方式1</span></span><br><span class="line">	<span class="comment">//数据类型 数组名[元素个数];</span></span><br><span class="line">	<span class="type">int</span> score[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用下标赋值</span></span><br><span class="line">	score[<span class="number">0</span>] = <span class="number">100</span>;</span><br><span class="line">	score[<span class="number">1</span>] = <span class="number">99</span>;</span><br><span class="line">	score[<span class="number">2</span>] = <span class="number">85</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用下标输出</span></span><br><span class="line">	cout &lt;&lt; score[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; score[<span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; score[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//第二种定义方式</span></span><br><span class="line">	<span class="comment">//数据类型 数组名[元素个数] =  &#123;值1，值2 ，值3 ...&#125;;</span></span><br><span class="line">	<span class="comment">//如果&#123;&#125;内不足10个数据，剩余数据用0补全</span></span><br><span class="line">	<span class="type">int</span> score2[<span class="number">10</span>] = &#123;<span class="number">100</span>,<span class="number">90</span>,<span class="number">80</span>,<span class="number">70</span>,<span class="number">60</span>,<span class="number">50</span>,<span class="number">40</span>,<span class="number">30</span>,<span class="number">20</span>,<span class="number">10</span> &#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//逐个输出</span></span><br><span class="line">	<span class="comment">//cout &lt;&lt; score2[0] &lt;&lt; endl;</span></span><br><span class="line">	<span class="comment">//cout &lt;&lt; score2[1] &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//一个一个输出太麻烦，因此可以利用循环进行输出</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)	&#123;</span><br><span class="line">		cout &lt;&lt; score2[i] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//定义方式3</span></span><br><span class="line">	<span class="comment">//数据类型 数组名[] =  &#123;值1，值2 ，值3 ...&#125;;</span></span><br><span class="line">	<span class="type">int</span> score3[] = &#123; <span class="number">100</span>,<span class="number">90</span>,<span class="number">80</span>,<span class="number">70</span>,<span class="number">60</span>,<span class="number">50</span>,<span class="number">40</span>,<span class="number">30</span>,<span class="number">20</span>,<span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)	&#123;</span><br><span class="line">		cout &lt;&lt; score3[i] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结1：数组名的命名规范与变量名命名规范一致，不要和变量重名</p>
+</blockquote>
+<blockquote>
+<p>总结2：数组中下标是从0开始索引</p>
+</blockquote>
+<h3 id="一维数组的数组名"><a href="#一维数组的数组名" class="headerlink" title="一维数组的数组名"></a>一维数组的数组名</h3><p>一维数组名称的<strong>用途</strong>：</p>
+<ol>
+<li>可以统计整个数组在内存中的长度</li>
+<li>可以获取数组在内存中的首地址</li>
+</ol>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//数组名用途</span></span><br><span class="line">	<span class="comment">//1、可以获取整个数组占用内存空间大小</span></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">10</span>] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;整个数组所占内存空间为： &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;每个元素所占内存空间为： &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组的元素个数为： &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr) / <span class="built_in">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2、可以通过数组名获取到数组首地址</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组首地址为： &quot;</span> &lt;&lt; (<span class="type">int</span>)arr &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组中第一个元素地址为： &quot;</span> &lt;&lt; (<span class="type">int</span>)&amp;arr[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组中第二个元素地址为： &quot;</span> &lt;&lt; (<span class="type">int</span>)&amp;arr[<span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//arr = 100; 错误，数组名是常量，因此不可以赋值</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：数组名是常量，不可以赋值</p>
+</blockquote>
+<blockquote>
+<p>总结1：直接打印数组名，可以查看数组所占内存的首地址</p>
+</blockquote>
+<blockquote>
+<p>总结2：对数组进行sizeof，可以获取整个数组站内存空间的大小</p>
+</blockquote>
+<p><strong>练习案例1：五只小猪称体重</strong></p>
+<p><strong>案例描述</strong>：</p>
+<p>在一个数组中记录了五只小猪的体重，如：int arr[5] &#x3D; {300,350,200,400,250};</p>
+<p>找出并打印最重的小猪体重。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">300</span>,<span class="number">350</span>,<span class="number">200</span>,<span class="number">400</span>,<span class="number">250</span>&#125;;</span><br><span class="line">	<span class="type">int</span> max_weight = arr[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(max_weight &lt; arr[i])&#123;</span><br><span class="line">			max_weight = arr[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;最重的小猪体重是 &quot;</span> &lt;&lt; max_weight &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230324101604.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230324101604.png"></p>
+<p><strong>练习案例2：数组元素逆置</strong></p>
+<p><strong>案例描述：</strong>请声明一个5个元素的数组，并且将元素逆置</p>
+<p>(如原数组元素为：1,3,2,5,4;逆置后输出结果为:4,5,2,3,1);</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)&#123;</span><br><span class="line">		<span class="type">int</span> a = arr[i];</span><br><span class="line">		arr[i] = arr[<span class="number">5</span> - i];</span><br><span class="line">		arr[<span class="number">5</span> - i] = a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230324101827.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230324101827.png"></p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><strong>作用</strong>：最常用的排序算法，对数组内元素进行排序</p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素做同样的工作，执行完毕后，找到第一个最大值。</li>
+<li>重复以上的步骤，每次比较次数-1，直到不需要比较</li>
+</ol>
+<p><strong>示例</strong>：将数组 {4,2,8,0,5,7,1,3,9} 进行升序排序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">9</span>] = &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">9</span>&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span> - <span class="number">1</span>; i++)	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span> - <span class="number">1</span> - i; j++)		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>])			&#123;</span><br><span class="line">				<span class="type">int</span> temp = arr[j];</span><br><span class="line">				arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">				arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)	&#123;</span><br><span class="line">		cout &lt;&lt; arr[i] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230324101917.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230324101917.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2302,118 +2465,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/840dc5ee.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/840dc5ee.html" class="post-title-link" itemprop="url">Java 运行机制</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-20 16:16:26" itemprop="dateCreated datePublished" datetime="2023-03-20T16:16:26+08:00">2023-03-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-21 16:46:29" itemprop="dateModified" datetime="2023-03-21T16:46:29+08:00">2023-03-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>318</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Java运行机制"><a href="#Java运行机制" class="headerlink" title="Java运行机制"></a>Java运行机制</h1><h2 id="Java运行的一般步骤是"><a href="#Java运行的一般步骤是" class="headerlink" title="Java运行的一般步骤是"></a>Java运行的一般步骤是</h2><ol>
-<li>Java首先利用文本编辑器编写Java源程序，源文件的后缀名为.java;</li>
-<li>再利用编译器（javac）将源程序编译成字节码，字节码文件的后缀名为.class;</li>
-<li>最后利用虚拟机（解释器，Java）解释执行。如下图所示</li>
-</ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160450.png"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160702.png"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320160716.png"></p>
-<h2 id="JVM、JRE和JDK三者的不同"><a href="#JVM、JRE和JDK三者的不同" class="headerlink" title="JVM、JRE和JDK三者的不同"></a>JVM、JRE和JDK三者的不同</h2><p><strong>JVM</strong>(Java Virtual Machine):用于执行bytecode字节码的“虚拟计算机”；</p>
-<p>不同的操作系统有不同版本的JVM，屏蔽了底层运行平台的差别，是实现跨平台的核心。</p>
-<p><strong>JRE</strong>(Java Runtime Environment),它包含了Java虚拟机(JVM)、库函数等。</p>
-<p><strong>JDK</strong>(Java Development Kit)包含了JRE，编译器和调试器等。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230320161326.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -2439,14 +2490,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">169k</span>
+    <span title="站点总字数">170k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:06</span>
+    <span title="站点阅读时长">5:08</span>
   </span>
 </div>
 <div class="busuanzi-count">
