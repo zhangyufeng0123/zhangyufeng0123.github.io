@@ -4009,4 +4009,213 @@
         <category>Linux</category>
       </categories>
   </entry>
+  <entry>
+    <title>vim常用命令</title>
+    <url>/posts/8c31560b.html</url>
+    <content><![CDATA[<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+<li><p>命令行模式下的文本编辑器</p>
+</li>
+<li><p>根据文件扩展名自动判别编程语言。支持代码缩进、代码高亮等功能。</p>
+</li>
+<li><p>使用方式：vim filename</p>
+<p> 如果已有该文件，则打开它</p>
+<p> 如果没有该文件，则打开一个新的文件，并命名为filename</p>
+</li>
+</ol>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><ol>
+<li><p>一般命令模式</p>
+<p> 默认模式。命令输入方式：类似于打游戏放技能，按不同字符，即可进行不同操作。可以复制、粘贴、删除文本等。</p>
+</li>
+<li><p>编辑模式</p>
+<p> 在一般命令模式里按下<code>i</code>，会进入编辑模式</p>
+<p> 按下<code>ESC</code>会退出编辑模式，返回到一般命令模式。</p>
+</li>
+<li><p>命令行模式</p>
+<p> 在一般命令模式里按下:&#x2F;?三个字母中的任意一个，会进入命令行模式。命令行在最下面。</p>
+<p> 可以查找、替换、保存、退出、配置编辑器等。</p>
+</li>
+</ol>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><table>
+<thead>
+<tr>
+<th>i</th>
+<th>进入编辑模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ESC</td>
+<td>进入一般命令模式</td>
+</tr>
+<tr>
+<td>h 或 左箭头键</td>
+<td>光标向左移动一个字符</td>
+</tr>
+<tr>
+<td>j 或 向下箭头</td>
+<td>光标向下移动一个字符</td>
+</tr>
+<tr>
+<td>k 或 向上箭头</td>
+<td>光标向上移动一个字符</td>
+</tr>
+<tr>
+<td>l 或 向右箭头</td>
+<td>光标向右移动一个字符</td>
+</tr>
+<tr>
+<td>n<Space></td>
+<td>n表示数字，按下数字后再按空格，光标会向右移动这一行的n个字符</td>
+</tr>
+<tr>
+<td>0 或 功能键[Home]</td>
+<td>光标移动到本行开头</td>
+</tr>
+<tr>
+<td>$ 或 功能键[End]</td>
+<td>光标移动到本行末尾</td>
+</tr>
+<tr>
+<td>G</td>
+<td>光标移动到最后一行</td>
+</tr>
+<tr>
+<td>:n 或 nG</td>
+<td>n为数字，光标移动到第n行</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>光标移动到第一行，相当于1G</td>
+</tr>
+<tr>
+<td>n<Enter></td>
+<td>n为数字，光标向下移动n行</td>
+</tr>
+<tr>
+<td>&#x2F;word</td>
+<td>向光标之下寻找第一个值为word的字符串</td>
+</tr>
+<tr>
+<td>?word</td>
+<td>向光标之上寻找第一个值为word的字符串</td>
+</tr>
+<tr>
+<td>n</td>
+<td>重复前一个查找操作</td>
+</tr>
+<tr>
+<td>N</td>
+<td>反向重复前一个查找操作</td>
+</tr>
+<tr>
+<td>:n1,n2s&#x2F;word1&#x2F;word2&#x2F;g</td>
+<td>n1与n2为数字，在第n1行与n2行之间寻找word1这个字符串，并将该字符串替换为word2</td>
+</tr>
+<tr>
+<td>:1,$s&#x2F;word1&#x2F;word2&#x2F;g</td>
+<td>将全文的word1替换为word2</td>
+</tr>
+<tr>
+<td>:1,$s&#x2F;word1&#x2F;word2&#x2F;gc</td>
+<td>将全文的word1替换为word2，且在替换前要求用户确认</td>
+</tr>
+<tr>
+<td>v</td>
+<td>选中文本</td>
+</tr>
+<tr>
+<td>d</td>
+<td>删除选中的文本</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除当前行</td>
+</tr>
+<tr>
+<td>y</td>
+<td>复制选中的文本</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制当前行</td>
+</tr>
+<tr>
+<td>p</td>
+<td>将复制的数据在光标的下一行&#x2F;下一个位置粘贴</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>Ctrl + r</td>
+<td>取消撤销</td>
+</tr>
+<tr>
+<td>大于号 &gt;</td>
+<td>将选中的文本整体向右缩进一次</td>
+</tr>
+<tr>
+<td>小于号 &lt;</td>
+<td>将选中的文本整体向左缩进一次</td>
+</tr>
+<tr>
+<td>:w</td>
+<td>保存</td>
+</tr>
+<tr>
+<td>:w!</td>
+<td>强制保存</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>强制退出</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>保存并推出</td>
+</tr>
+<tr>
+<td>:set paste</td>
+<td>设置成粘贴模式，取消代码自动缩进</td>
+</tr>
+<tr>
+<td>:set nopaste</td>
+<td>取消粘贴模式，开启代码自动缩进</td>
+</tr>
+<tr>
+<td>:set nu</td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>隐藏行号</td>
+</tr>
+<tr>
+<td>gg&#x3D;G</td>
+<td>将全文代码格式化</td>
+</tr>
+<tr>
+<td>:noh</td>
+<td>关闭查找关键词高亮</td>
+</tr>
+<tr>
+<td>Ctrl + q</td>
+<td>当vim卡死时，可以取消当前正在执行的命令</td>
+</tr>
+</tbody></table>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>如果每次用vim编辑文件时，会自动创建一个.filename.swp的临时文件</p>
+<p>如果打开某个文件时，该文件的swp文件已存在，则会报错。此时解决办法有两种：</p>
+<ol>
+<li>找到正在打开该文件的程序，并推出</li>
+<li>直接删掉该swp文件即可</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
 </search>
