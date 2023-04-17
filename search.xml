@@ -3912,4 +3912,27 @@
         <tag>每日一题</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 242.有效的字母异位词</title>
+    <url>/posts/24a74496.html</url>
+    <content><![CDATA[<h1 id="242-有效的字母异位词"><a href="#242-有效的字母异位词" class="headerlink" title="242.有效的字母异位词"></a><strong><a href="https://leetcode.cn/problems/valid-anagram/">242.有效的字母异位词</a></strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;anagram&quot;</span>, t = <span class="string">&quot;nagaram&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li><code>1 &lt;= s.length, t.length &lt;= 5 * 1e4</code></li>
+<li><code>s</code> 和 <code>t</code> 仅包含小写字母</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>如果两个字符串互为字母异位词，那么这两个字母通过相同的排序条件排序之后，就是同一个字符串。因此我们可以判断这两个字符串排序完之后是否相同即可。但是排序的时间复杂度为$O(nlogn)$.时间复杂度不是很优秀，因此我们可以换一种思路。</p>
+<p>既然这两个字符串排序完之后相等，那么这两个字符串每一个字母的个数都相同，因此我们只需要统计每个字符串的每种字母个数，如果两个字符串每种字母的个数都相同，那么这两个字符串就像等，否则就不是互为字母异位词。这个的时间复杂度为$O(n)$</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们分别用两个数组来存储每个字符串的每种字母的个数，然后遍历两个数组，如果对应索引的字母个数都相同，那么这连个字符串互为字母异位词。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isAnagram</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> a[<span class="number">26</span>] = &#123;<span class="number">0</span>&#125;, b[<span class="number">26</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> ss : s)    a[ss - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> tt : t)    b[tt - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">            <span class="keyword">if</span>(a[i] != b[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>哈希</tag>
+      </tags>
+  </entry>
 </search>

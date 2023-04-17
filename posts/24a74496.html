@@ -22,32 +22,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zyfblogs.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="LeetCode 915.分割数组（Medium）915. 分割数组（20221024每日一题）题面 SampleInput1nums &#x3D; [5,0,3,8,6]  Output13  思路题目要求我们将一个数组分为左右两部分，并且左半边的最大值要小于等于右半边的最小值，那么我们需要用两个数组 $b, s$来维护这个最大值喝最小值， $b[i]$代表我维护的是在[1,i]之间的最大值，s[i]代表">
+    <meta name="description" content="242.有效的字母异位词题面 SampleInput1s &#x3D; &quot;anagram&quot;, t &#x3D; &quot;nagaram&quot;  Output1true  提示 1 &lt;&#x3D; s.length, t.length &lt;&#x3D; 5 * 1e4 s 和 t 仅包含小写字母  思路如果两个字符串互为字母异位词，那么这两个字母通过相同的排序条件排序之后，就是同一个字符串。因此我们">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 915.分割数组">
-<meta property="og:url" content="https://www.zyfblogs.xyz/posts/2acaafb0.html">
+<meta property="og:title" content="LeetCode 242.有效的字母异位词">
+<meta property="og:url" content="https://www.zyfblogs.xyz/posts/24a74496.html">
 <meta property="og:site_name" content="G.M. Blog">
-<meta property="og:description" content="LeetCode 915.分割数组（Medium）915. 分割数组（20221024每日一题）题面 SampleInput1nums &#x3D; [5,0,3,8,6]  Output13  思路题目要求我们将一个数组分为左右两部分，并且左半边的最大值要小于等于右半边的最小值，那么我们需要用两个数组 $b, s$来维护这个最大值喝最小值， $b[i]$代表我维护的是在[1,i]之间的最大值，s[i]代表">
+<meta property="og:description" content="242.有效的字母异位词题面 SampleInput1s &#x3D; &quot;anagram&quot;, t &#x3D; &quot;nagaram&quot;  Output1true  提示 1 &lt;&#x3D; s.length, t.length &lt;&#x3D; 5 * 1e4 s 和 t 仅包含小写字母  思路如果两个字符串互为字母异位词，那么这两个字母通过相同的排序条件排序之后，就是同一个字符串。因此我们">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-1.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-2.png">
-<meta property="article:published_time" content="2023-03-20T06:38:34.000Z">
-<meta property="article:modified_time" content="2023-03-21T08:46:29.490Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png">
+<meta property="article:published_time" content="2023-04-17T13:20:02.000Z">
+<meta property="article:modified_time" content="2023-04-17T13:20:31.682Z">
 <meta property="article:author" content="GotoMove">
-<meta property="article:tag" content="每日一题">
-<meta property="article:tag" content="前缀和">
+<meta property="article:tag" content="哈希">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-1.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png">
 
 
-<link rel="canonical" href="https://www.zyfblogs.xyz/posts/2acaafb0.html">
+<link rel="canonical" href="https://www.zyfblogs.xyz/posts/24a74496.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zyfblogs.xyz/posts/2acaafb0.html","path":"posts/2acaafb0.html","title":"LeetCode 915.分割数组"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zyfblogs.xyz/posts/24a74496.html","path":"posts/24a74496.html","title":"LeetCode 242.有效的字母异位词"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LeetCode 915.分割数组 | G.M. Blog</title>
+<title>LeetCode 242.有效的字母异位词 | G.M. Blog</title>
   
 
 
@@ -147,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-915-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84%EF%BC%88Medium%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 915.分割数组（Medium）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#915-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84%EF%BC%8820221024%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">915. 分割数组（20221024每日一题）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E9%9D%A2"><span class="nav-number">2.1.</span> <span class="nav-text">题面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample"><span class="nav-number">2.1.1.</span> <span class="nav-text">Sample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">2.1.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">2.1.3.</span> <span class="nav-text">Output</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">2.4.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D"><span class="nav-number">1.</span> <span class="nav-text">242.有效的字母异位词</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E9%9D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample"><span class="nav-number">1.2.</span> <span class="nav-text">Sample</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">1.2.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">1.2.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">1.2.3.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.5.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/2acaafb0.html">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/24a74496.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/main.jpg">
@@ -222,12 +220,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="LeetCode 915.分割数组 | G.M. Blog">
+      <meta itemprop="name" content="LeetCode 242.有效的字母异位词 | G.M. Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 915.分割数组
+          LeetCode 242.有效的字母异位词
         </h1>
 
         <div class="post-meta-container">
@@ -237,15 +235,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-03-20 14:38:34" itemprop="dateCreated datePublished" datetime="2023-03-20T14:38:34+08:00">2023-03-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-21 16:46:29" itemprop="dateModified" datetime="2023-03-21T16:46:29+08:00">2023-03-21</time>
+      <time title="创建时间：2023-04-17 21:20:02 / 修改时间：21:20:31" itemprop="dateCreated datePublished" datetime="2023-04-17T21:20:02+08:00">2023-04-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>635</span>
+      <span>690</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -289,16 +281,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="LeetCode-915-分割数组（Medium）"><a href="#LeetCode-915-分割数组（Medium）" class="headerlink" title="LeetCode 915.分割数组（Medium）"></a>LeetCode 915.分割数组（Medium）</h1><h1 id="915-分割数组（20221024每日一题）"><a href="#915-分割数组（20221024每日一题）" class="headerlink" title="915. 分割数组（20221024每日一题）"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/partition-array-into-disjoint-intervals/">915. 分割数组</a>（20221024每日一题）</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-1.png" alt="Problem Description"></p>
-<h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">5</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+        <h1 id="242-有效的字母异位词"><a href="#242-有效的字母异位词" class="headerlink" title="242.有效的字母异位词"></a><strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/valid-anagram/">242.有效的字母异位词</a></strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png" alt="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;anagram&quot;</span>, t = <span class="string">&quot;nagaram&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目要求我们将一个数组分为左右两部分，并且左半边的最大值要小于等于右半边的最小值，那么我们需要用两个数组 $b, s$来维护这个最大值喝最小值， $b[i]$代表我维护的是在<code>[1,i</code>]之间的最大值，<code>s[i]</code>代表我维护的是在<code>[i,]</code>的最小值，之后我们只要遍历一次数组，当<code>b[i]&gt;s[i + 1]</code>的时候我们就能找到我们想要找到的分界点。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">partitionDisjoint</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">b</span><span class="params">(len, <span class="number">0</span>)</span>, <span class="title">s</span><span class="params">(len, <span class="number">0</span>)</span></span>;</span><br><span class="line">        b[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; len; i++) b[i] = <span class="built_in">max</span>(b[i - <span class="number">1</span>], nums[i]);</span><br><span class="line">        s[len - <span class="number">1</span>] = nums[len - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) s[i] = <span class="built_in">min</span>(s[i + <span class="number">1</span>], nums[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(b[i] &lt;= s[i + <span class="number">1</span>]) <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/915-2.png" alt="Result"></p>
-
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li><code>1 &lt;= s.length, t.length &lt;= 5 * 1e4</code></li>
+<li><code>s</code> 和 <code>t</code> 仅包含小写字母</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>如果两个字符串互为字母异位词，那么这两个字母通过相同的排序条件排序之后，就是同一个字符串。因此我们可以判断这两个字符串排序完之后是否相同即可。但是排序的时间复杂度为$O(nlogn)$.时间复杂度不是很优秀，因此我们可以换一种思路。</p>
+<p>既然这两个字符串排序完之后相等，那么这两个字符串每一个字母的个数都相同，因此我们只需要统计每个字符串的每种字母个数，如果两个字符串每种字母的个数都相同，那么这两个字符串就像等，否则就不是互为字母异位词。这个的时间复杂度为$O(n)$</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们分别用两个数组来存储每个字符串的每种字母的个数，然后遍历两个数组，如果对应索引的字母个数都相同，那么这连个字符串互为字母异位词。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isAnagram</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> a[<span class="number">26</span>] = &#123;<span class="number">0</span>&#125;, b[<span class="number">26</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> ss : s)    a[ss - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> tt : t)    b[tt - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">            <span class="keyword">if</span>(a[i] != b[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -307,22 +302,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag"># 每日一题</a>
-              <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag"># 前缀和</a>
+              <a href="/tags/%E5%93%88%E5%B8%8C/" rel="tag"># 哈希</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/f4d40e11.html" rel="prev" title="LeetCode 904. 水果成篮">
-                  <i class="fa fa-chevron-left"></i> LeetCode 904. 水果成篮
+                <a href="/posts/3effc393.html" rel="prev" title="LeetCode 1023.驼峰式匹配">
+                  <i class="fa fa-chevron-left"></i> LeetCode 1023.驼峰式匹配
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/16343545.html" rel="next" title="LeetCode 481.神奇数字">
-                  LeetCode 481.神奇数字 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
