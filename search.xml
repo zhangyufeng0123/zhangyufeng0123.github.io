@@ -4218,4 +4218,32 @@
         <category>Linux</category>
       </categories>
   </entry>
+  <entry>
+    <title>LeetCode 454.四数相加 II</title>
+    <url>/posts/345aa0d2.html</url>
+    <content><![CDATA[<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230418212548.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">nums1 = [<span class="number">1</span>,<span class="number">2</span>], nums2 = [<span class="number">-2</span>,<span class="number">-1</span>], nums3 = [<span class="number">-1</span>,<span class="number">2</span>], nums4 = [<span class="number">0</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">两个元组如下：</span><br><span class="line"><span class="number">1.</span> (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>) -&gt; nums1[<span class="number">0</span>] + nums2[<span class="number">0</span>] + nums3[<span class="number">0</span>] + nums4[<span class="number">1</span>] = <span class="number">1</span> + (<span class="number">-2</span>) + (<span class="number">-1</span>) + <span class="number">2</span> = <span class="number">0</span></span><br><span class="line"><span class="number">2.</span> (<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>) -&gt; nums1[<span class="number">1</span>] + nums2[<span class="number">1</span>] + nums3[<span class="number">0</span>] + nums4[<span class="number">0</span>] = <span class="number">2</span> + (<span class="number">-1</span>) + (<span class="number">-1</span>) + <span class="number">0</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ul>
+<li><code>n == nums1.length</code></li>
+<li><code>n == nums2.length</code></li>
+<li><code>n == nums3.length</code></li>
+<li><code>n == nums4.length</code></li>
+<li><code>1 &lt;= n &lt;= 200</code></li>
+<li><code>-2^28 &lt;= nums1[i], nums2[i], nums3[i], nums4[i] &lt;= 2^28</code></li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>刚开始的时候我想着这个数据真小，才<code>200</code>，因此我打算直接比完全暴力又那么不暴力一点的做法，用哈希存储前三个数组能够组成的和的个数，最后再遍历第四个数组即可。但是这样没想到超时了！后来一想，这样的时间复杂度是$O(n^3)$，这里有四个数组，完全可以用更小的时间复杂度来做。我们可以将四个数组两两分组，时间复杂度为$O(n^2)$，这样的话我们只要进行两次的两个数组之间的一一对应即可。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们用hash表来存储第一和第二两个数组每一种组合的和的个数，再组合另外两个数组的元素，每组合一次，就在hash表中查看是否有这个和的相反数，如果有，则加入这个相反数的二元组的个数。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">fourSumCount</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2, vector&lt;<span class="type">int</span>&gt;&amp; nums3, vector&lt;<span class="type">int</span>&gt;&amp; nums4)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num1 : nums1)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> num2 : nums2)&#123;</span><br><span class="line">                hash[num1 + num2]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num1 : nums3)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> num2 : nums4)&#123;</span><br><span class="line">                ans += hash[-num1 - num2];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>哈希</tag>
+      </tags>
+  </entry>
 </search>
