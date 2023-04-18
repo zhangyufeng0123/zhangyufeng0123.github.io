@@ -42,7 +42,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132129.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132129.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132129.png)
 
 > 整型结论：short < int ≤ long ≤ long long
 > 
@@ -88,7 +88,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132209.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132209.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132209.png)
 
 ## 字符型
 
@@ -125,7 +125,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132240.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132240.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132240.png)
 
 ASCII码表格：
 
@@ -223,7 +223,7 @@ int main() {
     }
     ```
     
-    ![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132314.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132314.png)
+    ![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132314.png)
     
     > 注意：C风格的字符串要用双引号括起来
     > 
@@ -240,7 +240,7 @@ int main() {
     }
     ```
     
-    ![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132357.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132357.png)
+    ![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132357.png)
     
     > 注意：C++风格字符串，需要加入头文件 *#include<string>*
     > 
@@ -276,7 +276,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132426.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132426.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132426.png)
 
 ## 数据的输入
 
@@ -325,7 +325,7 @@ int main(){
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132645.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132645.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132645.png)
 
 ## 运算符
 
@@ -392,7 +392,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132721.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132721.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132721.png)
 
 > 总结：在除法运算中，除数不能为0（这应该算是小学数学了吧）
 > 
@@ -430,7 +430,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132756.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132756.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132756.png)
 
 > 只有整型变量可以进行取模运算
 > 
@@ -468,7 +468,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132832.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132832.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132832.png)
 
 > 总结：前置递增先对变量进行++再进行计算表达式，后置递增相反
 > 
@@ -531,7 +531,7 @@ int main() {
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132905.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132905.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323132905.png)
 
 ### 比较运算符
 

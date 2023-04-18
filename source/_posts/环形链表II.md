@@ -91,7 +91,7 @@ public:
 
 这道题有一个证明：
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326144715.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326144715.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326144715.png)
 
 其中a是head到入口的距离，b是入口到快慢指针相遇的距离，c是相遇点到入口的长度。
 
@@ -152,23 +152,23 @@ public:
 
 1. 两个初始链表，head1、head2是两个链表的头指针，s记录合并链表的当前位置
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152438.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152438.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152438.png)
 
 1. 第一个链表的头指针向后移动一位
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152510.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152510.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152510.png)
 
 1. 我们更改当前节点的next指针，将next指针指向另外一条链表的头指针
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152738.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152738.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326152738.png)
 
 1. 移动s指针，将s移到s的next位置，再将head2指针往后移一个
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153033.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153033.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153033.png)
 
 1. 继续移动s指针，再回到第一步
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153129.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153129.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230326153129.png)
 
 ```cpp
 /**

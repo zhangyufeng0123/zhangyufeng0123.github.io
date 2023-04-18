@@ -12,9 +12,9 @@ date: 2023-04-01 21:03:37
 
 ## 题面
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204338.png)
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230401204410.png)
 
 ## Sample
 

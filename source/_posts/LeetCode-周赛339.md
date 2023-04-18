@@ -15,7 +15,7 @@ date: 2023-04-03 18:20:30
 
 ## 题面
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402130249.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402130249.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402130249.png)
 
 ## Sample
 
@@ -75,7 +75,7 @@ public:
 
 ## 题面
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402131000.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402131000.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402131000.png)
 
 ## Sample
 
@@ -151,7 +151,7 @@ public:
 
 ## 题面
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402131723.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402131723.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230402131723.png)
 
 ## Sample
 

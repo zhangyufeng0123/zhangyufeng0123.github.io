@@ -47,7 +47,7 @@ int main(){
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323131712.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323131712.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323131712.png)
 
 > 注意：C++在创建变量时，必须给变量一个初始值，否则会报错（如果你在全局定义的时候他会有默认值，在局部定义不调用也不会报错，所以这段话不严谨）
 > 
@@ -82,7 +82,7 @@ int main(){
 }
 ```
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323131825.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323131825.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230323131825.png)
 
 ## 关键字
 

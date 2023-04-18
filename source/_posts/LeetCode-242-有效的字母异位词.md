@@ -12,7 +12,7 @@ date: 2023-04-17 21:20:02
 
 ## 题面
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230417210119.png)
 
 ## Sample
 

@@ -12,7 +12,7 @@ date: 2023-03-30 18:33:44
 
 ## 题面
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182639.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182639.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182639.png)
 
 ## Sample
 
@@ -30,7 +30,7 @@ date: 2023-03-30 18:33:44
 
 ### Example
 
-![https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182733.png](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182733.png)
+![](https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230330182733.png)
 
 ### 范围
 
