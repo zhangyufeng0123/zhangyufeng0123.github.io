@@ -19,29 +19,29 @@ tags:
 
 tmux:
 
-session0:
+&emsp;&emsp;session0:
 
-window0:
+&emsp;&emsp;&emsp;&emsp;window0:
 
-pane0
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pane0
 
-pane1
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pane1
 
-pane2
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pane2
 
-...
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;...
 
-window1:
+&emsp;&emsp;&emsp;&emsp;window1:
 
-window2:
+&emsp;&emsp;&emsp;&emsp;window2:
 
-...
+&emsp;&emsp;&emsp;&emsp;...
 
-session1
+&emsp;&emsp;session1
 
-session2
+&emsp;&emsp;session2
 
-...
+&emsp;&emsp;...
 
 ## 常用命令
 
