@@ -4274,4 +4274,28 @@
         <tag>Daily</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 49.字母异位词分组</title>
+    <url>/posts/9170754a.html</url>
+    <content><![CDATA[<h1 id="49-字母异位词分组"><a href="#49-字母异位词分组" class="headerlink" title="49.字母异位词分组"></a><strong><a href="https://leetcode.cn/problems/group-anagrams/description/">49.字母异位词分组</a></strong></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230418223356.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">strs = [<span class="string">&quot;eat&quot;</span>, <span class="string">&quot;tea&quot;</span>, <span class="string">&quot;tan&quot;</span>, <span class="string">&quot;ate&quot;</span>, <span class="string">&quot;nat&quot;</span>, <span class="string">&quot;bat&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">[[<span class="string">&quot;bat&quot;</span>],[<span class="string">&quot;nat&quot;</span>,<span class="string">&quot;tan&quot;</span>],[<span class="string">&quot;ate&quot;</span>,<span class="string">&quot;eat&quot;</span>,<span class="string">&quot;tea&quot;</span>]]</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ul>
+<li><code>1 &lt;= strs.length &lt;= 1e4</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> 仅包含小写字母</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>首先，我们得知道什么是字母异位词。两个字符串互为字母异位词当且仅当这两个字符串中所有的相同的字母的个数相等。</p>
+<p>之前我们用判断两个字符串是否是互为字母异位词可以用判断相同字母个数是否相等来做，但是当涉及到多个字符串分类的时候，这个方法就不是那么方便了。换一种想法，两个字符串互为字母异位词，那么这两个字符串根据相同的优先级对字符进行排序之后就是相同的字符串了，因此我们可以对所有的字符串进行从小到大排序，然后记录每一种排完序之后的字符串的组别，最后我们将相同的字符串进行归类即可。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>用哈希表来判断每一种排完序之后的字符串是否已经出现过，如果出现过，那么我们就将这个字符串归入到相应的类别中，如果未出现过，那么我们就增加一个类别，并将这个字符串压入这个类别。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        unordered_map&lt;string, <span class="type">int</span>&gt; hash;</span><br><span class="line">        <span class="type">int</span> len = strs.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">index</span><span class="params">(len)</span></span>;</span><br><span class="line">        <span class="type">int</span> idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            string tmp = strs[i];</span><br><span class="line">            <span class="built_in">sort</span>(tmp.<span class="built_in">begin</span>(), tmp.<span class="built_in">end</span>());</span><br><span class="line">            <span class="keyword">if</span>(hash[tmp]) index[i] = hash[tmp];</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                index[i] = ++idx;</span><br><span class="line">                hash[tmp] = idx;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; <span class="built_in">ans</span>(idx);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            ans[index[i] - <span class="number">1</span>].<span class="built_in">emplace_back</span>(strs[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>哈希</tag>
+      </tags>
+  </entry>
 </search>
