@@ -3945,18 +3945,18 @@
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane</p>
 <p>示例：</p>
 <p>tmux:</p>
-<p>session0:</p>
-<p>window0:</p>
-<p>pane0</p>
-<p>pane1</p>
-<p>pane2</p>
-<p>…</p>
-<p>window1:</p>
-<p>window2:</p>
-<p>…</p>
-<p>session1</p>
-<p>session2</p>
-<p>…</p>
+<p>&amp;emsp;&amp;emsp;session0:</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;window0:</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;pane0</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;pane1</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;pane2</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;…</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;window1:</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;window2:</p>
+<p>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;…</p>
+<p>&amp;emsp;&amp;emsp;session1</p>
+<p>&amp;emsp;&amp;emsp;session2</p>
+<p>&amp;emsp;&amp;emsp;…</p>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
 <li><p>tmux：新建一个session，其中包含一个window，window包含一个pane，pane里打开了一个shell对话框</p>
 </li>
