@@ -4953,4 +4953,39 @@
         <tag>shell语法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 1376.通知所有员工所需的时间</title>
+    <url>/posts/3d809fe9.html</url>
+    <content><![CDATA[<h1 id="LeetCode-1376-通知所有员工所需的时间"><a href="#LeetCode-1376-通知所有员工所需的时间" class="headerlink" title="LeetCode 1376.通知所有员工所需的时间"></a>LeetCode 1376.通知所有员工所需的时间</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230501171724.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">n = 6, headID = 2, manager = [2,2,-1,2,2,2], informTime = [0,0,1,0,0,0]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">id</span> = 2 的员工是公司的总负责人，也是其他所有员工的直属负责人，他需要 1 分钟来通知所有员工。</span><br><span class="line">上图显示了公司员工的树结构。</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ul>
+<li><code>1 &lt;= n &lt;= 10^5</code></li>
+<li><code>0 &lt;= headID &lt; n</code></li>
+<li><code>manager.length == n</code></li>
+<li><code>0 &lt;= manager[i] &lt; n</code></li>
+<li><code>manager[headID] == -1</code></li>
+<li><code>informTime.length == n</code></li>
+<li><code>0 &lt;= informTime[i] &lt;= 1000</code></li>
+<li>如果员工 <code>i</code> 没有下属，<code>informTime[i] == 0</code> 。</li>
+<li>题目 <strong>保证</strong> 所有员工都可以收到通知。</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题我们可以看作是一棵多叉树，或者是一个带边权的单向图，我们要求的是找到这个单向图中最远的两个节点的长度。</p>
+<p>我们已经知道了起点，我们要找最远的路径，那么我们只要找到这个点到所有点的距离即可，然后选取最大值，因为图中的点最多是1e5，并且每个点都只有一个入度（除了起点），因此不用考虑重复到达某个点的问题。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>既然是需要遍历所有点的距离，那么我们可以用bfs和dfs遍历获取起点到每一个点的距离。</p>
+<p>这里我选择使用bfs</p>
+<p>值得注意的是，我们在bfs的过程中我们需要维护起点到每个点的时间消耗。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numOfMinutes</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> headID, vector&lt;<span class="type">int</span>&gt;&amp; manager, vector&lt;<span class="type">int</span>&gt;&amp; informTime)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">employ</span>(n);</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">costT</span><span class="params">(n, <span class="number">0</span>)</span></span>;<span class="comment">//起点到其他点消耗的时间</span></span><br><span class="line">        <span class="type">int</span> len = manager.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(headID == i) <span class="keyword">continue</span>;</span><br><span class="line">            employ[manager[i]].<span class="built_in">emplace_back</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">        q.<span class="built_in">push</span>(headID);</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            <span class="type">int</span> v = q.<span class="built_in">front</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> u : employ[v])&#123;</span><br><span class="line">                q.<span class="built_in">push</span>(u);</span><br><span class="line">                costT[u] = costT[v] + informTime[v];<span class="comment">//时间=起点到上一个消耗的时间+上一个点到这个点消耗的时间</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, costT[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Daily</tag>
+        <tag>Bfs</tag>
+      </tags>
+  </entry>
 </search>
