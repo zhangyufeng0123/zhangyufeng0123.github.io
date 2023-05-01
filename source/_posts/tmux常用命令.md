@@ -48,7 +48,7 @@ tmux:
 1. tmux：新建一个session，其中包含一个window，window包含一个pane，pane里打开了一个shell对话框
 2. 按下`Ctrl + a`后手指松开，然后按`%`:将当前pane左右平分成两个pane
 3. 按下`Ctrl + a`后手指松开，然后按`”`:将当前pane上下平分成两个pane
-4. `Ctrl + d`: 关闭当前pane；如果当前window的所有pane均已关闭，则自动关闭window；瑞国当前session的所有window均已关闭，则自动关闭session
+4. `Ctrl + d`: 关闭当前pane；如果当前window的所有pane均已关闭，则自动关闭window；如果当前session的所有window均已关闭，则自动关闭session
 5. 鼠标点集可以选pane
 6. 按下`Ctrl + a`后手指松开，然后按下方向键：选择相邻的pane
 7. 鼠标拖动pane之间的分割线，可以调整分割线的位置
