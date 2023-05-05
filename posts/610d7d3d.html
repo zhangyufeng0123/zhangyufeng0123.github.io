@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="j_rl1fPa6H1312ggKmYdh8iewr9_U8gvyoP6yI9nnaU">
+  <meta name="baidu-site-verification" content="codeva-S87KHGfNCp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zyfblogs.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="线程线程概述 与进程（process）类似，线程（thread）是允许应用程序并发执行多个任务的一种机制。一个进程可以包含多个线程。同一个程序中的所有线程均会独立执行相同程序，且共享同一份全局内存区域，其中包括初始化数据段、未初始化数据段，以及堆内存段。（传统意义上的UNIX进程只是多线程程序的一个特例，该进程只包含一个线程） 进程是CPU分配资源的最小单位，线城市操作系统调度执行的最小单位 线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux多线程开发">
+<meta property="og:url" content="https://www.zyfblogs.xyz/posts/610d7d3d.html">
+<meta property="og:site_name" content="G.M. Blog">
+<meta property="og:description" content="线程线程概述 与进程（process）类似，线程（thread）是允许应用程序并发执行多个任务的一种机制。一个进程可以包含多个线程。同一个程序中的所有线程均会独立执行相同程序，且共享同一份全局内存区域，其中包括初始化数据段、未初始化数据段，以及堆内存段。（传统意义上的UNIX进程只是多线程程序的一个特例，该进程只包含一个线程） 进程是CPU分配资源的最小单位，线城市操作系统调度执行的最小单位 线程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230504153052.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230504153152.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230504225849.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230505131235.png">
+<meta property="article:published_time" content="2023-05-05T08:34:57.000Z">
+<meta property="article:modified_time" content="2023-05-05T08:36:02.729Z">
+<meta property="article:author" content="GotoMove">
+<meta property="article:tag" content="多线程开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230504153052.png">
+
+
+<link rel="canonical" href="https://www.zyfblogs.xyz/posts/610d7d3d.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zyfblogs.xyz/posts/610d7d3d.html","path":"posts/610d7d3d.html","title":"Linux多线程开发"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux多线程开发 | G.M. Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">G.M. Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">You juan, I juan</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">线程概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.</span> <span class="nav-text">线程和进程的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="nav-number">1.3.</span> <span class="nav-text">线程和进程虚拟地址空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E5%92%8C%E9%9D%9E%E5%85%B1%E4%BA%AB%E8%B5%84%E6%BA%90"><span class="nav-number">1.4.</span> <span class="nav-text">线程之间共享和非共享资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="nav-number">1.5.</span> <span class="nav-text">线程操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">线程属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">线程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5-1"><span class="nav-number">3.1.</span> <span class="nav-text">线程同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E9%87%8F"><span class="nav-number">3.2.</span> <span class="nav-text">互斥量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E9%87%8F%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.3.</span> <span class="nav-text">互斥量函数介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">3.4.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E5%86%99%E9%94%81"><span class="nav-number">3.5.</span> <span class="nav-text">读写锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F"><span class="nav-number">3.6.</span> <span class="nav-text">条件变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-number">3.7.</span> <span class="nav-text">信号量</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="GotoMove"
+      src="/images/main.jpg">
+  <p class="site-author-name" itemprop="name">GotoMove</p>
+  <div class="site-description" itemprop="description">sharing blogs</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhangyufeng0123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhangyufeng0123" rel="noopener me external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/610d7d3d.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux多线程开发 | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux多线程开发
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-05-05 16:34:57 / 修改时间：16:36:02" itemprop="dateCreated datePublished" datetime="2023-05-05T16:34:57+08:00">2023-05-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>14k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>25 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><h3 id="线程概述"><a href="#线程概述" class="headerlink" title="线程概述"></a>线程概述</h3><ul>
+<li>与进程（process）类似，线程（thread）是允许应用程序并发执行多个任务的一种机制。一个进程可以包含多个线程。同一个程序中的所有线程均会独立执行相同程序，且共享同一份全局内存区域，其中包括初始化数据段、未初始化数据段，以及堆内存段。（传统意义上的UNIX进程只是多线程程序的一个特例，该进程只包含一个线程）</li>
+<li>进程是CPU分配资源的最小单位，线城市操作系统调度执行的最小单位</li>
+<li>线程是轻量级的进程（LWP：Light Weight Process），在Linux环境下线程的本质仍是进程</li>
+<li>查看指定进程的LWP号: ps -Lf pid</li>
+</ul>
+<h3 id="线程和进程的区别"><a href="#线程和进程的区别" class="headerlink" title="线程和进程的区别"></a>线程和进程的区别</h3><ul>
+<li>进程间的信息难以共享。由于出去只读代码段外，父子进程并未共享内存，因此必须采用一些进程间通信方式，在进程间进行信息共享</li>
+<li>调用fork()来创建进程的代价相对较高，即便利用写时复制技术，仍然需要复制注入内存页表和文件描述符表之类的多种进程属性，这意味着fork()调用在时间上的开销依然不菲</li>
+<li>线程之间能够方便、快速地共享信息。只需将数据复制到共享（全局或堆）变量中即可</li>
+<li>创建线程比创建进程通常要快10倍甚至更多。线程间是共享虚拟地址空间的，无需采用写时复制来复制内存，也无需复制页表</li>
+</ul>
+<h3 id="线程和进程虚拟地址空间"><a href="#线程和进程虚拟地址空间" class="headerlink" title="线程和进程虚拟地址空间"></a>线程和进程虚拟地址空间</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230504153052.png"></p>
+<h3 id="线程之间共享和非共享资源"><a href="#线程之间共享和非共享资源" class="headerlink" title="线程之间共享和非共享资源"></a>线程之间共享和非共享资源</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230504153152.png"></p>
+<h3 id="线程操作"><a href="#线程操作" class="headerlink" title="线程操作"></a>线程操作</h3><ol>
+<li><p>获取线程ID</p>
+<p> <code>pthread_t pthread_self(void);</code></p>
+<ul>
+<li>功能：获取当前的线程的线程ID</li>
+</ul>
+</li>
+<li><p>比较线程</p>
+<p> <code>int pthread_equal(pthread_t t1, pthread_t t2);</code></p>
+<ul>
+<li>功能：比较两个线程ID是否相等</li>
+</ul>
+</li>
+<li><p>线程创建</p>
+<p> <code>int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg);</code></p>
+<ul>
+<li>功能：创建一个子线程</li>
+<li>参数：<ul>
+<li><code>thread</code>：传出参数，线程创建成功后，子线程的线程ID被写入该变量中</li>
+<li><code>attr</code>：需要设置线程的属性，一般是默认，NULL</li>
+<li><code>start_routine</code>：函数指针，子线程需要处理的逻辑代码</li>
+<li><code>arg</code>：给第三个参数使用，传参</li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>成功 返回0</li>
+<li>失败 返回错误号。这个错误号和之前的errno不太一样。获取错误号的信息：<code>char *strerror(int errnum);</code></li>
+</ul>
+</li>
+</ul>
+<p> 函数示例</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span>* <span class="title">callback</span><span class="params">(<span class="type">void</span> *arg)</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child thread... arg=%d\n&quot;</span>, *(<span class="type">int</span> *)arg);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个子线程</span></span><br><span class="line">    <span class="type">pthread_t</span> tid;</span><br><span class="line">    <span class="type">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> ret = <span class="built_in">pthread_create</span>(&amp;tid, <span class="literal">NULL</span>, callback, (<span class="type">void</span> *) &amp;num);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *errstr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, errstr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sleep</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>终止线程</p>
+<p> <code>void pthread_exit(void *retval);</code></p>
+<ul>
+<li>功能：终止一个线程，在哪个线程调用，就表示终止哪个线程</li>
+<li>参数<ul>
+<li><code>retval</code>：需要传递一个指针，作为返回值，可以在<code>pthread_join()</code>中获得</li>
+</ul>
+</li>
+</ul>
+<p> 函数示例：</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> * <span class="title">callback</span><span class="params">(<span class="type">void</span> *arg)</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child thread %ld\n&quot;</span>, <span class="built_in">pthread_self</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个子线程</span></span><br><span class="line">    <span class="type">pthread_t</span> tid;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> ret = <span class="built_in">pthread_create</span>(&amp;tid, <span class="literal">NULL</span>, callback, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *strerr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strerr);</span><br><span class="line">        <span class="comment">// exit(0);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 主线程</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;tid: %ld, parent thread %ld\n&quot;</span>, tid, <span class="built_in">pthread_self</span>());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 让主线程退出</span></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">// 当主线程退出时，不会影响其它线程</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;main exit\n&quot;</span>);<span class="comment">//不会打印</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连接线程</p>
+</li>
+</ol>
+<p><code>int pthread_join(pthread_t thread, void **retval);</code></p>
+<ul>
+<li><p>功能：和一个已经终止的线程连接（为什么要连接？是为了释放结束线程的资源）。回收子线程的资源</p>
+<ul>
+<li>特点：<ul>
+<li>这个函数是阻塞函数，调用一次只能回收一个子线程</li>
+<li>一般在主线程中使用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>参数</p>
+<ul>
+<li>thread：需要回收子线程的ID</li>
+<li>retval：二级指针，接收子线程退出时的返回值<ul>
+<li><p>为什么要用二级指针</p>
+<p>  在 <strong><code>pthread_join</code></strong> 函数中，第二个参数需要传递一个指向线程返回值的指针。由于线程的返回值类型是 **<code>void *</code>**，因此需要传递一个指针来存储线程的返回值。</p>
+<p>  但是，线程返回值的指针需要在调用 <strong><code>pthread_join</code></strong> 函数之前分配内存空间。如果将指针作为参数传递给 <strong><code>pthread_join</code></strong> 函数，则无法在函数内部为其分配内存空间。</p>
+<p>  为了解决这个问题，**<code>pthread_join</code>** 函数使用了一个指向指针的指针，也就是二级指针。在调用 <strong><code>pthread_join</code></strong> 函数之前，需要在调用线程的代码中为返回值指针分配内存空间，并将其地址赋值给二级指针。这样，在调用 <strong><code>pthread_join</code></strong> 函数时，可以传递指向二级指针的指针作为第二个参数，并在函数内部通过该指针来操作返回值指针。</p>
+<p>  因此，**<code>pthread_join</code>** 函数的第二个参数是一个二级指针，以便在函数内部对返回值指针进行操作，而不需要在函数外部为其分配内存空间。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>返回值</p>
+<ul>
+<li>成功 返回0</li>
+<li>失败 返回错误号，用strerror接收错误信息</li>
+</ul>
+</li>
+</ul>
+<p>函数示例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> value = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> * <span class="title">callback</span><span class="params">(<span class="type">void</span> *arg)</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child thread %ld\n&quot;</span>, <span class="built_in">pthread_self</span>());</span><br><span class="line">    <span class="built_in">sleep</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// return NULL;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// int value = 10;</span></span><br><span class="line">    <span class="built_in">pthread_exit</span>((<span class="type">void</span>*)&amp;value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个子线程</span></span><br><span class="line">    <span class="type">pthread_t</span> tid;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> ret = <span class="built_in">pthread_create</span>(&amp;tid, <span class="literal">NULL</span>, callback, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *strerr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strerr);</span><br><span class="line">        <span class="comment">// exit(0);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 主线程</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;tid: %ld, parent thread %ld\n&quot;</span>, tid, <span class="built_in">pthread_self</span>());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 主线程调用pthread_join()回收子线程的资源</span></span><br><span class="line">    <span class="type">int</span> *thread_value;</span><br><span class="line">    ret = <span class="built_in">pthread_join</span>(tid, (<span class="type">void</span> **)&amp;thread_value);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *strerr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strerr);</span><br><span class="line">        <span class="comment">// exit(0);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;exit data: %d\n&quot;</span>, *thread_value);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;回收子线程资源成功!\n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 让主线程退出</span></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">// 当主线程退出时，不会影响其它线程</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>线程分离</p>
+<p> <code>int pthread_detach(pthread_t thread);</code></p>
+<ul>
+<li>功能：分离一个线程。被分离的线程在终止的时候会自动释放资源，返回系统<ol>
+<li>不能多次分离，会产生不可预料的行为</li>
+<li>不能去连接已经分离的线程，如果连接，则会报错</li>
+</ol>
+</li>
+<li>参数<ul>
+<li>thread：需要分离的线程ID</li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>成功 返回0</li>
+<li>失败 返回错误ID</li>
+</ul>
+</li>
+</ul>
+<p> 函数示例：</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">callback</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child thread...\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">pthread_t</span> tid;</span><br><span class="line">    <span class="type">int</span> ret = <span class="built_in">pthread_create</span>(&amp;tid, <span class="literal">NULL</span>, callback, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *strerr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strerr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出主线程和子线程的id</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child thread : %ld, main thread : %ld\n&quot;</span>, tid, <span class="built_in">pthread_self</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置子线程分离后，对分离的子线程进行连接 pthread_join();</span></span><br><span class="line">    ret = <span class="built_in">pthread_detach</span>(tid);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *strerr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strerr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ret = <span class="built_in">pthread_join</span>(tid, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *strerr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strerr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>线程取消</p>
+<p> <code>int pthread_cancel(pthread_t thread);</code></p>
+<ul>
+<li>功能：取消线程（让线程终止）<ul>
+<li>取消某个线程，可以终止某个线程的运行，但是并不是马上终止，而是当子线程执行到一个取消点，线程才会终止调用</li>
+<li>取消点：系统规定好的一些系统调用，我们可以粗略的理解为从用户区到内核区的切换，这个位置称之为取消点</li>
+</ul>
+</li>
+<li>参数<ul>
+<li>thread：需要取消的线程号</li>
+</ul>
+</li>
+<li>返回值<ul>
+<li>成功 返回0</li>
+<li>失败 返回错误编号</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="线程属性"><a href="#线程属性" class="headerlink" title="线程属性"></a>线程属性</h2><ol>
+<li><p>初始化线程属性变量</p>
+<p> <code>int pthread_attr_init(pthread_attr_t *attr);</code></p>
+</li>
+<li><p>释放线程属性资源</p>
+<p> <code>int pthread_attr_destroy(pthread_attr_t *attr);</code></p>
+</li>
+<li><p>获取线程分离的状态属性</p>
+<p> <code>int pthread_attr_getdetachstate(const pthread_attr_t *attr, int *detachstate);</code></p>
+</li>
+<li><p>设置线程分离的状态属性</p>
+<p> <code>int pthread_attr_setdetachstate(pthread_attr_t *attr, int detachstate);</code></p>
+</li>
+</ol>
+<p>函数示例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">callback</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child thread...\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">pthread_t</span> tid;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个线程属性的变量</span></span><br><span class="line">    <span class="type">pthread_attr_t</span> attr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化属性变量</span></span><br><span class="line">    <span class="built_in">pthread_attr_init</span>(&amp;attr);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置属性</span></span><br><span class="line">    <span class="built_in">pthread_attr_setdetachstate</span>(&amp;attr, PTHREAD_CREATE_DETACHED);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取线程的栈的大小</span></span><br><span class="line"></span><br><span class="line">    <span class="type">size_t</span> size;</span><br><span class="line">    <span class="built_in">pthread_attr_getstacksize</span>(&amp;attr, &amp;size);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;stacksize is %ld\n&quot;</span>, size);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个子线程</span></span><br><span class="line">    <span class="type">int</span> ret = <span class="built_in">pthread_create</span>(&amp;tid, <span class="literal">NULL</span>, callback, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">char</span> *strerr = <span class="built_in">strerror</span>(ret);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strerr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出主线程和子线程的id</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child thread : %ld, main thread : %ld\n&quot;</span>, tid, <span class="built_in">pthread_self</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 释放线程属性资源</span></span><br><span class="line">    <span class="built_in">pthread_attr_destroy</span>(&amp;attr);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><h3 id="线程同步-1"><a href="#线程同步-1" class="headerlink" title="线程同步"></a>线程同步</h3><ul>
+<li>线程的主要优势在于，能够通过全局变量来共享信息。不过，这种便携的共享是有代价的：必须确保多个线程不会同时修改同一变量，或者某一线程不会读取正在由其它线程修改的变量</li>
+<li>临界区是指访问某一共享资源的代码片段，并且这段代码的执行应为原子操作，也就是同时访问同意共享资源的其他线程不应中断该片段的执行</li>
+<li>线程同步：即当有一个线程在对内存进行操作时，其他线程都不可以对这个内存地址进行操作，直到该线程完成操作，其他线程才能对该内存地址进行操作，而其他线程则处于等待状态。</li>
+</ul>
+<h3 id="互斥量"><a href="#互斥量" class="headerlink" title="互斥量"></a>互斥量</h3><ul>
+<li>为避免线程更新共享变量时出现问题，可以使用互斥量（mutex时mutual exclusion的缩写）来确保同时仅有一个线程可以访问某项共享资源。可以使用互斥量来保证对任意共享资源的原子访问</li>
+<li>互斥量有两种状态：已锁定（locked）和未锁定（unlocked）。任何时候，至多只有一个线程可以锁定该互斥量。试图对已经锁定的某一互斥量再次加锁，将可能阻塞线程或者报错失败，具体取决于加锁时使用的方法。</li>
+<li>一旦线程锁定互斥量，随机成为该互斥量的所有者，只有所有者才能给互斥量解锁。一般情况下，对每一共享资源（可能有多个相关变量组成）会使用不同的互斥量，每一线程在访问统一资源时将采用如下协议：<ul>
+<li>针对共享资源锁定互斥量</li>
+<li>访问共享资源</li>
+<li>对互斥量解锁</li>
+</ul>
+</li>
+<li>如果多个线程试图执行这一块代码（一个临界区），事实上只有一个线程能够持有该互斥量（其他线程将遭到阻塞），即同时只有一个线程能够进入这段代码区域，如下图所示</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230504225849.png"></p>
+<h3 id="互斥量函数介绍"><a href="#互斥量函数介绍" class="headerlink" title="互斥量函数介绍"></a>互斥量函数介绍</h3><ol>
+<li><p>初始化互斥量</p>
+<p> <code>int pthread_mutex_init(pthread_mutex_t *restrict mutex, const pthread_mutexattr_t *restrict attr);</code></p>
+<ul>
+<li>参数：<ul>
+<li>mutex：需要初始化的互斥量变量</li>
+<li>attr：互斥量的相关属性，一般NULL，默认</li>
+</ul>
+</li>
+<li>restrict：修饰符，被修饰的指针，不能由另外的一个指针进行操作</li>
+</ul>
+</li>
+<li><p>释放互斥量的资源</p>
+<p> <code>int pthread_mutex_destroy(pthread_mutex_t *mutex);</code></p>
+</li>
+<li><p>加锁</p>
+<p> <code>int pthread_mutex_lock(pthread_mutex_t *mutex);</code></p>
+<p> 阻塞的，如果有一个线程已经枷锁了，那么其他线程只能阻塞等待</p>
+</li>
+<li><p>尝试加锁</p>
+<p> <code>int pthread_mutex_trylock(pthread_mutex_t *mutex);</code></p>
+<p> 如果加锁失败，不会阻塞，会直接返回</p>
+</li>
+<li><p>解锁</p>
+<p> <code>int pthread_mutex_unlock(pthread_mutex_t *mutex);</code></p>
+</li>
+</ol>
+<p>函数示例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个互斥量</span></span><br><span class="line"></span><br><span class="line"><span class="type">pthread_mutex_t</span> mutex;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> tickets = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> *<span class="title">sellticket</span><span class="params">(<span class="type">void</span> *args)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 卖票</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">// 加锁</span></span><br><span class="line">        <span class="built_in">pthread_mutex_lock</span>(&amp;mutex);</span><br><span class="line">        <span class="keyword">if</span>(tickets &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">// usleep(500);</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%ld 正在卖第 %d 门票\n&quot;</span>, <span class="built_in">pthread_self</span>(), <span class="number">1001</span> - tickets);</span><br><span class="line">            tickets--;</span><br><span class="line">					   <span class="comment">// 解锁</span></span><br><span class="line">            <span class="built_in">pthread_mutex_unlock</span>(&amp;mutex);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					   <span class="comment">// 解锁</span></span><br><span class="line">            <span class="built_in">pthread_mutex_unlock</span>(&amp;mutex);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  初始化互斥量</span></span><br><span class="line">    <span class="built_in">pthread_mutex_init</span>(&amp;mutex, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建三个子线程</span></span><br><span class="line">    <span class="type">pthread_t</span> tid1, tid2, tid3;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_create</span>(&amp;tid1, <span class="literal">NULL</span>, sellticket, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">pthread_create</span>(&amp;tid2, <span class="literal">NULL</span>, sellticket, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">pthread_create</span>(&amp;tid3, <span class="literal">NULL</span>, sellticket, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 回收子线程的资源</span></span><br><span class="line">    <span class="built_in">pthread_join</span>(tid1, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">pthread_join</span>(tid2, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">pthread_join</span>(tid3, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置线程分离</span></span><br><span class="line">    <span class="comment">// pthread_detach(tid1);</span></span><br><span class="line">    <span class="comment">// pthread_detach(tid2);</span></span><br><span class="line">    <span class="comment">// pthread_detach(tid3);</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>); <span class="comment">// 退出主线程</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 释放互斥量资源</span></span><br><span class="line">    <span class="built_in">pthread_mutex_destroy</span>(&amp;mutex);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><ul>
+<li><p>有时，一个线程需要同时访问两个或更多不同的共享资源，而每个资源又都由不同的互斥量管理。当超过一个线程加锁同一组互斥量时，就可能发生死锁。</p>
+</li>
+<li><p>两个或两个以上的进程在执行过程中，因争夺共享资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁</p>
+</li>
+<li><p>死锁的几种场景：</p>
+<ul>
+<li>忘记释放锁</li>
+<li>重复加锁</li>
+<li>多线程多锁，抢占锁资源</li>
+</ul>
+<p>  <img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230505131235.png"></p>
+</li>
+</ul>
+<h3 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h3><ul>
+<li>当有一个线程已经持有互斥锁时，互斥锁将所有试图进入临界区的线程都阻塞住。但是考虑一种情形，当前持有互斥锁的线程只是要读访问共享资源，而同时有其它几个线程也想读取这个共享资源，但是由于互斥锁的排它性，所有其它线程都无法获取锁，也就无法读访问共享资源了，但是实际上多个线程同时读访问共享资源并不会导致问题。</li>
+<li>在对数据的读写操作中，更多的是读操作，写操作比较少，例如对数据库数据的读写应用。为了满足当前能够允许多个读出，但只允许一个写入的需求，线程提供了读写锁来实现</li>
+<li>读写锁的特点：<ul>
+<li>如果有其他线程读数据，则允许其他线程执行读操作，但不允许写操作</li>
+<li>如果有其他线程写数据，则其他线程都不要允许读、写操作</li>
+<li>写是独占的，写的优先级更高</li>
+</ul>
+</li>
+</ul>
+<p>读写锁函数</p>
+<ol>
+<li><p>初始化读写锁</p>
+<p> <code>int pthread_rwlock_init(pthread_rwlock_t *restrict rwlock, const pthread_rwlockattr_t *restrict attr);</code></p>
+</li>
+<li><p>释放锁资源</p>
+<p> <code>int pthread_rwlock_destroy(pthread_rwlock_t *rwlock);</code></p>
+</li>
+<li><p>上读锁</p>
+<p> <code>int pthread_rwlock_rdlock(pthread_rwlock_t *rwlock);</code></p>
+</li>
+<li><p>尝试上读锁</p>
+<p> <code>int pthread_rwlock_tryrdlock(pthread_rwlock_t *rwlock)</code></p>
+</li>
+<li><p>上写锁</p>
+<p> <code>int pthread_rwlock_wrlock(pthread_rwlock_t *rwlock);</code></p>
+</li>
+<li><p>尝试上写锁</p>
+<p> <code>int pthread_rwlock_trywrlock(pthread_rwlock_t *rwlock);</code></p>
+</li>
+<li><p>解锁</p>
+<p> <code>int pthread_rwlock_unlock(pthread_rwlock_t *rwlock);</code></p>
+</li>
+</ol>
+<p>函数示例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// pthread_mutex_t mutex;</span></span><br><span class="line"><span class="type">pthread_rwlock_t</span> rwlock;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> *<span class="title">writeNum</span><span class="params">(<span class="type">void</span> *args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">pthread_rwlock_wrlock</span>(&amp;rwlock);</span><br><span class="line">        num++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;++write, tid : %ld, num : %d\n&quot;</span>, <span class="built_in">pthread_self</span>(), num);</span><br><span class="line">        <span class="built_in">pthread_rwlock_unlock</span>(&amp;rwlock);</span><br><span class="line">        <span class="built_in">usleep</span>(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> *<span class="title">readNum</span><span class="params">(<span class="type">void</span> *args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">// num++;</span></span><br><span class="line">        <span class="built_in">pthread_rwlock_rdlock</span>(&amp;rwlock);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;===read, tid : %ld, num : %d\n&quot;</span>, <span class="built_in">pthread_self</span>(), num);</span><br><span class="line">        <span class="built_in">pthread_rwlock_unlock</span>(&amp;rwlock);</span><br><span class="line">        <span class="built_in">usleep</span>(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建3个写线程，5个读线程</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_rwlock_init</span>(&amp;rwlock, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">pthread_t</span> wtids[<span class="number">3</span>], rtids[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_create</span>(&amp;wtids[i], <span class="literal">NULL</span>, writeNum, <span class="literal">NULL</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置线程分离</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_detach</span>(wtids[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_create</span>(&amp;rtids[i], <span class="literal">NULL</span>, readNum, <span class="literal">NULL</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_detach</span>(rtids[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_rwlock_destroy</span>(&amp;rwlock);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件变量"><a href="#条件变量" class="headerlink" title="条件变量"></a>条件变量</h3><ol>
+<li><p>初始化条件变量</p>
+<p> <code>int pthread_cond_init(pthread_cond_t *restrict cond, const pthread_condattr_t *restrict attr);</code></p>
+</li>
+<li><p>释放条件变量</p>
+<p> <code>int pthread_cond_destroy(pthread_cond_t *cond);</code></p>
+</li>
+<li><p>等待条件响应</p>
+<p> <code>int pthread_cond_wait(pthread_cond_t *restrict cond, pthread_mutex_t *restrict mutex);</code></p>
+</li>
+<li><p>设置等待时间</p>
+<p> <code>int pthread_cond_timedwait(pthread_cond_t *restrict cond, pthread_mutex_t *restrict mutex, const struct timespec *restrict abstime);</code></p>
+</li>
+<li><p>唤醒个别等待线程</p>
+<p> <code>int pthread_cond_signal(pthread_cond_t *cond);</code></p>
+</li>
+<li><p>唤醒所有等待线程</p>
+<p> <code>int pthread_cond_broadcast(pthread_cond_t *cond);</code></p>
+</li>
+</ol>
+<p>函数示例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">node</span> *next;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 头节点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> *head = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个互斥量</span></span><br><span class="line"></span><br><span class="line"><span class="type">pthread_mutex_t</span> mutex;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建条件变量</span></span><br><span class="line"><span class="type">pthread_cond_t</span> cond;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> * <span class="title">producer</span><span class="params">(<span class="type">void</span> *args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 不断的创建新的节点，添加到链表中</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">pthread_mutex_lock</span>(&amp;mutex);</span><br><span class="line">        <span class="keyword">struct</span> <span class="title class_">node</span> *newNode = (<span class="keyword">struct</span> node*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="keyword">struct</span> node));</span><br><span class="line">        newNode-&gt;next = head;</span><br><span class="line">        head=newNode;</span><br><span class="line">        newNode-&gt;num = (<span class="type">int</span>)(<span class="built_in">rand</span>()) * <span class="number">1000</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;add node, num : %d, tid : %ld\n&quot;</span>, newNode-&gt;num, <span class="built_in">pthread_self</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 只要生产一个，就通知消费者消费</span></span><br><span class="line">        <span class="built_in">pthread_cond_signal</span>(&amp;cond);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">pthread_mutex_unlock</span>(&amp;mutex);</span><br><span class="line">        <span class="built_in">usleep</span>(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> *<span class="title">customer</span><span class="params">(<span class="type">void</span> *args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">// 保存头节点的指针</span></span><br><span class="line">        <span class="built_in">pthread_mutex_lock</span>(&amp;mutex);</span><br><span class="line">        <span class="keyword">struct</span> <span class="title class_">node</span> *tmp = head;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断是否有数据</span></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="comment">// 没有数据 需要等待</span></span><br><span class="line">            <span class="built_in">pthread_mutex_unlock</span>(&amp;mutex);</span><br><span class="line">            <span class="built_in">pthread_cond_wait</span>(&amp;cond, &amp;mutex);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;delete node, num : %d, tid : %ld\n&quot;</span>, tmp-&gt;num, <span class="built_in">pthread_self</span>());</span><br><span class="line">            <span class="built_in">free</span>(tmp);</span><br><span class="line">            <span class="built_in">pthread_mutex_unlock</span>(&amp;mutex);</span><br><span class="line">            <span class="built_in">usleep</span>(<span class="number">100</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建5个生产者线程，5个消费者线程</span></span><br><span class="line">    </span><br><span class="line">    <span class="type">pthread_t</span> ptids[<span class="number">5</span>], ctids[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_mutex_init</span>(&amp;mutex, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">pthread_cond_init</span>(&amp;cond, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_create</span>(&amp;ptids[i], <span class="literal">NULL</span>, producer, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">pthread_detach</span>(ptids[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_create</span>(&amp;ctids[i], <span class="literal">NULL</span>, customer, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">pthread_detach</span>(ctids[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// while(1)&#123;</span></span><br><span class="line">    <span class="comment">//     sleep(10);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">sleep</span>(<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_mutex_destroy</span>(&amp;mutex);</span><br><span class="line">    <span class="built_in">pthread_cond_destroy</span>(&amp;cond);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><ol>
+<li><p>初始化</p>
+<p> <code>int sem_init(sem_t *sem, int pshared, unsigned int value);</code></p>
+</li>
+<li><p>释放资源</p>
+<p> <code>int sem_destroy(sem_t *sem);</code></p>
+</li>
+<li><p>对信号量进行加锁，调用一次对信号量的值-1，如果值为0，则阻塞</p>
+<p> <code>int sem_wait(sem_t *sem);</code></p>
+</li>
+<li><p>尝试-1</p>
+<p> <code>int sem_trywait(sem_t *sem);</code></p>
+</li>
+<li><p>设置等待时间（存疑）</p>
+<p> <code>int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout);</code></p>
+</li>
+<li><p>对信号量解锁，调用一次对信号量的值+1</p>
+<p> <code>int sem_post(sem_t *sem);</code></p>
+</li>
+<li><p>获取信号量的值</p>
+<p> <code>int sem_getvalue(sem_t *sem, int *sval);</code></p>
+</li>
+</ol>
+<p>函数示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">node</span> *next;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 头节点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> *head = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个互斥量</span></span><br><span class="line"></span><br><span class="line"><span class="type">pthread_mutex_t</span> mutex;</span><br><span class="line"><span class="comment">// 创建两个信号量</span></span><br><span class="line"><span class="type">sem_t</span> psem, csem;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> * <span class="title">producer</span><span class="params">(<span class="type">void</span> *args)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 不断的创建新的节点，添加到链表中</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">sem_wait</span>(&amp;psem);</span><br><span class="line">        <span class="built_in">pthread_mutex_lock</span>(&amp;mutex);</span><br><span class="line">        <span class="keyword">struct</span> <span class="title class_">node</span> *newNode = (<span class="keyword">struct</span> node*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="keyword">struct</span> node));</span><br><span class="line">        newNode-&gt;next = head;</span><br><span class="line">        head=newNode;</span><br><span class="line">        newNode-&gt;num = (<span class="type">int</span>)(<span class="built_in">rand</span>()) * <span class="number">1000</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;add node, num : %d, tid : %ld\n&quot;</span>, newNode-&gt;num, <span class="built_in">pthread_self</span>());</span><br><span class="line">        <span class="built_in">pthread_mutex_unlock</span>(&amp;mutex);</span><br><span class="line">        <span class="built_in">sem_post</span>(&amp;csem);</span><br><span class="line">        <span class="built_in">usleep</span>(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> *<span class="title">customer</span><span class="params">(<span class="type">void</span> *args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">// 保存头节点的指针</span></span><br><span class="line">        <span class="built_in">sem_wait</span>(&amp;csem);</span><br><span class="line">        <span class="built_in">pthread_mutex_lock</span>(&amp;mutex);</span><br><span class="line">        <span class="keyword">struct</span> <span class="title class_">node</span> *tmp = head;</span><br><span class="line"></span><br><span class="line">        head = head-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;delete node, num : %d, tid : %ld\n&quot;</span>, tmp-&gt;num, <span class="built_in">pthread_self</span>());</span><br><span class="line">        <span class="built_in">free</span>(tmp);</span><br><span class="line">        <span class="built_in">pthread_mutex_unlock</span>(&amp;mutex);</span><br><span class="line">        <span class="built_in">sem_post</span>(&amp;psem);</span><br><span class="line">        <span class="built_in">usleep</span>(<span class="number">100</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建5个生产者线程，5个消费者线程</span></span><br><span class="line">    </span><br><span class="line">    <span class="type">pthread_t</span> ptids[<span class="number">5</span>], ctids[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_mutex_init</span>(&amp;mutex, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sem_init</span>(&amp;psem, <span class="number">0</span>, <span class="number">8</span>);</span><br><span class="line">    <span class="built_in">sem_init</span>(&amp;csem, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_create</span>(&amp;ptids[i], <span class="literal">NULL</span>, producer, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">pthread_detach</span>(ptids[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">pthread_create</span>(&amp;ctids[i], <span class="literal">NULL</span>, customer, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">pthread_detach</span>(ctids[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// while(1)&#123;</span></span><br><span class="line">    <span class="comment">//     sleep(10);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">sleep</span>(<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_mutex_destroy</span>(&amp;mutex);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">pthread_exit</span>(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%80%E5%8F%91/" rel="tag"># 多线程开发</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/5afd8342.html" rel="prev" title="LeetCode 1003.检查替换后的词是否有效">
+                  <i class="fa fa-chevron-left"></i> LeetCode 1003.检查替换后的词是否有效
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GotoMove</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:07</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
