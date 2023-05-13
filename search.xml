@@ -5321,4 +5321,34 @@
         <tag>多线程开发</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 2441 与对应负数同时存在的最大正整数</title>
+    <url>/posts/2cd6a016.html</url>
+    <content><![CDATA[<h2 id="难度-1168分"><a href="#难度-1168分" class="headerlink" title="难度 1168分"></a>难度 1168分</h2><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230513235239.png" alt="Img"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nums = [-1,2,-3,3]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3 是数组中唯一一个满足题目要求的 k 。</span><br></pre></td></tr></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+<li><code>nums[i] != 0</code></li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目的意思简洁明了，让我们在数组中找到一个正整数，并且它的相反数也在这个数组内，用另一种话来讲，就是在一个数组中找到两个数使得这两个数相等。<br>那我们应该怎么找呢？</p>
+<ul>
+<li>暴力点的方法就是用$O(n^2)$的时间复杂度用两层for循环找，数据范围是1000，不会超时。</li>
+<li>次一点的方法就是用$O(nlogn)$的时间复杂度，先排序再利用双指针来寻找两个数相加为0</li>
+<li>最后一个方法就是用$O(n)$的时间复杂度，利用哈希表来存储已经遍历过的数字，之后每遍历一个点的时候就判断它的相反数是否已经出现过即可</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findMaxK</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash[<span class="number">-1</span> * num]) res = <span class="built_in">max</span>(res, <span class="built_in">abs</span>(num));</span><br><span class="line">            hash[num] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+        <tag>哈希表</tag>
+      </tags>
+  </entry>
 </search>
