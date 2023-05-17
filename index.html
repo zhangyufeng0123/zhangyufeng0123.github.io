@@ -155,13 +155,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -201,6 +201,316 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/2ba40472.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/2ba40472.html" class="post-title-link" itemprop="url">操作系统概述</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-05-18 00:22:28 / 修改时间：00:22:43" itemprop="dateCreated datePublished" datetime="2023-05-18T00:22:28+08:00">2023-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="操作系统的目标和功能"><a href="#操作系统的目标和功能" class="headerlink" title="操作系统的目标和功能"></a>操作系统的目标和功能</h2><p>操作系统是控制应用程序执行的程序，并充当应用程序和计算机硬件之间的接口</p>
+<ul>
+<li>作为用户&#x2F;计算机接口</li>
+<li>作为资源管理器（操作系统控制处理器使用其它系统资源，并控制其它程序的执行时机）</li>
+<li>易扩展性</li>
+</ul>
+<h2 id="操作系统的发展"><a href="#操作系统的发展" class="headerlink" title="操作系统的发展"></a>操作系统的发展</h2><ol>
+<li><strong>串行处理</strong>：程序员直接与计算机硬件打交道，因为当时还没操作系统。这些机器在一个控制台上运行，用机器代码编写的程序通过输入设备载入计算机。如果发生错误使得程序停止，错误原因由显示灯指示。如果程序正常完成，输出结果出现在打印机上</li>
+<li><strong>简单批处理系统</strong>：中心思想是使用一个称为监控程序的软件。通过使用这类操作系统，用户不再直接访问机器，相反，用户把卡片或磁带种的作业提交给计算机操作员，由他把这些作业按顺序组织成一批，并将整个批作业放在输入设备上，供监控程序使用。每个程序完成处理后返回到监控程序，同时，监控程序自动加载下一个程序</li>
+<li><strong>多道批处理系统</strong>：简单批处理系统提供了自动作业序列，但是处理器仍经常空闲，因为对于I&#x2F;O指令，处理器必须等到其执行完才能继续。内存空间可以保持操作系统和一个用户程序，假设内存空间容得下操作系统和两个用户程序，那么当一个作业需要等到I&#x2F;O时，处理器可以切换到另一个可能不需要等到I&#x2F;O的作业。进一步还可以扩展存储器保存三个、四个或更多的程序，并且在他们之间进行切换。这种处理称为多道程序设计或多任务处理，是现代操作系统的主要方案</li>
+<li><strong>分时系统</strong>：正如多道程序设计允许处理器同时处理多个批作业一样，它还可以用于处理多个交互作业。对于后一种情况，由于多个用户分享处理器时间，因而该技术称为分时。在分时系统中，多个用户可以通过终端同时访问系统，由操作系统控制每个用户程序以很短的时间为单位交替执行</li>
+</ol>
+<p>以下为多道批处理系统与分时系统的比较</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>批处理多道程序设计</th>
+<th>分时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主要目标</td>
+<td>充分使用处理器</td>
+<td>减小响应时间</td>
+</tr>
+<tr>
+<td>操作系统指令源</td>
+<td>作业控制语言；作业提供的命令</td>
+<td>终端输入的命令</td>
+</tr>
+</tbody></table>
+<h2 id="现代操作系统"><a href="#现代操作系统" class="headerlink" title="现代操作系统"></a>现代操作系统</h2><p>对操作系统要求上的变化速度之快不仅需要修改和增强现有的操作系统体系结构，而且需要有新的操作系统组织方法。在实验用和商用操作系统中有很多不同的方法和设计要素，大致分为以下几类：</p>
+<ul>
+<li>微内核体系结构</li>
+<li>多线程</li>
+<li>对称多处理：是一种计算机系统架构，其中多个处理器核心对称地共享系统资源和执行任务。在 SMP 架构中，每个处理器核心都可以独立执行指令，并且可以访问共享的内存、外部设备和其他系统资源。</li>
+<li>分布式操作系统：</li>
+<li>面向对象设计</li>
+</ul>
+<p><strong>大内核</strong>：至今为止大多数操作系统都有一个单体内核，操作系统应该提供的大多数功能由这些大内核提供，包括调度、文件系统、网络、设备管理器、存储管理等。典型情况下，这个大内核是作为一个进程实现的，所有元素共享相同的地址空间</p>
+<p><strong>微内核</strong>：微内核体系结构只给内核分配一些最基本的功能，包括地址空间，进程间通信和基本的调度。其它操作系统服务都是由运行在用户态下且与其他应用程序类似的进程提供，这些进程可以根据特定应用和环境定制。这种方法把内核和服务程序的开发分离开，可以为特定的应用程序或环境要求定制服务程序。可以使系统结构的设计更简单、灵活，很适合于分布式环境</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/47ad01c5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/47ad01c5.html" class="post-title-link" itemprop="url">计算机系统概述</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-05-18 00:21:17 / 修改时间：00:22:05" itemprop="dateCreated datePublished" datetime="2023-05-18T00:21:17+08:00">2023-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="基本构成"><a href="#基本构成" class="headerlink" title="基本构成"></a>基本构成</h2><p>计算机的四个主要组件</p>
+<ul>
+<li>处理器：也称为中央处理器(Central Processing Unit, 简称CPU)，是计算机系统中的一个核心组件，它是一种能够执行计算机指令的硬件设备</li>
+<li>内存：用于存储数据和程序的硬件设备，是计算机系统中的一种临时存储介质，用于暂时存放正在执行的程序和数据，以供处理器快速访问</li>
+<li>I&#x2F;O模块：是计算机系统中用于处理输入和输出设备的硬件模块，负责处理计算机系统与外部设备之间的数据传输和交互</li>
+<li>系统总线：是计算机系统中用于连接主要组件的集线器，它扮演着数据和信号传输的通道角色</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516203050.png" alt="Img"></p>
+<h2 id="指令的执行"><a href="#指令的执行" class="headerlink" title="指令的执行"></a>指令的执行</h2><p>基本指令周期，指令处理包括2步：</p>
+<ul>
+<li>处理器从存储器一次读一条指令</li>
+<li>执行每条指令</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516204104.png" alt="Img"></p>
+<p>处理器中的PC保存下一条指令的地址，IR保存当前即将执行的指令。</p>
+<p>PC：程序计数器（Program Conter），也称为指令指针或指令计数器。PC是处理器（CPU）中的一个寄存器，用于存储下一条将要执行的指令的内存地址。在执行程序时，处理器根据PC中存储的地址来获取下一条指令，并将PC的值增加以指向下一条指令的地址，从而实现顺序执行。</p>
+<p>IR：指令寄存器（Instruction Register），也称为指令缓冲寄存器或指令译码器。IR时处理器中的一个寄存器，用于存储当前正在执行的指令。当处理器从内存中读取指令并准备执行时，指令会被加载到IR中，供处理器进行解码和执行。</p>
+<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p><strong>允许“其它模块”（I&#x2F;O、存储器）中断“处理器”正常处理过程的机制</strong></p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>提高CPU利用率，防止一个程序垄断CPU资源</p>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ol>
+<li>程序中断：是操作系统中的一种机制，用于在程序执行过程中暂停当前的指令流，并转而执行一个特定的中断处理程序。</li>
+<li>时钟中断：是指由计时器或时钟设备触发的一种中断</li>
+<li>I&#x2F;O中断：是操作系统中的一种中断类型，用于处理外部设备产生的事件和请求</li>
+<li>硬件失效中断：指由于硬件故障或错误导致的计算机系统中断。当计算机系统中的硬件设备出现故障或错误时，它可能无法继续正常工作，这时系统会产生硬件失效中断信号，通知操作系统或其他软件程序中断正在进行的处理并采取相应的措施。</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516204925.png" alt="Img"></p>
+<h3 id="中断控制流"><a href="#中断控制流" class="headerlink" title="中断控制流"></a>中断控制流</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516210016.png" alt="Img"></p>
+<p>I&#x2F;O程序：</p>
+<ul>
+<li>指令序号4：为实际I&#x2F;O做准备</li>
+<li>I&#x2F;O命令：如果不使用中断，执行命令时，程序必须等待I&#x2F;O设备执行请求的函数（或周期性地检测I&#x2F;O设备的状态或轮询I&#x2F;O设备）。程序可能通过简单地重复执行一个测试操作的方式进行等待，以确定I&#x2F;O操作是否完成</li>
+<li>指令序号5：操作完成，包括设置成功或失败标签</li>
+</ul>
+<p>中断：短I&#x2F;O等待</p>
+<ul>
+<li>利用中断功能，处理器可以在I&#x2F;O操作的执行过程中执行其它指令：用户程序到达系统调用WRITE处，但涉及的I&#x2F;O程序仅包括准备代码和真正的I&#x2F;O命令。在这些为数不多的几条指令执行后，控制返回到用户程序。在这期间，外部设备忙于从计算机存储器接收数据并打印。这种I&#x2F;O操作和用户程序中指令的执行是并发的</li>
+<li>当外部设备做好服务的准备时，也就是说，当它准备好从处理器接收更多的数据时，该外部设备的I&#x2F;O模块给处理器发送一个中断请求信号。这是处理器会做出响应，暂停当前程序的处理，转去处理服务于特定I&#x2F;O设备的程序，这个程序称为中断处理程序。在对该设备的服务响应完成后，处理器恢复原先的执行</li>
+</ul>
+<p>中断：长I&#x2F;O等待</p>
+<ul>
+<li>对于如打印机等较慢的设备来说，I&#x2F;O操作比执行一系列用户指令的时间长得多，因此在下一次I&#x2F;O操作时，前一次I&#x2F;O可能还未执行完。在上图c中，第二次WRITE调用时，第一次WRITE的I&#x2F;O还未执行完，结果是用户程序会在这挂起，当前面I&#x2F;O完成后，才能继续新的WRITE调用</li>
+</ul>
+<h3 id="中断处理"><a href="#中断处理" class="headerlink" title="中断处理"></a>中断处理</h3><p>中断激活了很多事件，包括处理器硬件中的事件以及软件中的事件</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516211026.png" alt="Img"></p>
+<p>被中断程序的信息保存与恢复：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234021.png" alt="Img"></p>
+<h3 id="多个中断"><a href="#多个中断" class="headerlink" title="多个中断"></a>多个中断</h3><p>在处理一个中断的过程中，可能会发生另一个中断，处理多个中断有2种方法<br>    - <strong>当正在处理一个中断时，禁止再发生中断</strong>：如果有新的中断请求信号，处理器不予理睬。通常在处理中断期间发生的中断被挂起，当处理器再次允许中断时再处理<br>    - <strong>定义中断优先级</strong>：允许高优先级的中断处理打断低优先级的中断处理程序的允许</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234241.png" alt="Img"></p>
+<h2 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234331.png" alt="Img"></p>
+<p>从上往下看，会出现以下情况：<br>    - 每“位”的价格递减<br>    - 容量递增<br>    - 存取时间递增<br>    - 处理器访问存储器的频率笛剑（有效的基础是访问的局部性原理）</p>
+<h3 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h3><p>内存的存储周期跟不上处理器周期，因此，利用局部性原理在处理器和内存间提供一个容量小而速度快的存储器，称为高速缓存</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234533.png" alt="Img"></p>
+<p>上图中高速缓存通常分为多级：L1、L2、L3</p>
+<h2 id="直接内存存取（DMA）"><a href="#直接内存存取（DMA）" class="headerlink" title="直接内存存取（DMA）"></a>直接内存存取（DMA）</h2><p>针对I&#x2F;O操作有3种可能的技术</p>
+<ul>
+<li>可编程（控制程序）I&#x2F;O（需处理器干预）</li>
+<li>中断驱动I&#x2F;O（需处理器干预）</li>
+<li>直接内存存取</li>
+</ul>
+<p>当处理器正在执行程序并遇到一个I&#x2F;O相关的指令时，它通过给相应的I&#x2F;O模块发命令来执行这个指令：</p>
+<ol>
+<li><p>使用可编程I&#x2F;O时，I&#x2F;O模块执行请求的动作并设置I&#x2F;O状态寄存器中相应的位，<strong>但它并不进一步通知处理器，尤其是它并不中断处理器</strong>，因此处理器在执行I&#x2F;O指令后，还需定期检查I&#x2F;O模块的状态。为了确定I&#x2F;O模块是否做好了接收或发送更多数据的准备，处理器等待期间必须不断询问I&#x2F;O模块的状态，这会严重降低整个系统的性能</p>
+</li>
+<li><p>如果是中断驱动I&#x2F;O，在给I&#x2F;O模块发送I&#x2F;O命令后，处理器可以继续做其它事。当I&#x2F;O模块准备好与处理器交换数据时，会中断处理器并请求服务，处理器接着响应中断，完成后再恢复以前的执行过程。</p>
+<p> 尽管中断驱动I&#x2F;O比可编程I&#x2F;O更有效，但是<strong>处理器仍需要主动干预在存储器和I&#x2F;O模块直接的数据传输，并且任何数据传送都必须完全通过处理器</strong>。由于需要处理器干预，这两种I&#x2F;O存在下列缺陷：</p>
+<ul>
+<li>I&#x2F;O传送速度受限于处理器测试设备和提供服务的速度（数据传送受限于处理器）</li>
+<li>处理器忙于管理I&#x2F;O传送工作，必须执行很多指令以完成I&#x2F;O传送（处理器为数据传送需要做很多事）</li>
+</ul>
+</li>
+<li><p>因此，当需要移动大量数据时，需要使用一种更有效的技术：直接内存存取。DMA功能可以由系统总线种一个独立的模块完成，也可以并入到一个I&#x2F;O模块中。</p>
+</li>
+</ol>
+<p>DMA的工作方式如下，当处理器需要读写一块数据时，它给DMA模块产生一条命令，发送下列信息：</p>
+<ul>
+<li>是否请求一次读或写</li>
+<li>涉及的I&#x2F;O设备的地址</li>
+<li>开始读或写的存储单元</li>
+<li>需要读或写的子树</li>
+</ul>
+<p>之后处理器继续其它工作。处理器将这个操作委托给DMA模块，DMA模块直接与存储器交换，这个操作过程不需要处理器参与。当传送完成后，DMA模块发送一个中断信号给处理器。因此只有在开始和结束时，处理器才会参与</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518000544.png" alt="Img"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/bcc7d896.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,7 +541,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-05-14 12:56:52 / 修改时间：12:57:41" itemprop="dateCreated datePublished" datetime="2023-05-14T12:56:52+08:00">2023-05-14</time>
+      <time title="创建时间：2023-05-14 12:56:52 / 修改时间：12:57:52" itemprop="dateCreated datePublished" datetime="2023-05-14T12:56:52+08:00">2023-05-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2076,410 +2386,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/345aa0d2.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/345aa0d2.html" class="post-title-link" itemprop="url">LeetCode 454.四数相加 II</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-04-18 22:06:52 / 修改时间：22:11:03" itemprop="dateCreated datePublished" datetime="2023-04-18T22:06:52+08:00">2023-04-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230418212548.png"></p>
-<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums1 = [<span class="number">1</span>,<span class="number">2</span>], nums2 = [<span class="number">-2</span>,<span class="number">-1</span>], nums3 = [<span class="number">-1</span>,<span class="number">2</span>], nums4 = [<span class="number">0</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">两个元组如下：</span><br><span class="line"><span class="number">1.</span> (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>) -&gt; nums1[<span class="number">0</span>] + nums2[<span class="number">0</span>] + nums3[<span class="number">0</span>] + nums4[<span class="number">1</span>] = <span class="number">1</span> + (<span class="number">-2</span>) + (<span class="number">-1</span>) + <span class="number">2</span> = <span class="number">0</span></span><br><span class="line"><span class="number">2.</span> (<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>) -&gt; nums1[<span class="number">1</span>] + nums2[<span class="number">1</span>] + nums3[<span class="number">0</span>] + nums4[<span class="number">0</span>] = <span class="number">2</span> + (<span class="number">-1</span>) + (<span class="number">-1</span>) + <span class="number">0</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ul>
-<li><code>n == nums1.length</code></li>
-<li><code>n == nums2.length</code></li>
-<li><code>n == nums3.length</code></li>
-<li><code>n == nums4.length</code></li>
-<li><code>1 &lt;= n &lt;= 200</code></li>
-<li><code>-2^28 &lt;= nums1[i], nums2[i], nums3[i], nums4[i] &lt;= 2^28</code></li>
-</ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>刚开始的时候我想着这个数据真小，才<code>200</code>，因此我打算直接比完全暴力又那么不暴力一点的做法，用哈希存储前三个数组能够组成的和的个数，最后再遍历第四个数组即可。但是这样没想到超时了！后来一想，这样的时间复杂度是$O(n^3)$，这里有四个数组，完全可以用更小的时间复杂度来做。我们可以将四个数组两两分组，时间复杂度为$O(n^2)$，这样的话我们只要进行两次的两个数组之间的一一对应即可。</p>
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们用hash表来存储第一和第二两个数组每一种组合的和的个数，再组合另外两个数组的元素，每组合一次，就在hash表中查看是否有这个和的相反数，如果有，则加入这个相反数的二元组的个数。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">fourSumCount</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2, vector&lt;<span class="type">int</span>&gt;&amp; nums3, vector&lt;<span class="type">int</span>&gt;&amp; nums4)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num1 : nums1)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> num2 : nums2)&#123;</span><br><span class="line">                hash[num1 + num2]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num1 : nums3)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> num2 : nums4)&#123;</span><br><span class="line">                ans += hash[-num1 - num2];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/8c31560b.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/8c31560b.html" class="post-title-link" itemprop="url">vim常用命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-04-18 00:21:16 / 修改时间：00:21:53" itemprop="dateCreated datePublished" datetime="2023-04-18T00:21:16+08:00">2023-04-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
-<li><p>命令行模式下的文本编辑器</p>
-</li>
-<li><p>根据文件扩展名自动判别编程语言。支持代码缩进、代码高亮等功能。</p>
-</li>
-<li><p>使用方式：vim filename</p>
-<p> 如果已有该文件，则打开它</p>
-<p> 如果没有该文件，则打开一个新的文件，并命名为filename</p>
-</li>
-</ol>
-<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><ol>
-<li><p>一般命令模式</p>
-<p> 默认模式。命令输入方式：类似于打游戏放技能，按不同字符，即可进行不同操作。可以复制、粘贴、删除文本等。</p>
-</li>
-<li><p>编辑模式</p>
-<p> 在一般命令模式里按下<code>i</code>，会进入编辑模式</p>
-<p> 按下<code>ESC</code>会退出编辑模式，返回到一般命令模式。</p>
-</li>
-<li><p>命令行模式</p>
-<p> 在一般命令模式里按下:&#x2F;?三个字母中的任意一个，会进入命令行模式。命令行在最下面。</p>
-<p> 可以查找、替换、保存、退出、配置编辑器等。</p>
-</li>
-</ol>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><table>
-<thead>
-<tr>
-<th>i</th>
-<th>进入编辑模式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ESC</td>
-<td>进入一般命令模式</td>
-</tr>
-<tr>
-<td>h 或 左箭头键</td>
-<td>光标向左移动一个字符</td>
-</tr>
-<tr>
-<td>j 或 向下箭头</td>
-<td>光标向下移动一个字符</td>
-</tr>
-<tr>
-<td>k 或 向上箭头</td>
-<td>光标向上移动一个字符</td>
-</tr>
-<tr>
-<td>l 或 向右箭头</td>
-<td>光标向右移动一个字符</td>
-</tr>
-<tr>
-<td>n<Space></td>
-<td>n表示数字，按下数字后再按空格，光标会向右移动这一行的n个字符</td>
-</tr>
-<tr>
-<td>0 或 功能键[Home]</td>
-<td>光标移动到本行开头</td>
-</tr>
-<tr>
-<td>$ 或 功能键[End]</td>
-<td>光标移动到本行末尾</td>
-</tr>
-<tr>
-<td>G</td>
-<td>光标移动到最后一行</td>
-</tr>
-<tr>
-<td>:n 或 nG</td>
-<td>n为数字，光标移动到第n行</td>
-</tr>
-<tr>
-<td>gg</td>
-<td>光标移动到第一行，相当于1G</td>
-</tr>
-<tr>
-<td>n<Enter></td>
-<td>n为数字，光标向下移动n行</td>
-</tr>
-<tr>
-<td>&#x2F;word</td>
-<td>向光标之下寻找第一个值为word的字符串</td>
-</tr>
-<tr>
-<td>?word</td>
-<td>向光标之上寻找第一个值为word的字符串</td>
-</tr>
-<tr>
-<td>n</td>
-<td>重复前一个查找操作</td>
-</tr>
-<tr>
-<td>N</td>
-<td>反向重复前一个查找操作</td>
-</tr>
-<tr>
-<td>:n1,n2s&#x2F;word1&#x2F;word2&#x2F;g</td>
-<td>n1与n2为数字，在第n1行与n2行之间寻找word1这个字符串，并将该字符串替换为word2</td>
-</tr>
-<tr>
-<td>:1,$s&#x2F;word1&#x2F;word2&#x2F;g</td>
-<td>将全文的word1替换为word2</td>
-</tr>
-<tr>
-<td>:1,$s&#x2F;word1&#x2F;word2&#x2F;gc</td>
-<td>将全文的word1替换为word2，且在替换前要求用户确认</td>
-</tr>
-<tr>
-<td>v</td>
-<td>选中文本</td>
-</tr>
-<tr>
-<td>d</td>
-<td>删除选中的文本</td>
-</tr>
-<tr>
-<td>dd</td>
-<td>删除当前行</td>
-</tr>
-<tr>
-<td>y</td>
-<td>复制选中的文本</td>
-</tr>
-<tr>
-<td>yy</td>
-<td>复制当前行</td>
-</tr>
-<tr>
-<td>p</td>
-<td>将复制的数据在光标的下一行&#x2F;下一个位置粘贴</td>
-</tr>
-<tr>
-<td>u</td>
-<td>撤销</td>
-</tr>
-<tr>
-<td>Ctrl + r</td>
-<td>取消撤销</td>
-</tr>
-<tr>
-<td>大于号 &gt;</td>
-<td>将选中的文本整体向右缩进一次</td>
-</tr>
-<tr>
-<td>小于号 &lt;</td>
-<td>将选中的文本整体向左缩进一次</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>保存</td>
-</tr>
-<tr>
-<td>:w!</td>
-<td>强制保存</td>
-</tr>
-<tr>
-<td>:q</td>
-<td>退出</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>强制退出</td>
-</tr>
-<tr>
-<td>:wq</td>
-<td>保存并推出</td>
-</tr>
-<tr>
-<td>:set paste</td>
-<td>设置成粘贴模式，取消代码自动缩进</td>
-</tr>
-<tr>
-<td>:set nopaste</td>
-<td>取消粘贴模式，开启代码自动缩进</td>
-</tr>
-<tr>
-<td>:set nu</td>
-<td>显示行号</td>
-</tr>
-<tr>
-<td>:set nonu</td>
-<td>隐藏行号</td>
-</tr>
-<tr>
-<td>gg&#x3D;G</td>
-<td>将全文代码格式化</td>
-</tr>
-<tr>
-<td>:noh</td>
-<td>关闭查找关键词高亮</td>
-</tr>
-<tr>
-<td>Ctrl + q</td>
-<td>当vim卡死时，可以取消当前正在执行的命令</td>
-</tr>
-</tbody></table>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>如果每次用vim编辑文件时，会自动创建一个.filename.swp的临时文件</p>
-<p>如果打开某个文件时，该文件的swp文件已存在，则会报错。此时解决办法有两种：</p>
-<ol>
-<li>找到正在打开该文件的程序，并推出</li>
-<li>直接删掉该swp文件即可</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -2505,14 +2411,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">207k</span>
+    <span title="站点总字数">212k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:17</span>
+    <span title="站点阅读时长">6:25</span>
   </span>
 </div>
 <div class="busuanzi-count">
