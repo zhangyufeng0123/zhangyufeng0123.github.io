@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="j_rl1fPa6H1312ggKmYdh8iewr9_U8gvyoP6yI9nnaU">
+  <meta name="baidu-site-verification" content="codeva-S87KHGfNCp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zyfblogs.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一个进程只能在内存中执行，因此这个存储器称为实存储器，简称实存。但是程序员或用户感觉到的是一个更大的内存，通常它被分配在磁盘上，称为虚拟内存，简称虚存 虚存使得程序不必完全载入内存才能运行，每次可以只有部分驻留在内存中。如果处理器访问一个不在内存中的逻辑地址，则产生一个中断，说明产生了内存访问故障。操作系统把被中断的进程置于阻塞态。为了能继续执行这个进程，操作系统必须把包含引发访问故障的逻辑地址的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟内存">
+<meta property="og:url" content="https://www.zyfblogs.xyz/posts/f79e4123.html">
+<meta property="og:site_name" content="G.M. Blog">
+<meta property="og:description" content="一个进程只能在内存中执行，因此这个存储器称为实存储器，简称实存。但是程序员或用户感觉到的是一个更大的内存，通常它被分配在磁盘上，称为虚拟内存，简称虚存 虚存使得程序不必完全载入内存才能运行，每次可以只有部分驻留在内存中。如果处理器访问一个不在内存中的逻辑地址，则产生一个中断，说明产生了内存访问故障。操作系统把被中断的进程置于阻塞态。为了能继续执行这个进程，操作系统必须把包含引发访问故障的逻辑地址的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102250.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102308.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102410.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102429.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102505.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102723.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102738.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102915.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103149.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103530.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103734.png">
+<meta property="article:published_time" content="2023-05-20T03:14:05.000Z">
+<meta property="article:modified_time" content="2023-05-20T03:14:22.797Z">
+<meta property="article:author" content="GotoMove">
+<meta property="article:tag" content="blogs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102250.png">
+
+
+<link rel="canonical" href="https://www.zyfblogs.xyz/posts/f79e4123.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zyfblogs.xyz/posts/f79e4123.html","path":"posts/f79e4123.html","title":"虚拟内存"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>虚拟内存 | G.M. Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">G.M. Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">You juan, I juan</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-number">1.</span> <span class="nav-text">分页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E8%A1%A8"><span class="nav-number">1.1.</span> <span class="nav-text">页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BA%A7%E5%88%86%E9%A1%B5%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.2.</span> <span class="nav-text">一级分页系统中的地址转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%BA%A7%E5%88%86%E9%A1%B5%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.3.</span> <span class="nav-text">两级分页系统中的地址转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%92%E6%8E%92%E9%A1%B5%E8%A1%A8"><span class="nav-number">1.4.</span> <span class="nav-text">倒排页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E6%A3%80%E6%B5%8B%E7%BC%93%E5%86%B2%E5%8C%BA-TLB"><span class="nav-number">1.5.</span> <span class="nav-text">转换检测缓冲区(TLB)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%AE%B5"><span class="nav-number">2.</span> <span class="nav-text">分段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.1.</span> <span class="nav-text">分段系统中的地址转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E6%8A%A4%E5%92%8C%E5%85%B1%E4%BA%AB"><span class="nav-number">2.2.</span> <span class="nav-text">保护和共享</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">段页式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.1.</span> <span class="nav-text">段页式系统中的地址转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%85%B3%E7%AD%96%E7%95%A5"><span class="nav-number">4.</span> <span class="nav-text">内存管理中的相关策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E7%AD%96%E7%95%A5"><span class="nav-number">4.1.</span> <span class="nav-text">读取策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%BE%E7%BD%AE%E7%AD%96%E7%95%A5"><span class="nav-number">4.2.</span> <span class="nav-text">放置策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2%E7%AD%96%E7%95%A5"><span class="nav-number">4.3.</span> <span class="nav-text">置换策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%BB%E7%95%99%E9%9B%86%E7%AE%A1%E7%90%86"><span class="nav-number">4.4.</span> <span class="nav-text">驻留集管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%AD%96%E7%95%A5"><span class="nav-number">4.5.</span> <span class="nav-text">清除策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%8E%A7%E5%88%B6"><span class="nav-number">4.6.</span> <span class="nav-text">加载控制</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="GotoMove"
+      src="/images/main.jpg">
+  <p class="site-author-name" itemprop="name">GotoMove</p>
+  <div class="site-description" itemprop="description">sharing blogs</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhangyufeng0123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhangyufeng0123" rel="noopener me external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/f79e4123.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/main.jpg">
+      <meta itemprop="name" content="GotoMove">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.M. Blog">
+      <meta itemprop="description" content="sharing blogs">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="虚拟内存 | G.M. Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          虚拟内存
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-05-20 11:14:05 / 修改时间：11:14:22" itemprop="dateCreated datePublished" datetime="2023-05-20T11:14:05+08:00">2023-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>一个进程只能在内存中执行，因此这个存储器称为实存储器，简称实存。但是程序员或用户感觉到的是一个更大的内存，通常它被分配在磁盘上，称为虚拟内存，简称虚存</p>
+<p><strong>虚存使得程序不必完全载入内存才能运行</strong>，每次可以只有部分驻留在内存中。如果处理器访问一个不在内存中的逻辑地址，则产生一个中断，说明产生了内存访问故障。操作系统把被中断的进程置于阻塞态。为了能继续执行这个进程，操作系统必须把包含引发访问故障的逻辑地址的进程块读入内存。为此，操作系统产生一个磁盘I&#x2F;O读请求。在此期间，可以调度另一个进程运行。一旦需要的块被读入内存，则产生一个I&#x2F;O中断，操作系统把由于缺少该块而被阻塞的进程置为就绪态</p>
+<p><strong>不必将程序完全载入即可运行使得程序可以比实际内存更大</strong></p>
+<p><strong>系统抖动</strong>：如果一个块正好在将要被用到之前换出，操作系统就不得不很快把它取回来。太多这类操作会导致一种称为系统抖动的情况，处理器大部分时间都用于交换块，而不是执行指令</p>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><h3 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h3><ul>
+<li>每个进程都有自己的页表</li>
+<li>由于进程某些页可能不在内存中，所以页表项中有一位表示该页是否在内存中</li>
+<li>页表项有一位表示该页(从上次载入)是否已经被修改</li>
+<li>页表的长度可以基于进程的长度而变化，因此不能在寄存器中保存它（对于占据大量虚存空间的程序，其页表很大，因此页表通常保存在虚存中，因此页表也服从分页管理）</li>
+<li>一个程序正在运行时，页表至少有一部分必须在内存中</li>
+</ul>
+<h3 id="一级分页系统中的地址转换"><a href="#一级分页系统中的地址转换" class="headerlink" title="一级分页系统中的地址转换"></a>一级分页系统中的地址转换</h3><p>一级分页系统中的虚拟地址和页表项：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102250.png" alt="Img"></p>
+<p>地址转换：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102308.png" alt="Img"></p>
+<h3 id="两级分页系统中的地址转换"><a href="#两级分页系统中的地址转换" class="headerlink" title="两级分页系统中的地址转换"></a>两级分页系统中的地址转换</h3><p>两级页表结构（假设页大小为4KB，每个页表项大小为4B）：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102410.png" alt="Img"></p>
+<p>地址转换：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102429.png" alt="Img"></p>
+<h3 id="倒排页表"><a href="#倒排页表" class="headerlink" title="倒排页表"></a>倒排页表</h3><p>一级和两级分页系统中的页表存在一个缺陷：页表的大小与虚拟地址空间的大小成正比</p>
+<p>一种替代方法是使用一个倒排页表，其机构如下：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102505.png" alt="Img"></p>
+<p>页表结构之所以称为”倒排“，是因为它使用页框号而非虚拟页号来索引页表项</p>
+<h3 id="转换检测缓冲区-TLB"><a href="#转换检测缓冲区-TLB" class="headerlink" title="转换检测缓冲区(TLB)"></a>转换检测缓冲区(TLB)</h3><p>原则上，每次虚拟内存访问可能引起两次物理内存访问：一次取相应的页表项，一次取需要的数据。因此，简单的虚拟内存方案会导致内存访问时间加倍</p>
+<p>TLB保存在高速缓冲存储器中，它记录了最近用到过的页表项。给定一个虚拟地址，处理器首先检查TLB：</p>
+<ul>
+<li>如果需要的页表项在其中，则检索页框号并形成实地址</li>
+<li>如果未找到需要的页表项，则处理器用页号检索进程页表，并检查相应的页表项。<ul>
+<li>如果”存在位“置位，则页在内存中，处理器从页表项中检索页框号形成实地址。并更新TLB</li>
+<li>如果”存在位”没置位，表示需要的页不在内存中，这时发生缺页中断，因此离开硬件作用范围，调用操作系统，操作系统负责载入所需要的页，并更新页表</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102723.png" alt="Img"></p>
+<p>虚拟机制必须与高速缓存系统进行交互，一个虚拟地址通常为页号、偏移量的形式。首先，内存系统查看TLB中是否存在匹配的页表项，如果存在，通过把页框号和偏移量组合起来产生实际地址（物理地址）；如果不存在，则从页表中读取页表项。一旦产生了一个由标记和其余部分组成的实地址，则查看高速缓存中是否存在包含这个字的块。如果有，把它返回给CPU；如果没有，从内存中检索这个字</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102738.png" alt="Img"></p>
+<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><ul>
+<li>每个进程都有一个唯一的段表。</li>
+<li>进程可能只有一部分段在内存中，所以段表项中有一位表明相应段是否在内存中</li>
+<li>段表项有一位修改位表明相应段从上一次载入起是否被改变</li>
+<li>根据进程大小，段表长度可变，而无法在寄存器中保存</li>
+</ul>
+<h3 id="分段系统中的地址转换"><a href="#分段系统中的地址转换" class="headerlink" title="分段系统中的地址转换"></a>分段系统中的地址转换</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102915.png" alt="Img"></p>
+<h3 id="保护和共享"><a href="#保护和共享" class="headerlink" title="保护和共享"></a>保护和共享</h3><p>分段有助于实现保护与共享机制。由于<strong>每个段表项包括一个长度和一个基地址</strong>，因而程序不会不经意地访问超出该段的内存单元。为实现共享，一个段可能在多个进程的段表中被引用</p>
+<h2 id="段页式"><a href="#段页式" class="headerlink" title="段页式"></a>段页式</h2><ul>
+<li>分页对程序员是透明的，它消除了外部碎片，从而可以更有效地使用内存</li>
+<li>分段对程序员是可见的，它具有处理不断增长的数据结构的能力以及支持共享和保护的能力</li>
+</ul>
+<p>分段通常对于程序员可见，并且作为组织程序和数据的一种方便手段提供给程序员。一般情况下，程序员或编译器会把程序和数据指定到不同的段。为了实现模块化程序设计的目的，程序或数据可能进一步分成多个段。这种方法最不方便的地方是程序员必须清楚段的最大长度限制</p>
+<p>可以将分页和分段结合，即段页式</p>
+<p>在段页式系统中，用户的地址空间被程序员划分成许多段。每个段依次划分成许多固定大小的页，页的长度等于内存中的页框大小。如果某一段的长度小于一页，则该段只占据一页。从程序员角度看，逻辑地址仍然由段号和段偏移量组成；从系统角度看，段偏移量可视为指定段中的一个页号和页偏移量</p>
+<h3 id="段页式系统中的地址转换"><a href="#段页式系统中的地址转换" class="headerlink" title="段页式系统中的地址转换"></a>段页式系统中的地址转换</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103149.png" alt="Img"></p>
+<h2 id="内存管理中的相关策略"><a href="#内存管理中的相关策略" class="headerlink" title="内存管理中的相关策略"></a>内存管理中的相关策略</h2><p>操作系统的内存管理设计取决于三个基本方面的选择：</p>
+<ol>
+<li>是否使用虚存技术</li>
+<li>是使用分页还是使用分段，或者是二者组合</li>
+<li><strong>为各种存储管理特征采用的算法</strong></li>
+</ol>
+<h3 id="读取策略"><a href="#读取策略" class="headerlink" title="读取策略"></a>读取策略</h3><p>读取策略确定一个页何时取入内存</p>
+<ul>
+<li><strong>请求分页</strong>：只有当访问到某页中的一个单元时才将该页取入内存</li>
+<li><strong>预先分页</strong>：读取的页并不是缺页中断请求的页，如果一个进程的页被连续存储在辅存中，则一次读取许多连续的页</li>
+</ul>
+<h3 id="放置策略"><a href="#放置策略" class="headerlink" title="放置策略"></a>放置策略</h3><p>放置策略决定一个进程块驻留在实存中的什么地方</p>
+<ul>
+<li>在一个纯粹的分段系统中，放置策略并不是重要的设计问题（诸如最佳适配、首次适配等都可供选择）</li>
+<li>对于纯粹的分页系统或段页式系统，如何放置通常没有关系，因为地址转换硬件和内存访问硬件可以以相同的效率为任何页框组合执行它们的功能</li>
+</ul>
+<h3 id="置换策略"><a href="#置换策略" class="headerlink" title="置换策略"></a>置换策略</h3><p>置换策略决定在必须读取一个新页时，应该置换内存中的哪一页</p>
+<p><strong>页框锁定</strong>：如果一个页框被锁定，当前保存在该页框中的页就不能被置换。大部分操作系统内核和重要的控制结构就保存在锁定的页框中。此外，I&#x2F;O缓存区和其它对时间要求严格的区域也可能锁定在内存的页框中</p>
+<p><strong>基本置换算法</strong></p>
+<ul>
+<li>**最佳(OPT)**：置换下次访问距当前时间最长的那些页，该算法能导致最少的缺页中断（由于要求操作系统必须知道将来的事件，因此不可能实现，而是作为一种标准来衡量其它算法的性能）</li>
+<li>**最近最少使用(LRU)**：置换内存中上次使用距当前最远的页，LRU性能接近于OPT，但是难以实现（一种方法是为每一页添加一个最后一次访问的时间戳，但是开销较大</li>
+<li>**先进先出(FIFO)**：把分配给进程的页框视为一个循环缓冲区，按循环的方式移动页。实现简单，但性能较差（隐含的逻辑是置换驻留在内存中时间最长的页，经常会出现部分程序或数据在整个程序的生命周期中使用频率都很高的情况，如果使用FIFO这些页会需要反复地被换入换出）。FIFO还会产生当所分配的物理块数增大而页故障不减反增的异常现象，称为Belady异常</li>
+<li><strong>时钟(CLOCK)<strong>：时钟策略是试图以较小的开销接近LRU性能的一种算法，最简单的时钟策略需要给每一页关联一个附加位，称为使用位。当某一页首次装入内存中时，该页的使用位设置为1；当该页随后被访问到时，它的使用位也会被置为1。当需要置换一页时，操作系统扫描缓冲区，以查找使用位被置为0的一个页框。每当遇到一个使用位为1的页框时，就将该位重新置为0（</strong>只有寻找置换页和发生置换时，指针会移动。如果当前需要访问的页在内存中，即使不是当前指针指向的页，也只是将被访问的页置为1，而不发送指针移动，如下图右下角CLOCK策略中最后一次访问2</strong>）</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103530.png" alt="Img"></p>
+<h3 id="驻留集管理"><a href="#驻留集管理" class="headerlink" title="驻留集管理"></a>驻留集管理</h3><p>对于分页式的虚拟内存，在准备执行时，不需要也不可能把一个进程的所有页都读入内存。因此，操作系统必须决定读取多少页，即给特定的进程分配多大的内存空间。需要考虑以下几个因素：</p>
+<ul>
+<li>分配给一个进程的内存越少，在任何时候驻留在内存中的进程数就越多（这就增加了操作系统至少找到一个就绪进程的可能）</li>
+<li>如果一个进程在内存中的页数比较少，尽管有局部性原理，缺页率仍然相对较高</li>
+<li>如果分配过多页，由于局部性原理，该进程的缺页率没有明显的变化</li>
+</ul>
+<p>基于上述因素，通常采用两种策略：</p>
+<ol>
+<li><strong>固定分配策略</strong>：为一个进程在内存中分配固定数目的页框用于执行时使用，这个数目在最初加载时（创建进程时）决定（可以根据进程类型或程序员的需要确定）。一旦发生缺页中断，进程的一页必须被它所需要的页面置换</li>
+<li><strong>可变分配策略</strong>：允许分配给一个进程的页框在进程的生命周期中不断地变化。如果缺页中断多，则多分配一些；缺页中断少，适当减少分配。这种方法的难点在于要求操作系统评估活动进程的行为</li>
+</ol>
+<p><strong>置换范围</strong></p>
+<ul>
+<li><strong>局部置换策略</strong>：仅仅在产生缺页的进程的驻留页中选择</li>
+<li><strong>全局置换策略</strong>：把内存中所有未被锁定的页都视为置换的候选页，而不管它们属于哪个进程</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103734.png" alt="Img"></p>
+<ul>
+<li><strong>可变分配、全局范围</strong>：发生缺页时，如果存在空闲页框，则使用空闲页框；否则在全局页框中选择置换</li>
+<li><strong>可变分配、局部范围</strong>：不时评估进程的页框分配情况，增加或减少分配给它的页框</li>
+</ul>
+<h3 id="清除策略"><a href="#清除策略" class="headerlink" title="清除策略"></a>清除策略</h3><p>清除策略与读取策略相反，它用于确定在何时将一个被修改过的页写回辅存，通常有2种选择</p>
+<ul>
+<li><strong>请求式清除</strong>：只有当一页被选择用于置换时，才被写回辅存（可以减少写页，但意味着发生缺页中断的进程在解除阻塞之前必须等待两次页传送，这可能降低处理器的利用率）</li>
+<li><strong>预约试清除</strong>：将被修改的多个页在需要用到它们占据的页框之前成批地写回辅存（并没有太大意义，因为这些页中大部分常常会在置换之前又被修改，辅存传送能力有限，不应该浪费在不太需要的清除操作上）</li>
+</ul>
+<p>比较好的方法是结合页缓冲技术</p>
+<h3 id="加载控制"><a href="#加载控制" class="headerlink" title="加载控制"></a>加载控制</h3><p>加载控制决定驻留在内存中的进程数目，称为系统并发度</p>
+<p>并发度太低会导致处理器利用率不高，并发度太高会发生系统抖动</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/46bf65ac.html" rel="prev" title="并发">
+                  <i class="fa fa-chevron-left"></i> 并发
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GotoMove</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">234k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:06</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
