@@ -1,2285 +1,321 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/main.jpg">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/main.jpg">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="j_rl1fPa6H1312ggKmYdh8iewr9_U8gvyoP6yI9nnaU">
-  <meta name="baidu-site-verification" content="codeva-S87KHGfNCp">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zyfblogs.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="sharing blogs">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>G.M. Blog - You juan, I juan</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="sharing blogs">
 <meta property="og:type" content="website">
 <meta property="og:title" content="G.M. Blog">
 <meta property="og:url" content="https://www.zyfblogs.xyz/index.html">
 <meta property="og:site_name" content="G.M. Blog">
 <meta property="og:description" content="sharing blogs">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zyfblogs.xyz/img/main.jpg">
 <meta property="article:author" content="GotoMove">
 <meta property="article:tag" content="blogs">
 <meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://www.zyfblogs.xyz/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>G.M. Blog</title>
-  
-
-
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">G.M. Blog</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">You juan, I juan</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="GotoMove"
-      src="/images/main.jpg">
-  <p class="site-author-name" itemprop="name">GotoMove</p>
-  <div class="site-description" itemprop="description">sharing blogs</div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">85</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">31</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/zhangyufeng0123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhangyufeng0123" rel="noopener me external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-  </div>
-
-        </div>
-      </div>
-        <div class="back-to-top animated" role="button" aria-label="返回顶部">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-    </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/f79e4123.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/f79e4123.html" class="post-title-link" itemprop="url">虚拟内存</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-20 11:14:05 / 修改时间：11:14:29" itemprop="dateCreated datePublished" datetime="2023-05-20T11:14:05+08:00">2023-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>7 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一个进程只能在内存中执行，因此这个存储器称为实存储器，简称实存。但是程序员或用户感觉到的是一个更大的内存，通常它被分配在磁盘上，称为虚拟内存，简称虚存</p>
-<p><strong>虚存使得程序不必完全载入内存才能运行</strong>，每次可以只有部分驻留在内存中。如果处理器访问一个不在内存中的逻辑地址，则产生一个中断，说明产生了内存访问故障。操作系统把被中断的进程置于阻塞态。为了能继续执行这个进程，操作系统必须把包含引发访问故障的逻辑地址的进程块读入内存。为此，操作系统产生一个磁盘I&#x2F;O读请求。在此期间，可以调度另一个进程运行。一旦需要的块被读入内存，则产生一个I&#x2F;O中断，操作系统把由于缺少该块而被阻塞的进程置为就绪态</p>
-<p><strong>不必将程序完全载入即可运行使得程序可以比实际内存更大</strong></p>
-<p><strong>系统抖动</strong>：如果一个块正好在将要被用到之前换出，操作系统就不得不很快把它取回来。太多这类操作会导致一种称为系统抖动的情况，处理器大部分时间都用于交换块，而不是执行指令</p>
-<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><h3 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h3><ul>
-<li>每个进程都有自己的页表</li>
-<li>由于进程某些页可能不在内存中，所以页表项中有一位表示该页是否在内存中</li>
-<li>页表项有一位表示该页(从上次载入)是否已经被修改</li>
-<li>页表的长度可以基于进程的长度而变化，因此不能在寄存器中保存它（对于占据大量虚存空间的程序，其页表很大，因此页表通常保存在虚存中，因此页表也服从分页管理）</li>
-<li>一个程序正在运行时，页表至少有一部分必须在内存中</li>
-</ul>
-<h3 id="一级分页系统中的地址转换"><a href="#一级分页系统中的地址转换" class="headerlink" title="一级分页系统中的地址转换"></a>一级分页系统中的地址转换</h3><p>一级分页系统中的虚拟地址和页表项：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102250.png" alt="Img"></p>
-<p>地址转换：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102308.png" alt="Img"></p>
-<h3 id="两级分页系统中的地址转换"><a href="#两级分页系统中的地址转换" class="headerlink" title="两级分页系统中的地址转换"></a>两级分页系统中的地址转换</h3><p>两级页表结构（假设页大小为4KB，每个页表项大小为4B）：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102410.png" alt="Img"></p>
-<p>地址转换：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102429.png" alt="Img"></p>
-<h3 id="倒排页表"><a href="#倒排页表" class="headerlink" title="倒排页表"></a>倒排页表</h3><p>一级和两级分页系统中的页表存在一个缺陷：页表的大小与虚拟地址空间的大小成正比</p>
-<p>一种替代方法是使用一个倒排页表，其机构如下：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102505.png" alt="Img"></p>
-<p>页表结构之所以称为”倒排“，是因为它使用页框号而非虚拟页号来索引页表项</p>
-<h3 id="转换检测缓冲区-TLB"><a href="#转换检测缓冲区-TLB" class="headerlink" title="转换检测缓冲区(TLB)"></a>转换检测缓冲区(TLB)</h3><p>原则上，每次虚拟内存访问可能引起两次物理内存访问：一次取相应的页表项，一次取需要的数据。因此，简单的虚拟内存方案会导致内存访问时间加倍</p>
-<p>TLB保存在高速缓冲存储器中，它记录了最近用到过的页表项。给定一个虚拟地址，处理器首先检查TLB：</p>
-<ul>
-<li>如果需要的页表项在其中，则检索页框号并形成实地址</li>
-<li>如果未找到需要的页表项，则处理器用页号检索进程页表，并检查相应的页表项。<ul>
-<li>如果”存在位“置位，则页在内存中，处理器从页表项中检索页框号形成实地址。并更新TLB</li>
-<li>如果”存在位”没置位，表示需要的页不在内存中，这时发生缺页中断，因此离开硬件作用范围，调用操作系统，操作系统负责载入所需要的页，并更新页表</li>
-</ul>
-</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102723.png" alt="Img"></p>
-<p>虚拟机制必须与高速缓存系统进行交互，一个虚拟地址通常为页号、偏移量的形式。首先，内存系统查看TLB中是否存在匹配的页表项，如果存在，通过把页框号和偏移量组合起来产生实际地址（物理地址）；如果不存在，则从页表中读取页表项。一旦产生了一个由标记和其余部分组成的实地址，则查看高速缓存中是否存在包含这个字的块。如果有，把它返回给CPU；如果没有，从内存中检索这个字</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102738.png" alt="Img"></p>
-<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><ul>
-<li>每个进程都有一个唯一的段表。</li>
-<li>进程可能只有一部分段在内存中，所以段表项中有一位表明相应段是否在内存中</li>
-<li>段表项有一位修改位表明相应段从上一次载入起是否被改变</li>
-<li>根据进程大小，段表长度可变，而无法在寄存器中保存</li>
-</ul>
-<h3 id="分段系统中的地址转换"><a href="#分段系统中的地址转换" class="headerlink" title="分段系统中的地址转换"></a>分段系统中的地址转换</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519102915.png" alt="Img"></p>
-<h3 id="保护和共享"><a href="#保护和共享" class="headerlink" title="保护和共享"></a>保护和共享</h3><p>分段有助于实现保护与共享机制。由于<strong>每个段表项包括一个长度和一个基地址</strong>，因而程序不会不经意地访问超出该段的内存单元。为实现共享，一个段可能在多个进程的段表中被引用</p>
-<h2 id="段页式"><a href="#段页式" class="headerlink" title="段页式"></a>段页式</h2><ul>
-<li>分页对程序员是透明的，它消除了外部碎片，从而可以更有效地使用内存</li>
-<li>分段对程序员是可见的，它具有处理不断增长的数据结构的能力以及支持共享和保护的能力</li>
-</ul>
-<p>分段通常对于程序员可见，并且作为组织程序和数据的一种方便手段提供给程序员。一般情况下，程序员或编译器会把程序和数据指定到不同的段。为了实现模块化程序设计的目的，程序或数据可能进一步分成多个段。这种方法最不方便的地方是程序员必须清楚段的最大长度限制</p>
-<p>可以将分页和分段结合，即段页式</p>
-<p>在段页式系统中，用户的地址空间被程序员划分成许多段。每个段依次划分成许多固定大小的页，页的长度等于内存中的页框大小。如果某一段的长度小于一页，则该段只占据一页。从程序员角度看，逻辑地址仍然由段号和段偏移量组成；从系统角度看，段偏移量可视为指定段中的一个页号和页偏移量</p>
-<h3 id="段页式系统中的地址转换"><a href="#段页式系统中的地址转换" class="headerlink" title="段页式系统中的地址转换"></a>段页式系统中的地址转换</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103149.png" alt="Img"></p>
-<h2 id="内存管理中的相关策略"><a href="#内存管理中的相关策略" class="headerlink" title="内存管理中的相关策略"></a>内存管理中的相关策略</h2><p>操作系统的内存管理设计取决于三个基本方面的选择：</p>
-<ol>
-<li>是否使用虚存技术</li>
-<li>是使用分页还是使用分段，或者是二者组合</li>
-<li><strong>为各种存储管理特征采用的算法</strong></li>
-</ol>
-<h3 id="读取策略"><a href="#读取策略" class="headerlink" title="读取策略"></a>读取策略</h3><p>读取策略确定一个页何时取入内存</p>
-<ul>
-<li><strong>请求分页</strong>：只有当访问到某页中的一个单元时才将该页取入内存</li>
-<li><strong>预先分页</strong>：读取的页并不是缺页中断请求的页，如果一个进程的页被连续存储在辅存中，则一次读取许多连续的页</li>
-</ul>
-<h3 id="放置策略"><a href="#放置策略" class="headerlink" title="放置策略"></a>放置策略</h3><p>放置策略决定一个进程块驻留在实存中的什么地方</p>
-<ul>
-<li>在一个纯粹的分段系统中，放置策略并不是重要的设计问题（诸如最佳适配、首次适配等都可供选择）</li>
-<li>对于纯粹的分页系统或段页式系统，如何放置通常没有关系，因为地址转换硬件和内存访问硬件可以以相同的效率为任何页框组合执行它们的功能</li>
-</ul>
-<h3 id="置换策略"><a href="#置换策略" class="headerlink" title="置换策略"></a>置换策略</h3><p>置换策略决定在必须读取一个新页时，应该置换内存中的哪一页</p>
-<p><strong>页框锁定</strong>：如果一个页框被锁定，当前保存在该页框中的页就不能被置换。大部分操作系统内核和重要的控制结构就保存在锁定的页框中。此外，I&#x2F;O缓存区和其它对时间要求严格的区域也可能锁定在内存的页框中</p>
-<p><strong>基本置换算法</strong></p>
-<ul>
-<li>**最佳(OPT)**：置换下次访问距当前时间最长的那些页，该算法能导致最少的缺页中断（由于要求操作系统必须知道将来的事件，因此不可能实现，而是作为一种标准来衡量其它算法的性能）</li>
-<li>**最近最少使用(LRU)**：置换内存中上次使用距当前最远的页，LRU性能接近于OPT，但是难以实现（一种方法是为每一页添加一个最后一次访问的时间戳，但是开销较大</li>
-<li>**先进先出(FIFO)**：把分配给进程的页框视为一个循环缓冲区，按循环的方式移动页。实现简单，但性能较差（隐含的逻辑是置换驻留在内存中时间最长的页，经常会出现部分程序或数据在整个程序的生命周期中使用频率都很高的情况，如果使用FIFO这些页会需要反复地被换入换出）。FIFO还会产生当所分配的物理块数增大而页故障不减反增的异常现象，称为Belady异常</li>
-<li><strong>时钟(CLOCK)<strong>：时钟策略是试图以较小的开销接近LRU性能的一种算法，最简单的时钟策略需要给每一页关联一个附加位，称为使用位。当某一页首次装入内存中时，该页的使用位设置为1；当该页随后被访问到时，它的使用位也会被置为1。当需要置换一页时，操作系统扫描缓冲区，以查找使用位被置为0的一个页框。每当遇到一个使用位为1的页框时，就将该位重新置为0（</strong>只有寻找置换页和发生置换时，指针会移动。如果当前需要访问的页在内存中，即使不是当前指针指向的页，也只是将被访问的页置为1，而不发送指针移动，如下图右下角CLOCK策略中最后一次访问2</strong>）</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103530.png" alt="Img"></p>
-<h3 id="驻留集管理"><a href="#驻留集管理" class="headerlink" title="驻留集管理"></a>驻留集管理</h3><p>对于分页式的虚拟内存，在准备执行时，不需要也不可能把一个进程的所有页都读入内存。因此，操作系统必须决定读取多少页，即给特定的进程分配多大的内存空间。需要考虑以下几个因素：</p>
-<ul>
-<li>分配给一个进程的内存越少，在任何时候驻留在内存中的进程数就越多（这就增加了操作系统至少找到一个就绪进程的可能）</li>
-<li>如果一个进程在内存中的页数比较少，尽管有局部性原理，缺页率仍然相对较高</li>
-<li>如果分配过多页，由于局部性原理，该进程的缺页率没有明显的变化</li>
-</ul>
-<p>基于上述因素，通常采用两种策略：</p>
-<ol>
-<li><strong>固定分配策略</strong>：为一个进程在内存中分配固定数目的页框用于执行时使用，这个数目在最初加载时（创建进程时）决定（可以根据进程类型或程序员的需要确定）。一旦发生缺页中断，进程的一页必须被它所需要的页面置换</li>
-<li><strong>可变分配策略</strong>：允许分配给一个进程的页框在进程的生命周期中不断地变化。如果缺页中断多，则多分配一些；缺页中断少，适当减少分配。这种方法的难点在于要求操作系统评估活动进程的行为</li>
-</ol>
-<p><strong>置换范围</strong></p>
-<ul>
-<li><strong>局部置换策略</strong>：仅仅在产生缺页的进程的驻留页中选择</li>
-<li><strong>全局置换策略</strong>：把内存中所有未被锁定的页都视为置换的候选页，而不管它们属于哪个进程</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519103734.png" alt="Img"></p>
-<ul>
-<li><strong>可变分配、全局范围</strong>：发生缺页时，如果存在空闲页框，则使用空闲页框；否则在全局页框中选择置换</li>
-<li><strong>可变分配、局部范围</strong>：不时评估进程的页框分配情况，增加或减少分配给它的页框</li>
-</ul>
-<h3 id="清除策略"><a href="#清除策略" class="headerlink" title="清除策略"></a>清除策略</h3><p>清除策略与读取策略相反，它用于确定在何时将一个被修改过的页写回辅存，通常有2种选择</p>
-<ul>
-<li><strong>请求式清除</strong>：只有当一页被选择用于置换时，才被写回辅存（可以减少写页，但意味着发生缺页中断的进程在解除阻塞之前必须等待两次页传送，这可能降低处理器的利用率）</li>
-<li><strong>预约试清除</strong>：将被修改的多个页在需要用到它们占据的页框之前成批地写回辅存（并没有太大意义，因为这些页中大部分常常会在置换之前又被修改，辅存传送能力有限，不应该浪费在不太需要的清除操作上）</li>
-</ul>
-<p>比较好的方法是结合页缓冲技术</p>
-<h3 id="加载控制"><a href="#加载控制" class="headerlink" title="加载控制"></a>加载控制</h3><p>加载控制决定驻留在内存中的进程数目，称为系统并发度</p>
-<p>并发度太低会导致处理器利用率不高，并发度太高会发生系统抖动</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/46bf65ac.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/46bf65ac.html" class="post-title-link" itemprop="url">并发</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-20 11:13:11 / 修改时间：11:14:29" itemprop="dateCreated datePublished" datetime="2023-05-20T11:13:11+08:00">2023-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>8.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>16 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>并发相关的术语：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518104039.png" alt="Img"></p>
-<h2 id="互斥"><a href="#互斥" class="headerlink" title="互斥"></a>互斥</h2><p>可以根据进程相互之间知道对方是否存在的程度，对进程间的交互进行分类：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518104124.png" alt="Img"></p>
-<ul>
-<li><strong>进程间的资源竞争</strong>：每个进程不影响它所使用的资源，这类资源包括I&#x2F;O设备、存储器、处理器时间和时钟。首先需要提供互斥要求（比方说，如果不提供对打印机的互斥访问，打印结果会穿插）。实施互斥又产生了两个额外的控制问题：死锁和饥饿</li>
-<li><strong>进程间通过共享的合作</strong>：进程可能使用并修改共享变量而不涉及其他进程，但却知道其他进程也可能访问同一数据。因此，进程必须合作，以确保共享的数据得到正确管理。由于数据保存在资源中（设备或存储器），因此再次涉及有关互斥、死锁、饥饿等控制问题，除此之外，还有一个新要求：数据的一致性</li>
-<li><strong>进程间通过通信的合作</strong>：由于在传递消息的过程中，进程间未共享任何对象，因而这类合作不需要互斥，但是仍然存在死锁和饥饿问题（死锁举例：两个进程可能都被阻塞，每个都在等待来自对方的通信；饥饿举例：P1,P2,P3，P1不断试图与P2，P3通信，P2和P3都试图与P1通信，如果P1和P2不断交换信息，而P3一直被阻塞，等待与P1通信，由于P1一直是活跃的，P3处于饥饿状态）</li>
-</ul>
-<h3 id="互斥的硬件支持"><a href="#互斥的硬件支持" class="headerlink" title="互斥的硬件支持"></a>互斥的硬件支持</h3><h4 id="中断禁用（只对单处理器有效）"><a href="#中断禁用（只对单处理器有效）" class="headerlink" title="中断禁用（只对单处理器有效）"></a>中断禁用（只对单处理器有效）</h4><p>为保证互斥，只需保证一个进程不被中断即可</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="comment">/* 禁用中断 */</span></span><br><span class="line">    <span class="comment">/*  临界区  */</span></span><br><span class="line">    <span class="comment">/* 启用中断 */</span></span><br><span class="line">    <span class="comment">/* 其余部分 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>问题</strong></p>
-<ul>
-<li>处理器被限制于只能交替执行程序，因此执行的效率将会有明显的降低</li>
-<li>该方法不能用于多处理器结构中</li>
-</ul>
-<h4 id="专用机器指令"><a href="#专用机器指令" class="headerlink" title="专用机器指令"></a>专用机器指令</h4><ul>
-<li><strong>比较和交换指令</strong></li>
-<li><strong>交换指令</strong></li>
-</ul>
-<p>在硬件级别上，对存储单元的访问排斥对相同单元的其它访问。基于这一点，处理器的设计者提出了一些机器指令，用于保证两个动作的原子性。在指令执行的过程中，任何其它指令访问内存将被阻止</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*比较和交换指令*/</span></span><br><span class="line"><span class="type">int</span> bolt;</span><br><span class="line"><span class="type">void</span> <span class="title function_">P</span><span class="params">(<span class="type">int</span> i)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">while</span>(compare_and_swap(&amp;bolt,<span class="number">0</span>,<span class="number">1</span>) == <span class="number">1</span>)</span><br><span class="line">            <span class="comment">/*不做任何事*/</span>;</span><br><span class="line">        <span class="comment">/*临界区*/</span></span><br><span class="line">        bolt = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">/*其余部分*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">compare_and_swap</span><span class="params">(<span class="type">int</span> *word,<span class="type">int</span> testval,<span class="type">int</span> newval)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> oldval;</span><br><span class="line">    oldval = *word;</span><br><span class="line">    <span class="keyword">if</span>(oldval == testval) *word = newval;</span><br><span class="line">    <span class="keyword">return</span> oldval;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*交换指令*/</span></span><br><span class="line"><span class="type">int</span> bolt;</span><br><span class="line"><span class="type">void</span> <span class="title function_">P</span><span class="params">(<span class="type">int</span> i)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> keyi = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">do</span> <span class="title function_">exchange</span> <span class="params">(&amp;keyi,&amp;bolt)</span>;</span><br><span class="line">        <span class="keyword">while</span>(keyi != <span class="number">0</span>);</span><br><span class="line">        <span class="comment">/*临界区*/</span></span><br><span class="line">        bolt = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">/*其余部分*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">exchange</span> <span class="params">(<span class="type">int</span> *<span class="keyword">register</span>,<span class="type">int</span> *memory)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> temp;</span><br><span class="line">    temp = *memory;</span><br><span class="line">    *memory = *<span class="keyword">register</span>;</span><br><span class="line">    *<span class="keyword">register</span> = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>优点</strong></p>
-<ul>
-<li>适用于单处理器或共享内存的多处理上的任何数目的进程</li>
-<li>简单且易于证明</li>
-<li>可用于支持多个临界区（每个临界区可以用它自己的变量定义）</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>使用了忙等待（进入临界区前会一直循环检测，会销毁处理器时间）</li>
-<li>可能饥饿（忙等的进程中可能存在一些进程一直无法进入临界区）</li>
-<li>可能死锁（P1在临街区中时被更高优先级的P2抢占，P2请求相同的资源）</li>
-</ul>
-<h3 id="互斥的软件支持"><a href="#互斥的软件支持" class="headerlink" title="互斥的软件支持"></a>互斥的软件支持</h3><p>软件支持包括操作系统和用于提供并发性的程序设计语言机制，常见如下表：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518105058.png" alt="Img"></p>
-<h4 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h4><p>通常称为计数信号量或一般信号量</p>
-<p>可把信号量视为一个具有整数值的变量，在它之上定义三个操作：</p>
-<ol>
-<li>一个信号量可以初始化为非负数（表示发出semWait操作后可立即执行的进程数量）</li>
-<li>semWait操作使信号量减1。若值为负数，执行该操作进程被阻塞。否则进程继续执行</li>
-<li>semSignal操作使信号量加1。若值小于或等于0，则被semWait阻塞的进程被解除阻塞</li>
-</ol>
-<p>信号量原语的定义：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">semaphore</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> count;</span><br><span class="line">    queueType <span class="built_in">queue</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">semWait</span><span class="params">(semaphore s)</span></span><br><span class="line">&#123;</span><br><span class="line">    s.count--;</span><br><span class="line">    <span class="keyword">if</span>(s.count &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="comment">/*把当前进程插入到队列当中*/</span>;</span><br><span class="line">        <span class="comment">/*阻塞当前进程*/</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">semSignal</span><span class="params">(semaphore s)</span></span><br><span class="line">&#123;</span><br><span class="line">    s.count++;</span><br><span class="line">    <span class="keyword">if</span>(s.count &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="comment">/*把进程P从队列中移除*/</span>;</span><br><span class="line">        <span class="comment">/*把进程P插入到就绪队列*/</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="二元信号量"><a href="#二元信号量" class="headerlink" title="二元信号量"></a>二元信号量</h4><p>二元信号量是一种更特殊的信号量，它的值只能是0或1</p>
-<p>可以使用下面3种操作：</p>
-<ol>
-<li>可以初始化为0或1</li>
-<li>semWaitB操作检查信号的值，如果为0，该操作会阻塞进程。如果值为1，将其改为0后进程继续执行</li>
-<li>semSignalB操作检查是否有任何进程在信号上阻塞。有则通过semSignalB操作，受阻进程会被唤醒，如果没有，那么设置值为1</li>
-</ol>
-<p>二元信号量的原语定义：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">binary_semaphore</span>&#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">enum</span> &#123;</span>zero,one&#125; value;</span><br><span class="line">    queueType <span class="built_in">queue</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">semWaitB</span><span class="params">(binary_semaphore s)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(s.value == one)</span><br><span class="line">        s.value = zero;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">/*把当前进程插入到队列当中*/</span>;</span><br><span class="line">        <span class="comment">/*阻塞当前进程*/</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">semSignalB</span><span class="params">(binary_semaphore s)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(s.<span class="built_in">queue</span> is empty())</span><br><span class="line">        s.value = one;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">/*把进程P从等待队列中移除*/</span>;</span><br><span class="line">        <span class="comment">/*把进程P插入到就绪队列*/</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<ul>
-<li>强信号量：队列设计为FIFO，被阻塞最久的进程最先从队列中释放（保证不会饥饿）</li>
-<li>弱信号量：没有规定进程从队列中移出顺序</li>
-</ul>
-</blockquote>
-<p><strong>使用信号量的互斥</strong>（这里是一般信号量，不是二元信号量）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="comment">/*进程数*/</span></span><br><span class="line">semaphore s = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">P</span><span class="params">(<span class="type">int</span> i)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        semWait(s);</span><br><span class="line">        <span class="comment">/*临界区*/</span>;</span><br><span class="line">        semSignal(s);</span><br><span class="line">        <span class="comment">/*其它部分*/</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    parbegin(P(<span class="number">1</span>),P(<span class="number">2</span>),...,P(n));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>下图为三个进程使用上述互斥协议后，一种可能的执行顺序：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518132024.png" alt="Img"></p>
-<blockquote>
-<p>信号量为实施互斥及进程间合作提供了一种原始但功能强大且灵活的工具，但是，使用信号量设计一个正确的程序是很困难的，其难点在于semWait和semSignal操作可能分布在整个程序中，却很难看出这些在信号量上的操作所产生的整体效果</p>
-</blockquote>
-<h4 id="互斥量"><a href="#互斥量" class="headerlink" title="互斥量"></a>互斥量</h4><p>互斥量和二元信号量关键的区别在于：互斥量加锁的进程和解锁的进程必须是同一进程</p>
-<h4 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h4><p>管程是一个程序设计语言结构，它提供了与信号量同样的功能，但更易于控制。它是由<strong>一个或多个过程，一个初始化序列</strong>和<strong>局部数据</strong>组成的软件模块，主要特点如下：</p>
-<ol>
-<li>局部数据变量只能被管程的过程访问，任何外部过程都不能访问</li>
-<li>一个进程通过调用管程的一个过程进入管程</li>
-<li>在任何时候，只能有一个进程在管理种执行，调用管程的其它进程都被阻塞，等待管程可用</li>
-</ol>
-<p>为进行并发处理，管程必须包含同步工具（例如：一个进程调用了管程，并且当它在管程中时必须被阻塞，直到满足某些条件。这就需要一种机制，使得该进程在管程内被阻塞时，能释放管程，以便其它进程可以进入。以后，当条件满足且管程在此可用时，需要恢复进程并允许它在阻塞点重新进入管程）</p>
-<p>管程通过使用<strong>条件变量</strong>提供对同步的支持，这些条件变量包含在管程中，并且只有在管程中才能被访问。有两个操作：</p>
-<ul>
-<li>cwait(c):调用进程的执行在条件c上阻塞，管程现在可被另一个进程使用</li>
-<li>csignal(c):恢复执行在cwait后因某些条件被阻塞的进程。如果有多个则选择其一；如果没有则什么也不做</li>
-</ul>
-<p>管程的结构如下：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518133313.png" alt="Img"></p>
-<blockquote>
-<p>管程优于信号量之处在于，所有的同步机制都被限制在管程内部，因此，不但易于验证同步的正确性，而且易于检查出错误。此外，如果一个管程被正确编写，则所有进程对保护资源的访问都是正确的；而对于信号量，只有当所有访问资源的进程都被正确地编写时，资源访问才是正确的</p>
-</blockquote>
-<h4 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h4><p>最小操作集：</p>
-<ul>
-<li>send(destination, message)</li>
-<li>receive(source, message)</li>
-</ul>
-<p>阻塞：</p>
-<ul>
-<li>当一个进程执行send原语时，有2中可能：<ul>
-<li>发送进程被阻塞直到这个消息被目标进程接收</li>
-<li>不阻塞</li>
-</ul>
-</li>
-<li>当一个进程执行receive原语后，也有2种可能：<ul>
-<li>如果一个消息在此之前被发送，该消息被正确接收并继续执行</li>
-<li>没有正在等待的消息，则a）进程阻塞直到等待的消息到达，b）继续执行，放弃接收的努力</li>
-</ul>
-</li>
-</ul>
-<p>消息传递过程中需要识别消息的源或目的地，这个过程称为<strong>寻址</strong>，可分为两类：</p>
-<ol>
-<li><p>直接寻址：</p>
-<ul>
-<li>对于send：包含目标进程的标识号</li>
-<li>对于receive：1）进程显示指定袁锦程；2）不可能指定所希望的源进程时，通过source参数保存相应信息</li>
-</ul>
-</li>
-<li><p>间接寻址（解除了发送者&#x2F;接收者的耦合性，更灵活）</p>
-<ul>
-<li>消息发送到一个共享数据结构，称为“信箱”。发送者和接收者直接有“一对一”、“多对一”、“一对多”和“多对多”的对应关系（典型的“多对一”如客户端&#x2F;服务器，此时“信箱”就是端口）</li>
-</ul>
-</li>
-</ol>
-<p>消息传递实现互斥（消息函数可视为在进程直接传递的一个令牌）：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="comment">/*进程数*/</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">P</span><span class="params">(<span class="type">int</span> i)</span></span><br><span class="line">&#123;</span><br><span class="line">    message msg;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        receive(box,msg);</span><br><span class="line">        <span class="comment">/*临界区*/</span>;</span><br><span class="line">        send(box,msg);</span><br><span class="line">        <span class="comment">/*其它部分*/</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    create <span class="title function_">mailbox</span> <span class="params">(box)</span>;</span><br><span class="line">    send(box,null);</span><br><span class="line">    parbegin(P(<span class="number">1</span>),P(<span class="number">2</span>),...,P(n));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>可以使用消息传递处理“生产者&#x2F;消费者问题”，可以有多个消费者和生产者，系统甚至可以是分布式系统</p>
-</blockquote>
-<h3 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h3><p>在设计同步和并发机制时，可以与一些经典问题联系起来，以检测该问题的解决方案对原问题是否有效</p>
-<h4 id="生产者-x2F-消费者问题"><a href="#生产者-x2F-消费者问题" class="headerlink" title="生产者&#x2F;消费者问题"></a>生产者&#x2F;消费者问题</h4><p>有一个或多个生产者生产某种类型的数据，并放置在缓冲区中；有一个消费者从缓冲区中取数据，每次取一项；</p>
-<p>任何时候只有一个主体（生产者或消费者）可以访问缓冲区。要确保缓存满时，生产者不会继续添加，缓存为空时，消费者不会从中取数据</p>
-<p>实现代码：</p>
-<ul>
-<li><strong>当缓冲无限大时</strong>（二元信号量，对应图5.10；信号量，对应图5.11）</li>
-<li><strong>当缓冲有限时</strong>（信号量，对应图5.14；管程，对应图5.16；消息传递，对应图5.21）</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518134902.png" alt="Img"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518134918.png" alt="Img"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518134927.png" alt="Img"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518134939.png" alt="Img"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518134958.png" alt="Img"></p>
-<h4 id="读者-x2F-写者问题"><a href="#读者-x2F-写者问题" class="headerlink" title="读者&#x2F;写者问题"></a>读者&#x2F;写者问题</h4><p>有一个由多个进程共享的数据区，一些进程只读取这个数据区中的数据，一些进程只往数据区中写数据；此外还满足以下条件：</p>
-<ul>
-<li>任意多的读进程可以同时读</li>
-<li>一次只有一个进程可以写</li>
-<li>如果一个进程在写，禁止所有读</li>
-</ul>
-<p>实现代码：</p>
-<ul>
-<li><strong>读优先</strong>：只要至少有一个都进程正在读，就为进程保留对这个数据区的控制权（信号量，对应图5.22）</li>
-<li><strong>写优先</strong>：保证当有一个写进程声明想写时，不允许新的读进程访问该数据区（信号量，对应图5.23）</li>
-</ul>
-<center>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518135515.png" width="280"/>
-<img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518213258.png" width="340"/>
-</figure>
-</center>
-
-<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p><strong>死锁定义</strong>：一组进程中的每个进程都在等待某个事件，而只有在这种进程中的其它被阻塞的进程才可以出发该事件，这时就称这组进程发生死锁</p>
-<p>假设两个进程的资源请求喝释放序列如下：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518213633.png" alt="Img"></p>
-<p>下图是相应的<strong>联合进程图</strong>，显示了进程竞争资源的进展情况</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518214403.png" alt="Img"></p>
-<p><strong>敏感区域</strong>：路径3，4进入的区域。敏感区域的存在依赖于两个进程的逻辑关系。然而，如果另个进程的交互过程创建了能够进入敏感区的执行路径，那么死锁就必然发生</p>
-<p><strong>死锁问题中的资源分类</strong></p>
-<ul>
-<li><strong>可重用资源</strong>：一次只能供一个进程安全地使用，并且不会由于使用而耗尽的资源（包括处理器、I&#x2F;O通道、内外存、设备等）</li>
-<li><strong>可消耗资源</strong>：可以被进程创建和消耗的资源。通常对某种类型可消耗资源的数目没有限制，一个无阻塞的生产进程可以创建任意数目的这类资源（包括中断、信号、消息和I&#x2F;O缓冲中的信息）</li>
-</ul>
-<p><strong>资源分配图</strong></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518214631.png" alt="Img"></p>
-<ul>
-<li>进程到资源：进程请求资源但还没得到授权</li>
-<li>资源到进程：请求资源已被授权</li>
-<li>资源中的“点”：表示该类资源的一个实例</li>
-</ul>
-<h3 id="死锁的条件"><a href="#死锁的条件" class="headerlink" title="死锁的条件"></a>死锁的条件</h3><p>死锁条件：<br>    1. <strong>互斥</strong>：一次只有一个进程可以使用一个资源<br>    2. <strong>占有且等待</strong>：当一个进程等待其他进程时，继续占有已经分配的资源<br>    3. <strong>不可抢占</strong>：不能强行抢占进程已占有的资源<br>    4. <strong>循环等待</strong>：存在一个封闭的进程链，使得每个进程至少占有此链中下一个进程所需的一个资源</p>
-<p>条件1~3是死锁的必要条件，条件4是前3个条件的潜在结果，即假设前3个条件存在，可能发生的一系列事件会导致不可解的循环等待。这个不可解的循环等待实际上就是死锁的定义。之所以不可解是因为有前3个条件的存在。因此，4个条件连在一起构成了死锁的充分必要条件</p>
-<h3 id="死锁的预防"><a href="#死锁的预防" class="headerlink" title="死锁的预防"></a>死锁的预防</h3><p>死锁预防是通过约束资源请求，使得4个死锁条件中的至少1个被破坏，从而防止死锁发生</p>
-<ul>
-<li><p><strong>间接的死锁预防（防止死锁条件1~3）</strong></p>
-<ul>
-<li><strong>预防互斥</strong>：一般来说，不可能禁止</li>
-<li><strong>预防占有且等待</strong>：可以要求进程一次性地请求所有需要的资源，并且阻塞进程直到所有请求都同时满足。这种方法在两个方面是低效的：1）为了等待满足其所有请求的资源，进程可能被阻塞很长时间。但实际上只要有一部分资源，就可以继续执行；2）分配的资源有可能有相当长的一段时间不会被使用，且在此期间，这些资源不能被其它进程使用；除此之外，一个进程可能事先并不会知道它所需要的所有资源</li>
-<li><strong>预防不可抢占</strong>：有几种方法：1）如果占用某些资源的进程进一步申请资源时被拒，则释放其占用的资源；2）如果一个进程请求当前被另一个进程占有的一个资源，操作系统可以抢占另一个进程，要求它释放资源(方法2只有在任意两个进程优先级不同时，才能预防死锁)；此外，通过预防不可抢占来预防死锁的方法，只有在资源状态可以很容易保存和恢复的情况下才实用</li>
-</ul>
-</li>
-<li><p><strong>直接的死锁预防（防止死锁条件4）</strong></p>
-<ul>
-<li><strong>预防循环等待</strong>：可以通过定义资源类型的线性顺序来预防，如果一个进程已经分配到了R类型的资源，那么它接下来请求的资源只能是那些排在R类型之后的资源；这种方法可能是低效的，会使进程执行速度变慢，并且可能在没有必要的情况下拒绝资源访问</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>都会导致低效的资源使用和低效的进程运行</p>
-</blockquote>
-<h3 id="死锁避免"><a href="#死锁避免" class="headerlink" title="死锁避免"></a>死锁避免</h3><p>死锁避免允许3个必要条件，但通过明智选择，确保永远不会到达死锁点</p>
-<p>由于需要对是否会引起死锁进行判断，因此死锁避免需要知道将来的进程资源请求的情况</p>
-<p>2种死锁避免的方法：<br>    1. <strong>进程启动拒绝</strong>：如果一个进程的请求会导致死锁，则不启动此进程<br>    2. <strong>资源分配拒绝</strong>：如果一个进程增加的资源请求会导致死锁，则不允许此分配</p>
-<h4 id="进程启动拒绝"><a href="#进程启动拒绝" class="headerlink" title="进程启动拒绝"></a>进程启动拒绝</h4><p>一个有n个进程，m种不同类型资源的系统。定义如下向量和矩阵</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518215548.png" alt="Img"></p>
-<p>从中可以看出以下关系成立：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518215642.png" alt="Img"></p>
-<p>对于进程n+1，仅当对所有j，以下关系成立时，才启动进程n+1：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518215712.png" alt="Img"></p>
-<h4 id="资源分配拒绝（银行家算法）"><a href="#资源分配拒绝（银行家算法）" class="headerlink" title="资源分配拒绝（银行家算法）"></a>资源分配拒绝（银行家算法）</h4><p>当进程请求一组资源时，假设同意该请求，从而改变了系统的状态，然后确定其结果是否还处于安全状态。如果是，同意这个请求；如果不是，阻塞该进程直到同意该请求后系统状态仍然是安全的</p>
-<ul>
-<li>安全状态：至少有一个资源分配序列不会导致死锁(即所有进程都能运行直到结束)</li>
-<li>不安全状态：非安全的一个状态(所有分配序列都不可行)</li>
-</ul>
-<p>下图为一个安全序列</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518215814.png" alt="Img"></p>
-<p>下图为一个不安全序列：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518215846.png" alt="Img"></p>
-<p>这个不安全序列并不是一个死锁状态，仅仅是有可能死锁。例如，如果P1从这个状态开始运行，先释放一个R1和R3，后来又再次需要这些资源，一旦这样做，则系统将到达一个安全状态</p>
-<p><strong>优点</strong><br>    - 不需要死锁预防中的抢占和回滚进程，并且比死锁预防的限制少。比死锁预防允许更多的并发</p>
-<p><strong>缺点</strong><br>    - 必须事先声明每个进程请求的最大资源<br>    - 所讨论的进程必须是无关的，也就是说，他们执行的顺序必须没有任何同步要求的限制<br>    - 分配的资源数目必须是固定的<br>    - 在占有资源时，进程不能退出</p>
-<h3 id="死锁检测"><a href="#死锁检测" class="headerlink" title="死锁检测"></a>死锁检测</h3><p>死锁检测不限制资源访问或约束进程行为。只要有可能，被请求的资源就被分配给进程。操作系统周期性地执行一个算法检测死锁条件4(循环等待)</p>
-<p><strong>常见死锁检测算法</strong></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518220209.png" alt="Img"></p>
-<p>这种算法的策略是查找一个进程，使得可用资源可以满足该进程的资源请求，然后假设同意这些资源，让该进程运行直到结束，再释放它的所有资源。然后算法再寻找另一个可以满足资源请求的进程</p>
-<p>这个算法并不能保证防止死锁，是否死锁要取决于将来同意请求的次序，它所做的一切是确定当前是否存在死锁</p>
-<p><strong>恢复</strong></p>
-<p>一旦检测到死锁，就需要某种策略以恢复死锁，有下列方法(复杂度递增)：</p>
-<ul>
-<li>取消所有死锁进程（操作系统最常用）</li>
-<li>回滚每个死锁进程到前面定义的某些检测点</li>
-<li>连续取消死锁进程直到不再存在死锁（基于某种最小代价原则）</li>
-<li>连续抢占资源直到不再存在死锁（基于代价选择，每次抢占后需重新调用算法检测，被抢占的进程需回滚）</li>
-</ul>
-<h3 id="死锁“预防-x2F-避免-x2F-检测”总结"><a href="#死锁“预防-x2F-避免-x2F-检测”总结" class="headerlink" title="死锁“预防&#x2F;避免&#x2F;检测”总结"></a>死锁“预防&#x2F;避免&#x2F;检测”总结</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518220405.png" alt="Img"></p>
-<h3 id="经典问题-哲学家就餐问题"><a href="#经典问题-哲学家就餐问题" class="headerlink" title="经典问题(哲学家就餐问题)"></a>经典问题(哲学家就餐问题)</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518220432.png" alt="Img"></p>
-<p>就餐需要使用盘子和两侧的叉子，设计一套算法以允许哲学家吃饭。算法必须保证互斥（没有两位哲学家同时使用同一把叉子），同时还要避免死锁和饥饿</p>
-<p>**方法一(基于信号量，可能死锁)**：每位哲学家首先拿起左边的叉子，然后拿起右边的叉子。吃完面后，把两把叉子放回。如果哲学家同时拿起左边的叉子，会死锁</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518220501.png" alt="Img"></p>
-<p>**方法二(基于信号量，不会死锁)**：增加一位服务员，只允许4位哲学家同时就座，因而至少有一位哲学家可以拿到两把叉子</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518220541.png" alt="Img"></p>
-<p>**方法三(基于管程，不会死锁)**：和方法一类似，但和信号量不同的是，因为同一时刻只有一个进程进入管程，所以不会发生死锁</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518220604.png" alt="Img"></p>
-<h2 id="UNIX并发机制"><a href="#UNIX并发机制" class="headerlink" title="UNIX并发机制"></a>UNIX并发机制</h2><p>UNIX为进程间的通信和同步，提供了下列几种重要的通信机制：</p>
-<ul>
-<li><strong>提供进程间传递数据的方法</strong><ul>
-<li>管道</li>
-<li>消息</li>
-<li>共享内存</li>
-</ul>
-</li>
-<li><strong>触发其它进程的行为</strong><ul>
-<li>信号量</li>
-<li>信号</li>
-</ul>
-</li>
-</ul>
-<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>管道是一个环形缓冲区，允许两个进程以生产者&#x2F;消费者的模型进程通信</p>
-<ul>
-<li>写管道：当一个进程试图写管道时，如果有足够的空间，则写请求被立即执行，否则进程被阻塞</li>
-<li>读管道：当一个进程试图读管道时，如果读取字节数多于当前管道中的字节数，进程被阻塞</li>
-</ul>
-<p>操作系统强制实施互斥，即一次只能有一个进程可以访问管道</p>
-<p><strong>两类管道</strong></p>
-<ul>
-<li>命名管道：共享的进程可以不相关</li>
-<li>匿名管道：只有父子关系的进程才能共享</li>
-</ul>
-<h3 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h3><p>每个进程都有一个关联的消息队列，功能类似于信箱</p>
-<ul>
-<li>发送消息：发送者指定发送消息的类型。试图给一个满队列发送时进程会被阻塞</li>
-<li>接收消息：接收者可以按先进先出的顺序接收信息；也可以按类型接收；试图从空队列读消息时，进程会被阻塞，试图读取某一类型消息，但是该类型消息不存在时，不会阻塞进程</li>
-</ul>
-<h3 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h3><p>共享内存是UNIX提供的进程间通信手段中速度最快的一种。共享内存是虚存中由多个进程共享的一个公共内存块。互斥约束不属于共享内存机制的一部分，但必须由使用共享内存的进程提供</p>
-<h3 id="信号量-1"><a href="#信号量-1" class="headerlink" title="信号量"></a>信号量</h3><p>UNIX System V中的信号量系统调用是对semWait和semSignal原语的推广</p>
-<h3 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h3><p>信号是用于向一个进程通知发生异步事件的机制。类似于硬件中断，但没有优先级，即内核平等地对待所有的信号。对于同时发送的信号，一次只给进程一个信号，而没有特定的次序</p>
-<h2 id="Linux内核并发机制"><a href="#Linux内核并发机制" class="headerlink" title="Linux内核并发机制"></a>Linux内核并发机制</h2><p>Linux包含了在其他UNIX系统中出现的所有并发机制，其中包括管道，消息，共享内存和信号。除此之外，还包括：</p>
-<ul>
-<li>原子操作</li>
-<li>自旋锁</li>
-<li>信号量</li>
-<li>屏障</li>
-</ul>
-<h3 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h3><p>Linux提供了一组操作以保证对变量的原子操作。这些操作能够用来避免简单的竞争条件。原子操作执行时不会被打断或被干涉</p>
-<ul>
-<li>在单处理器上：线程一旦启动原子操作，则从操作开始到结束的这段时间内，线程不能被中断</li>
-<li>在多处理器上：原子操作所针对的变量是被锁住的，以免被其他的进程访问，直到原子操作执行完毕</li>
-</ul>
-<p>Linux中定义了2种原子操作：</p>
-<ul>
-<li>针对整数变量的整数操作：定义了一个特殊的数据类型atomic_t，原子整数操作仅能用在这个数据类型上，其它操作不允许用在这个数据类型上</li>
-<li>针对位图中某一位的位图操作：操作由指针变量指定任意一块内存区域的位序列中的某一位。因此没有和原子整数操作中atomic_t等同的数据类型</li>
-</ul>
-<p>Linux原子操作表：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518221036.png" alt="Img"></p>
-<h3 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h3><p>自旋锁是Linux中包含临界区最常见的技术。同一时刻，只有一个线程能获得自旋锁。其它任何企图获得自旋锁的进程将一直进行尝试（忙等），直到获得了该锁</p>
-<ul>
-<li>普通自旋锁</li>
-<li>读者-写者自旋锁：允许多个线程同时以只读方式访问同一数据结构，只有当一个线程想要更新时，才会互斥访问</li>
-</ul>
-<p>自旋锁操作表：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518221217.png" alt="Img"></p>
-<h3 id="信号量-2"><a href="#信号量-2" class="headerlink" title="信号量"></a>信号量</h3><p>内核的信号量不能通过系统调用直接被用户程序访问。内核信号量是作为内核内部函数实现的，比用户可见的信号量更高效</p>
-<ul>
-<li>二元信号量：在Linux中也称为互斥信号量MUTEX</li>
-<li>计数信号量</li>
-<li>读者-写者信号量：允许多个并发的读者，仅允许一个写者。事实上，对于读者使用的是一个计数信号量，而对于写者使用的是一个二元信号量</li>
-</ul>
-<p>Linux提供3种版本的down操作：</p>
-<ol>
-<li>down：对应于传统的semWait操作</li>
-<li>down_interruptible：允许因down操作而被阻塞的线程在此期间接收并相应内核信号</li>
-<li>down_trylock：可在不被阻塞的同时获得信号量，如果信号量不可用，返回非0值，不会阻塞</li>
-</ol>
-<p>信号量操作表：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518221334.png" alt="Img"></p>
-<h3 id="屏障"><a href="#屏障" class="headerlink" title="屏障"></a>屏障</h3><p>屏障用于保证指令执行的顺序。如，rmb()操作保证了之前和之后的代码都没有任何读操作会穿过屏障</p>
-<p>对于屏障操作，需要注意2点：</p>
-<ol>
-<li>屏障和机器指令相关，也就是装载和存储指令（高级语言a&#x3D;b会产生2个指令）</li>
-<li>编译方面，屏障操作指示编译器在编译期间不要重新排序指令；处理器方面，屏障操作指示流水线上任何屏障前的指令必须在屏障后的指令开始执行之前提交</li>
-</ol>
-<p>barrier()操作是mb()操作的一个轻量版本，它仅仅控制编译器的行为</p>
-<p>屏障操作表：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518221422.png" alt="Img"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/b07f406.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/b07f406.html" class="post-title-link" itemprop="url">单处理器调度</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-20 11:12:18 / 修改时间：11:14:29" itemprop="dateCreated datePublished" datetime="2023-05-20T11:12:18+08:00">2023-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>所谓单处理器调度，指的是单个处理器上的调度。主要是单处理器上多道程序设计系统的进程调度，多道程序设计系统中，内存可以同时驻留多个进程</p>
-<h2 id="进程调度类型"><a href="#进程调度类型" class="headerlink" title="进程调度类型"></a>进程调度类型</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519104045.png" alt="Img"></p>
-<p>调度类型和进程状态转换：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519105543.png" alt="Img"></p>
-<p>长程调度决定哪一个程序可以进入系统中处理，因此控制着系统的并发度</p>
-<p>在批处理系统或者操作系统的批处理部分，新提交的作业被发生到磁盘，并保存在一个批处理队列中。在长程调度程序运行的时候，从队列中创建相应的进程。这里涉及两个决策：</p>
-<ul>
-<li>调度程序决定何时操作系统接纳一个进程或者多个进程</li>
-<li>调度程序决定接收哪个作业或哪些作业，并将其转变成进程</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519105628.png" alt="Img"></p>
-<p>长程调度执行频率较低，并且仅仅是粗略地决定是否接受新进程及接受哪一个</p>
-<p>该章剩余内容主要关注短程调度，即处理器选择一个进程执行时的调度决策。短程调度执行得最频繁，并且精确地决定下一次执行哪个进程</p>
-<h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><h3 id="短程调度准则"><a href="#短程调度准则" class="headerlink" title="短程调度准则"></a>短程调度准则</h3><p>调度算法的设计需要考虑如下方面（以下为从一种维度的划分）：</p>
-<ul>
-<li>面向用户的准则：延迟（侧重于用户）</li>
-<li>面向系统的准则：效果、利用率、吞吐量（侧重于系统）</li>
-</ul>
-<h3 id="优先级调度"><a href="#优先级调度" class="headerlink" title="优先级调度"></a>优先级调度</h3><ul>
-<li>每个进程被指定一个优先级，调度程序总是优先选择具有较高优先级的进程</li>
-<li>低优先级进程可能饥饿</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519105758.png" alt="Img"></p>
-<h3 id="选择调度策略"><a href="#选择调度策略" class="headerlink" title="选择调度策略"></a>选择调度策略</h3><ul>
-<li><strong>周转时间</strong>：等待时间 + 服务时间</li>
-<li><strong>归一化周转时间</strong>：周转时间&#x2F;服务时间</li>
-</ul>
-<h4 id="先来先服务-FCFS-："><a href="#先来先服务-FCFS-：" class="headerlink" title="先来先服务(FCFS)："></a>先来先服务(FCFS)：</h4><ul>
-<li>非抢占</li>
-<li>对短进程不利（相对于I&#x2F;O密集型的进程，更利于处CPU密集型的进程）；一种改进是与优先级结合，每个优先级一个队列，同一队列内部使用FCFS</li>
-</ul>
-<h4 id="轮转（时间片）："><a href="#轮转（时间片）：" class="headerlink" title="轮转（时间片）："></a>轮转（时间片）：</h4><ul>
-<li>抢占</li>
-<li>以时间片为周期产生时钟中断，切换运行</li>
-<li>主要设计问题是时间片的长度，太短时间片会带来频繁的进程上下文切换开销。时间片过长（比最长进程还长），算法就退化成了FCFS</li>
-</ul>
-<h4 id="最短进程优先（SPN）："><a href="#最短进程优先（SPN）：" class="headerlink" title="最短进程优先（SPN）："></a>最短进程优先（SPN）：</h4><ul>
-<li>非抢占</li>
-<li>每次调度选择（所需总）处理事件最短的进程。可能饥饿长进程</li>
-<li>难点在于需要估计每个进程所需要的时间处理</li>
-</ul>
-<h4 id="最短剩余时间（SRT）："><a href="#最短剩余时间（SRT）：" class="headerlink" title="最短剩余时间（SRT）："></a>最短剩余时间（SRT）：</h4><ul>
-<li>抢占</li>
-<li>每次选择剩余处理时间最少的进程，可能饥饿长进程</li>
-<li>也需要估计每个进程所需的处理时间。同时，维护过去的服务时间也会增加开销</li>
-</ul>
-<h4 id="最高响应比（HRRN）："><a href="#最高响应比（HRRN）：" class="headerlink" title="最高响应比（HRRN）："></a>最高响应比（HRRN）：</h4><ul>
-<li>非抢占</li>
-<li>调度选择归一化周转时间最大的进程，归一化时间越大说明进程“年龄”越大。当偏向短作业时（小分母产生大比值），长进程由于得不到服务，等待的时间不断增加，从而增大了比值，最终在竞争中可以胜出</li>
-<li>同样需要预估每个进程所需的处理时间</li>
-</ul>
-<h4 id="反馈法："><a href="#反馈法：" class="headerlink" title="反馈法："></a>反馈法：</h4><ul>
-<li>抢占</li>
-<li>反馈法为了解决SPN、SPT和HRRN必须预估进程所需处理时间的问题（不能获得剩余执行时间就关注已经执行了的时间）。通过处罚运行时间较长的进程的方法来偏向短进程。进程每被抢占一次（说明进程还未运行完，可能是个长进程），就移入更低优先级的队列。在这种机制下，短进程在降级过多前就能运行完，长进程会一直降级，如果已经处于最低级队列，则再次被抢占后返回该队列</li>
-<li>这种方法的问题是长进程的周转时间可能惊人的增加，导致饥饿，一种方法是可以增加低优先级队列进程运行的时间片，但仍可能饥饿，还有一种方法是如果在低级队列中时间过长，提升到高优先级队列中</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519132642.png" alt="Img"></p>
-<p><strong>调度策略对比总结</strong>：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519132658.png" alt="Img"></p>
-<p><strong>性能比较</strong></p>
-<p>调度策略的性能是选择调度策略的一个关键因素。但是由于相关的性能取决于各种各样的因素，包括各种进程的服务时间分布、调度的效率、上下文切换机制、I&#x2F;O请求的本质和I&#x2F;O子系统的性能，因而不可能得到明确的比较结果</p>
-<h3 id="调度实例分析"><a href="#调度实例分析" class="headerlink" title="调度实例分析"></a>调度实例分析</h3><p>给出如下进程以及到达时间和服务时间：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519132823.png" alt="Img"></p>
-<p>使用各种调度策略：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519132833.png" alt="Img"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/41e39f2b.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/41e39f2b.html" class="post-title-link" itemprop="url">内存管理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-20 11:11:43 / 修改时间：11:14:29" itemprop="dateCreated datePublished" datetime="2023-05-20T11:11:43+08:00">2023-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li><strong>单道程序设计中</strong>：内存被划分为两部分，一部分供操作系统使用(驻留监控程序、内核)，一部分供当前正在执行的程序使用</li>
-<li><strong>多道程序设计中</strong>：必须在内存中进一步细分“用户”部分，以满足多个进程的要求，细分的任务由操作系统动态完成，称为内存管理</li>
-</ul>
-<p><strong>内存管理的需求</strong></p>
-<ul>
-<li><strong>重定位</strong>：程序在从磁盘换入内存时，可以被装载到内存中的不同区域</li>
-<li><strong>保护</strong>：处理器必须保证进程以外的其它进程不能未经授权地访问该进程的内存单元</li>
-<li><strong>共享</strong>：任何保护机制都必须具有一定灵活性，以允许多个进程访问内存的同一部分</li>
-<li><strong>逻辑组织</strong></li>
-<li><strong>物理组织</strong></li>
-</ul>
-<p><strong>内存管理中的地址</strong></p>
-<ul>
-<li><strong>逻辑地址</strong>：指与当前数据在内存中的物理分配地址无关的访问地址，执行对内存访问前必须转换成物理地址</li>
-<li><strong>相对地址</strong>：逻辑地址的一个特例，是相对于某些已知点（通常是程序开始处）的存储单元</li>
-<li>**物理地址(绝对地址)**：数据在内存中的实际位置</li>
-<li><strong>虚拟地址</strong>：虚拟内存中的逻辑地址</li>
-</ul>
-<p>**内存管理单元(MMU)**：CPU中的一个模块，将虚拟地址转换成实际物理地址</p>
-<h2 id="内存管理中的数据块"><a href="#内存管理中的数据块" class="headerlink" title="内存管理中的数据块"></a>内存管理中的数据块</h2><ul>
-<li><strong>页框</strong>：内存中一个固定长度的块</li>
-<li><strong>页</strong>：二级存储(如磁盘)中一个固定长度的数据块</li>
-<li><strong>段</strong>：二级存储中一个变长的数据块</li>
-</ul>
-<h2 id="内存分区"><a href="#内存分区" class="headerlink" title="内存分区"></a>内存分区</h2><h3 id="固定分区"><a href="#固定分区" class="headerlink" title="固定分区"></a>固定分区</h3><p>系统生成阶段，<strong>内存被划分成许多静态(大小，容量固定不变)分区</strong>，两种固定分区：</p>
-<ul>
-<li><strong>分区大小相等</strong></li>
-<li><strong>分区大小不等</strong></li>
-</ul>
-<p><strong>放置策略：</strong></p>
-<ul>
-<li><strong>对于分区大小相等的固定分区</strong><ul>
-<li>只要存在可用分区，就可以分配给进程</li>
-</ul>
-</li>
-<li><strong>对于分区大小不等的固定分区</strong><ul>
-<li><strong>每个进程分配到能容纳它的最小分区</strong>：每个分区维护一个队列（较多小进程时，大分区会空闲）</li>
-<li><strong>每个进程分配到能容纳它的最小可用分区</strong>：只需一个队列</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>存在内部碎片；活动进程数固定</p>
-</blockquote>
-<h3 id="动态分区"><a href="#动态分区" class="headerlink" title="动态分区"></a>动态分区</h3><p>并不进行预先分区，<strong>在每次需要为进程分配时动态划分</strong></p>
-<p>外部碎片（随着时间推移，内存中产生了越来越多”空洞“）：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519100824.png" alt="Img"></p>
-<p>可以使用压缩解决外部碎片，但是非常耗时</p>
-<p><strong>放置算法</strong>：由于压缩十分耗时，因而需要巧妙地把进程分配到内存中，塞住内存中的”洞“</p>
-<ul>
-<li><strong>最佳适配</strong>：选择与要求大小最接近的块（通常性能最差，尽管每次浪费的空间最小，但结果却使得内存中很快产生许多碎片）</li>
-<li><strong>首次适配</strong>：选择大小足够的第一个块（不仅最简单，通常也是最好、最快的；容易在首部产生碎片）</li>
-<li><strong>下次适配</strong>：从上次放置的位置起，第一个大小足够的块（比首次适配差，常常会在尾部产生碎片）</li>
-</ul>
-<blockquote>
-<p>维护复杂，且会产生外部碎片</p>
-</blockquote>
-<h3 id="伙伴系统"><a href="#伙伴系统" class="headerlink" title="伙伴系统"></a>伙伴系统</h3><p>内存最小块和最大块的尺寸是M和L。在为一个进程分配空间时，如果需要的内存大于L&#x2F;2，则分配L的内存，否则，将大小为L的块分成两个L&#x2F;2的块，继续上述步骤；如果两个相邻的块（伙伴）都未分配出去（如前面的进程释放后），则将其合并</p>
-<p>下图为一个伙伴系统的例子：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519100953.png" alt="Img"></p>
-<blockquote>
-<p>伙伴系统是一种折中方案，克服了固定分区和动态分区方案的缺陷。但在当前操作系统中，基于分页和分段机制的虚拟内存更好。伙伴系统在并行系统中有很多应用</p>
-</blockquote>
-<h3 id="分区中的地址转换"><a href="#分区中的地址转换" class="headerlink" title="分区中的地址转换"></a>分区中的地址转换</h3><p>逻辑地址-&gt;物理地址的转换如下</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519101057.png" alt="Img"></p>
-<ul>
-<li><strong>基址寄存器</strong>：被载入程序在内存中的起始地址</li>
-<li><strong>界限寄存器</strong>：程序的终止位置</li>
-</ul>
-<p>这种转换方式适用于程序运行时，被加载到内存中连续区域的情况。对于分页和分段，由于一个程序可以加载到内存的不同区域，所以需要使用另外的机制进行转换</p>
-<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p>内存被划分为大小固定的块，且块相对比较小，每个进程也被分成同样大小的小块，那么进程中称为页的块可以指定到内存中称为页框的可用块。<strong>和固定分区的不同在于：一个程序可以占据多个分区，这些分区不要求连续</strong></p>
-<p>使用分页技术在内存中每个进程浪费的空间，仅仅是最后一页的一小部分（内部碎片）</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519101215.png" alt="Img"></p>
-<h3 id="分页中的地址转换"><a href="#分页中的地址转换" class="headerlink" title="分页中的地址转换"></a>分页中的地址转换</h3><p>由于进程的页可能不连续，因此仅使用一个简单的基址寄存器是不够的，操作系统需要为每个进程维护一个页表。页表项是进程每一页与内存页框的映射</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519101307.png" alt="Img"></p>
-<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><p>段有一个最大长度限制，但不要求所有程序的所有段长度都相等。分段类似于<strong>动态分区，区别在于：一个程序可以占据多个不连续的分区</strong></p>
-<p>分段同样会产生外部碎片，但是进程被划分成多个小块，因此外部碎片也会很小</p>
-<h3 id="分段中的地址转换"><a href="#分段中的地址转换" class="headerlink" title="分段中的地址转换"></a>分段中的地址转换</h3><p>由于进程的段可能不连续，因此也不能仅靠一个简单的基址寄存器，地址转换通过<strong>段表</strong>实现。由于段的大小不同，因此段表项中还包括段的大小</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519101438.png" alt="Img"></p>
-<p>如果偏移大于段的长度，则这个地址无效</p>
-<h2 id="内存安全"><a href="#内存安全" class="headerlink" title="内存安全"></a>内存安全</h2><h3 id="缓冲区溢出"><a href="#缓冲区溢出" class="headerlink" title="缓冲区溢出"></a>缓冲区溢出</h3><p><strong>缓冲区溢出是指输入到一个缓冲区或者数据保存区域的数据量超过了其容量，从而导致覆盖了其它区域数据的状况</strong>。攻击者造成并利用这种状况使系统崩溃或者通过插入特制的代码来控制系统</p>
-<p>被覆盖的区域可能存有其它程序的变量、参数、类似于返回地址或指向前一个栈帧的指针等程序控制流数据。缓冲区可以位于堆、栈或进程的数据段。这种错误可能产生如下后果：</p>
-<ol>
-<li>破坏程序的数据</li>
-<li>改变程序的控制流，因此可能访问特权代码</li>
-</ol>
-<p><strong>最终很有可能造成程序终止</strong>。当攻击者成功地攻击了一个系统之后，作为攻击的一部分，程序的控制流可能会跳转到攻击者选择的代码处，造成的结果是被攻击的进程可以执行任意的特权代码（比如通过判断输入是否和密码匹配来访问特权代码，如果存在缓冲区漏洞，非法输入导致存放“密码”的内存区被覆盖，从而使得“密码”被改写，因此判断为匹配进而获得了特权代码的访问权）</p>
-<blockquote>
-<p>缓冲区溢出攻击是最普遍和最具危害性的计算机安全攻击类型之一</p>
-</blockquote>
-<h3 id="预防缓冲区溢出"><a href="#预防缓冲区溢出" class="headerlink" title="预防缓冲区溢出"></a>预防缓冲区溢出</h3><p>广义上分为两类：</p>
-<ul>
-<li>编译时防御系统，目的是强化系统以抵御潜伏于新程序中的恶意攻击</li>
-<li>运行时预防系统，目的是检测并终止现有程序中的恶意攻击</li>
-</ul>
-<p>尽管合适的防御系统已经出现几十年了，但是大量现有的脆弱的软件和系统阻碍了它们的部署。因此运行时防御有趣的地方是它能够部署在操作系统中，可以更新，并能为现有的易受攻击的程序提供保护</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/7434cf9c.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/7434cf9c.html" class="post-title-link" itemprop="url">I/O管理与磁盘调度</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-20 11:10:47 / 修改时间：11:14:29" itemprop="dateCreated datePublished" datetime="2023-05-20T11:10:47+08:00">2023-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="I-x2F-O缓冲"><a href="#I-x2F-O缓冲" class="headerlink" title="I&#x2F;O缓冲"></a>I&#x2F;O缓冲</h2><p><strong>缓冲技术</strong>：在输入请求发出之前就开始执行输入传送，并且在输出请求发出一段时间之后才开始执行输出传送，这项技术称为缓冲</p>
-<p>两类I&#x2F;O设备：</p>
-<ul>
-<li><strong>面向块的I&#x2F;O设备</strong>：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块</li>
-<li><strong>面向块的I&#x2F;O设备</strong>：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块</li>
-</ul>
-<h3 id="单缓冲"><a href="#单缓冲" class="headerlink" title="单缓冲"></a>单缓冲</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519133222.png" alt="Img"></p>
-<p><strong>对于面向块的I&#x2F;O设备</strong>：</p>
-<ul>
-<li>对于面向块的I&#x2F;O设备：</li>
-<li>相对于无缓冲的情况，这种方法通常会提高系统速度。用户进程可以在下一数据块读取的同时，处理已读入的数据块。由于输入发生在系统内存中而非用户进程内存中，因此操作系统可以将该进程换出</li>
-</ul>
-<p><strong>对于面向流的I&#x2F;O设备</strong>：</p>
-<p>单缓冲方案能以每次传送一行的方式或者每次传送一个字节的方式使用</p>
-<h3 id="双缓冲-缓冲交换"><a href="#双缓冲-缓冲交换" class="headerlink" title="双缓冲(缓冲交换)"></a>双缓冲(缓冲交换)</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519133353.png" alt="Img"></p>
-<p>分配2个缓冲区。在一个进程往一个缓冲区中传送数据(从这个缓冲区中取数据)的同时，操作系统正在清空(或者填充)另一个缓冲区</p>
-<h3 id="循环缓冲"><a href="#循环缓冲" class="headerlink" title="循环缓冲"></a>循环缓冲</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519133429.png" alt="Img"></p>
-<p>双缓冲方案可以平滑I&#x2F;O设备和进程之间的数据流。如果关注的焦点是某个特定进程的性能，那么常常会希望相关I&#x2F;O操作能够跟得上这个进程。如果该进程需要爆发式地执行大量的I&#x2F;O操作，仅有双缓冲就不够了，在这种情况下，通常使用多于两个的缓冲区方案来缓解不足</p>
-<h3 id="I-x2F-O缓冲的作用"><a href="#I-x2F-O缓冲的作用" class="headerlink" title="I&#x2F;O缓冲的作用"></a>I&#x2F;O缓冲的作用</h3><p>I&#x2F;O缓冲是用来平滑I&#x2F;O需求的峰值的一种技术，但是当进程的平均需求大于I&#x2F;O设备的服务能力时，缓冲再多也不能让I&#x2F;O设备与这个进程一直并驾齐驱。即使有多个缓冲区，所有的缓冲区终将会被填满，进程在处理完每一大块数据后不得不等待。但是，在多道程序设计环境中，当存在多种I&#x2F;O活动和多种进程活动时，缓冲是提高操作系统效率和单个进程性能的一种方法</p>
-<h2 id="磁盘调度"><a href="#磁盘调度" class="headerlink" title="磁盘调度"></a>磁盘调度</h2><h3 id="磁盘性能参数"><a href="#磁盘性能参数" class="headerlink" title="磁盘性能参数"></a>磁盘性能参数</h3><ul>
-<li><strong>寻道时间</strong>：磁头定位到磁道所需的时间</li>
-<li><strong>旋转延迟</strong>：选好磁道后，磁头到达扇区开始位置的时间</li>
-<li><strong>存取时间</strong>：寻道时间+旋转延迟</li>
-<li><strong>传输时间</strong>：磁头定位到扇区开始位置后，数据读写的时间</li>
-<li><strong>排队时间</strong></li>
-</ul>
-<h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><p>在多道程序环境中，操作系统为每个I&#x2F;O设备维护一个请求队列。因此对一个磁盘，队列中可能有来自多个进程的许多I&#x2F;O请求。如果随机地从队列中选择请求，那么磁道完全是被随机访问的，这种情况下性能最差。随机调度可用于与其他调度算法进行对比</p>
-<h4 id="先进先出-FIFO"><a href="#先进先出-FIFO" class="headerlink" title="先进先出(FIFO)"></a>先进先出(FIFO)</h4><ul>
-<li>按顺序处理队列中的请求</li>
-<li>如果有大量进程竞争一个磁盘，这种算法在性能上往往接近于随机调度</li>
-</ul>
-<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><ul>
-<li>这种方法不会优化磁盘利用率，但可以满足操作系统的其它目标</li>
-<li>这种方法不会优化磁盘利用率，但可以满足操作系统的其它目标</li>
-<li>可能会导致部分用户采用对抗手段：把作业分成小块，以回应系统的这种策略。对于数据库系统，这种算法往往性能较差</li>
-</ul>
-<h4 id="最短服务时间优先-SSTF"><a href="#最短服务时间优先-SSTF" class="headerlink" title="最短服务时间优先(SSTF)"></a>最短服务时间优先(SSTF)</h4><ul>
-<li>选择使磁头臂从当前位置开始移动最少(最小寻道时间)的磁盘I&#x2F;O请求</li>
-<li>但是，总是选择最小寻道时间并不能保证平均寻道时间最小，不过能提供比FIFO更好的性能</li>
-<li>磁头臂可以沿两个方向移动</li>
-</ul>
-<h4 id="SCAN"><a href="#SCAN" class="headerlink" title="SCAN"></a>SCAN</h4><ul>
-<li>运行类似电梯。磁头臂沿某一方向移动，并在途中满足所有未完成请求，直到到达最后一个磁道，或者该方向上没有更多请求。接着反转服务方向</li>
-<li>偏向接近最靠里或最靠外的磁道的请求，并且偏向最近的请求，可能发生饥饿</li>
-</ul>
-<h4 id="C-SCAN"><a href="#C-SCAN" class="headerlink" title="C-SCAN"></a>C-SCAN</h4><ul>
-<li>沿某个方向的扫描结束后，返回到相反方向的末端，再次扫描</li>
-<li>减少了新请求的最大延迟</li>
-<li>可能饥饿</li>
-</ul>
-<h4 id="N-step-SCAN-N步扫描"><a href="#N-step-SCAN-N步扫描" class="headerlink" title="N-step-SCAN(N步扫描)"></a>N-step-SCAN(N步扫描)</h4><p>SSTF、SCAN和C-SCAN可能在一段很长时间内磁头臂都不会移动(比如一个或多个进程对一个磁道有较高的访问速度，通过重复的请求这个磁道垄断整个设备)，从而饥饿其它请求</p>
-<ul>
-<li>把请求队列分成长度为N的子队列，每一次用SCAN处理一个子队列。在处理一个子队列时，新请求必须添加到其它某个队列中</li>
-<li>对于比较大的N值，性能接近SCAN；当N&#x3D;1时，实际上就是FIFO</li>
-</ul>
-<h3 id="磁盘调度算法比较"><a href="#磁盘调度算法比较" class="headerlink" title="磁盘调度算法比较"></a>磁盘调度算法比较</h3><p>假设有一些I&#x2F;O请求，需问这些磁道：55、58、39、18、90、160、150、38、184</p>
-<p>使用不同磁盘调度算法的结果如下：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519134030.png" alt="Img"></p>
-<h2 id="磁盘高速缓存"><a href="#磁盘高速缓存" class="headerlink" title="磁盘高速缓存"></a>磁盘高速缓存</h2><p>一个磁盘高速缓存是内存中为磁盘扇区设置的一个缓冲区，它包含有磁盘中某些扇区的副本。当出现一个请求某一特定扇区的I&#x2F;O请求时，首先进行检查，以确定该扇区是否在磁盘高速缓存中。如果在，则该请求可以通过这个高速缓存来满足；如果不在，则把请求的扇区从磁盘读到磁盘高速缓存中</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/15fc6e8c.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/15fc6e8c.html" class="post-title-link" itemprop="url">线程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-05-18 10:38:02" itemprop="dateCreated datePublished" datetime="2023-05-18T10:38:02+08:00">2023-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-20 11:14:29" itemprop="dateModified" datetime="2023-05-20T11:14:29+08:00">2023-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><ul>
-<li><strong>进程</strong>是操作系统进行资源分配的基本单位</li>
-<li><strong>线程</strong>是调度的基本单位</li>
-</ul>
-<p>进程中的所有线程共享该进程的状态和资源，进程和线程的关系如下图：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518102036.png" alt="Img"></p>
-<p>从性能上比较，线程具有如下优点：</p>
-<ol>
-<li>在一个已有进程中创建一个新线程比创建一个全新进程所需的时间要少许多</li>
-<li>终止一个线程比终止一个进程花费的时间少</li>
-<li>同一进程内线程间切换比进程间切换花费的时间少</li>
-<li>线程提高了不同的执行程序间通信的效率（在大多数操作系统中，独立进程间的通信需要内核的介入，以提供保护和通信所需要的机制。但是，由于在同一个进程中的线程共享内存和文件，它们无须调用内核就可以互相通信）</li>
-</ol>
-<h2 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h2><p>和进程一样，线程的关键状态有运行态、就绪态和阻塞态。一般来说，挂起态对线程没有什么意义。这是由于此类状态是一个进程级的概念。特别地，如果一个进程被换出，由于它的所有线程都共享该进程的地址空间，因此它们必须都被换出</p>
-<p>有4种与线程相关的基本操作：</p>
-<ul>
-<li><strong>派生</strong>：在典型情况下，当派生一个新进程时，同时也为该进程派生了一个线程。随后，进程中的线程可以在同一进程中派生另一个线程，并为新线程提供指令指针和参数；新线程拥有自己的寄存器上下文和栈空间，且被放置在就绪队列中</li>
-<li><strong>阻塞</strong>：当线程需要等待一个事件时，它将被阻塞（保存它的用户寄存器、程序计数器和栈指针），此时处理器转而执行另一个处于同一进程中或不同进程中的就绪线程</li>
-<li><strong>解除阻塞</strong>：当阻塞一个线程的事件发生时，该线程被转移到就绪队列中</li>
-<li><strong>结束</strong>：当一个线程完成时，其寄存器上下文和栈都被释放</li>
-</ul>
-<p>线程的生命周期</p>
-<p>线程的一些状态：</p>
-<ol>
-<li><strong>新建</strong>：创建线程对象</li>
-<li><strong>就绪</strong>：线程有执行资格，没有执行权</li>
-<li><strong>运行</strong>：有执行资格，有执行权</li>
-<li><strong>阻塞</strong>：由于一些操作让线程改变了状态，没有执行资格，没有执行权；另一些操作可以把它给激活，激活处于就绪状态</li>
-<li><strong>死亡</strong>：线程对象变成垃圾，等待被回收</li>
-</ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518102636.png" alt="Img"></p>
-<h2 id="线程分类"><a href="#线程分类" class="headerlink" title="线程分类"></a>线程分类</h2><p>线程的实现可以分为两大类：</p>
-<ul>
-<li><strong>用户级线程</strong>：有关线程管理的所有工作都由应用程序完成(使用线程库)，内核意识不到线程的存在</li>
-<li><strong>内核级线程</strong>：有关线程管理的所有工作都由内核完成，应用程序部分没有进行线程管理的代码</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518102843.png" alt="Img"></p>
-<h3 id="用户级线程"><a href="#用户级线程" class="headerlink" title="用户级线程"></a>用户级线程</h3><p>在用户级线程中，进程和线程的状态可能有如下转换</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518103007.png" alt="Img"></p>
-<ul>
-<li>a)-&gt;b)：<strong>线程2中执行的应用程序代码进行系统调用</strong>，阻塞了进程B。例如，进行一次I&#x2F;O调用。这导致控制转移到内核，内核启动I&#x2F;O操作，把进程B置于阻塞状态，并切换到另一个进程。在此期间，根据线程库维护的数据结构，进程B的线程2仍处于运行状态。值得注意的是，从处理器上执行的角度看，线程2实际上并不处于运行态，但是在线程库看来，它处于运行态</li>
-<li>a)-&gt;c)：<strong>时钟中断把控制传递给内核</strong>，内核确定当前正在运行的进程B已经用完了它的时间片。内核把进程B置于就绪态并切换到另一个进程。同时，根据线程库维护的数据结构，进程B的线程2仍处于运行态</li>
-<li>a)-&gt;d)：<strong>线程2运行到需要进程B的线程1执行某些动作的一个点</strong>。此时，线程2进入阻塞态，而线程1从就绪态转换到运行态。进程自身保留在运行态</li>
-</ul>
-<p>在前两种情况中，当内核把控制切换回进程B时，线程2会恢复执行</p>
-<p>还需注意，<strong>进程在执行线程库中的代码时可以被中断</strong>，或者是由于它的时间片用完了，或者是由于被一个更高优先级的进程所抢占。因此在中断时，进程可能处于线程切换的中间时刻。当该进程被恢复时，线程库得以继续运行，并完成线程切换和把控制转移给另一个线程</p>
-<p><strong>用户级线程的优点</strong></p>
-<ol>
-<li>由于所有线程管理数据结构都在一个进程的用户地址空间中，线程切换不需要内核态特权，节省了两次状态转换的开销</li>
-<li>调度可以是应用程序相关的（一个应用程序可能更适合简单的轮转调度，另一个可能更适合基于优先级的调度），可以为应用量身定做调度算法而不扰乱底层操作系统调度程序</li>
-<li>可以在任何操作系统中运行，不需要对底层内核进行修改以支持用户级线程</li>
-</ol>
-<p><strong>用户级线程的缺点</strong></p>
-<ol>
-<li>当用户级线程执行一个系统调用时，不仅这个线程会被阻塞，进程中的所有线程都会被阻塞</li>
-<li>一个多线程应用程序不能利用多处理技术。内核一次只把一个进程分配给一个处理器，因此一次进程中只有一个线程可以执行（事实上，在一个进程内，相当于实现了应用程序级别的多道程序）</li>
-</ol>
-<h3 id="内核级线程"><a href="#内核级线程" class="headerlink" title="内核级线程"></a>内核级线程</h3><p>内核能意识到线程的存在</p>
-<p><strong>内核级线程的优点</strong></p>
-<ol>
-<li>内核可以同时把同一进程中的多个线程调度到多个处理器中同时运行</li>
-<li>如果进程中一个线程被阻塞，内核可以调度其它线程</li>
-<li>内核例程自身也可以使用多线程</li>
-</ol>
-<p><strong>内核级线程的缺点</strong></p>
-<ol>
-<li>把控制从一个线程转移到用一进程的另一线程时，需要到内核的状态切换</li>
-</ol>
-<h3 id="混合方案"><a href="#混合方案" class="headerlink" title="混合方案"></a>混合方案</h3><p>可以混合使用用户级和内核级线程。在混合方案中，同一应用程序中的多个线程可以在多个处理器上并行地运行，某个会引起阻塞的系统调用不会阻塞整个进程</p>
-<p>如果设计正确，该方法将会结合纯粹用户级线程和内核级线程方法的优点，同时克服它们的缺点</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/31a6b40.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/31a6b40.html" class="post-title-link" itemprop="url">进程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-18 10:17:39 / 修改时间：10:18:09" itemprop="dateCreated datePublished" datetime="2023-05-18T10:17:39+08:00">2023-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="进程的定义"><a href="#进程的定义" class="headerlink" title="进程的定义"></a>进程的定义</h2><p>进程有以下定义：</p>
-<ul>
-<li>一个正在执行中的程序</li>
-<li>一个正在计算机上执行的程序实例</li>
-<li>能分配给处理器并由处理器执行的实体</li>
-<li>一个具有以下特征的活动单元：一组指令序列的执行、一个当前状态和相关的系统资源集</li>
-</ul>
-<p>也可以把进程视为由<strong>程序代码、和代码相关联的数据集、进程控制块</strong>组成的实体</p>
-<p><strong>进程控制块</strong>：由操作系统创建和管理。进程控制块包含了充分的信息，这样就可以中断一个进程的执行，并且在后来恢复执行进程时就好像进程未被中断过一样。进程控制块是操作系统能够支持多进程和提供多重处理技术的关键，<strong>进程控制块是操作系统中最重要的数据结构，每个进程控制块包含操作系统所需要的关于进程的所有信息</strong></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518095136.png" alt="Img"></p>
-<ul>
-<li>内存指针：包括程序代码和进程相关数据的指针，还有和其他进程共享内存块的指针</li>
-<li>上下文数据：进程执行时处理器寄存器中的数据</li>
-</ul>
-<p>进程被中断时，操作系统会把程序计数器和上下文数据保存到进程控制块中的相应位置</p>
-<p>**程序状态字(PSW)**：所有处理器设计都包括一个或一组通常称为程序状态字的寄存器，包含有进程的状态信息</p>
-<h2 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h2><h3 id="进程的创建与终止"><a href="#进程的创建与终止" class="headerlink" title="进程的创建与终止"></a>进程的创建与终止</h3><p>进程按以下步骤创建：</p>
-<ol>
-<li>给新进程分配一个唯一的进程标识符</li>
-<li>给新进程分配空间（包括进程映像中的所有元素）</li>
-<li>初始化进程控制块</li>
-<li>设置正确的连接（保存到相应队列）</li>
-</ol>
-<p>会导致创建进程的事件：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518095357.png" alt="Img"></p>
-<p>会导致终止进程的事件：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518095443.png" alt="Img"></p>
-<h3 id="两状态模型"><a href="#两状态模型" class="headerlink" title="两状态模型"></a>两状态模型</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518095520.png" alt="Img"></p>
-<h3 id="五状态模型"><a href="#五状态模型" class="headerlink" title="五状态模型"></a>五状态模型</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518095551.png" alt="Img"></p>
-<p><strong>运行态-&gt;就绪态</strong>：<br>1）超时：即正在运行的进程到达了”允许不中断执行“的最大时间段（所有多道程序操作系统都实现了这类时间限定）<br>2）优先级低的进程被优先级高进程抢占（并不是所有操作系统都实现了）</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518095646.png" alt="Img"></p>
-<p>图b)中一个事件对应一个队列。当事件发生时，相应队列中的所有进程都转换到就绪态</p>
-<p>除此之外，就绪队列也可以按照优先级组织成多个队列</p>
-<h3 id="引入”挂起态“的进程模型"><a href="#引入”挂起态“的进程模型" class="headerlink" title="引入”挂起态“的进程模型"></a>引入”挂起态“的进程模型</h3><p><strong>为何引入？</strong></p>
-<p>考虑一个没有使用虚拟内存的系统，每个被执行的进程必须完全载入内存，因此，2.3图b)中，所有队列中的所有进程必须驻留在内存中</p>
-<p>所有这些设计机制的原因都是由于I&#x2F;O活动比计算速度慢得多，因此在单道程序系统中的处理器大多数时候是空闲的。但是2.3图b)的方案并未完全解决这个问题。在这种情况下，内存保存有多个进程，当一个进程正在等待时，处理器可以转移到另一个进程，但是处理器比I&#x2F;O要快的多，以至于内存中所有的进程都在等待I&#x2F;O的情况很常见。因此，即使是多道程序设计，大多数时候处理器仍然处于空闲</p>
-<p>因此，<strong>可以把内存中某个进程的一部分或全部移出到磁盘中</strong>。当内存中没有处于就绪状态的进程时，操作系统就把被阻塞的进程换出到磁盘中的”挂起队列“。操作系统在此之后取出挂起队列中的另一个进程，或者接受一个新进程的请求，将其纳入内存运行</p>
-<p>“交换”是一个I&#x2F;O操作，因而也可能使问题更加恶化。但是由于磁盘I&#x2F;O一般是系统中最快的I&#x2F;O(相对于磁带或打印机I&#x2F;O)，所以交换通常会提高性能</p>
-<p><strong>进程模型</strong></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518100141.png" alt="Img"></p>
-<ul>
-<li><strong>就绪&#x2F;挂起-&gt;就绪</strong>：1）内存中没有就绪态进程，需要调入一个进程继续执行；2）处于就绪&#x2F;挂起的进程具有更高优先级</li>
-<li><strong>就绪-&gt;就绪&#x2F;挂起</strong>：1）如果释放空间以得到足够空间的唯一方法是挂起一个就绪态的进程；2）如果操作系统确信高优先级的阻塞态进程很快将会就绪，那么可能会挂起一个低优先级的就绪态进程而不是一个高优先级的阻塞态进程</li>
-<li><strong>新建-&gt;就绪&#x2F;挂起</strong>：进程创建需要为其分配内存空间，如果内存中没有足够的空间分配给新进程，会使用”新建-&gt;就绪&#x2F;挂起“转换</li>
-<li><strong>阻塞&#x2F;挂起-&gt;阻塞</strong>：比较少见。如果一个进程终止，释放了一些内存空间，阻塞&#x2F;挂起队列中有一个进程比就绪&#x2F;挂起队列中任何进程的优先级都要高，并且操作系统有理由相信阻塞进程的事件很快就会发生</li>
-<li><strong>运行-&gt;就绪&#x2F;挂起</strong>：如果位于阻塞&#x2F;挂起队列中的具有较高优先级的进程变得不再阻塞，操作系统抢占这个进程，也可以直接把这个进程转换到就绪&#x2F;挂起队列中，并释放一些内存</li>
-</ul>
-<p><strong>导致进程挂起的原因</strong><br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518100434.png" alt="Img"></p>
-<h2 id="进程的描述"><a href="#进程的描述" class="headerlink" title="进程的描述"></a>进程的描述</h2><p>操作系统为了管理进程和资源，必须掌握关于每个进程和资源当前状态的信息。普遍使用的方法是：操作系统构造并维护它所管理的每个实体的信息表：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518100702.png" alt="Img"></p>
-<p>内存表用于跟踪内(实)存和外存(虚拟内存)</p>
-<p>使用<strong>进程映像</strong>来描述一个进程，进程镜像包括：<strong>程序、数据、栈和进程控制块(属性的集合)：</strong><br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518100753.png" alt="Img"></p>
-<p>下图为一个典型的<strong>进程映像</strong>结构：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518100813.png" alt="Img"></p>
-<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><h3 id="执行模式"><a href="#执行模式" class="headerlink" title="执行模式"></a>执行模式</h3><p>大多数处理器至少支持两种执行模式：</p>
-<ul>
-<li><strong>用户态</strong></li>
-<li>**内核态(系统态、控制态)**：软件具有对处理器及所有指令、寄存器和内存的控制能力</li>
-</ul>
-<p>使用两种模式的原因是很显然的，它可以保护操作系统和重要的操作系统表(如进程控制块)不受用户程序的干涉</p>
-<p><strong>处理器如何知道它正在什么模式下执行及如何改变模式？</strong></p>
-<p>程序状态字(PSW)中有一位表示执行模式，这一位应某些事件的要求而改变。在典型情况下</p>
-<ul>
-<li>当用户调用一个操作系统服务或中断触发系统例程的执行时，执行模式被设置为内核态</li>
-<li>当从系统服务返回到用户进程时，执行模式被设为用户态</li>
-</ul>
-<h3 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h3><p>在下列事件中，进程可能把控制权交给操作系统：<br><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518101105.png" alt="Img"></p>
-<ul>
-<li><strong>系统中断</strong><ul>
-<li><strong>中断</strong>：与当前正在运行的进程无关的某种类型的外部事件相关。控制首先转移给中断处理器，做一些基本的辅助工作后，转到与已经发生的特定类型的中断相关的操作系统例程</li>
-<li><strong>陷阱</strong>：与当前正在运行的进程所产生的错误或异常条件相关。操作系统首先确定错误或异常条件是否是致命的。1）如果是，当前进程被换到退出态，发生进程转换；2）如果不是，动作取决于错误的种类或操作系统的设计，可能会进行一次进程切换或者继续执行当前进程</li>
-</ul>
-</li>
-<li><strong>系统调用</strong>：转移到作为操作系统代码一部分的一个例程上执行。通常，使用系统调用会把用户进程置为阻塞态</li>
-</ul>
-<p>进程切换步骤如下：</p>
-<ol>
-<li>保存处理器上下文环境（包括程序计数器和其它寄存器）</li>
-<li>更新当前处于运行态进程的进程控制块（状态和其它信息）</li>
-<li>将进程控制块移到相应队列</li>
-<li>选择另一个进程执行</li>
-<li>更新所选择进程的进程控制块（包括将状态变为运行态）</li>
-<li>更新内存管理的数据结构</li>
-<li>恢复处理器在被选择的进程最近一次切换出运行状态时的上下文环境</li>
-</ol>
-<blockquote>
-<p><strong>进程切换一定有模式切换；模式切换不一定有进程切换</strong>（中断会发生模式切换，但是在大多数操作系统中，中断的发生并不是必须伴随着进程的切换的。可能是中断处理器执行之后，当前正在运行的程序继续执行）；</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/2ba40472.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/2ba40472.html" class="post-title-link" itemprop="url">操作系统概述</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-18 00:22:28 / 修改时间：00:22:55" itemprop="dateCreated datePublished" datetime="2023-05-18T00:22:28+08:00">2023-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="操作系统的目标和功能"><a href="#操作系统的目标和功能" class="headerlink" title="操作系统的目标和功能"></a>操作系统的目标和功能</h2><p>操作系统是控制应用程序执行的程序，并充当应用程序和计算机硬件之间的接口</p>
-<ul>
-<li>作为用户&#x2F;计算机接口</li>
-<li>作为资源管理器（操作系统控制处理器使用其它系统资源，并控制其它程序的执行时机）</li>
-<li>易扩展性</li>
-</ul>
-<h2 id="操作系统的发展"><a href="#操作系统的发展" class="headerlink" title="操作系统的发展"></a>操作系统的发展</h2><ol>
-<li><strong>串行处理</strong>：程序员直接与计算机硬件打交道，因为当时还没操作系统。这些机器在一个控制台上运行，用机器代码编写的程序通过输入设备载入计算机。如果发生错误使得程序停止，错误原因由显示灯指示。如果程序正常完成，输出结果出现在打印机上</li>
-<li><strong>简单批处理系统</strong>：中心思想是使用一个称为监控程序的软件。通过使用这类操作系统，用户不再直接访问机器，相反，用户把卡片或磁带种的作业提交给计算机操作员，由他把这些作业按顺序组织成一批，并将整个批作业放在输入设备上，供监控程序使用。每个程序完成处理后返回到监控程序，同时，监控程序自动加载下一个程序</li>
-<li><strong>多道批处理系统</strong>：简单批处理系统提供了自动作业序列，但是处理器仍经常空闲，因为对于I&#x2F;O指令，处理器必须等到其执行完才能继续。内存空间可以保持操作系统和一个用户程序，假设内存空间容得下操作系统和两个用户程序，那么当一个作业需要等到I&#x2F;O时，处理器可以切换到另一个可能不需要等到I&#x2F;O的作业。进一步还可以扩展存储器保存三个、四个或更多的程序，并且在他们之间进行切换。这种处理称为多道程序设计或多任务处理，是现代操作系统的主要方案</li>
-<li><strong>分时系统</strong>：正如多道程序设计允许处理器同时处理多个批作业一样，它还可以用于处理多个交互作业。对于后一种情况，由于多个用户分享处理器时间，因而该技术称为分时。在分时系统中，多个用户可以通过终端同时访问系统，由操作系统控制每个用户程序以很短的时间为单位交替执行</li>
-</ol>
-<p>以下为多道批处理系统与分时系统的比较</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>批处理多道程序设计</th>
-<th>分时</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>主要目标</td>
-<td>充分使用处理器</td>
-<td>减小响应时间</td>
-</tr>
-<tr>
-<td>操作系统指令源</td>
-<td>作业控制语言；作业提供的命令</td>
-<td>终端输入的命令</td>
-</tr>
-</tbody></table>
-<h2 id="现代操作系统"><a href="#现代操作系统" class="headerlink" title="现代操作系统"></a>现代操作系统</h2><p>对操作系统要求上的变化速度之快不仅需要修改和增强现有的操作系统体系结构，而且需要有新的操作系统组织方法。在实验用和商用操作系统中有很多不同的方法和设计要素，大致分为以下几类：</p>
-<ul>
-<li>微内核体系结构</li>
-<li>多线程</li>
-<li>对称多处理：是一种计算机系统架构，其中多个处理器核心对称地共享系统资源和执行任务。在 SMP 架构中，每个处理器核心都可以独立执行指令，并且可以访问共享的内存、外部设备和其他系统资源。</li>
-<li>分布式操作系统：</li>
-<li>面向对象设计</li>
-</ul>
-<p><strong>大内核</strong>：至今为止大多数操作系统都有一个单体内核，操作系统应该提供的大多数功能由这些大内核提供，包括调度、文件系统、网络、设备管理器、存储管理等。典型情况下，这个大内核是作为一个进程实现的，所有元素共享相同的地址空间</p>
-<p><strong>微内核</strong>：微内核体系结构只给内核分配一些最基本的功能，包括地址空间，进程间通信和基本的调度。其它操作系统服务都是由运行在用户态下且与其他应用程序类似的进程提供，这些进程可以根据特定应用和环境定制。这种方法把内核和服务程序的开发分离开，可以为特定的应用程序或环境要求定制服务程序。可以使系统结构的设计更简单、灵活，很适合于分布式环境</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/47ad01c5.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/47ad01c5.html" class="post-title-link" itemprop="url">计算机系统概述</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-18 00:21:17 / 修改时间：00:22:55" itemprop="dateCreated datePublished" datetime="2023-05-18T00:21:17+08:00">2023-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="基本构成"><a href="#基本构成" class="headerlink" title="基本构成"></a>基本构成</h2><p>计算机的四个主要组件</p>
-<ul>
-<li>处理器：也称为中央处理器(Central Processing Unit, 简称CPU)，是计算机系统中的一个核心组件，它是一种能够执行计算机指令的硬件设备</li>
-<li>内存：用于存储数据和程序的硬件设备，是计算机系统中的一种临时存储介质，用于暂时存放正在执行的程序和数据，以供处理器快速访问</li>
-<li>I&#x2F;O模块：是计算机系统中用于处理输入和输出设备的硬件模块，负责处理计算机系统与外部设备之间的数据传输和交互</li>
-<li>系统总线：是计算机系统中用于连接主要组件的集线器，它扮演着数据和信号传输的通道角色</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516203050.png" alt="Img"></p>
-<h2 id="指令的执行"><a href="#指令的执行" class="headerlink" title="指令的执行"></a>指令的执行</h2><p>基本指令周期，指令处理包括2步：</p>
-<ul>
-<li>处理器从存储器一次读一条指令</li>
-<li>执行每条指令</li>
-</ul>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516204104.png" alt="Img"></p>
-<p>处理器中的PC保存下一条指令的地址，IR保存当前即将执行的指令。</p>
-<p>PC：程序计数器（Program Conter），也称为指令指针或指令计数器。PC是处理器（CPU）中的一个寄存器，用于存储下一条将要执行的指令的内存地址。在执行程序时，处理器根据PC中存储的地址来获取下一条指令，并将PC的值增加以指向下一条指令的地址，从而实现顺序执行。</p>
-<p>IR：指令寄存器（Instruction Register），也称为指令缓冲寄存器或指令译码器。IR时处理器中的一个寄存器，用于存储当前正在执行的指令。当处理器从内存中读取指令并准备执行时，指令会被加载到IR中，供处理器进行解码和执行。</p>
-<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p><strong>允许“其它模块”（I&#x2F;O、存储器）中断“处理器”正常处理过程的机制</strong></p>
-<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>提高CPU利用率，防止一个程序垄断CPU资源</p>
-<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ol>
-<li>程序中断：是操作系统中的一种机制，用于在程序执行过程中暂停当前的指令流，并转而执行一个特定的中断处理程序。</li>
-<li>时钟中断：是指由计时器或时钟设备触发的一种中断</li>
-<li>I&#x2F;O中断：是操作系统中的一种中断类型，用于处理外部设备产生的事件和请求</li>
-<li>硬件失效中断：指由于硬件故障或错误导致的计算机系统中断。当计算机系统中的硬件设备出现故障或错误时，它可能无法继续正常工作，这时系统会产生硬件失效中断信号，通知操作系统或其他软件程序中断正在进行的处理并采取相应的措施。</li>
-</ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516204925.png" alt="Img"></p>
-<h3 id="中断控制流"><a href="#中断控制流" class="headerlink" title="中断控制流"></a>中断控制流</h3><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516210016.png" alt="Img"></p>
-<p>I&#x2F;O程序：</p>
-<ul>
-<li>指令序号4：为实际I&#x2F;O做准备</li>
-<li>I&#x2F;O命令：如果不使用中断，执行命令时，程序必须等待I&#x2F;O设备执行请求的函数（或周期性地检测I&#x2F;O设备的状态或轮询I&#x2F;O设备）。程序可能通过简单地重复执行一个测试操作的方式进行等待，以确定I&#x2F;O操作是否完成</li>
-<li>指令序号5：操作完成，包括设置成功或失败标签</li>
-</ul>
-<p>中断：短I&#x2F;O等待</p>
-<ul>
-<li>利用中断功能，处理器可以在I&#x2F;O操作的执行过程中执行其它指令：用户程序到达系统调用WRITE处，但涉及的I&#x2F;O程序仅包括准备代码和真正的I&#x2F;O命令。在这些为数不多的几条指令执行后，控制返回到用户程序。在这期间，外部设备忙于从计算机存储器接收数据并打印。这种I&#x2F;O操作和用户程序中指令的执行是并发的</li>
-<li>当外部设备做好服务的准备时，也就是说，当它准备好从处理器接收更多的数据时，该外部设备的I&#x2F;O模块给处理器发送一个中断请求信号。这是处理器会做出响应，暂停当前程序的处理，转去处理服务于特定I&#x2F;O设备的程序，这个程序称为中断处理程序。在对该设备的服务响应完成后，处理器恢复原先的执行</li>
-</ul>
-<p>中断：长I&#x2F;O等待</p>
-<ul>
-<li>对于如打印机等较慢的设备来说，I&#x2F;O操作比执行一系列用户指令的时间长得多，因此在下一次I&#x2F;O操作时，前一次I&#x2F;O可能还未执行完。在上图c中，第二次WRITE调用时，第一次WRITE的I&#x2F;O还未执行完，结果是用户程序会在这挂起，当前面I&#x2F;O完成后，才能继续新的WRITE调用</li>
-</ul>
-<h3 id="中断处理"><a href="#中断处理" class="headerlink" title="中断处理"></a>中断处理</h3><p>中断激活了很多事件，包括处理器硬件中的事件以及软件中的事件</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230516211026.png" alt="Img"></p>
-<p>被中断程序的信息保存与恢复：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234021.png" alt="Img"></p>
-<h3 id="多个中断"><a href="#多个中断" class="headerlink" title="多个中断"></a>多个中断</h3><p>在处理一个中断的过程中，可能会发生另一个中断，处理多个中断有2种方法<br>    - <strong>当正在处理一个中断时，禁止再发生中断</strong>：如果有新的中断请求信号，处理器不予理睬。通常在处理中断期间发生的中断被挂起，当处理器再次允许中断时再处理<br>    - <strong>定义中断优先级</strong>：允许高优先级的中断处理打断低优先级的中断处理程序的允许</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234241.png" alt="Img"></p>
-<h2 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234331.png" alt="Img"></p>
-<p>从上往下看，会出现以下情况：<br>    - 每“位”的价格递减<br>    - 容量递增<br>    - 存取时间递增<br>    - 处理器访问存储器的频率笛剑（有效的基础是访问的局部性原理）</p>
-<h3 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h3><p>内存的存储周期跟不上处理器周期，因此，利用局部性原理在处理器和内存间提供一个容量小而速度快的存储器，称为高速缓存</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230517234533.png" alt="Img"></p>
-<p>上图中高速缓存通常分为多级：L1、L2、L3</p>
-<h2 id="直接内存存取（DMA）"><a href="#直接内存存取（DMA）" class="headerlink" title="直接内存存取（DMA）"></a>直接内存存取（DMA）</h2><p>针对I&#x2F;O操作有3种可能的技术</p>
-<ul>
-<li>可编程（控制程序）I&#x2F;O（需处理器干预）</li>
-<li>中断驱动I&#x2F;O（需处理器干预）</li>
-<li>直接内存存取</li>
-</ul>
-<p>当处理器正在执行程序并遇到一个I&#x2F;O相关的指令时，它通过给相应的I&#x2F;O模块发命令来执行这个指令：</p>
-<ol>
-<li><p>使用可编程I&#x2F;O时，I&#x2F;O模块执行请求的动作并设置I&#x2F;O状态寄存器中相应的位，<strong>但它并不进一步通知处理器，尤其是它并不中断处理器</strong>，因此处理器在执行I&#x2F;O指令后，还需定期检查I&#x2F;O模块的状态。为了确定I&#x2F;O模块是否做好了接收或发送更多数据的准备，处理器等待期间必须不断询问I&#x2F;O模块的状态，这会严重降低整个系统的性能</p>
-</li>
-<li><p>如果是中断驱动I&#x2F;O，在给I&#x2F;O模块发送I&#x2F;O命令后，处理器可以继续做其它事。当I&#x2F;O模块准备好与处理器交换数据时，会中断处理器并请求服务，处理器接着响应中断，完成后再恢复以前的执行过程。</p>
-<p> 尽管中断驱动I&#x2F;O比可编程I&#x2F;O更有效，但是<strong>处理器仍需要主动干预在存储器和I&#x2F;O模块直接的数据传输，并且任何数据传送都必须完全通过处理器</strong>。由于需要处理器干预，这两种I&#x2F;O存在下列缺陷：</p>
-<ul>
-<li>I&#x2F;O传送速度受限于处理器测试设备和提供服务的速度（数据传送受限于处理器）</li>
-<li>处理器忙于管理I&#x2F;O传送工作，必须执行很多指令以完成I&#x2F;O传送（处理器为数据传送需要做很多事）</li>
-</ul>
-</li>
-<li><p>因此，当需要移动大量数据时，需要使用一种更有效的技术：直接内存存取。DMA功能可以由系统总线种一个独立的模块完成，也可以并入到一个I&#x2F;O模块中。</p>
-</li>
-</ol>
-<p>DMA的工作方式如下，当处理器需要读写一块数据时，它给DMA模块产生一条命令，发送下列信息：</p>
-<ul>
-<li>是否请求一次读或写</li>
-<li>涉及的I&#x2F;O设备的地址</li>
-<li>开始读或写的存储单元</li>
-<li>需要读或写的子树</li>
-</ul>
-<p>之后处理器继续其它工作。处理器将这个操作委托给DMA模块，DMA模块直接与存储器交换，这个操作过程不需要处理器参与。当传送完成后，DMA模块发送一个中断信号给处理器。因此只有在开始和结束时，处理器才会参与</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230518000544.png" alt="Img"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zyfblogs.xyz/posts/bcc7d896.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/main.jpg">
-      <meta itemprop="name" content="GotoMove">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="G.M. Blog">
-      <meta itemprop="description" content="sharing blogs">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | G.M. Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/bcc7d896.html" class="post-title-link" itemprop="url">LeetCode 周赛345</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-05-14 12:56:52 / 修改时间：12:57:52" itemprop="dateCreated datePublished" datetime="2023-05-14T12:56:52+08:00">2023-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>10 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="6430-找出转圈游戏输家"><a href="#6430-找出转圈游戏输家" class="headerlink" title="6430.找出转圈游戏输家"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/contest/weekly-contest-345/problems/find-the-losers-of-the-circular-game/">6430.找出转圈游戏输家</a></h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514112241.png" alt="Img"></p>
-<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n = 5, k = 2</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[4,5]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">以下为游戏进行情况：</span><br><span class="line">1）第 1 个朋友接球，第 1 个朋友将球传给距离他顺时针方向 2 步的玩家 —— 第 3 个朋友。</span><br><span class="line">2）第 3 个朋友将球传给距离他顺时针方向 4 步的玩家 —— 第 2 个朋友。</span><br><span class="line">3）第 2 个朋友将球传给距离他顺时针方向 6 步的玩家 —— 第 3 个朋友。</span><br><span class="line">4）第 3 个朋友接到两次球，游戏结束。</span><br></pre></td></tr></table></figure>
-
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们用哈希表来存储每个朋友是否接到过球，因为第二次接球的时候游戏就结束了，因此我们不用记录每个朋友接过多少次球，只要记录是否接过球即可。然后每传一次球，就将相应的位置的哈希值置为<code>1</code>，直到该位置本身就是<code>1</code>时退出传球。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">circularGameLosers</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">t</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        t[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> f = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(t[(i * k + f) % n]) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                t[(i * k + f) % n] = <span class="number">1</span>;</span><br><span class="line">                f = (i * k + f) % n;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!t[i])&#123;</span><br><span class="line">                ans.<span class="built_in">emplace_back</span>(i + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="6431-相邻值的按位异或"><a href="#6431-相邻值的按位异或" class="headerlink" title="6431. 相邻值的按位异或"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/contest/weekly-contest-345/problems/neighboring-bitwise-xor/">6431. 相邻值的按位异或</a></h1><h2 id="题面-1"><a href="#题面-1" class="headerlink" title="题面"></a>题面</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514120633.png" alt="Img"></p>
-<h2 id="Sample-1"><a href="#Sample-1" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">derived = [1,1,0]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">true</span><br></pre></td></tr></table></figure>
-
-<h3 id="Explain-1"><a href="#Explain-1" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">能够派生得到 [1,1,0] 的有效原始二进制数组是 [0,1,0] ：</span><br><span class="line">derived[0] = original[0] ⊕ original[1] = 0 ⊕ 1 = 1 </span><br><span class="line">derived[1] = original[1] ⊕ original[2] = 1 ⊕ 0 = 1</span><br><span class="line">derived[2] = original[2] ⊕ original[0] = 0 ⊕ 0 = 0</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><ul>
-<li><code>n == derived.length</code></li>
-<li><code>1 &lt;= n &lt;= 1e5</code></li>
-<li><code>derived</code> 中的值不是 0 就是 1 。</li>
-</ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>刚开始看到这道题的时候愣了一下，因为不知道如何下手，但是一看到这个题是一个二进制，我就当作模拟来做了<br>开始做题目之前，我们先熟悉一下什么是异或，下面我会提供一个异或表</p>
-<table>
-<thead>
-<tr>
-<th>a</th>
-<th>b</th>
-<th>a⊕b</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody></table>
-<p>由此我们看到如果我们知道了数值<code>a</code>的值和异或的值，那么<code>b</code>的值就是唯一的，根据这个特性我们就可以解决这个问题</p>
-<p>我们先假设original数组中的第一个数是<code>0</code>，然后我们根据提供的derived数组慢慢往后推original每一个位置的值(因为我们已经知道了异或的值和一个异或的参数)，直到最后一个数，然后根据最后一个数推第一个数，因为题目中有说明，derived的最后一个数是original数组中的最后一个数和第一个数异或得到，因此我们推到最后可以获得original的第一个数，如果和我们假设的数一样，那么说明构造成功，否则就重新假设第一个数是<code>1</code>再构造一遍。</p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">doesValidArrayExist</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; derived)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> f = <span class="number">0</span>, len = derived.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(derived[i] == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(f == <span class="number">1</span>) f = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span> f = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(f == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        f = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(derived[i] == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(f == <span class="number">1</span>) f = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span> f = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(f == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="6433-矩阵中移动的最大次数"><a href="#6433-矩阵中移动的最大次数" class="headerlink" title="6433. 矩阵中移动的最大次数"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/contest/weekly-contest-345/problems/maximum-number-of-moves-in-a-grid/">6433. 矩阵中移动的最大次数</a></h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514122530.png"></p>
-<h2 id="Sample-2"><a href="#Sample-2" class="headerlink" title="Sample"></a>Sample</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514122603.png" alt="Img"></p>
-<h3 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid = [[2,4,3,5],[5,4,9,3],[3,4,2,11],[10,9,13,15]]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<h3 id="Explain-2"><a href="#Explain-2" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">可以从单元格 (0, 0) 开始并且按下面的路径移动：</span><br><span class="line">- (0, 0) -&gt; (0, 1).</span><br><span class="line">- (0, 1) -&gt; (1, 2).</span><br><span class="line">- (1, 2) -&gt; (2, 3).</span><br><span class="line">可以证明这是能够移动的最大次数。</span><br></pre></td></tr></table></figure>
-
-<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
-<li><code>m == grid.length</code></li>
-<li><code>n == grid[i].length</code></li>
-<li><code>2 &lt;= m, n &lt;= 1000</code></li>
-<li><code>4 &lt;= m * n &lt;= 1e5</code></li>
-<li><code>1 &lt;= grid[i][j] &lt;= 1e6</code></li>
-</ul>
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>做题第一要点，得看清题意，做完之后和群内大佬聊天，发现很多人都是因为题意没有理清就做，然后贡献了一发wa<br>题目中已经很明确的说了，是在<strong>第一列的任一位置</strong>，而不是在任意位置，因此起点只能在第一列<br>然后根据题目的意思，我们可以知道移动的三个方向如下图所示</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514122455.png" alt="Img"></p>
-<p>知道这些后我们应该怎么做呢？如果我们单纯的暴力bfs做的话，搜索树节点将会非常多，会导致我们超时（第一次提交的时候因为这个导致TLE），那我们应该怎么节省时间呢？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514123358.png" alt="Img"></p>
-<p>我想到了之前学dp的时候有一个记忆化搜索，这道题也可以使用，因为我们遍历是从左往右一列一列的遍历，所以不同的点遍历到相同的点时所需的步数是一样的，就像上图的<code>2-&gt;4</code>和<code>3-&gt;4</code>，都只需要一步，如果<code>2-&gt;4</code>已经遍历下去，那么<code>3-&gt;4</code>之后还需要遍历吗？不需要，因为就算遍历下去，这条路径的最优解也就是之前已经遍历过的最优解，属于是重复遍历，因此我们可以对每一个节点进行标记，如果一个点之前遍历过了就可以直接停止往下遍历。<br>这样的话，因为每一个点最多遍历一次，因此时间复杂度最高也就是$O(m*n)$。</p>
-<h2 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h2><p>我们用dfs的方法进行搜索获取全局最优解。</p>
-<p>首先用一个二维数组对grid图进行标记，0为未曾到达过，1为已经遍历过，如果我们到达一个点时，这个点的标记是1，那么说明我们可以停止在这条路径上继续搜索。<br>每到达一个点的时候，我们根据路径的三个方向继续往下搜索，直到不能继续搜索。<br>搜索要注意的有以下两点</p>
-<ol>
-<li>搜索的起点是第一列</li>
-<li>搜索的路径中数字是逐渐变大的</li>
-</ol>
-<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; f;</span><br><span class="line">    <span class="type">int</span> ans;</span><br><span class="line">    <span class="type">int</span> rows, cols;</span><br><span class="line">    <span class="type">int</span> dx[<span class="number">3</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; &amp;grid, <span class="type">int</span> row, <span class="type">int</span> col)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(f[row][col]) <span class="keyword">return</span>;</span><br><span class="line">        f[row][col] = <span class="number">1</span>;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, col);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(dx[i] + row &gt;= <span class="number">0</span> &amp;&amp; dx[i] + row &lt; rows &amp;&amp; col + <span class="number">1</span> &lt; cols &amp;&amp; grid[dx[i] + row][col + <span class="number">1</span>] &gt; grid[row][col])&#123;</span><br><span class="line">                <span class="built_in">dfs</span>(grid, row + dx[i], col + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxMoves</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        rows = grid.<span class="built_in">size</span>(), cols = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        ans = <span class="number">0</span>;</span><br><span class="line">        f.<span class="built_in">assign</span>(grid.<span class="built_in">begin</span>(), grid.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) f[i][j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++)&#123;</span><br><span class="line">            <span class="built_in">dfs</span>(grid, i, <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="6432-统计完全连通分量的数量"><a href="#6432-统计完全连通分量的数量" class="headerlink" title="6432. 统计完全连通分量的数量"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/contest/weekly-contest-345/problems/count-the-number-of-complete-components/">6432. 统计完全连通分量的数量</a></h1><h2 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514124139.png" alt="Img"></p>
-<h2 id="Sample-3"><a href="#Sample-3" class="headerlink" title="Sample"></a>Sample</h2><p><img data-src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230514124156.png" alt="Img"></p>
-<h3 id="Input-3"><a href="#Input-3" class="headerlink" title="Input"></a>Input</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n = 6, edges = [[0,1],[0,2],[1,2],[3,4]]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Output-3"><a href="#Output-3" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<h3 id="Explain-3"><a href="#Explain-3" class="headerlink" title="Explain"></a>Explain</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如上图所示，可以看到此图所有分量都是完全连通分量。</span><br></pre></td></tr></table></figure>
-
-<h3 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a>提示</h3><ul>
-<li><code>1 &lt;= n &lt;= 50</code></li>
-<li><code>0 &lt;= edges.length &lt;= n * (n - 1) / 2</code></li>
-<li><code>edges[i].length == 2</code></li>
-<li><code>0 &lt;= ai, bi &lt;= n - 1</code></li>
-<li><code>ai != bi</code><br>不存在重复的边</li>
-</ul>
-<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>在做题目之前我们得搞清楚两个概念</p>
-<p>什么是连通分量</p>
-<blockquote>
-<p>如果在子图中任意两个顶点之间都存在路径，并且子图中没有任何一个顶点与子图外部的顶点共享边，则称其为 连通分量</p>
-</blockquote>
-<p>什么是完全连通分量</p>
-<blockquote>
-<p>如果连通分量中每对节点之间都存在一条边，则称其为 完全连通分量</p>
-</blockquote>
-<p>知道上述的要求之后，我们就可以开始球了，如果是求连通分量应该怎么求？很明显，使用并查集，我们利用并查集就可以知道哪些点是相邻的。<br>那如果要求完全连通分量呢？我们已经知道了并查集可以求连通分量，那么我们只要在此基础上遍历同一个集合中的所有点的邻居数量即可，如果每一个点的邻居数量刚好是集合大小-1，那么就说明这个集合中的点集是完全连通分量</p>
-<h2 id="做法-2"><a href="#做法-2" class="headerlink" title="做法"></a>做法</h2><p>我们首先遍历edges数组，遍历的时候不断合并边的两端，合并的时候也要合并两个端点所在集合的集合size<br>通过并查集，我们已经能获取所有点集和每个点集的size大小了，因此我们再遍历一次所有点，如果这个点的邻居数量不是点集大小-1，那么我们就将这个点集标记为<code>-1</code>，说明这个点集不可能是完全连通分量。</p>
-<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//并查集模板</span></span><br><span class="line"><span class="type">int</span> p[N]; <span class="comment">//存储每个点的祖宗节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回x的祖宗节点</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p[x] != x) p[x] = <span class="built_in">find</span>(p[x]);</span><br><span class="line">    <span class="keyword">return</span> p[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化，假定节点编号是1~n</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) p[i] = i;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并a和b所在的两个集合：</span></span><br><span class="line">p[<span class="built_in">find</span>(a)] = <span class="built_in">find</span>(b);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//维护size的并查集</span></span><br><span class="line"><span class="type">int</span> p[N]; <span class="comment">//存储每个点的祖宗节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回x的祖宗节点</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p[x] != x) p[x] = <span class="built_in">find</span>(p[x]);</span><br><span class="line">    <span class="keyword">return</span> p[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化，假定节点编号是1~n</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) p[i] = i;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并a和b所在的两个集合：</span></span><br><span class="line">p[<span class="built_in">find</span>(a)] = <span class="built_in">find</span>(b);</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; p, size;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p[x] != x) p[x] = <span class="built_in">find</span>(p[x]);</span><br><span class="line">        <span class="keyword">return</span> p[x];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countCompleteComponents</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; edges)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = edges.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sum</span><span class="params">(n)</span></span>;</span><br><span class="line">        p.<span class="built_in">resize</span>(n);</span><br><span class="line">        size.<span class="built_in">resize</span>(n);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            p[i] = i;</span><br><span class="line">            size[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            sum[edges[i][<span class="number">0</span>]]++;</span><br><span class="line">            sum[edges[i][<span class="number">1</span>]]++;</span><br><span class="line">            <span class="type">int</span> a = <span class="built_in">find</span>(edges[i][<span class="number">0</span>]);</span><br><span class="line">            <span class="type">int</span> b = <span class="built_in">find</span>(edges[i][<span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span>(a != b) &#123;</span><br><span class="line">                size[b] += size[a];</span><br><span class="line">                p[a] = b;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">f</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(p[i] != i) f[i] = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span>(sum[i] != size[p[i]] - <span class="number">1</span>) f[p[i]] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(f[i] != <span class="number">-1</span>) ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">GotoMove</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-      <span>站点总字数：</span>
-    <span title="站点总字数">234k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:06</span>
-  </span>
-</div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-<!-- <br /> -->
-<!-- 网站运行时间的设置 -->
-<span id="timeDate">载入天数...</span>
-<!-- <span id="times">载入时分秒...</span> -->
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("03/16/2023 21:00:00");//此处修改你的建站时间或者网站上线时间
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); 
-        if(String(snum).length ==1 ){snum = "0" + snum;}
-        // var times = document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "+hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+<meta name="twitter:image" content="https://www.zyfblogs.xyz/img/main.jpg"><link rel="shortcut icon" href="/img/main.jpg"><link rel="canonical" href="https://www.zyfblogs.xyz/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
-setInterval("createtime()",250);
-</script>
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'G.M. Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-05-26 15:45:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-    </div>
-  </footer>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-
-
-
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">G.M. Blog</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/zhangyufeng0123" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/f79e4123.html" title="虚拟内存">虚拟内存</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-20T03:14:05.000Z" title="发表于 2023-05-20 11:14:05">2023-05-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">一个进程只能在内存中执行，因此这个存储器称为实存储器，简称实存。但是程序员或用户感觉到的是一个更大的内存，通常它被分配在磁盘上，称为虚拟内存，简称虚存
+虚存使得程序不必完全载入内存才能运行，每次可以只有部分驻留在内存中。如果处理器访问一个不在内存中的逻辑地址，则产生一个中断，说明产生了内存访问故障。操作系统把被中断的进程置于阻塞态。为了能继续执行这个进程，操作系统必须把包含引发访问故障的逻辑地址的进程块读入内存。为此，操作系统产生一个磁盘I&#x2F;O读请求。在此期间，可以调度另一个进程运行。一旦需要的块被读入内存，则产生一个I&#x2F;O中断，操作系统把由于缺少该块而被阻塞的进程置为就绪态
+不必将程序完全载入即可运行使得程序可以比实际内存更大
+系统抖动：如果一个块正好在将要被用到之前换出，操作系统就不得不很快把它取回来。太多这类操作会导致一种称为系统抖动的情况，处理器大部分时间都用于交换块，而不是执行指令
+分页页表
+每个进程都有自己的页表
+由于进程某些页可能不在内存中，所以页表项中有一位表示该页是否在内存中
+页表项有一位表示该页(从上次载入)是否已经被修改
+页表的长度可以基于进程 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/46bf65ac.html" title="并发">并发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-20T03:13:11.000Z" title="发表于 2023-05-20 11:13:11">2023-05-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">并发相关的术语：
+互斥可以根据进程相互之间知道对方是否存在的程度，对进程间的交互进行分类：
 
 
+进程间的资源竞争：每个进程不影响它所使用的资源，这类资源包括I&#x2F;O设备、存储器、处理器时间和时钟。首先需要提供互斥要求（比方说，如果不提供对打印机的互斥访问，打印结果会穿插）。实施互斥又产生了两个额外的控制问题：死锁和饥饿
+进程间通过共享的合作：进程可能使用并修改共享变量而不涉及其他进程，但却知道其他进程也可能访问同一数据。因此，进程必须合作，以确保共享的数据得到正确管理。由于数据保存在资源中（设备或存储器），因此再次涉及有关互斥、死锁、饥饿等控制问题，除此之外，还有一个新要求：数据的一致性
+进程间通过通信的合作：由于在传递消息的过程中，进程间未共享任何对象，因而这类合作不需要互斥，但是仍然存在死锁和饥饿问题（死锁举例：两个进程可能都被阻塞，每个都在等待来自对方的通信；饥饿举例：P1,P2,P3，P1不断试图与P2，P3通信，P2和P3都试图与P1通信，如果P1和P2不断交换信息，而P3一直被阻塞，等待与P1通信，由于P1一直是活跃的，P3处于饥饿状态）
+
+互斥的硬件支持中断禁用（ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/b07f406.html" title="单处理器调度">单处理器调度</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-20T03:12:18.000Z" title="发表于 2023-05-20 11:12:18">2023-05-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">所谓单处理器调度，指的是单个处理器上的调度。主要是单处理器上多道程序设计系统的进程调度，多道程序设计系统中，内存可以同时驻留多个进程
+进程调度类型
+调度类型和进程状态转换：
+
+长程调度决定哪一个程序可以进入系统中处理，因此控制着系统的并发度
+在批处理系统或者操作系统的批处理部分，新提交的作业被发生到磁盘，并保存在一个批处理队列中。在长程调度程序运行的时候，从队列中创建相应的进程。这里涉及两个决策：
+
+调度程序决定何时操作系统接纳一个进程或者多个进程
+调度程序决定接收哪个作业或哪些作业，并将其转变成进程
 
 
+长程调度执行频率较低，并且仅仅是粗略地决定是否接受新进程及接受哪一个
+该章剩余内容主要关注短程调度，即处理器选择一个进程执行时的调度决策。短程调度执行得最频繁，并且精确地决定下一次执行哪个进程
+调度算法短程调度准则调度算法的设计需要考虑如下方面（以下为从一种维度的划分）：
 
-</body>
-</html>
+面向用户的准则：延迟（侧重于用户）
+面向系统的准则：效果、利用率、吞吐量（侧重于系统）
+
+优先级调度
+每个进程被指定一个优先级，调度程序总是优先选择具有较高优先级的进程
+低优先级进程可能饥饿
+
+
+选择调度策略
+周 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/41e39f2b.html" title="内存管理">内存管理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-20T03:11:43.000Z" title="发表于 2023-05-20 11:11:43">2023-05-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">
+单道程序设计中：内存被划分为两部分，一部分供操作系统使用(驻留监控程序、内核)，一部分供当前正在执行的程序使用
+多道程序设计中：必须在内存中进一步细分“用户”部分，以满足多个进程的要求，细分的任务由操作系统动态完成，称为内存管理
+
+内存管理的需求
+
+重定位：程序在从磁盘换入内存时，可以被装载到内存中的不同区域
+保护：处理器必须保证进程以外的其它进程不能未经授权地访问该进程的内存单元
+共享：任何保护机制都必须具有一定灵活性，以允许多个进程访问内存的同一部分
+逻辑组织
+物理组织
+
+内存管理中的地址
+
+逻辑地址：指与当前数据在内存中的物理分配地址无关的访问地址，执行对内存访问前必须转换成物理地址
+相对地址：逻辑地址的一个特例，是相对于某些已知点（通常是程序开始处）的存储单元
+**物理地址(绝对地址)**：数据在内存中的实际位置
+虚拟地址：虚拟内存中的逻辑地址
+
+**内存管理单元(MMU)**：CPU中的一个模块，将虚拟地址转换成实际物理地址
+内存管理中的数据块
+页框：内存中一个固定长度的块
+页：二级存储(如磁盘)中一个固定长度的数据块
+段：二级存储中一个变长的数据块
+
+内存分区固定分区系统 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/7434cf9c.html" title="I/O管理与磁盘调度">I/O管理与磁盘调度</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-20T03:10:47.000Z" title="发表于 2023-05-20 11:10:47">2023-05-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">I&#x2F;O缓冲缓冲技术：在输入请求发出之前就开始执行输入传送，并且在输出请求发出一段时间之后才开始执行输出传送，这项技术称为缓冲
+两类I&#x2F;O设备：
+
+面向块的I&#x2F;O设备：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块
+面向块的I&#x2F;O设备：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块
+
+单缓冲
+对于面向块的I&#x2F;O设备：
+
+对于面向块的I&#x2F;O设备：
+相对于无缓冲的情况，这种方法通常会提高系统速度。用户进程可以在下一数据块读取的同时，处理已读入的数据块。由于输入发生在系统内存中而非用户进程内存中，因此操作系统可以将该进程换出
+
+对于面向流的I&#x2F;O设备：
+单缓冲方案能以每次传送一行的方式或者每次传送一个字节的方式使用
+双缓冲(缓冲交换)
+分配2个缓冲区。在一个进程往一个缓冲区中传送数据(从这个缓冲区中取数据)的同时，操作系统正在清空(或者填充)另一个缓冲区
+循环缓冲
+双缓冲方案可以平滑I&#x2F;O设备和进程之间的数据流。如果关注的焦点是某个特定进程的性能，那么常常会希望相关I&#x2F;O操 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/15fc6e8c.html" title="线程">线程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-18T02:38:02.000Z" title="发表于 2023-05-18 10:38:02">2023-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">进程与线程
+进程是操作系统进行资源分配的基本单位
+线程是调度的基本单位
+
+进程中的所有线程共享该进程的状态和资源，进程和线程的关系如下图：
+从性能上比较，线程具有如下优点：
+
+在一个已有进程中创建一个新线程比创建一个全新进程所需的时间要少许多
+终止一个线程比终止一个进程花费的时间少
+同一进程内线程间切换比进程间切换花费的时间少
+线程提高了不同的执行程序间通信的效率（在大多数操作系统中，独立进程间的通信需要内核的介入，以提供保护和通信所需要的机制。但是，由于在同一个进程中的线程共享内存和文件，它们无须调用内核就可以互相通信）
+
+线程状态和进程一样，线程的关键状态有运行态、就绪态和阻塞态。一般来说，挂起态对线程没有什么意义。这是由于此类状态是一个进程级的概念。特别地，如果一个进程被换出，由于它的所有线程都共享该进程的地址空间，因此它们必须都被换出
+有4种与线程相关的基本操作：
+
+派生：在典型情况下，当派生一个新进程时，同时也为该进程派生了一个线程。随后，进程中的线程可以在同一进程中派生另一个线程，并为新线程提供指令指针和参数；新线程拥有自己的寄存器上下文和栈空间，且被放置在就绪队列中
+阻塞 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/31a6b40.html" title="进程">进程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-18T02:17:39.000Z" title="发表于 2023-05-18 10:17:39">2023-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">进程的定义进程有以下定义：
+
+一个正在执行中的程序
+一个正在计算机上执行的程序实例
+能分配给处理器并由处理器执行的实体
+一个具有以下特征的活动单元：一组指令序列的执行、一个当前状态和相关的系统资源集
+
+也可以把进程视为由程序代码、和代码相关联的数据集、进程控制块组成的实体
+进程控制块：由操作系统创建和管理。进程控制块包含了充分的信息，这样就可以中断一个进程的执行，并且在后来恢复执行进程时就好像进程未被中断过一样。进程控制块是操作系统能够支持多进程和提供多重处理技术的关键，进程控制块是操作系统中最重要的数据结构，每个进程控制块包含操作系统所需要的关于进程的所有信息
+
+
+内存指针：包括程序代码和进程相关数据的指针，还有和其他进程共享内存块的指针
+上下文数据：进程执行时处理器寄存器中的数据
+
+进程被中断时，操作系统会把程序计数器和上下文数据保存到进程控制块中的相应位置
+**程序状态字(PSW)**：所有处理器设计都包括一个或一组通常称为程序状态字的寄存器，包含有进程的状态信息
+进程的状态进程的创建与终止进程按以下步骤创建：
+
+给新进程分配一个唯一的进程标识符
+给新进程分配空间（包括进程映像中 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/2ba40472.html" title="操作系统概述">操作系统概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-17T16:22:28.000Z" title="发表于 2023-05-18 00:22:28">2023-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">操作系统的目标和功能操作系统是控制应用程序执行的程序，并充当应用程序和计算机硬件之间的接口
+
+作为用户&#x2F;计算机接口
+作为资源管理器（操作系统控制处理器使用其它系统资源，并控制其它程序的执行时机）
+易扩展性
+
+操作系统的发展
+串行处理：程序员直接与计算机硬件打交道，因为当时还没操作系统。这些机器在一个控制台上运行，用机器代码编写的程序通过输入设备载入计算机。如果发生错误使得程序停止，错误原因由显示灯指示。如果程序正常完成，输出结果出现在打印机上
+简单批处理系统：中心思想是使用一个称为监控程序的软件。通过使用这类操作系统，用户不再直接访问机器，相反，用户把卡片或磁带种的作业提交给计算机操作员，由他把这些作业按顺序组织成一批，并将整个批作业放在输入设备上，供监控程序使用。每个程序完成处理后返回到监控程序，同时，监控程序自动加载下一个程序
+多道批处理系统：简单批处理系统提供了自动作业序列，但是处理器仍经常空闲，因为对于I&#x2F;O指令，处理器必须等到其执行完才能继续。内存空间可以保持操作系统和一个用户程序，假设内存空间容得下操作系统和两个用户程序，那么当一个作业需要等到I&#x2 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/47ad01c5.html" title="计算机系统概述">计算机系统概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-17T16:21:17.000Z" title="发表于 2023-05-18 00:21:17">2023-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">基本构成计算机的四个主要组件
+
+处理器：也称为中央处理器(Central Processing Unit, 简称CPU)，是计算机系统中的一个核心组件，它是一种能够执行计算机指令的硬件设备
+内存：用于存储数据和程序的硬件设备，是计算机系统中的一种临时存储介质，用于暂时存放正在执行的程序和数据，以供处理器快速访问
+I&#x2F;O模块：是计算机系统中用于处理输入和输出设备的硬件模块，负责处理计算机系统与外部设备之间的数据传输和交互
+系统总线：是计算机系统中用于连接主要组件的集线器，它扮演着数据和信号传输的通道角色
+
+
+指令的执行基本指令周期，指令处理包括2步：
+
+处理器从存储器一次读一条指令
+执行每条指令
+
+
+处理器中的PC保存下一条指令的地址，IR保存当前即将执行的指令。
+PC：程序计数器（Program Conter），也称为指令指针或指令计数器。PC是处理器（CPU）中的一个寄存器，用于存储下一条将要执行的指令的内存地址。在执行程序时，处理器根据PC中存储的地址来获取下一条指令，并将PC的值增加以指向下一条指令的地址，从而实现顺序执行。
+IR：指令寄存器（Instruction R ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/posts/bcc7d896.html" title="LeetCode 周赛345">LeetCode 周赛345</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-14T04:56:52.000Z" title="发表于 2023-05-14 12:56:52">2023-05-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">6430.找出转圈游戏输家题面
+SampleInput1n = 5, k = 2
+
+Output1[4,5]
+
+Explain12345以下为游戏进行情况：1）第 1 个朋友接球，第 1 个朋友将球传给距离他顺时针方向 2 步的玩家 —— 第 3 个朋友。2）第 3 个朋友将球传给距离他顺时针方向 4 步的玩家 —— 第 2 个朋友。3）第 2 个朋友将球传给距离他顺时针方向 6 步的玩家 —— 第 3 个朋友。4）第 3 个朋友接到两次球，游戏结束。
+
+做法我们用哈希表来存储每个朋友是否接到过球，因为第二次接球的时候游戏就结束了，因此我们不用记录每个朋友接过多少次球，只要记录是否接过球即可。然后每传一次球，就将相应的位置的哈希值置为1，直到该位置本身就是1时退出传球。
+代码12345678910111213141516171819202122class Solution &#123;public:    vector&lt;int&gt; circularGameLosers(int n, int k) &#123;        vector&lt;int&gt; ans;     ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/posts/f79e4123.html" title="虚拟内存">虚拟内存</a><time datetime="2023-05-20T03:14:05.000Z" title="发表于 2023-05-20 11:14:05">2023-05-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/posts/46bf65ac.html" title="并发">并发</a><time datetime="2023-05-20T03:13:11.000Z" title="发表于 2023-05-20 11:13:11">2023-05-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/posts/b07f406.html" title="单处理器调度">单处理器调度</a><time datetime="2023-05-20T03:12:18.000Z" title="发表于 2023-05-20 11:12:18">2023-05-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/posts/41e39f2b.html" title="内存管理">内存管理</a><time datetime="2023-05-20T03:11:43.000Z" title="发表于 2023-05-20 11:11:43">2023-05-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/posts/7434cf9c.html" title="I/O管理与磁盘调度">I/O管理与磁盘调度</a><time datetime="2023-05-20T03:10:47.000Z" title="发表于 2023-05-20 11:10:47">2023-05-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AcWing/"><span class="card-category-list-name">AcWing</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">23</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">C++基础</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E6%8F%90%E9%AB%98/"><span class="card-category-list-name">C++提高</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E6%A0%B8%E5%BF%83/"><span class="card-category-list-name">C++核心</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">Java基础</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">36</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">4</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.18em; color: #999ca1">递归</a> <a href="/tags/Hash/" style="font-size: 1.1em; color: #999">Hash</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" style="font-size: 1.1em; color: #999">记忆化搜索</a> <a href="/tags/shell%E8%AF%AD%E6%B3%95/" style="font-size: 1.1em; color: #999">shell语法</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 1.34em; color: #99a3b0">模拟</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 1.26em; color: #999fa8">贪心</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 1.26em; color: #999fa8">二分查找</a> <a href="/tags/Dfs/" style="font-size: 1.1em; color: #999">Dfs</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 1.1em; color: #999">并查集</a> <a href="/tags/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" style="font-size: 1.18em; color: #999ca1">LeetCode每日一题</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 1.34em; color: #99a3b0">前缀和</a> <a href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" style="font-size: 1.1em; color: #999">排列组合</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 1.18em; color: #999ca1">构造</a> <a href="/tags/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">快慢指针</a> <a href="/tags/Daily/" style="font-size: 1.18em; color: #999ca1">Daily</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" style="font-size: 1.5em; color: #99a9bf">每日一题</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 1.42em; color: #99a6b7">双指针</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.34em; color: #99a3b0">链表</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%80%E5%8F%91/" style="font-size: 1.1em; color: #999">多线程开发</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">快速排序</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 1.1em; color: #999">二叉树</a> <a href="/tags/%E5%BC%82%E6%88%96/" style="font-size: 1.1em; color: #999">异或</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 1.1em; color: #999">哈希表</a> <a href="/tags/%E5%A4%9A%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">多指针</a> <a href="/tags/%E5%91%A8%E8%B5%9B/" style="font-size: 1.34em; color: #99a3b0">周赛</a> <a href="/tags/Bfs/" style="font-size: 1.1em; color: #999">Bfs</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/" style="font-size: 1.1em; color: #999">数学推导</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 1.26em; color: #999fa8">哈希</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.18em; color: #999ca1">排序</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">归并排序</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">59</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">85</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-05-26T07:45:51.944Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
