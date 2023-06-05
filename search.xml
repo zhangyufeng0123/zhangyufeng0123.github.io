@@ -7090,4 +7090,78 @@ ALTER TABLE ADD UNIQUE(Sname);              // 增加Student表Sname必须取唯
         <tag>基础</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 2460.对数组执行操作</title>
+    <url>/posts/1a627862.html</url>
+    <content><![CDATA[<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230605210512.png"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><pre><code>nums = [1,2,2,1,1,0]
+</code></pre>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code>[1,4,2,0,0,0]
+</code></pre>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><pre><code>执行以下操作：
+- i = 0: nums[0] 和 nums[1] 不相等，跳过这步操作。
+- i = 1: nums[1] 和 nums[2] 相等，nums[1] 的值变成原来的 2 倍，nums[2] 的值变成 0 。数组变成 [1,4,0,1,1,0] 。
+- i = 2: nums[2] 和 nums[3] 不相等，所以跳过这步操作。
+- i = 3: nums[3] 和 nums[4] 相等，nums[3] 的值变成原来的 2 倍，nums[4] 的值变成 0 。数组变成 [1,4,0,2,0,0] 。
+- i = 4: nums[4] 和 nums[5] 相等，nums[4] 的值变成原来的 2 倍，nums[5] 的值变成 0 。数组变成 [1,4,0,2,0,0] 。
+执行完所有操作后，将 0 全部移动到数组末尾，得到结果数组 [1,4,2,0,0,0] 。
+</code></pre>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li>2 &lt;&#x3D; nums.length &lt;&#x3D; 2000</li>
+<li>0 &lt;&#x3D; nums[i] &lt;&#x3D; 1000</li>
+</ul>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>模拟。我们开辟一个新的初始化为<code>0</code>的数组进行存储需要返回的数值。我们在<code>nums</code>数组中每遍历到相同的邻居时，我们就将它存储到目标数组中，并对目标数组的索引进行<code>+1</code>操作。最后我们再将<code>nums</code>数组中的最后一位添加到目标数组中，这个时候不用考虑该数字是否为0。</p>
+<ul>
+<li>如果这个数字为0，将它加入末尾之后不影响末尾都是0的要求</li>
+<li>如果这个数字不为0，它也不影响末尾都是0的要求</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="C++">class Solution &#123;
+public:
+    vector&lt;int&gt; applyOperations(vector&lt;int&gt;&amp; nums) &#123;
+        int idx = 0, len = nums.size();
+        vector&lt;int&gt; arr(len, 0);
+        for(int i = 0; i &lt; len - 1; i++)&#123;
+            if(nums[i] == 0) continue;
+            else if(nums[i] == nums[i + 1])&#123;
+                nums[i + 1] = 0;
+                arr[idx++] = nums[i] * 2;
+            &#125;else &#123;
+                arr[idx++] = nums[i];
+            &#125;
+        &#125;
+        arr[idx] = nums.back();
+        return arr;
+    &#125;
+&#125;;
+</code></pre>
+<pre><code class="C++">// O(1)的空间复杂度
+class Solution &#123;
+public:
+    vector&lt;int&gt; applyOperations(vector&lt;int&gt;&amp; nums) &#123;
+        int idx = 0, len = nums.size();
+        for(int i = 0; i &lt; len - 1; i++)&#123;
+            if(nums[i] == nums[i + 1])&#123;
+                nums[i] *= 2;
+                nums[i + 1] = 0;
+            &#125;
+        &#125;
+        
+        for(int i = 0; i &lt; len; i++)&#123;
+            if(nums[i]) nums[idx++] = nums[i];
+        &#125;
+        for(int i = idx; i &lt; len; i++)&#123;
+            nums[i] = 0;
+        &#125;
+        return nums;
+    &#125;
+&#125;;
+</code></pre>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
 </search>
