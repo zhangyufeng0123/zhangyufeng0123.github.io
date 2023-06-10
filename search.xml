@@ -7164,4 +7164,138 @@ public:
         <tag>每日一题</tag>
       </tags>
   </entry>
+  <entry>
+    <title>AcWing 4908. 饥饿的牛</title>
+    <url>/posts/bdc5df1d.html</url>
+    <content><![CDATA[<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230610103819.png" alt="Img"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><pre><code>2 5
+1 10
+5 10
+</code></pre>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code>5
+</code></pre>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><pre><code>10捆干草在第 1
+天早上被送到了牛棚，所以贝茜第 1∼5天都有干草吃。
+</code></pre>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ul>
+<li>1 ≤ N ≤ $10^5$</li>
+<li>1 ≤ T ≤ $10^{14}$</li>
+<li>1 ≤ $d_i$ ≤ $10^{14}$</li>
+<li>1 ≤ $b_i$ ≤ $10^9$</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看到时间有序，那么我们只要从前往后遍历即可，然后在遍历的时候维护当前干草最多能支撑牛吃到什么时候。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="C++">#include&lt;iostream&gt;
+
+using namespace std;
+
+const int maxn = 1e5 + 10;
+
+int main()&#123;
+    long long N, T;
+    scanf(&quot;%lld %lld&quot;, &amp;N, &amp;T);
+    
+    long long res = 0, days = 0;
+    
+    while(N--)&#123;
+        long long b, d;
+        scanf(&quot;%lld %lld&quot;, &amp;d, &amp;b);
+        if(d &gt; days)&#123;   // 如果当前时间大于干草支撑的时间
+            days = d + b - 1;   // -1是因为d这一天也要吃一份
+        &#125;else&#123;
+            days += b;
+        &#125;
+        res += b;
+        if(days &gt;= T)&#123;  // 如果已经到T时间了，后面就没必要继续计算
+            res -= (days - T);
+            break;
+        &#125;
+    &#125;
+    
+    printf(&quot;%lld\n&quot;, res);
+    
+    return 0;
+&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>AcWing</category>
+        <category>夏季赛每日一题 4908</category>
+      </categories>
+      <tags>
+        <tag>模拟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 1170.比较字符串最小字母出现频次</title>
+    <url>/posts/348193db.html</url>
+    <content><![CDATA[<h1 id="LeetCode-1170-1432"><a href="#LeetCode-1170-1432" class="headerlink" title="LeetCode-1170(1432)"></a>LeetCode-1170(1432)</h1><h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230610104927.png" alt="Img"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><pre><code>queries = [&quot;bbb&quot;,&quot;cc&quot;], words = [&quot;a&quot;,&quot;aa&quot;,&quot;aaa&quot;,&quot;aaaa&quot;]
+</code></pre>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code>[1,2]
+</code></pre>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><pre><code>第一个查询 f(&quot;bbb&quot;) &lt; f(&quot;aaaa&quot;)，第二个查询 f(&quot;aaa&quot;) 和 f(&quot;aaaa&quot;) 都 &gt; f(&quot;cc&quot;)。
+</code></pre>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ul>
+<li>1 &lt;&#x3D; queries.length &lt;&#x3D; 2000</li>
+<li>1 &lt;&#x3D; words.length &lt;&#x3D; 2000</li>
+<li>1 &lt;&#x3D; queries[i].length, words[i].length &lt;&#x3D; 10</li>
+<li>queries[i][j]、words[i][j] 都由小写英文字母组成</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这题有几个必要条件得获取</p>
+<ul>
+<li><code>words</code>中每个单词<code>word</code>的<code>f(word)</code>的值得知道</li>
+<li><code>queries</code>中每个单词<code>query</code>的<code>f(query)</code>的值也得知道</li>
+</ul>
+<p>这两个条件大家的时间复杂度应该都是一样的，$O(nm)$，其中，<code>n</code>是字符串数组的长度，<code>m</code>是字符串长度。</p>
+<p>那么我们获取上面的之后应该怎么快速的获得<code>query</code>对应的值呢？有一种暴力解法就是每获取一个<code>query</code>的<code>f</code>值，我们就对比一边所有的<code>f(word)</code>的值，然后输出结果，但是这样的事件复杂度为$O(n^2)$，时间复杂度偏高。</p>
+<p>但是我们可以换个思路来做这道题。如果<code>f(words)</code>是有序的，这道题就可以变成查询每个<code>f(query)</code>插入<code>f(words)</code>中的位置，那么我们一般怎么求位置呢？用二分，我们可以用二分的方法来确定<code>f(query)</code>对应的位置。根据这样的方法，排序的时间复杂度为$O(nlogn)$，二分的时间复杂度为$O(nlogn)$，总的时间复杂度为$O(nlogn)$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="C++">class Solution &#123;
+public:
+    int f(string s)&#123;
+        int res = 1, idx = 0;
+        for(int i = 1; i &lt; s.size(); i++)&#123;
+            if(s[i] == s[idx]) res++;
+            else if(s[i] &lt; s[idx])&#123;
+                res = 1;
+                idx = i;
+            &#125;
+        &#125;
+        return res;
+    &#125;
+
+    int binary_search(vector&lt;int&gt; &amp;arr, int target)&#123;
+        int left = -1, right = arr.size();
+        while(left + 1 &lt; right)&#123;
+            int mid = (left + right) &gt;&gt; 1;
+            if(arr[mid] &lt;= target) left = mid;
+            else right = mid;
+        &#125;
+        return left + 1;
+    &#125;
+
+    vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) &#123;
+        int len_queries = queries.size(), len_words = words.size();
+        vector&lt;int&gt; res(len_queries, 0);
+        vector&lt;int&gt; f_queries(len_queries, 0), f_words(len_words, 0);
+        for(int i = 0; i &lt; len_queries; i++) f_queries[i] = f(queries[i]);
+        for(int i = 0; i &lt; len_words; i++) f_words[i] = f(words[i]);
+
+        sort(f_words.begin(), f_words.end());
+        for(int i = 0; i &lt; len_queries; i++)&#123;
+            res[i] = len_words - binary_search(f_words, f_queries[i]);
+        &#125;
+
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>每日一题</category>
+      </categories>
+      <tags>
+        <tag>二分</tag>
+      </tags>
+  </entry>
 </search>
