@@ -7298,4 +7298,93 @@ public:
         <tag>二分</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 1171.从链表中删去总和值为零的连续节点</title>
+    <url>/posts/e00fa290.html</url>
+    <content><![CDATA[<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230611223436.png" alt="Img"></p>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><pre><code>head = [1,2,-3,3,1]
+</code></pre>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code>[3,1]
+</code></pre>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><pre><code>答案 [1,2,1] 也是正确的。
+</code></pre>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><ul>
+<li>给你的链表中可能有 1 到 1000 个节点。</li>
+<li>对于链表中的每个节点，节点的值：-1000 &lt;&#x3D; node.val &lt;&#x3D; 1000.</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我们怎么快速找到一段总和为<code>0</code>的连续区间呢？一般的做法就是用两个<code>for</code>循环遍历数组，然后计算，但是这样的时间复杂度为$O(n^2)$，当数组长度过大时，就会导致时间超限。那么我们可以怎么做呢？</p>
+<p>我们可以利用前缀和的思想，在一个前缀和的数组中，如果数组中有两个数相等，索引分别是<code>first</code>,<code>last</code>，那么在<code>(first, last]</code>这个区间内的所有数之和为<code>0</code>。这是为什么呢？</p>
+<p>假设现在有一个前缀和数组<code>num</code>，<code>num[first] = num[right]</code>，<code>num[first]</code>代表的是<code>[0, first]</code>区间的数之和，<code>num[last]</code>代表的是<code>[0, last]</code>区间的数之和。那么<code>num[last] - num[first]</code>代表的就是区间<code>(first, last]</code>的数之和，由前面我们可以得到<code>num[first] = num[last]</code>，即，区间<code>(first, last]</code>的数之和为<code>0</code></p>
+<p>因此我们可以通过前缀和的思想，再加上哈希来存储前缀和数组中每一个值的最远位置。这样的时间复杂度为$O(n)$</p>
+<p>当然，快速找到区间只是第一步，接下来就是下一步。</p>
+<p>为了满足返回最终结果链表中连续的数之和不为<code>0</code>，我们可以利用贪心的想法。</p>
+<p>我们从头遍历前缀和数组，如果这个数值不唯一，那么我们就获取索引值最大的那个值，然后将两个值之间的数都给删除，删除这些数并不会影响前缀和的性质，为什么呢？参考前面，这个区间的数之和为<code>0</code>，所以并不影响。</p>
+<p>删掉这些数字之后我们下次寻找就不在删掉的区间中遍历了，因为如果在这个区间中遍历寻找前缀和数组时，如果找到并进行删除操作，那么删除的数组可能会有重叠部分。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230611230552.png" alt="Img"></p>
+<p>我们要删除橙色部分，但是最后的操作删的其实是蓝色的部分，但是橙色部分的和为<code>0</code>，这是确定的，但是蓝色部分的和呢？我们并不知道，因此我们当我们删除一段区间之后，我们不用再遍历这个区间内的前缀和，直接从删除区间的末尾进行遍历。</p>
+<p>根据这样的操作，最后留下来的数就不会形成连续和为<code>0</code>的情况</p>
+<p>::: tip 注意<br>刚开始我们首先得确定从数组起点开始的前缀和为<code>0</code>的区间，并对其进行删除操作。否则当遇上输入为<code>[1, -1]</code>时，就会出现与结果不一样的答案。<br>:::</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">/**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) &#123;&#125;
+ *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;
+ *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;
+ * &#125;;
+ */
+class Solution &#123;
+public:
+    ListNode* removeZeroSumSublists(ListNode* head) &#123;
+        ListNode* root = new ListNode(0, head), *p = root;
+        vector&lt;int&gt; num;
+        num.emplace_back(head-&gt;val);
+        head = head-&gt;next;
+        while(head != NULL)&#123;
+            num.emplace_back(num.back() + head-&gt;val);
+            head = head-&gt;next;
+        &#125;
+        unordered_map&lt;int, int&gt; hash;
+        int len = num.size();
+        for(int i = 0; i &lt; len; i++)&#123;
+            hash[num[i]] = i;
+        &#125;
+        int idx = -1;
+        if(hash.count(0)) idx = hash[0];
+        for(int i = 0; i &lt;= idx; i++)&#123;
+            num[i] = 0;
+        &#125;
+        for(int i = idx + 1; i &lt; len; i++)&#123;
+            if(hash[num[i]] != i)&#123;
+                for(int j = i + 1; j &lt;= hash[num[i]]; j++)&#123;
+                    num[j] = 0;
+                &#125;
+                i = hash[num[i]];
+            &#125;
+        &#125;
+        ListNode *q = p-&gt;next;
+        p-&gt;next = NULL;
+        for(int i = 0; i &lt; len; i++)&#123;
+            if(q-&gt;val &amp;&amp; num[i])&#123;
+                ListNode *t = new ListNode(q-&gt;val);
+                p-&gt;next = t;
+                p = t;
+            &#125;
+            q = q-&gt;next;
+        &#125;
+        return root-&gt;next;
+    &#125;
+&#125;;
+</code></pre>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>每日一题</category>
+      </categories>
+      <tags>
+        <tag>贪心</tag>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
 </search>
