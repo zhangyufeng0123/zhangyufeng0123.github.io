@@ -2,7 +2,7 @@
 title: AcWing 4908. 饥饿的牛
 categories:
   - AcWing
-  - 夏季赛每日一题 4908
+  - 夏季赛每日一题
 tags:
   - 模拟
 abbrlink: bdc5df1d
