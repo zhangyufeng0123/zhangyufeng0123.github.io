@@ -1,7 +1,423 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>G.M. Blog - You juan, I juan</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="sharing blogs">
+<meta property="og:type" content="website">
+<meta property="og:title" content="G.M. Blog">
+<meta property="og:url" content="https://www.zyfblogs.xyz/page/6/index.html">
+<meta property="og:site_name" content="G.M. Blog">
+<meta property="og:description" content="sharing blogs">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zyfblogs.xyz/img/main.jpg">
+<meta property="article:author" content="GotoMove">
+<meta property="article:tag" content="blogs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zyfblogs.xyz/img/main.jpg"><link rel="shortcut icon" href="/img/main.jpg"><link rel="canonical" href="https://www.zyfblogs.xyz/page/6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":-1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'G.M. Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-22 22:58:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/blog-background.png')"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">G.M. Blog</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/zhangyufeng0123" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/dbf73455.html" title="函数提高">函数提高</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-27T09:05:42.000Z" title="发表于 2023-03-27 17:05:42">2023-03-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C/C-%E6%A0%B8%E5%BF%83/">C++核心</a></span></div><div class="content">在C++中，函数的形参列表中的形参是可以有默认值的
+语法：返回值类型 函数名 (参数 = 默认值)&#123;&#125;
+示例：
+int func(int a, int b = 10, int c = 10) &#123;
+    return a + b + c;
+&#125;
+
+//1. 如果某个位置参数有默认值，那么从这个位置往后，从左向右，必须都要有默认值
+//2. 如果函数声明有默认值，函数实现的时候就不能有默认参数
+int func2(int a = 10, int b = 10);
+int func2(int a, int b) &#123;
+    return a + b;
+&#125;
+
+int main() &#123;
+
+    cout &lt;&lt; &quot;ret = &quot; &lt;&lt; func(20, 20) &lt;&lt; endl;
+    cout &lt;&lt; &quot;ret = &quot; &lt;&lt; func(100) &lt;&lt; endl;
+
+    system(&quot;pause&quo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/c96f7df0.html" title="引用">引用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-27T09:04:36.000Z" title="发表于 2023-03-27 17:04:36">2023-03-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C/C-%E6%A0%B8%E5%BF%83/">C++核心</a></span></div><div class="content">引用的基本使用作用：给变量起别名
+语法：数据类型 &amp;别名 = 原名
+示例：
+int main() &#123;
+
+    int a = 10;
+    int &amp;b = a;
+
+    cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; &quot;b = &quot; &lt;&lt; b &lt;&lt; endl;
+
+    b = 100;
+
+    cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; &quot;b = &quot; &lt;&lt; b &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;
+
+
+引用注意事项
+引用必须初始化
+引用在初始化后，不可以改变
+
+示例：
+int main() &#123;
+
+    int a = 10;
+    int b = 20;
+   ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/30c3500f.html" title="内存分区模型">内存分区模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-27T08:55:38.000Z" title="发表于 2023-03-27 16:55:38">2023-03-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C/C-%E6%A0%B8%E5%BF%83/">C++核心</a></span></div><div class="content">内存分区模型C++chengxu在执行时，将内存当方向划分为4个区域
+
+代码区：存放函数体的二进制代码，由操作系统进行管理的
+全局区：存放全局变量和静态变量以及常量
+栈区：由编译器自动分配释放，存放函数的参数值，局部变量等
+堆区：由程序员分配和释放，若程序员不是放，程序结束时由操作系统回收
+
+内存四区意义：
+不同区域存放的数据，赋予不同的生命周期，给我们更大的灵活编程。
+程序运行前在程序编译后，生成了exe可执行程序，未执行该程序前分为两个区域
+
+代码区：
+ 存放CPU执行的机器指令
+ 代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可（多次打开同一个程序它的代码时同一个）
+ 代码区是只读的，使其只读的原因是防止程序意外地修改了它的指令
+
+全局区
+ 全局变量和静态变量存放在此
+ 全局区还包含了常量区、字符串常量和其他常量（const修饰）也存放在此
+ 该区域的数据在程序结束后由操作系统释放
+
+
+示例：
+//全局变量
+int g_a = 10;
+int g_b = 10;
+
+//全局常量
+const int c_g_a = 10;
+const int c_g_ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/7ad2c734.html" title="环形链表II">环形链表II</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-26T07:33:52.000Z" title="发表于 2023-03-26 15:33:52">2023-03-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%81%B5%E8%8C%B6%E5%B1%B1%E8%89%BE%E5%BA%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">灵茶山艾府学习笔记</a></span></div><div class="content">876.链表的中间结点这道题就是一道典型的快慢指针的问题，让我们找一串链表的中间位置。
+暴力的做法是先扫一遍，看看这个链表的长度，然后根据长度找到目标值。
+有没有更巧妙的做法呢？有，就是快慢指针，因为我们要求链表的中间节点，那么我们设置两个指针，一个指针一次走两格，另一个指针一次走一格。这样我们就能保证走一格的指针始终是走两格的指针的中间，当走得快的指针走到终点的时候返回走得慢的指针即可。
+/**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) &#123;&#125;
+ *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;
+ *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;
+ * &#125 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/82b7a1a9.html" title="反转链表">反转链表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-25T07:14:24.000Z" title="发表于 2023-03-25 15:14:24">2023-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%81%B5%E8%8C%B6%E5%B1%B1%E8%89%BE%E5%BA%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">灵茶山艾府学习笔记</a></span></div><div class="content">206. 反转链表最暴力的方法就是先将链表中的所有节点都拆分下来，再一一安装上去，但是这样我们需要扫两遍。
+有更简单的方法。
+传入的是这样的一个链表
+
+我们要想反转链表，我们得需要额外的指针来指着当前节点的前面一个，以及该节点的next应该指着的位置。我们用t来表示当前节点的后面的位置，末尾的next指针指着null的位置，所以我们把t设置为null
+
+在每次循环中，我们要先移动head的位置，以防止改变head的next指针后head后面的位置访问不到。
+
+
+这样我们就能保证能够找到前后节点了，下次反转的时候我们先将t指向root再将root指向的内容变为head指向的内容，再将head往后移动一位，再将root的next指针指向t。
+这样反复直到head指向null。
+/**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) &#123;&#12 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/54f14d01.html" title="LeetCode 1574.删除最短的子数组使剩余数组有序">LeetCode 1574.删除最短的子数组使剩余数组有序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-25T05:41:05.000Z" title="发表于 2023-03-25 13:41:05">2023-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">1574.删除最短的子数组使剩余数组有序
+题面
+SampleInputarr = [1,2,3,10,4,2,3,5]
+
+Output3
+
+Explain我们需要删除的最短子数组是 [10,4,2] ，长度为 3 。剩余元素形成非递减数组 [1,2,3,3,5] 。
+另一个正确的解为删除子数组 [3,10,4] 。
+
+范围
+1 &lt;= arr.length &lt;= 10^5
+0 &lt;= arr[i] &lt;= 10^9
+
+思路题目中也说了，要删除的是连续子数组，不然可以用最长上升子数组的做法来做。
+删除子数组不外乎有三种删法能使得剩下的数组是有序的。
+
+删除前面的
+
+
+
+删除中间的
+
+
+
+删除后面的
+
+
+只有这三种删法才能使得剩下的是有序的。
+那怎么删呢？
+我的思路是用到双指针，且先找好右边的有序数组，然后开始枚举左边的数，如果左边的数是有序的，那么我们就根据左边的数来寻找右边相应的索引。这样的时间复杂度是$O(n)$。
+做法
+首先我们得找先找右边最长的有序数组，并标记这个有序数组的起始索引j
+如果j=0，那么说明这个数组本就是有序数组，不用删减
+如果j≠0，那么我们就得 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/b7747429.html" title="结构体">结构体</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-25T05:16:01.000Z" title="发表于 2023-03-25 13:16:01">2023-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C/C-%E5%9F%BA%E7%A1%80/">C++基础</a></span></div><div class="content">结构体语法：struct 结构体名&#123;结构体成员列表&#125;;
+通过结构体创建变量的方式有三种：
+
+struct 结构体名 变量名
+struct 结构提名 变量名 &#x3D; {成员值1, 成员值2, …}
+定义结构体时顺便创建变量
+
+示例
+//结构体定义
+struct student&#123;
+    //成员列表
+    string name;  //姓名
+    int age;      //年龄
+    int score;    //分数
+&#125;stu3; //结构体变量创建方式3 
+
+int main() &#123;
+
+    //结构体变量创建方式1
+    struct student stu1; //struct 关键字可以省略
+
+    stu1.name = &quot;张三&quot;;
+    stu1.age = 18;
+    stu1.score = 100;
+    
+    cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; stu1.name &lt;&lt; &quot; 年龄：&quot;  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/73608288.html" title="指针">指针</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-25T05:15:12.000Z" title="发表于 2023-03-25 13:15:12">2023-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C/C-%E5%9F%BA%E7%A1%80/">C++基础</a></span></div><div class="content">指针的基本概念指针的作用：可以通过指针间接访问内存
+
+内存编号是从0开始记录的，一般用十六进制数字表示
+内存可以利用指针变量保存地址
+
+指针变量的定义和使用指针变量定义语法：数据类型 * 变量名
+示例：
+int main() &#123;
+
+    //1、指针的定义
+    int a = 10; //定义整型变量a
+    
+    //指针定义语法： 数据类型 * 变量名 ;
+    int * p;
+
+    //指针变量赋值
+    p = &amp;a; //指针指向变量a的地址
+    cout &lt;&lt; &amp;a &lt;&lt; endl; //打印数据a的地址
+    cout &lt;&lt; p &lt;&lt; endl;  //打印指针变量p
+
+    //2、指针的使用
+    //通过*操作指针变量指向的内存
+    cout &lt;&lt; &quot;*p = &quot; &lt;&lt; *p &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;
+
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/71adb096.html" title="函数">函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-25T05:14:24.000Z" title="发表于 2023-03-25 13:14:24">2023-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C/C-%E5%9F%BA%E7%A1%80/">C++基础</a></span></div><div class="content">概述作用：讲一段经常使用的代码封装起来，减少重复代码
+一个较大的程序，一般分为若干个程序块，每个模块实现特定的功能。
+函数的定义函数的定义一般主要有5个步骤：
+
+返回值类型
+函数名
+参数列表
+函数体语句
+return 表达式
+
+语法：
+返回值类型 函数名 （参数列表）&#123;
+       函数体语句
+
+       return表达式
+&#125;
+
+
+返回值类型：一个函数可以返回一个值。在函数定义中
+函数名：给函数起个名字
+参数列表：使用该函数时，函数内需要执行的语句
+函数体语句：花括号内的代码，函数内需要执行的语句
+return表达式：和返回值类型挂钩，函数执行完后，返回相应的数据
+
+示例：定义一个加法函数，实现两个数相加
+//函数定义
+int add(int num1, int num2)&#123;
+    int sum = num1 + num2;
+    return sum;
+&#125;
+
+函数的调用功能：使用定义好的函数
+语法：函数名(参数)
+示例
+//函数定义
+int add(int num1, int num2) &#123;//定义中的num1,num2 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/82583a29.html" title="数组—二维数组">数组—二维数组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-25T05:13:23.000Z" title="发表于 2023-03-25 13:13:23">2023-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C/C-%E5%9F%BA%E7%A1%80/">C++基础</a></span></div><div class="content">二维数组就是在一维数组上，多加一个维度
+二维数组的定义方式二维数组定义的四种方式：
+
+数据类型 数组名[行数][列数];
+数据类型 数组名[ 行数 ][ 列数 ] = &#123; &#123;数据1，数据2 &#125; ，&#123;数据3，数据4 &#125; &#125;;
+数据类型 数组名[ 行数 ][ 列数 ] = &#123; 数据1，数据2，数据3，数据4&#125;;
+数据类型 数组名[ ][ 列数 ] = &#123; 数据1，数据2，数据3，数据4&#125;;
+
+
+建议：以上四种定义方式，利用第二种更加只管，提高代码的可读性
+
+示例：
+int main() &#123;
+
+    //方式1  
+    //数组类型 数组名 [行数][列数]
+    int arr[2][3];
+    arr[0][0] = 1;
+    arr[0][1] = 2;
+    arr[0][2] = 3;
+    arr[1][0] = 4;
+    arr[1][1] = 5;
+    arr[1][2] = 6;
+
+    for (int i = 0; i &lt; 2 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/5/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#content-inner">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/#content-inner">10</a><a class="extend next" rel="next" href="/page/7/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/undefined.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AcWing/"><span class="card-category-list-name">AcWing</span><span class="card-category-list-count">4</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AcWing/%E5%A4%8F%E5%AD%A3%E8%B5%9B%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><span class="card-category-list-name">夏季赛每日一题</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">23</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">C++基础</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E6%8F%90%E9%AB%98/"><span class="card-category-list-name">C++提高</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E6%A0%B8%E5%BF%83/"><span class="card-category-list-name">C++核心</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">Java基础</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">39</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Dp/" style="font-size: 1.1em; color: #999">Dp</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.17em; color: #999c9f">排序</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.3em; color: #99a1ac">链表</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 1.3em; color: #99a1ac">基础</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/" style="font-size: 1.1em; color: #999">数学推导</a> <a href="/tags/shell%E8%AF%AD%E6%B3%95/" style="font-size: 1.1em; color: #999">shell语法</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 1.37em; color: #99a4b2">模拟</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 1.1em; color: #999">二叉树</a> <a href="/tags/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" style="font-size: 1.17em; color: #999c9f">LeetCode每日一题</a> <a href="/tags/%E6%80%9D%E7%BB%B4%E9%A2%98/" style="font-size: 1.1em; color: #999">思维题</a> <a href="/tags/Hash/" style="font-size: 1.1em; color: #999">Hash</a> <a href="/tags/%E5%A4%9A%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">多指针</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 1.17em; color: #999c9f">构造</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 1.23em; color: #999ea6">哈希</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 1.43em; color: #99a6b9">双指针</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.17em; color: #999c9f">递归</a> <a href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" style="font-size: 1.1em; color: #999">排列组合</a> <a href="/tags/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">快慢指针</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 1.1em; color: #999">并查集</a> <a href="/tags/Bfs/" style="font-size: 1.1em; color: #999">Bfs</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 1.23em; color: #999ea6">二分查找</a> <a href="/tags/Daily/" style="font-size: 1.17em; color: #999c9f">Daily</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" style="font-size: 1.1em; color: #999">记忆化搜索</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 1.1em; color: #999">哈希表</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 1.37em; color: #99a4b2">前缀和</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 1.37em; color: #99a4b2">贪心</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">快速排序</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">归并排序</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%80%E5%8F%91/" style="font-size: 1.1em; color: #999">多线程开发</a> <a href="/tags/%E5%BC%82%E6%88%96/" style="font-size: 1.1em; color: #999">异或</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" style="font-size: 1.5em; color: #99a9bf">每日一题</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 1.1em; color: #999">二分</a> <a href="/tags/Dfs/" style="font-size: 1.1em; color: #999">Dfs</a> <a href="/tags/%E5%91%A8%E8%B5%9B/" style="font-size: 1.3em; color: #99a1ac">周赛</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">19</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">58</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">95</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-22T14:58:41.161Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,32 +1,255 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>I/O管理与磁盘调度 | G.M. Blog</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="I&#x2F;O缓冲缓冲技术：在输入请求发出之前就开始执行输入传送，并且在输出请求发出一段时间之后才开始执行输出传送，这项技术称为缓冲 两类I&#x2F;O设备：  面向块的I&#x2F;O设备：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块 面向块的I&#x2F;O设备：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块  单缓冲 对于面向块的I&#x2F;O设备：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I&#x2F;O管理与磁盘调度">
+<meta property="og:url" content="https://www.zyfblogs.xyz/posts/7434cf9c.html">
+<meta property="og:site_name" content="G.M. Blog">
+<meta property="og:description" content="I&#x2F;O缓冲缓冲技术：在输入请求发出之前就开始执行输入传送，并且在输出请求发出一段时间之后才开始执行输出传送，这项技术称为缓冲 两类I&#x2F;O设备：  面向块的I&#x2F;O设备：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块 面向块的I&#x2F;O设备：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块  单缓冲 对于面向块的I&#x2F;O设备：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zyfblogs.xyz/img/main.jpg">
+<meta property="article:published_time" content="2023-05-20T03:10:47.000Z">
+<meta property="article:modified_time" content="2023-07-22T14:46:13.223Z">
+<meta property="article:author" content="GotoMove">
+<meta property="article:tag" content="blogs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zyfblogs.xyz/img/main.jpg"><link rel="shortcut icon" href="/img/main.jpg"><link rel="canonical" href="https://www.zyfblogs.xyz/posts/7434cf9c.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":-1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'I/O管理与磁盘调度',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-22 22:46:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">I/O管理与磁盘调度</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-20T03:10:47.000Z" title="发表于 2023-05-20 11:10:47">2023-05-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-22T14:46:13.223Z" title="更新于 2023-07-22 22:46:13">2023-07-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="I/O管理与磁盘调度"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/7434cf9c.html#post-comment"><span class="waline-comment-count" data-path="/posts/7434cf9c.html"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="I-O缓冲"><a href="#I-O缓冲" class="headerlink" title="I&#x2F;O缓冲"></a>I&#x2F;O缓冲</h2><p><strong>缓冲技术</strong>：在输入请求发出之前就开始执行输入传送，并且在输出请求发出一段时间之后才开始执行输出传送，这项技术称为缓冲</p>
+<p>两类I&#x2F;O设备：</p>
+<ul>
+<li><strong>面向块的I&#x2F;O设备</strong>：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块</li>
+<li><strong>面向块的I&#x2F;O设备</strong>：将信息保存在块中，块的大小通常是固定的，传送过程中一次传送一块</li>
+</ul>
+<h3 id="单缓冲"><a href="#单缓冲" class="headerlink" title="单缓冲"></a>单缓冲</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519133222.png" alt="Img"></p>
+<p><strong>对于面向块的I&#x2F;O设备</strong>：</p>
+<ul>
+<li>对于面向块的I&#x2F;O设备：</li>
+<li>相对于无缓冲的情况，这种方法通常会提高系统速度。用户进程可以在下一数据块读取的同时，处理已读入的数据块。由于输入发生在系统内存中而非用户进程内存中，因此操作系统可以将该进程换出</li>
+</ul>
+<p><strong>对于面向流的I&#x2F;O设备</strong>：</p>
+<p>单缓冲方案能以每次传送一行的方式或者每次传送一个字节的方式使用</p>
+<h3 id="双缓冲-缓冲交换"><a href="#双缓冲-缓冲交换" class="headerlink" title="双缓冲(缓冲交换)"></a>双缓冲(缓冲交换)</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519133353.png" alt="Img"></p>
+<p>分配2个缓冲区。在一个进程往一个缓冲区中传送数据(从这个缓冲区中取数据)的同时，操作系统正在清空(或者填充)另一个缓冲区</p>
+<h3 id="循环缓冲"><a href="#循环缓冲" class="headerlink" title="循环缓冲"></a>循环缓冲</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519133429.png" alt="Img"></p>
+<p>双缓冲方案可以平滑I&#x2F;O设备和进程之间的数据流。如果关注的焦点是某个特定进程的性能，那么常常会希望相关I&#x2F;O操作能够跟得上这个进程。如果该进程需要爆发式地执行大量的I&#x2F;O操作，仅有双缓冲就不够了，在这种情况下，通常使用多于两个的缓冲区方案来缓解不足</p>
+<h3 id="I-O缓冲的作用"><a href="#I-O缓冲的作用" class="headerlink" title="I&#x2F;O缓冲的作用"></a>I&#x2F;O缓冲的作用</h3><p>I&#x2F;O缓冲是用来平滑I&#x2F;O需求的峰值的一种技术，但是当进程的平均需求大于I&#x2F;O设备的服务能力时，缓冲再多也不能让I&#x2F;O设备与这个进程一直并驾齐驱。即使有多个缓冲区，所有的缓冲区终将会被填满，进程在处理完每一大块数据后不得不等待。但是，在多道程序设计环境中，当存在多种I&#x2F;O活动和多种进程活动时，缓冲是提高操作系统效率和单个进程性能的一种方法</p>
+<h2 id="磁盘调度"><a href="#磁盘调度" class="headerlink" title="磁盘调度"></a>磁盘调度</h2><h3 id="磁盘性能参数"><a href="#磁盘性能参数" class="headerlink" title="磁盘性能参数"></a>磁盘性能参数</h3><ul>
+<li><strong>寻道时间</strong>：磁头定位到磁道所需的时间</li>
+<li><strong>旋转延迟</strong>：选好磁道后，磁头到达扇区开始位置的时间</li>
+<li><strong>存取时间</strong>：寻道时间+旋转延迟</li>
+<li><strong>传输时间</strong>：磁头定位到扇区开始位置后，数据读写的时间</li>
+<li><strong>排队时间</strong></li>
+</ul>
+<h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><p>在多道程序环境中，操作系统为每个I&#x2F;O设备维护一个请求队列。因此对一个磁盘，队列中可能有来自多个进程的许多I&#x2F;O请求。如果随机地从队列中选择请求，那么磁道完全是被随机访问的，这种情况下性能最差。随机调度可用于与其他调度算法进行对比</p>
+<h4 id="先进先出-FIFO"><a href="#先进先出-FIFO" class="headerlink" title="先进先出(FIFO)"></a>先进先出(FIFO)</h4><ul>
+<li>按顺序处理队列中的请求</li>
+<li>如果有大量进程竞争一个磁盘，这种算法在性能上往往接近于随机调度</li>
+</ul>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><ul>
+<li>这种方法不会优化磁盘利用率，但可以满足操作系统的其它目标</li>
+<li>这种方法不会优化磁盘利用率，但可以满足操作系统的其它目标</li>
+<li>可能会导致部分用户采用对抗手段：把作业分成小块，以回应系统的这种策略。对于数据库系统，这种算法往往性能较差</li>
+</ul>
+<h4 id="最短服务时间优先-SSTF"><a href="#最短服务时间优先-SSTF" class="headerlink" title="最短服务时间优先(SSTF)"></a>最短服务时间优先(SSTF)</h4><ul>
+<li>选择使磁头臂从当前位置开始移动最少(最小寻道时间)的磁盘I&#x2F;O请求</li>
+<li>但是，总是选择最小寻道时间并不能保证平均寻道时间最小，不过能提供比FIFO更好的性能</li>
+<li>磁头臂可以沿两个方向移动</li>
+</ul>
+<h4 id="SCAN"><a href="#SCAN" class="headerlink" title="SCAN"></a>SCAN</h4><ul>
+<li>运行类似电梯。磁头臂沿某一方向移动，并在途中满足所有未完成请求，直到到达最后一个磁道，或者该方向上没有更多请求。接着反转服务方向</li>
+<li>偏向接近最靠里或最靠外的磁道的请求，并且偏向最近的请求，可能发生饥饿</li>
+</ul>
+<h4 id="C-SCAN"><a href="#C-SCAN" class="headerlink" title="C-SCAN"></a>C-SCAN</h4><ul>
+<li>沿某个方向的扫描结束后，返回到相反方向的末端，再次扫描</li>
+<li>减少了新请求的最大延迟</li>
+<li>可能饥饿</li>
+</ul>
+<h4 id="N-step-SCAN-N步扫描"><a href="#N-step-SCAN-N步扫描" class="headerlink" title="N-step-SCAN(N步扫描)"></a>N-step-SCAN(N步扫描)</h4><p>SSTF、SCAN和C-SCAN可能在一段很长时间内磁头臂都不会移动(比如一个或多个进程对一个磁道有较高的访问速度，通过重复的请求这个磁道垄断整个设备)，从而饥饿其它请求</p>
+<ul>
+<li>把请求队列分成长度为N的子队列，每一次用SCAN处理一个子队列。在处理一个子队列时，新请求必须添加到其它某个队列中</li>
+<li>对于比较大的N值，性能接近SCAN；当N&#x3D;1时，实际上就是FIFO</li>
+</ul>
+<h3 id="磁盘调度算法比较"><a href="#磁盘调度算法比较" class="headerlink" title="磁盘调度算法比较"></a>磁盘调度算法比较</h3><p>假设有一些I&#x2F;O请求，需问这些磁道：55、58、39、18、90、160、150、38、184</p>
+<p>使用不同磁盘调度算法的结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230519134030.png" alt="Img"></p>
+<h2 id="磁盘高速缓存"><a href="#磁盘高速缓存" class="headerlink" title="磁盘高速缓存"></a>磁盘高速缓存</h2><p>一个磁盘高速缓存是内存中为磁盘扇区设置的一个缓冲区，它包含有磁盘中某些扇区的副本。当出现一个请求某一特定扇区的I&#x2F;O请求时，首先进行检查，以确定该扇区是否在磁盘高速缓存中。如果在，则该请求可以通过这个高速缓存来满足；如果不在，则把请求的扇区从磁盘读到磁盘高速缓存中</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz">GotoMove</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz/posts/7434cf9c.html">https://www.zyfblogs.xyz/posts/7434cf9c.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.zyfblogs.xyz" target="_blank">G.M. Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/main.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/41e39f2b.html" title="内存管理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">内存管理</div></div></a></div><div class="next-post pull-right"><a href="/posts/15fc6e8c.html" title="线程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">线程</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-O%E7%BC%93%E5%86%B2"><span class="toc-number">1.</span> <span class="toc-text">I&#x2F;O缓冲</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%BC%93%E5%86%B2"><span class="toc-number">1.1.</span> <span class="toc-text">单缓冲</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%BC%93%E5%86%B2-%E7%BC%93%E5%86%B2%E4%BA%A4%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">双缓冲(缓冲交换)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BC%93%E5%86%B2"><span class="toc-number">1.3.</span> <span class="toc-text">循环缓冲</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O%E7%BC%93%E5%86%B2%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">I&#x2F;O缓冲的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">磁盘调度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">磁盘性能参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">磁盘调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA-FIFO"><span class="toc-number">2.2.1.</span> <span class="toc-text">先进先出(FIFO)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">2.2.2.</span> <span class="toc-text">优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%9F%AD%E6%9C%8D%E5%8A%A1%E6%97%B6%E9%97%B4%E4%BC%98%E5%85%88-SSTF"><span class="toc-number">2.2.3.</span> <span class="toc-text">最短服务时间优先(SSTF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SCAN"><span class="toc-number">2.2.4.</span> <span class="toc-text">SCAN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-SCAN"><span class="toc-number">2.2.5.</span> <span class="toc-text">C-SCAN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#N-step-SCAN-N%E6%AD%A5%E6%89%AB%E6%8F%8F"><span class="toc-number">2.2.6.</span> <span class="toc-text">N-step-SCAN(N步扫描)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83"><span class="toc-number">2.3.</span> <span class="toc-text">磁盘调度算法比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98"><span class="toc-number">3.</span> <span class="toc-text">磁盘高速缓存</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/undefined.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline233-delta.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: true,
+    }, {"requiredMeta":["nick","mail"],"locale":{"placeholder":"昵称和邮箱为必填项，为了您能及时收到相关回复的邮件通知，请确保邮箱的正确性！"}}))
+  }
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+  const walineCSSLoad = document.getElementById('waline-css')
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+  if (typeof Waline === 'object') {
+    walineCSSLoad ? initWaline() : getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css','waline-css').then(initWaline)
+  }
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css','waline-css').then(() => {
+      getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+    })
+  }
+}
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,7 +1,259 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>G.M. Blog - You juan, I juan</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="sharing blogs">
+<meta property="og:type" content="website">
+<meta property="og:title" content="G.M. Blog">
+<meta property="og:url" content="https://www.zyfblogs.xyz/page/9/index.html">
+<meta property="og:site_name" content="G.M. Blog">
+<meta property="og:description" content="sharing blogs">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zyfblogs.xyz/img/main.jpg">
+<meta property="article:author" content="GotoMove">
+<meta property="article:tag" content="blogs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zyfblogs.xyz/img/main.jpg"><link rel="shortcut icon" href="/img/main.jpg"><link rel="canonical" href="https://www.zyfblogs.xyz/page/9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":-1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'G.M. Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-22 22:58:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/blog-background.png')"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">G.M. Blog</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/zhangyufeng0123" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/c10480a9.html" title="LeetCode 809. 情感丰富的文字">LeetCode 809. 情感丰富的文字</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T06:54:54.000Z" title="发表于 2023-03-20 14:54:54">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">809. 情感丰富的文字题面有时候人们会用重复写一些字母来表示额外的感受，比如 &quot;hello&quot; -&gt; &quot;heeellooo&quot;, &quot;hi&quot; -&gt; &quot;hiii&quot;。我们将相邻字母都相同的一串字符定义为相同字母组，例如：”h”, “eee”, “ll”, “ooo”。对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 c ），然后往其中添加相同的字母 c 使其长度达到 3 或以上。
+例如，以 “hello” 为例，我们可以对字母组 “o” 扩张得到 “hellooo”，但是无法以同样的方法得到 “helloo” 因为字母组 “oo” 长度小于 3。此外，我们可以进行另一种扩张 “ll” -&gt; “lllll” 以获得 “helllllooo”。如果 s = &quot;helllllooo&quot;，那么查询词 “hello” 是可扩张的，因为可以对它执行这两种扩张操作 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/375eda24.html" title="LeetCode 791. 自定义字符串排序">LeetCode 791. 自定义字符串排序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T06:52:47.000Z" title="发表于 2023-03-20 14:52:47">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">791. 自定义字符串排序(20221113 每日一题)题面给定两个字符串 order 和 s 。order 的所有单词都是 唯一 的，并且以前按照一些自定义的顺序排序。对 s 的字符进行置换，使其与排序的 order 相匹配。更具体地说，如果在 order 中的字符 x 出现字符 y 之前，那么在排列后的字符串中， x 也应该出现在 y 之前。返回 满足这个性质的 s 的任意排列 。
+SampleInputorder = &quot;cba&quot;, s = &quot;abcd&quot;
+
+Output&quot;cbad&quot;
+
+思路题目中给了我们两个字符串，一个优先级字符串，一个需要处理的字符串。从题目我们可以得出，我们需要处理的是有优先级定义的字符，对于其余字符我们可以不做处理，可以放在字符串最前面、可以放在字符串最后面、可以穿插在字符串之间。那么我们怎么处理这个有优先级的字符呢？
+1第一种想法就是我们先对$order$字符串中的字符定义优先级，其余字符的优先级都定义为最高优先级，然后对$s$字符串中的字符根据我们刚刚定义的优先级进行排序。但是这样有一个问题，这个 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/598a88dc.html" title="LeetCode 209.长度最小的子数组">LeetCode 209.长度最小的子数组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T06:49:10.000Z" title="发表于 2023-03-20 14:49:10">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">209. 长度最小的子数组题面
+Sample1Input:target = 7, nums = [2,3,1,2,4,3]
+
+Output:2
+
+Sample2Input:target = 4, nums = [1,4,4]
+
+Output:1
+
+思路看到这个题目的数组长度范围是[1,1e5]，如果使用暴力的方法，也就是遍历所有的子数组，此时的时间复杂度是 $O(n^2)$，这个时候是有可能超时的，那么我们怎么来降低耗时呢？这个时候我们就可以利用滑动窗口的思路，即先记录一段子数组的总和，如果总和大于target，那么我们就可以慢慢减去这个子数组的最前面的数字，直到子数组的和小于target，在减的过程中我们统计这个子数组的长度与当前最优解进行比较，如果子数组的长度优于当前最优解时，我们就替换当前最优解。
+做法我们先用一个idx变量来记录这个数组的左端，然后遍历数组。在遍历数组的时候，我们用一个变量sum来记录从idx到i子数组总和。当这个总和sum的值大于等于target时，我们就慢慢删减idx上的数，同时把idx后移一位，直到sum小于target，在删减的同时更新最优解。
+代码cl ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/16343545.html" title="LeetCode 481.神奇数字">LeetCode 481.神奇数字</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T06:43:09.000Z" title="发表于 2023-03-20 14:43:09">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">481. 神奇字符串(20221031每日一题)题面
+SampleInput6
+
+Output3
+
+思路这道题给出一个一维数组，后面的数会根据前面的数而定值，那么我们只需要模拟一下即可，那么怎么模拟呢？
+定义这个一维数组为arr，那么我们可以看到。arr[2]的数字要根据arr[1]来定值，arr[3]的数字要根据arr[2]来定值，因为arr[0]为1，arr[1]为2，而因为arr[1]为2，那么arr[1]和arr[2]需要相同的数字，即arr[2] = arr[1]，之后arr[3]的值不能与arr[2]相等，否则就成为了arr[1]=arr[2]=arr[3]，这个时候arr[1]的值需要为3才能解释的通，但是arr的值只能是1或者2，那么我们就要将改变arr[3]的值与前面的值不同。
+因此我们需要定义一个索引值idx，来表示当前相同数字所需要的连贯个数，用一个变量f来表示当前数组的数字，每加入一个数字时，我们就对arr[idx]进行减一操作，当arr[idx]为0时，我们就需要对idx进行++操作，并且改变f的值，使得数字之间不相同。
+代码class Solution &# ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/2acaafb0.html" title="LeetCode 915.分割数组">LeetCode 915.分割数组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T06:38:34.000Z" title="发表于 2023-03-20 14:38:34">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">LeetCode 915.分割数组（Medium）915. 分割数组（20221024每日一题）题面
+SampleInputnums = [5,0,3,8,6]
+
+Output3
+
+思路题目要求我们将一个数组分为左右两部分，并且左半边的最大值要小于等于右半边的最小值，那么我们需要用两个数组 $b, s$来维护这个最大值喝最小值， $b[i]$代表我维护的是在[1,i]之间的最大值，s[i]代表我维护的是在[i,]的最小值，之后我们只要遍历一次数组，当b[i]&gt;s[i + 1]的时候我们就能找到我们想要找到的分界点。
+代码class Solution &#123;
+public:
+    int partitionDisjoint(vector&lt;int&gt;&amp; nums) &#123;
+        int len = nums.size();
+        vector&lt;int&gt; b(len, 0), s(len, 0);
+        b[0] = nums[0];
+        for(int i = 1; i &lt; len; i++) ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/f4d40e11.html" title="LeetCode 904. 水果成篮">LeetCode 904. 水果成篮</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T06:23:33.000Z" title="发表于 2023-03-20 14:23:33">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">904. 水果成篮(20221017 每日一题)
+题意题目给我们一个数组，让我们找到最长的子串，使得这个子串中所包含的数字种类最多只有两个。
+思路解决这种题，简单的就是利用双指针，一个在前，一个在后，在前的指针负责往队列里加数字，如果加完数字之后发现队列里的数字种类大于两种，那么我们就用后指针来弹出队列的数字，直到队列的数字种类小于等于2。
+Codeclass Solution &#123;
+public:
+    int totalFruit(vector&lt;int&gt;&amp; fruits) &#123;
+        int first = 0, last = 1;
+        unordered_map&lt;int, int&gt; hash;
+        hash[fruits[0]]++;
+        int sum = 1, res = 0;
+        while(last &lt; fruits.size())&#123;
+            hash[fruits[last]]++;
+            if(hash[frui ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/672638a9.html" title="LeetCode 870. 优势洗牌">LeetCode 870. 优势洗牌</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T04:16:24.000Z" title="发表于 2023-03-20 12:16:24">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">870. 优势洗牌 (20221008每日一题)题面
+给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums 的优势可以用满足 nums1[i] &gt; nums2[i] 的索引 i 的数目来描述。
+返回 nums1的任意排列，使其相对于 nums2的优势最大化。
+思路我们重排序nums1数组里的数字，使得nums1与nums2相同下标下nums1中的数比nums2中的数大，我们要求的是最大化情况下nums1数组中数字的排列情况。
+这道题类似于田忌赛马，田忌赛马中有下等马、中等马、上等马，我们用我方的中等马配对对方的下等马，用上等马配对对方的中等马，用下等马配对对方的上等马。
+在这里我们可以把数字看作马匹的好坏，我们需要用nums1中的较好的马匹配nums2中较差的马，用nums1中较差的马匹配nums2中最好的马。
+做法首先我们需要先排序，将nums1和nums2分别进行从小到大的顺序进行排序，其中nums2排序之后我们要记录每个数原来的索引值。这样方便将nums1的数放到对应的位置。
+我们依次从nums1和nums2拿出n1和n2
+
+如果n1&gt;n2 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/88c35860.html" title="LeetCode 927. 三等分">LeetCode 927. 三等分</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T04:13:13.000Z" title="发表于 2023-03-20 12:13:13">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">LeetCode 927. 三等分****927. 三等分 (20221006每日一题)**题意
+给定一个由 0和 1组成的数组 arr ，将数组分成  3 个非空的部分，使得所有这些部分表示相同的二进制值。
+如果可以做到，请返回任何[i, j]，其中 i+1 &lt; j，这样一来：
+
+arr[0], arr[1], ..., arr[i] 为第一部分；
+arr[i + 1], arr[i + 2], ..., arr[j - 1] 为第二部分；
+arr[j], arr[j + 1], ..., arr[arr.length - 1] 为第三部分。
+这三个部分所表示的二进制值相等。
+
+如果无法做到，就返回 [-1, -1]
+注意，在考虑每个部分所表示的二进制时，应当将其看作一个整体。例如，[1,1,0] 表示十进制的 6，而不会是 3。此外，前导零也是被允许的，所以 [0,1,1] 和 [1,1] 表示相同的值。
+这道题我将数组直接看作一个字符串，然后题目要求我们将这个字符串分成三份，这三份所形成的二进制的值要想等。
+思路二进制的值的大小取决于该二进制中有效1的多少以及有效位数，如果 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/d1540be5.html" title="LeetCode 77. 组合">LeetCode 77. 组合</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T04:09:38.000Z" title="发表于 2023-03-20 12:09:38">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">LeetCode 77. 组合77. 组合
+题意这道题的意思就是一道排列组合的问题，即求 $C^k_n$这种数学问题，但是我们不是求值，而是求排列组合中每一种的组合。这样的题显然是一种枚举问题，遇到枚举问题 $一般$是用dfs和bfs的方法。在这道题中，我用了一个剪枝策略来加速寻找每一种组合。
+如果剩下的数字个数加上当前数组大小小于要求值k，则返回
+代码class Solution &#123;
+    vector&lt;vector&lt;int&gt;&gt; res;
+public:
+    void dfs(vector&lt;int&gt; arr, int index, int n, int sum, int k)&#123;
+        if(sum == k)&#123;
+            this-&gt;res.emplace_back(arr);
+            return;
+        &#125;
+        if(index &gt; n) return;
+        if(sum + n - index + 1 &lt;  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/57efb66a.html" title="LeetCode 811. 子域名访问计数">LeetCode 811. 子域名访问计数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T04:03:59.000Z" title="发表于 2023-03-20 12:03:59">2023-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">LeetCode 811. 子域名访问计数****811. 子域名访问计数(20221005每日一题)**
+网站域名 “discuss.leetcode.com“ 由多个子域名组成。顶级域名为 “com” ，二级域名为 “leetcode.com“ ，最低一级为 “discuss.leetcode.com“。当访问域名 &quot;discuss.leetcode.com&quot;时，同时也会隐式访问其父域名 &quot;leetcode.com&quot; 以及 &quot;com&quot;。
+计数配对域名 是遵循 “rep d1.d2.d3” 或 “rep d1.d2” 格式的一个域名表示，其中 rep 表示访问域名的次数，d1.d2.d3 为域名本身。
+例如，”9001 discuss.leetcode.com“ 就是一个 计数配对域名 ，表示 discuss.leetcode.com 被访问了 9001 次。
+给你一个 计数配对域名 组成的数组 cpdomains ，解析得到输入中每个子域名对应的 计数配对域名，并以数组形式返回。可以按 任意顺序返回答案。
+思路我们需要获得 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/8/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/#content-inner">10</a><a class="extend next" rel="next" href="/page/10/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/undefined.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AcWing/"><span class="card-category-list-name">AcWing</span><span class="card-category-list-count">4</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AcWing/%E5%A4%8F%E5%AD%A3%E8%B5%9B%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><span class="card-category-list-name">夏季赛每日一题</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">23</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">C++基础</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E6%8F%90%E9%AB%98/"><span class="card-category-list-name">C++提高</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C-%E6%A0%B8%E5%BF%83/"><span class="card-category-list-name">C++核心</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">Java基础</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">39</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Dp/" style="font-size: 1.1em; color: #999">Dp</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.17em; color: #999c9f">排序</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.3em; color: #99a1ac">链表</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 1.3em; color: #99a1ac">基础</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/" style="font-size: 1.1em; color: #999">数学推导</a> <a href="/tags/shell%E8%AF%AD%E6%B3%95/" style="font-size: 1.1em; color: #999">shell语法</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 1.37em; color: #99a4b2">模拟</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 1.1em; color: #999">二叉树</a> <a href="/tags/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" style="font-size: 1.17em; color: #999c9f">LeetCode每日一题</a> <a href="/tags/%E6%80%9D%E7%BB%B4%E9%A2%98/" style="font-size: 1.1em; color: #999">思维题</a> <a href="/tags/Hash/" style="font-size: 1.1em; color: #999">Hash</a> <a href="/tags/%E5%A4%9A%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">多指针</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 1.17em; color: #999c9f">构造</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 1.23em; color: #999ea6">哈希</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 1.43em; color: #99a6b9">双指针</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.17em; color: #999c9f">递归</a> <a href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" style="font-size: 1.1em; color: #999">排列组合</a> <a href="/tags/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">快慢指针</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 1.1em; color: #999">并查集</a> <a href="/tags/Bfs/" style="font-size: 1.1em; color: #999">Bfs</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 1.23em; color: #999ea6">二分查找</a> <a href="/tags/Daily/" style="font-size: 1.17em; color: #999c9f">Daily</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" style="font-size: 1.1em; color: #999">记忆化搜索</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 1.1em; color: #999">哈希表</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 1.37em; color: #99a4b2">前缀和</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 1.37em; color: #99a4b2">贪心</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">快速排序</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">归并排序</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%80%E5%8F%91/" style="font-size: 1.1em; color: #999">多线程开发</a> <a href="/tags/%E5%BC%82%E6%88%96/" style="font-size: 1.1em; color: #999">异或</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" style="font-size: 1.5em; color: #99a9bf">每日一题</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 1.1em; color: #999">二分</a> <a href="/tags/Dfs/" style="font-size: 1.1em; color: #999">Dfs</a> <a href="/tags/%E5%91%A8%E8%B5%9B/" style="font-size: 1.3em; color: #99a1ac">周赛</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">19</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">58</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">95</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-22T14:58:41.161Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
