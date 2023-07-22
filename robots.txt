@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://www.zyfblogs.xyz/sitemap.xml
+Sitemap: https://www.zyfblogs.xyz/baidusitemap.xml
