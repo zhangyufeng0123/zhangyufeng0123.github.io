@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>tmux常用命令 | G.M. Blog</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="功能 分屏 允许断开terminal连接后，继续运行进程  结构一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane 示例： tmux: &amp;emsp;&amp;emsp;session0: &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;window0: &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;pane0">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>tmux常用命令 | G.M. Blog</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="功能  分屏 允许断开terminal连接后，继续运行进程   结构 一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane 示例： tmux:   session0:     window0:       pane0       pane1       pane2       ...     window1:     windo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tmux常用命令">
 <meta property="og:url" content="https://www.zyfblogs.xyz/posts/c3f7601e.html">
 <meta property="og:site_name" content="G.M. Blog">
-<meta property="og:description" content="功能 分屏 允许断开terminal连接后，继续运行进程  结构一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane 示例： tmux: &amp;emsp;&amp;emsp;session0: &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;window0: &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;pane0">
+<meta property="og:description" content="功能  分屏 允许断开terminal连接后，继续运行进程   结构 一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane 示例： tmux:   session0:     window0:       pane0       pane1       pane2       ...     window1:     windo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.zyfblogs.xyz/img/main.jpg">
 <meta property="article:published_time" content="2023-04-17T15:59:27.000Z">
@@ -162,65 +162,90 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">tmux常用命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-17T15:59:27.000Z" title="发表于 2023-04-17 23:59:27">2023-04-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-22T14:46:13.228Z" title="更新于 2023-07-22 22:46:13">2023-07-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="tmux常用命令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/c3f7601e.html#post-comment"><span class="waline-comment-count" data-path="/posts/c3f7601e.html"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">tmux常用命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-17T15:59:27.000Z" title="发表于 2023-04-17 23:59:27">2023-04-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-22T14:46:13.228Z" title="更新于 2023-07-22 22:46:13">2023-07-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="tmux常用命令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/c3f7601e.html#post-comment"><span class="waline-comment-count" data-path="/posts/c3f7601e.html"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="功能"><a class="markdownIt-Anchor" href="#功能"></a> 功能</h2>
+<ol>
 <li>分屏</li>
 <li>允许断开terminal连接后，继续运行进程</li>
 </ol>
-<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane</p>
+<h2 id="结构"><a class="markdownIt-Anchor" href="#结构"></a> 结构</h2>
+<p>一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane</p>
 <p>示例：</p>
 <p>tmux:</p>
-<p>&emsp;&emsp;session0:</p>
-<p>&emsp;&emsp;&emsp;&emsp;window0:</p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pane0</p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pane1</p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pane2</p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;…</p>
-<p>&emsp;&emsp;&emsp;&emsp;window1:</p>
-<p>&emsp;&emsp;&emsp;&emsp;window2:</p>
-<p>&emsp;&emsp;&emsp;&emsp;…</p>
-<p>&emsp;&emsp;session1</p>
-<p>&emsp;&emsp;session2</p>
-<p>&emsp;&emsp;…</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
-<li><p>tmux：新建一个session，其中包含一个window，window包含一个pane，pane里打开了一个shell对话框</p>
+<p>  session0:</p>
+<p>    window0:</p>
+<p>      pane0</p>
+<p>      pane1</p>
+<p>      pane2</p>
+<p>      ...</p>
+<p>    window1:</p>
+<p>    window2:</p>
+<p>    ...</p>
+<p>  session1</p>
+<p>  session2</p>
+<p>  ...</p>
+<h2 id="常用命令"><a class="markdownIt-Anchor" href="#常用命令"></a> 常用命令</h2>
+<ol>
+<li>
+<p>tmux：新建一个session，其中包含一个window，window包含一个pane，pane里打开了一个shell对话框</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>%</code>:将当前pane左右平分成两个pane</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>%</code>:将当前pane左右平分成两个pane</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>”</code>:将当前pane上下平分成两个pane</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>”</code>:将当前pane上下平分成两个pane</p>
 </li>
-<li><p><code>Ctrl + d</code>: 关闭当前pane；如果当前window的所有pane均已关闭，则自动关闭window；如果当前session的所有window均已关闭，则自动关闭session</p>
+<li>
+<p><code>Ctrl + d</code>: 关闭当前pane；如果当前window的所有pane均已关闭，则自动关闭window；如果当前session的所有window均已关闭，则自动关闭session</p>
 </li>
-<li><p>鼠标点集可以选pane</p>
+<li>
+<p>鼠标点集可以选pane</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按下方向键：选择相邻的pane</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按下方向键：选择相邻的pane</p>
 </li>
-<li><p>鼠标拖动pane之间的分割线，可以调整分割线的位置</p>
+<li>
+<p>鼠标拖动pane之间的分割线，可以调整分割线的位置</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>的同时按方向键，可以调整pane之间分割线的位置（鼠标按着分界线也可以位置）</p>
+<li>
+<p>按下<code>Ctrl + a</code>的同时按方向键，可以调整pane之间分割线的位置（鼠标按着分界线也可以位置）</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>d</code>：挂起当前session</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>d</code>：挂起当前session</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>z</code>：将当前pane全屏&#x2F;取消全屏</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>z</code>：将当前pane全屏/取消全屏</p>
 </li>
-<li><p><code>tmux a</code>: 打开之前挂起的session</p>
+<li>
+<p><code>tmux a</code>: 打开之前挂起的session</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>s</code>：选择其他session</p>
-<p>方向键 ——— 上：选择上一项 session&#x2F;window&#x2F;pane</p>
-<p>方向键 ——— 下：选择下一项 session&#x2F;window&#x2F;pane</p>
-<p>方向键 ——— 右：展开当前项 session&#x2F;window</p>
-<p>方向键 ——— 左：闭合当前项 session&#x2F;window</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>s</code>：选择其他session</p>
+<p>方向键 ——— 上：选择上一项 session/window/pane</p>
+<p>方向键 ——— 下：选择下一项 session/window/pane</p>
+<p>方向键 ——— 右：展开当前项 session/window</p>
+<p>方向键 ——— 左：闭合当前项 session/window</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>c</code>：在当前session种创建一个新的window</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>c</code>：在当前session种创建一个新的window</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>w</code>：选择其他window，操作方法与（12）完全相同</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>w</code>：选择其他window，操作方法与（12）完全相同</p>
 </li>
-<li><p>按下<code>Ctrl + a</code>后手指松开，然后按<code>PageUp</code>：翻阅当前pane的内容</p>
+<li>
+<p>按下<code>Ctrl + a</code>后手指松开，然后按<code>PageUp</code>：翻阅当前pane的内容</p>
 </li>
-<li><p>鼠标滚轮：翻阅当前pane内的内容</p>
+<li>
+<p>鼠标滚轮：翻阅当前pane内的内容</p>
 </li>
-<li><p>在tmux中选中文本时，需要按住<code>shift</code>键</p>
+<li>
+<p>在tmux中选中文本时，需要按住<code>shift</code>键</p>
 </li>
-<li><p>tmux中复制&#x2F;粘贴文本的通用方式</p>
+<li>
+<p>tmux中复制/粘贴文本的通用方式</p>
 <ol>
 <li>按下<code>Ctrl + a</code>后松开手指，然后按<code>[</code></li>
 <li>用鼠标选中文本，被选中的文本会被自动复制到tmux的剪贴板</li>
@@ -228,7 +253,51 @@
 </ol>
 </li>
 </ol>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz">GotoMove</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz/posts/c3f7601e.html">https://www.zyfblogs.xyz/posts/c3f7601e.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.zyfblogs.xyz" target="_blank">G.M. Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/main.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/8c31560b.html" title="vim常用命令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">vim常用命令</div></div></a></div><div class="next-post pull-right"><a href="/posts/24a74496.html" title="LeetCode 242.有效的字母异位词"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">LeetCode 242.有效的字母异位词</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">常用命令</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/undefined.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadWaline () {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz">GotoMove</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz/posts/c3f7601e.html">https://www.zyfblogs.xyz/posts/c3f7601e.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.zyfblogs.xyz" target="_blank">G.M. Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/main.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/8c31560b.html" title="vim常用命令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">vim常用命令</div></div></a></div><div class="next-post pull-right"><a href="/posts/24a74496.html" title="LeetCode 242.有效的字母异位词"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">LeetCode 242.有效的字母异位词</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.</span> <span class="toc-text"> 功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text"> 结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text"> 常用命令</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/29f70fcd.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>function loadWaline () {
   function initWaline () {
     const waline = Waline.init(Object.assign({
       el: '#waline-wrap',

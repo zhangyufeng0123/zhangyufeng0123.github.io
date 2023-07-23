@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>STL-vector 下 | G.M. Blog</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="vector基本概念功能： vector数据结构和数组非常相似，也成为单端数组 vector与普通数组的区别： 不同之处在于数组是静态空间，而vector可以动态扩展 动态扩展： 并不是在原空间之后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间 vector构造函数功能描述： 创建vector容器 函数原型：  vector&lt;T&gt; v;&#x2F;&#x2F;采用">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>STL-vector 下 | G.M. Blog</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="vector基本概念 功能： vector数据结构和数组非常相似，也成为单端数组 vector与普通数组的区别： 不同之处在于数组是静态空间，而vector可以动态扩展 动态扩展： 并不是在原空间之后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间  vector构造函数 功能描述： 创建vector容器 函数原型：  vector&lt;T&gt; v;&#x2F;&#x2F;采用模板实现类实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL-vector 下">
 <meta property="og:url" content="https://www.zyfblogs.xyz/posts/b27c37e9.html">
 <meta property="og:site_name" content="G.M. Blog">
-<meta property="og:description" content="vector基本概念功能： vector数据结构和数组非常相似，也成为单端数组 vector与普通数组的区别： 不同之处在于数组是静态空间，而vector可以动态扩展 动态扩展： 并不是在原空间之后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间 vector构造函数功能描述： 创建vector容器 函数原型：  vector&lt;T&gt; v;&#x2F;&#x2F;采用">
+<meta property="og:description" content="vector基本概念 功能： vector数据结构和数组非常相似，也成为单端数组 vector与普通数组的区别： 不同之处在于数组是静态空间，而vector可以动态扩展 动态扩展： 并不是在原空间之后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间  vector构造函数 功能描述： 创建vector容器 函数原型：  vector&lt;T&gt; v;&#x2F;&#x2F;采用模板实现类实">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.zyfblogs.xyz/img/main.jpg">
 <meta property="article:published_time" content="2023-03-31T05:36:49.000Z">
@@ -162,171 +162,182 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">STL-vector 下</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-31T05:36:49.000Z" title="发表于 2023-03-31 13:36:49">2023-03-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-22T14:46:13.228Z" title="更新于 2023-07-22 22:46:13">2023-07-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/C-%E6%8F%90%E9%AB%98/">C++提高</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="STL-vector 下"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/b27c37e9.html#post-comment"><span class="waline-comment-count" data-path="/posts/b27c37e9.html"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="vector基本概念"><a href="#vector基本概念" class="headerlink" title="vector基本概念"></a>vector基本概念</h2><p><strong>功能</strong>：</p>
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">STL-vector 下</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-31T05:36:49.000Z" title="发表于 2023-03-31 13:36:49">2023-03-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-22T14:46:13.228Z" title="更新于 2023-07-22 22:46:13">2023-07-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/C-%E6%8F%90%E9%AB%98/">C++提高</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="STL-vector 下"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/b27c37e9.html#post-comment"><span class="waline-comment-count" data-path="/posts/b27c37e9.html"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="vector基本概念"><a class="markdownIt-Anchor" href="#vector基本概念"></a> vector基本概念</h2>
+<p><strong>功能</strong>：</p>
 <p>vector数据结构和<strong>数组非常相似</strong>，也成为<strong>单端数组</strong></p>
 <p><strong>vector与普通数组的区别</strong>：</p>
 <p>不同之处在于数组是静态空间，而vector可以<strong>动态扩展</strong></p>
 <p><strong>动态扩展</strong>：</p>
 <p>并不是在原空间之后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间</p>
-<h2 id="vector构造函数"><a href="#vector构造函数" class="headerlink" title="vector构造函数"></a>vector构造函数</h2><p><strong>功能描述</strong>：</p>
+<h2 id="vector构造函数"><a class="markdownIt-Anchor" href="#vector构造函数"></a> vector构造函数</h2>
+<p><strong>功能描述</strong>：</p>
 <p>创建vector容器</p>
 <p>函数原型：</p>
 <ul>
-<li><code>vector&lt;T&gt; v;</code>&#x2F;&#x2F;采用模板实现类实现，默认构造函数</li>
-<li><code>vector(v.begin(), v.end());</code>&#x2F;&#x2F;将v[begin(), end())区间中的元素拷贝给本身。</li>
-<li><code>vector(n, elem);</code>&#x2F;&#x2F;构造函数将n个elem拷贝给本身。</li>
-<li><code>vector(const vector &amp;vec);</code>&#x2F;&#x2F;拷贝构造函数。</li>
+<li><code>vector&lt;T&gt; v;</code>//采用模板实现类实现，默认构造函数</li>
+<li><code>vector(v.begin(), v.end());</code>//将v[begin(), end())区间中的元素拷贝给本身。</li>
+<li><code>vector(n, elem);</code>//构造函数将n个elem拷贝给本身。</li>
+<li><code>vector(const vector &amp;vec);</code>//拷贝构造函数。</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre><code class="cpp">#include &lt;vector&gt;
+<pre class="highlight"><code class="cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
 
-void printVector(vector&lt;int&gt;&amp; v) &#123;
-    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) &#123;
-        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printVector</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; v)</span> </span>&#123;
+	<span class="hljs-keyword">for</span> (vector&lt;<span class="hljs-type">int</span>&gt;::iterator it = v.<span class="hljs-built_in">begin</span>(); it != v.<span class="hljs-built_in">end</span>(); it++) &#123;
+		cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+	&#125;
+	cout &lt;&lt; endl;
 &#125;
 
-void test01()&#123;
-    vector&lt;int&gt; v1; //无参构造
-    for (int i = 0; i &lt; 10; i++)	&#123;
-        v1.push_back(i);
-    &#125;
-    printVector(v1);
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt; v1; <span class="hljs-comment">//无参构造</span>
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)	&#123;
+		v1.<span class="hljs-built_in">push_back</span>(i);
+	&#125;
+	<span class="hljs-built_in">printVector</span>(v1);
 
-    vector&lt;int&gt; v2(v1.begin(), v1.end());
-    printVector(v2);
+	<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v2</span><span class="hljs-params">(v1.begin(), v1.end())</span></span>;
+	<span class="hljs-built_in">printVector</span>(v2);
 
-    vector&lt;int&gt; v3(10, 100);
-    printVector(v3);
-    
-    vector&lt;int&gt; v4(v3);
-    printVector(v4);
+	<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v3</span><span class="hljs-params">(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>)</span></span>;
+	<span class="hljs-built_in">printVector</span>(v3);
+	
+	<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v4</span><span class="hljs-params">(v3)</span></span>;
+	<span class="hljs-built_in">printVector</span>(v4);
 &#125;
 
-int main() &#123;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
 
-    test01();
+	<span class="hljs-built_in">test01</span>();
 
-    system(&quot;pause&quot;);
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);
 
-    return 0;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331131647.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331131647.png" alt="" /></p>
 <ul>
-<li><p>总结</p>
-<p>  vector的多种构造方式没有可比性，灵活使用即可</p>
+<li>
+<p>总结</p>
+<p>vector的多种构造方式没有可比性，灵活使用即可</p>
 </li>
 </ul>
-<h2 id="vector赋值操作"><a href="#vector赋值操作" class="headerlink" title="vector赋值操作"></a>vector赋值操作</h2><p><strong>功能描述：</strong></p>
+<h2 id="vector赋值操作"><a class="markdownIt-Anchor" href="#vector赋值操作"></a> vector赋值操作</h2>
+<p><strong>功能描述：</strong></p>
 <p>给vector容器进行赋值</p>
 <p>函数原型：</p>
 <ul>
-<li><code>vector &amp;operator=(const vector &amp;vec);</code>&#x2F;&#x2F;重载等号操作符</li>
-<li><code>assign(beg, end);</code>&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。</li>
-<li><code>assign(n, elem);</code>&#x2F;&#x2F;将n个elem拷贝赋值给本身。</li>
+<li><code>vector &amp;operator=(const vector &amp;vec);</code>//重载等号操作符</li>
+<li><code>assign(beg, end);</code>//将[beg, end)区间中的数据拷贝赋值给本身。</li>
+<li><code>assign(n, elem);</code>//将n个elem拷贝赋值给本身。</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre><code class="cpp">#include &lt;vector&gt;
+<pre class="highlight"><code class="cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
 
-void printVector(vector&lt;int&gt;&amp; v) &#123;
-    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) &#123;
-        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printVector</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; v)</span> </span>&#123;
+	<span class="hljs-keyword">for</span> (vector&lt;<span class="hljs-type">int</span>&gt;::iterator it = v.<span class="hljs-built_in">begin</span>(); it != v.<span class="hljs-built_in">end</span>(); it++) &#123;
+		cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+	&#125;
+	cout &lt;&lt; endl;
 &#125;
 
-//赋值操作
-void test01()&#123;
-    vector&lt;int&gt; v1; //无参构造
-    for (int i = 0; i &lt; 10; i++)	&#123;
-        v1.push_back(i);
-    &#125;
-    printVector(v1);
+<span class="hljs-comment">//赋值操作</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt; v1; <span class="hljs-comment">//无参构造</span>
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)	&#123;
+		v1.<span class="hljs-built_in">push_back</span>(i);
+	&#125;
+	<span class="hljs-built_in">printVector</span>(v1);
 
-    vector&lt;int&gt;v2;
-    v2 = v1;
-    printVector(v2);
+	vector&lt;<span class="hljs-type">int</span>&gt;v2;
+	v2 = v1;
+	<span class="hljs-built_in">printVector</span>(v2);
 
-    vector&lt;int&gt;v3;
-    v3.assign(v1.begin(), v1.end());
-    printVector(v3);
+	vector&lt;<span class="hljs-type">int</span>&gt;v3;
+	v3.<span class="hljs-built_in">assign</span>(v1.<span class="hljs-built_in">begin</span>(), v1.<span class="hljs-built_in">end</span>());
+	<span class="hljs-built_in">printVector</span>(v3);
 
-    vector&lt;int&gt;v4;
-    v4.assign(10, 100);
-    printVector(v4);
+	vector&lt;<span class="hljs-type">int</span>&gt;v4;
+	v4.<span class="hljs-built_in">assign</span>(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>);
+	<span class="hljs-built_in">printVector</span>(v4);
 &#125;
 
-int main() &#123;
-    test01();
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+	<span class="hljs-built_in">test01</span>();
 
-    system(&quot;pause&quot;);
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);
 
-    return 0;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331131810.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331131810.png" alt="" /></p>
 <ul>
-<li><p>总结</p>
-<p>  vector赋值方式比较简单，使用operator&#x3D;，或者assign都可以</p>
+<li>
+<p>总结</p>
+<p>vector赋值方式比较简单，使用operator=，或者assign都可以</p>
 </li>
 </ul>
-<h2 id="vector容量和大小"><a href="#vector容量和大小" class="headerlink" title="vector容量和大小"></a>vector容量和大小</h2><p><strong>功能描述</strong>：</p>
+<h2 id="vector容量和大小"><a class="markdownIt-Anchor" href="#vector容量和大小"></a> vector容量和大小</h2>
+<p><strong>功能描述</strong>：</p>
 <p>对vector容量的容器和大小操作</p>
 <p>函数原型：</p>
 <ul>
-<li><code>empty();</code>&#x2F;&#x2F;判断容器是否为空</li>
-<li><code>capacity();</code>&#x2F;&#x2F;容器的容量</li>
-<li><code>size();</code>&#x2F;&#x2F;返回容器中元素的个数</li>
-<li><code>resize(int num);</code>&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。</li>
-<li><code>resize(int num, elem);</code>&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以elem值填充新位置。&#x2F;&#x2F;如果容器变短，则末尾超出容器长度的元素被删除</li>
+<li><code>empty();</code>//判断容器是否为空</li>
+<li><code>capacity();</code>//容器的容量</li>
+<li><code>size();</code>//返回容器中元素的个数</li>
+<li><code>resize(int num);</code>//重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。</li>
+<li><code>resize(int num, elem);</code>//重新指定容器的长度为num，若容器变长，则以elem值填充新位置。//如果容器变短，则末尾超出容器长度的元素被删除</li>
 </ul>
 <p><strong>示例</strong>：</p>
-<pre><code class="cpp">#include &lt;vector&gt;
+<pre class="highlight"><code class="cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
 
-void printVector(vector&lt;int&gt;&amp; v) &#123;
-    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) &#123;
-        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printVector</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; v)</span> </span>&#123;
+	<span class="hljs-keyword">for</span> (vector&lt;<span class="hljs-type">int</span>&gt;::iterator it = v.<span class="hljs-built_in">begin</span>(); it != v.<span class="hljs-built_in">end</span>(); it++) &#123;
+		cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+	&#125;
+	cout &lt;&lt; endl;
 &#125;
 
-void test01()&#123;
-    vector&lt;int&gt; v1;
-    for (int i = 0; i &lt; 10; i++)	&#123;
-        v1.push_back(i);
-    &#125;
-    printVector(v1);
-    if (v1.empty())	&#123;
-        cout &lt;&lt; &quot;v1为空&quot; &lt;&lt; endl;
-    &#125;	else	&#123;
-        cout &lt;&lt; &quot;v1不为空&quot; &lt;&lt; endl;
-        cout &lt;&lt; &quot;v1的容量 = &quot; &lt;&lt; v1.capacity() &lt;&lt; endl;
-        cout &lt;&lt; &quot;v1的大小 = &quot; &lt;&lt; v1.size() &lt;&lt; endl;
-    &#125;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt; v1;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)	&#123;
+		v1.<span class="hljs-built_in">push_back</span>(i);
+	&#125;
+	<span class="hljs-built_in">printVector</span>(v1);
+	<span class="hljs-keyword">if</span> (v1.<span class="hljs-built_in">empty</span>())	&#123;
+		cout &lt;&lt; <span class="hljs-string">&quot;v1为空&quot;</span> &lt;&lt; endl;
+	&#125;	<span class="hljs-keyword">else</span>	&#123;
+		cout &lt;&lt; <span class="hljs-string">&quot;v1不为空&quot;</span> &lt;&lt; endl;
+		cout &lt;&lt; <span class="hljs-string">&quot;v1的容量 = &quot;</span> &lt;&lt; v1.<span class="hljs-built_in">capacity</span>() &lt;&lt; endl;
+		cout &lt;&lt; <span class="hljs-string">&quot;v1的大小 = &quot;</span> &lt;&lt; v1.<span class="hljs-built_in">size</span>() &lt;&lt; endl;
+	&#125;
 
-    //resize 重新指定大小 ，若指定的更大，默认用0填充新位置，可以利用重载版本替换默认填充
-    v1.resize(15,10);
-    printVector(v1);
+	<span class="hljs-comment">//resize 重新指定大小 ，若指定的更大，默认用0填充新位置，可以利用重载版本替换默认填充</span>
+	v1.<span class="hljs-built_in">resize</span>(<span class="hljs-number">15</span>,<span class="hljs-number">10</span>);
+	<span class="hljs-built_in">printVector</span>(v1);
 
-    //resize 重新指定大小 ，若指定的更小，超出部分元素被删除
-    v1.resize(5);
-    printVector(v1);
+	<span class="hljs-comment">//resize 重新指定大小 ，若指定的更小，超出部分元素被删除</span>
+	v1.<span class="hljs-built_in">resize</span>(<span class="hljs-number">5</span>);
+	<span class="hljs-built_in">printVector</span>(v1);
 &#125;
 
-int main() &#123;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
 
-    test01();
+	<span class="hljs-built_in">test01</span>();
 
-    system(&quot;pause&quot;);
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);
 
-    return 0;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331131911.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331131911.png" alt="" /></p>
 <ul>
-<li>总结<ul>
+<li>总结
+<ul>
 <li>判断是否为空 ——— empty</li>
 <li>返回元素个数 ——— size</li>
 <li>返回容器容量 ——— capacity</li>
@@ -334,70 +345,72 @@ int main() &#123;
 </ul>
 </li>
 </ul>
-<h2 id="vector插入和删除"><a href="#vector插入和删除" class="headerlink" title="vector插入和删除"></a>vector插入和删除</h2><p><strong>功能描述：</strong></p>
+<h2 id="vector插入和删除"><a class="markdownIt-Anchor" href="#vector插入和删除"></a> vector插入和删除</h2>
+<p><strong>功能描述：</strong></p>
 <p>对vector容器进行插入、删除操作</p>
 <p><strong>函数原型：</strong></p>
 <ul>
-<li><code>push_back(elem);</code>&#x2F;&#x2F;尾部插入元素elem</li>
-<li><code>pop_back();</code>&#x2F;&#x2F;删除最后一个元素</li>
-<li><code>insert(cosnt_iterator pos, elem);</code>&#x2F;&#x2F;迭代器指向位置pos插入元素elem</li>
-<li><code>insert(const_iterator pos, int count, elem);</code>&#x2F;&#x2F;迭代器指向位置pos插入count个元素elem</li>
-<li><code>erase(const_iterator pos);</code>&#x2F;&#x2F;删除迭代器指向的元素</li>
-<li><code>erase(const_iterator start, const_iterator end);</code>&#x2F;&#x2F;删除迭代器从start到end之间的元素</li>
-<li><code>clear();</code>&#x2F;&#x2F;删除容器中所有元素</li>
+<li><code>push_back(elem);</code>//尾部插入元素elem</li>
+<li><code>pop_back();</code>//删除最后一个元素</li>
+<li><code>insert(cosnt_iterator pos, elem);</code>//迭代器指向位置pos插入元素elem</li>
+<li><code>insert(const_iterator pos, int count, elem);</code>//迭代器指向位置pos插入count个元素elem</li>
+<li><code>erase(const_iterator pos);</code>//删除迭代器指向的元素</li>
+<li><code>erase(const_iterator start, const_iterator end);</code>//删除迭代器从start到end之间的元素</li>
+<li><code>clear();</code>//删除容器中所有元素</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre><code class="cpp">#include &lt;vector&gt;
+<pre class="highlight"><code class="cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
 
-void printVector(vector&lt;int&gt;&amp; v) &#123;
-    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) &#123;
-        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printVector</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; v)</span> </span>&#123;
+	<span class="hljs-keyword">for</span> (vector&lt;<span class="hljs-type">int</span>&gt;::iterator it = v.<span class="hljs-built_in">begin</span>(); it != v.<span class="hljs-built_in">end</span>(); it++) &#123;
+		cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+	&#125;
+	cout &lt;&lt; endl;
 &#125;
 
-//插入和删除
-void test01()&#123;
-    vector&lt;int&gt; v1;
-    //尾插
-    v1.push_back(10);
-    v1.push_back(20);
-    v1.push_back(30);
-    v1.push_back(40);
-    v1.push_back(50);
-    printVector(v1);
-    //尾删
-    v1.pop_back();
-    printVector(v1);
-    //插入
-    v1.insert(v1.begin(), 100);
-    printVector(v1);
+<span class="hljs-comment">//插入和删除</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt; v1;
+	<span class="hljs-comment">//尾插</span>
+	v1.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">10</span>);
+	v1.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">20</span>);
+	v1.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">30</span>);
+	v1.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">40</span>);
+	v1.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">50</span>);
+	<span class="hljs-built_in">printVector</span>(v1);
+	<span class="hljs-comment">//尾删</span>
+	v1.<span class="hljs-built_in">pop_back</span>();
+	<span class="hljs-built_in">printVector</span>(v1);
+	<span class="hljs-comment">//插入</span>
+	v1.<span class="hljs-built_in">insert</span>(v1.<span class="hljs-built_in">begin</span>(), <span class="hljs-number">100</span>);
+	<span class="hljs-built_in">printVector</span>(v1);
 
-    v1.insert(v1.begin(), 2, 1000);
-    printVector(v1);
+	v1.<span class="hljs-built_in">insert</span>(v1.<span class="hljs-built_in">begin</span>(), <span class="hljs-number">2</span>, <span class="hljs-number">1000</span>);
+	<span class="hljs-built_in">printVector</span>(v1);
 
-    //删除
-    v1.erase(v1.begin());
-    printVector(v1);
+	<span class="hljs-comment">//删除</span>
+	v1.<span class="hljs-built_in">erase</span>(v1.<span class="hljs-built_in">begin</span>());
+	<span class="hljs-built_in">printVector</span>(v1);
 
-    //清空
-    v1.erase(v1.begin(), v1.end());
-    v1.clear();
-    printVector(v1);
+	<span class="hljs-comment">//清空</span>
+	v1.<span class="hljs-built_in">erase</span>(v1.<span class="hljs-built_in">begin</span>(), v1.<span class="hljs-built_in">end</span>());
+	v1.<span class="hljs-built_in">clear</span>();
+	<span class="hljs-built_in">printVector</span>(v1);
 &#125;
 
-int main() &#123;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
 
-    test01();
+	<span class="hljs-built_in">test01</span>();
 
-    system(&quot;pause&quot;);
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);
 
-    return 0;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133324.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133324.png" alt="" /></p>
 <ul>
-<li>总结<ul>
+<li>总结
+<ul>
 <li>尾插 ——— push_back()</li>
 <li>尾删 ——— pop_back()</li>
 <li>插入 ——— insert(位置迭代器)</li>
@@ -406,169 +419,218 @@ int main() &#123;
 </ul>
 </li>
 </ul>
-<h2 id="vector数据存储"><a href="#vector数据存储" class="headerlink" title="vector数据存储"></a>vector数据存储</h2><p><strong>功能描述：</strong></p>
+<h2 id="vector数据存储"><a class="markdownIt-Anchor" href="#vector数据存储"></a> vector数据存储</h2>
+<p><strong>功能描述：</strong></p>
 <p>对vector中的数据的存取操作</p>
 <p>函数原型：</p>
 <ul>
-<li><code>at(int idx);</code>&#x2F;&#x2F;返回索引idx所指的数据</li>
-<li><code>operator[];</code>&#x2F;&#x2F;返回索引idx所指的数据</li>
-<li><code>front();</code>&#x2F;&#x2F;返回容器中第一个数据元素</li>
-<li><code>back();</code>&#x2F;&#x2F;返回容器中最后一个数据元素</li>
+<li><code>at(int idx);</code>//返回索引idx所指的数据</li>
+<li><code>operator[];</code>//返回索引idx所指的数据</li>
+<li><code>front();</code>//返回容器中第一个数据元素</li>
+<li><code>back();</code>//返回容器中最后一个数据元素</li>
 </ul>
 <p><strong>示例</strong>：</p>
-<pre><code class="cpp">#include &lt;vector&gt;
+<pre class="highlight"><code class="cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
 
-void test01()&#123;
-    vector&lt;int&gt;v1;
-    for (int i = 0; i &lt; 10; i++)	&#123;
-        v1.push_back(i);
-    &#125;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt;v1;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)	&#123;
+		v1.<span class="hljs-built_in">push_back</span>(i);
+	&#125;
 
-    for (int i = 0; i &lt; v1.size(); i++)	&#123;
-        cout &lt;&lt; v1[i] &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; v1.<span class="hljs-built_in">size</span>(); i++)	&#123;
+		cout &lt;&lt; v1[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+	&#125;
+	cout &lt;&lt; endl;
 
-    for (int i = 0; i &lt; v1.size(); i++)	&#123;
-        cout &lt;&lt; v1.at(i) &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; v1.<span class="hljs-built_in">size</span>(); i++)	&#123;
+		cout &lt;&lt; v1.<span class="hljs-built_in">at</span>(i) &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+	&#125;
+	cout &lt;&lt; endl;
 
-    cout &lt;&lt; &quot;v1的第一个元素为： &quot; &lt;&lt; v1.front() &lt;&lt; endl;
-    cout &lt;&lt; &quot;v1的最后一个元素为： &quot; &lt;&lt; v1.back() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v1的第一个元素为： &quot;</span> &lt;&lt; v1.<span class="hljs-built_in">front</span>() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v1的最后一个元素为： &quot;</span> &lt;&lt; v1.<span class="hljs-built_in">back</span>() &lt;&lt; endl;
 &#125;
 
-int main() &#123;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
 
-    test01();
+	<span class="hljs-built_in">test01</span>();
 
-    system(&quot;pause&quot;);
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);
 
-    return 0;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133417.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133417.png" alt="" /></p>
 <ul>
-<li>总结<ul>
+<li>总结
+<ul>
 <li>除了用迭代器获取vector容器元素，[]和at也可以</li>
 <li>front返回容器第一个元素</li>
 <li>back返回容器最后一个元素</li>
 </ul>
 </li>
 </ul>
-<h2 id="vector互换容器"><a href="#vector互换容器" class="headerlink" title="vector互换容器"></a>vector互换容器</h2><p><strong>功能描述：</strong></p>
+<h2 id="vector互换容器"><a class="markdownIt-Anchor" href="#vector互换容器"></a> vector互换容器</h2>
+<p><strong>功能描述：</strong></p>
 <p>实现两个容器内元素进行互换</p>
 <p><strong>函数原型：</strong></p>
 <ul>
-<li><code>swap(vec);</code>&#x2F;&#x2F; 将vec与本身的元素互换</li>
+<li><code>swap(vec);</code>// 将vec与本身的元素互换</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre><code class="cpp">#include &lt;vector&gt;
+<pre class="highlight"><code class="cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
 
-void printVector(vector&lt;int&gt;&amp; v) &#123;
-    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) &#123;
-        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printVector</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; v)</span> </span>&#123;
+	<span class="hljs-keyword">for</span> (vector&lt;<span class="hljs-type">int</span>&gt;::iterator it = v.<span class="hljs-built_in">begin</span>(); it != v.<span class="hljs-built_in">end</span>(); it++) &#123;
+		cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+	&#125;
+	cout &lt;&lt; endl;
 &#125;
 
-void test01()&#123;
-    vector&lt;int&gt;v1;
-    for (int i = 0; i &lt; 10; i++)	&#123;
-        v1.push_back(i);
-    &#125;
-    printVector(v1);
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt;v1;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)	&#123;
+		v1.<span class="hljs-built_in">push_back</span>(i);
+	&#125;
+	<span class="hljs-built_in">printVector</span>(v1);
 
-    vector&lt;int&gt;v2;
-    for (int i = 10; i &gt; 0; i--)	&#123;
-        v2.push_back(i);
-    &#125;
-    printVector(v2);
+	vector&lt;<span class="hljs-type">int</span>&gt;v2;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">10</span>; i &gt; <span class="hljs-number">0</span>; i--)	&#123;
+		v2.<span class="hljs-built_in">push_back</span>(i);
+	&#125;
+	<span class="hljs-built_in">printVector</span>(v2);
 
-    //互换容器
-    cout &lt;&lt; &quot;互换后&quot; &lt;&lt; endl;
-    v1.swap(v2);
-    printVector(v1);
-    printVector(v2);
+	<span class="hljs-comment">//互换容器</span>
+	cout &lt;&lt; <span class="hljs-string">&quot;互换后&quot;</span> &lt;&lt; endl;
+	v1.<span class="hljs-built_in">swap</span>(v2);
+	<span class="hljs-built_in">printVector</span>(v1);
+	<span class="hljs-built_in">printVector</span>(v2);
 &#125;
 
-void test02()&#123;
-    vector&lt;int&gt; v;
-    for (int i = 0; i &lt; 100000; i++) &#123;
-        v.push_back(i);
-    &#125;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test02</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt; v;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100000</span>; i++) &#123;
+		v.<span class="hljs-built_in">push_back</span>(i);
+	&#125;
 
-    cout &lt;&lt; &quot;v的容量为：&quot; &lt;&lt; v.capacity() &lt;&lt; endl;
-    cout &lt;&lt; &quot;v的大小为：&quot; &lt;&lt; v.size() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v的容量为：&quot;</span> &lt;&lt; v.<span class="hljs-built_in">capacity</span>() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v的大小为：&quot;</span> &lt;&lt; v.<span class="hljs-built_in">size</span>() &lt;&lt; endl;
 
-    v.resize(3);
+	v.<span class="hljs-built_in">resize</span>(<span class="hljs-number">3</span>);
 
-    cout &lt;&lt; &quot;v的容量为：&quot; &lt;&lt; v.capacity() &lt;&lt; endl;
-    cout &lt;&lt; &quot;v的大小为：&quot; &lt;&lt; v.size() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v的容量为：&quot;</span> &lt;&lt; v.<span class="hljs-built_in">capacity</span>() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v的大小为：&quot;</span> &lt;&lt; v.<span class="hljs-built_in">size</span>() &lt;&lt; endl;
 
-    //收缩内存
-    vector&lt;int&gt;(v).swap(v); //匿名对象
+	<span class="hljs-comment">//收缩内存</span>
+	<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(v).<span class="hljs-built_in">swap</span>(v); <span class="hljs-comment">//匿名对象</span>
 
-    cout &lt;&lt; &quot;v的容量为：&quot; &lt;&lt; v.capacity() &lt;&lt; endl;
-    cout &lt;&lt; &quot;v的大小为：&quot; &lt;&lt; v.size() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v的容量为：&quot;</span> &lt;&lt; v.<span class="hljs-built_in">capacity</span>() &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;v的大小为：&quot;</span> &lt;&lt; v.<span class="hljs-built_in">size</span>() &lt;&lt; endl;
 &#125;
 
-int main() &#123;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
 
-    test01();
+	<span class="hljs-built_in">test01</span>();
 
-    test02();
+	<span class="hljs-built_in">test02</span>();
 
-    system(&quot;pause&quot;);
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);
 
-    return 0;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133519.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133519.png" alt="" /></p>
 <ul>
-<li><p>总结</p>
-<p>  swap可以使两个容器互换，可以达到实用的收缩内存效果</p>
+<li>
+<p>总结</p>
+<p>swap可以使两个容器互换，可以达到实用的收缩内存效果</p>
 </li>
 </ul>
-<h2 id="vector预留空间"><a href="#vector预留空间" class="headerlink" title="vector预留空间"></a>vector预留空间</h2><p><strong>功能描述：</strong></p>
+<h2 id="vector预留空间"><a class="markdownIt-Anchor" href="#vector预留空间"></a> vector预留空间</h2>
+<p><strong>功能描述：</strong></p>
 <p>减少vector在动态扩展容量时的扩展次数</p>
 <p><strong>函数原型：</strong></p>
 <ul>
-<li><code>reserve(int len);</code>&#x2F;&#x2F;容器预留len个元素长度，预留位置不初始化，元素不可访问。</li>
+<li><code>reserve(int len);</code>//容器预留len个元素长度，预留位置不初始化，元素不可访问。</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre><code class="cpp">#include &lt;vector&gt;
+<pre class="highlight"><code class="cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
 
-void test01()&#123;
-    vector&lt;int&gt; v;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span>&#123;
+	vector&lt;<span class="hljs-type">int</span>&gt; v;
 
-    //预留空间
-    v.reserve(100000);
+	<span class="hljs-comment">//预留空间</span>
+	v.<span class="hljs-built_in">reserve</span>(<span class="hljs-number">100000</span>);
 
-    int num = 0;
-    int* p = NULL;
-    for (int i = 0; i &lt; 100000; i++) &#123;
-        v.push_back(i);
-        if (p != &amp;v[0]) &#123;
-            p = &amp;v[0];
-            num++;
-        &#125;
-    &#125;
+	<span class="hljs-type">int</span> num = <span class="hljs-number">0</span>;
+	<span class="hljs-type">int</span>* p = <span class="hljs-literal">NULL</span>;
+	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100000</span>; i++) &#123;
+		v.<span class="hljs-built_in">push_back</span>(i);
+		<span class="hljs-keyword">if</span> (p != &amp;v[<span class="hljs-number">0</span>]) &#123;
+			p = &amp;v[<span class="hljs-number">0</span>];
+			num++;
+		&#125;
+	&#125;
 
-    cout &lt;&lt; &quot;num:&quot; &lt;&lt; num &lt;&lt; endl;
+	cout &lt;&lt; <span class="hljs-string">&quot;num:&quot;</span> &lt;&lt; num &lt;&lt; endl;
 &#125;
 
-int main() &#123;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
 
-    test01();
+	<span class="hljs-built_in">test01</span>();
     
-    system(&quot;pause&quot;);
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);
 
-    return 0;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133605.png"></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz">GotoMove</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz/posts/b27c37e9.html">https://www.zyfblogs.xyz/posts/b27c37e9.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.zyfblogs.xyz" target="_blank">G.M. Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/main.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/ccbe430.html" title="LeetCode 831.隐藏个人信息"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">LeetCode 831.隐藏个人信息</div></div></a></div><div class="next-post pull-right"><a href="/posts/c57b077f.html" title="STL-vector 上"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">STL-vector 上</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">vector基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">vector构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">vector赋值操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E5%AE%B9%E9%87%8F%E5%92%8C%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.</span> <span class="toc-text">vector容量和大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-number">5.</span> <span class="toc-text">vector插入和删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="toc-number">6.</span> <span class="toc-text">vector数据存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E4%BA%92%E6%8D%A2%E5%AE%B9%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text">vector互换容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E9%A2%84%E7%95%99%E7%A9%BA%E9%97%B4"><span class="toc-number">8.</span> <span class="toc-text">vector预留空间</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/undefined.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadWaline () {
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/20230331133605.png" alt="" /></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz">GotoMove</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz/posts/b27c37e9.html">https://www.zyfblogs.xyz/posts/b27c37e9.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.zyfblogs.xyz" target="_blank">G.M. Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/main.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/ccbe430.html" title="LeetCode 831.隐藏个人信息"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">LeetCode 831.隐藏个人信息</div></div></a></div><div class="next-post pull-right"><a href="/posts/c57b077f.html" title="STL-vector 上"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">STL-vector 上</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text"> vector基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> vector构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text"> vector赋值操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E5%AE%B9%E9%87%8F%E5%92%8C%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.</span> <span class="toc-text"> vector容量和大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-number">5.</span> <span class="toc-text"> vector插入和删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="toc-number">6.</span> <span class="toc-text"> vector数据存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E4%BA%92%E6%8D%A2%E5%AE%B9%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text"> vector互换容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector%E9%A2%84%E7%95%99%E7%A9%BA%E9%97%B4"><span class="toc-number">8.</span> <span class="toc-text"> vector预留空间</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/29f70fcd.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>function loadWaline () {
   function initWaline () {
     const waline = Waline.init(Object.assign({
       el: '#waline-wrap',
