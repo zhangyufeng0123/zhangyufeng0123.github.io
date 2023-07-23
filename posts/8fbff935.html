@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SQL-条件查询&amp;排序查询 | G.M. Blog</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="本篇博客常用数据表       语法 SELECT 查询列表 FROM 表名 WHERE 筛选条件;  分类：  按条件表达式筛选 条件运算符：&gt; &lt; &#x3D; !&#x3D; &lt;&gt; &gt;&#x3D; &lt;&#x3D; 按逻辑表达式筛选 逻辑运算符：&amp;&amp; || ! and or not 模糊查询 like, between and, in, is null   按条件表达式筛选 案例：">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SQL-条件查询&amp;排序查询 | G.M. Blog</title><meta name="author" content="GotoMove"><meta name="copyright" content="GotoMove"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="本篇博客常用数据表       语法 SELECT 查询列表 FROM 表名 WHERE 筛选条件;  分类：  按条件表达式筛选 条件运算符：&gt; &lt; &#x3D; !&#x3D; &lt;&gt; &gt;&#x3D; &lt;&#x3D;  按逻辑表达式筛选 逻辑运算符：&amp;&amp; || ! and or not 模糊查询 like, between and, in, is null  按条件表达式筛选案例：查">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL-条件查询&amp;排序查询">
 <meta property="og:url" content="https://www.zyfblogs.xyz/posts/8fbff935.html">
 <meta property="og:site_name" content="G.M. Blog">
-<meta property="og:description" content="本篇博客常用数据表       语法 SELECT 查询列表 FROM 表名 WHERE 筛选条件;  分类：  按条件表达式筛选 条件运算符：&gt; &lt; &#x3D; !&#x3D; &lt;&gt; &gt;&#x3D; &lt;&#x3D; 按逻辑表达式筛选 逻辑运算符：&amp;&amp; || ! and or not 模糊查询 like, between and, in, is null   按条件表达式筛选 案例：">
+<meta property="og:description" content="本篇博客常用数据表       语法 SELECT 查询列表 FROM 表名 WHERE 筛选条件;  分类：  按条件表达式筛选 条件运算符：&gt; &lt; &#x3D; !&#x3D; &lt;&gt; &gt;&#x3D; &lt;&#x3D;  按逻辑表达式筛选 逻辑运算符：&amp;&amp; || ! and or not 模糊查询 like, between and, in, is null  按条件表达式筛选案例：查">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.zyfblogs.xyz/img/main.jpg">
 <meta property="article:published_time" content="2023-05-29T15:42:39.000Z">
@@ -167,121 +167,106 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/main.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="G.M. Blog"><span class="site-name">G.M. Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SQL-条件查询&amp;排序查询</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-29T15:42:39.000Z" title="发表于 2023-05-29 23:42:39">2023-05-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-22T14:46:13.227Z" title="更新于 2023-07-22 22:46:13">2023-07-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MySQL/">MySQL</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SQL-条件查询&amp;排序查询"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/8fbff935.html#post-comment"><span class="waline-comment-count" data-path="/posts/8fbff935.html"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>本篇博客常用数据表</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220437.png" alt="Img" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220453.png" alt="Img" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220506.png" alt="Img" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220522.png" alt="Img" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220534.png" alt="Img" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220543.png" alt="Img" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220437.png" alt="Img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220453.png" alt="Img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220506.png" alt="Img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220522.png" alt="Img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220534.png" alt="Img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyufeng0123/ImageHosting/img/yank-note-picgo-img-20230529220543.png" alt="Img"></p>
 <p><strong>语法</strong></p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> 查询列表 <span class="hljs-keyword">FROM</span> 表名 <span class="hljs-keyword">WHERE</span> 筛选条件;
+<pre><code class="lang-SQL">SELECT 查询列表 FROM 表名 WHERE 筛选条件;
 </code></pre>
 <p>分类：</p>
 <ol>
-<li>按条件表达式筛选
-条件运算符：&gt; &lt; = != &lt;&gt; &gt;= &lt;=</li>
-<li>按逻辑表达式筛选
-逻辑运算符：&amp;&amp; || ! and or not</li>
-<li>模糊查询
-like, between and, in, is null</li>
+<li>按条件表达式筛选<br> 条件运算符：&gt; &lt; = != &lt;&gt; &gt;= &lt;= </li>
+<li>按逻辑表达式筛选<br> 逻辑运算符：&amp;&amp; || ! and or not</li>
+<li>模糊查询<br> like, between and, in, is null</li>
 </ol>
-<h2 id="按条件表达式筛选"><a class="markdownIt-Anchor" href="#按条件表达式筛选"></a> 按条件表达式筛选</h2>
-<p><strong>案例</strong>：查询工资&gt;12000的员工信息</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> employees <span class="hljs-keyword">WHERE</span> salary <span class="hljs-operator">&gt;</span> <span class="hljs-number">12000</span>;
+<h2 id="按条件表达式筛选"><a href="#按条件表达式筛选" class="headerlink" title="按条件表达式筛选"></a>按条件表达式筛选</h2><p><strong>案例</strong>：查询工资&gt;12000的员工信息</p>
+<pre><code class="lang-SQL">SELECT * FROM employees WHERE salary &gt; 12000;
 </code></pre>
 <p><strong>案例</strong>：查询部门编号不等于90号的员工名和部门编号</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> last_name, department_id <span class="hljs-keyword">FROM</span> employees <span class="hljs-keyword">WHERE</span> department_id <span class="hljs-operator">&lt;&gt;</span> <span class="hljs-number">90</span>;
+<pre><code class="lang-SQL">SELECT last_name, department_id FROM employees WHERE department_id &lt;&gt; 90;
 </code></pre>
-<h2 id="按逻辑表达式筛选"><a class="markdownIt-Anchor" href="#按逻辑表达式筛选"></a> 按逻辑表达式筛选</h2>
-<p><strong>案例</strong>：查询工资在10000到20000之间的员工名、工资以及奖金</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> last_name, salary, ISNULL(commission_pct, <span class="hljs-number">0.0</span>) <span class="hljs-operator">*</span> salary
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> salary <span class="hljs-operator">&gt;=</span> <span class="hljs-number">10000</span> <span class="hljs-keyword">and</span> salary <span class="hljs-operator">&lt;=</span> <span class="hljs-number">20000</span>;
+<h2 id="按逻辑表达式筛选"><a href="#按逻辑表达式筛选" class="headerlink" title="按逻辑表达式筛选"></a>按逻辑表达式筛选</h2><p><strong>案例</strong>：查询工资在10000到20000之间的员工名、工资以及奖金</p>
+<pre><code class="lang-SQL">SELECT last_name, salary, ISNULL(commission_pct, 0.0) * salary
+FROM employees
+WHERE salary &gt;= 10000 and salary &lt;= 20000;
 </code></pre>
 <p><strong>案例</strong>：查询部门编号不是在90到110之间，或者工资高于15000的员工信息</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> 
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> (department_id <span class="hljs-operator">&lt;</span> <span class="hljs-number">90</span> <span class="hljs-keyword">or</span> department_id <span class="hljs-operator">&gt;</span> <span class="hljs-number">110</span>) <span class="hljs-keyword">or</span> (salary <span class="hljs-operator">&gt;</span> <span class="hljs-number">15000</span>);
+<pre><code class="lang-SQL">SELECT * 
+FROM employees
+WHERE (department_id &lt; 90 or department_id &gt; 110) or (salary &gt; 15000);
 </code></pre>
-<h2 id="模糊查询"><a class="markdownIt-Anchor" href="#模糊查询"></a> 模糊查询</h2>
-<p><strong>通配符</strong></p>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><p><strong>通配符</strong></p>
 <ul>
 <li>%：任意多个字符</li>
 <li>_：任意单个字符</li>
 </ul>
-<h3 id="like"><a class="markdownIt-Anchor" href="#like"></a> LIKE</h3>
-<p><strong>案例</strong>：查询员工名中包含字符<code>a</code>的员工信息</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> last_name <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%a%&#x27;</span>;
+<h3 id="LIKE"><a href="#LIKE" class="headerlink" title="LIKE"></a>LIKE</h3><p><strong>案例</strong>：查询员工名中包含字符<code>a</code>的员工信息</p>
+<pre><code class="lang-SQL">SELECT *
+FROM employees
+WHERE last_name LIKE &#39;%a%&#39;;
 </code></pre>
 <p><strong>案例</strong>：查询员工字名中第三个字符为<code>e</code>，第五个字符为<code>a</code>的员工名和工资</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> first_name, salary
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> first_name <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;__e_a%&#x27;</span>;
+<pre><code class="lang-SQL">SELECT first_name, salary
+FROM employees
+WHERE first_name LIKE &#39;__e_a%&#39;;
 </code></pre>
-<h3 id="between-and"><a class="markdownIt-Anchor" href="#between-and"></a> BETWEEN AND</h3>
-<ul>
+<h3 id="BETWEEN-AND"><a href="#BETWEEN-AND" class="headerlink" title="BETWEEN AND"></a>BETWEEN AND</h3><ul>
 <li>使用<code>between and</code>可以提高语句的简洁度</li>
 <li>包含临界值</li>
 <li>临界值不能调换顺序</li>
 </ul>
 <p><strong>案例</strong>：查询员工编号在100到120之间的员工信息</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> employee_id <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">100</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">120</span>;
+<pre><code class="lang-SQL">SELECT *
+FROM employees
+WHERE employee_id BETWEEN 100 AND 120;
 </code></pre>
-<h3 id="in"><a class="markdownIt-Anchor" href="#in"></a> in</h3>
-<p>含义：判断某字段的值是否属于<code>in</code>列表中的某一项
-特点：</p>
+<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><p>含义：判断某字段的值是否属于<code>in</code>列表中的某一项<br>特点：</p>
 <ol>
 <li>使用<code>in</code>提高语句简洁度</li>
 <li><code>in</code>列表中的值类型必须统一或兼容</li>
 </ol>
 <p><strong>案例</strong>：查询员工的工种编号是IT_PROT, AD_VP, AD_PRES中的一个员工名和工种编号</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> last_name, job_id
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> job_id <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;IT_PROT&#x27;</span>, <span class="hljs-string">&#x27;AD_VP&#x27;</span>, <span class="hljs-string">&#x27;AD_PRES&#x27;</span>);
+<pre><code class="lang-SQL">SELECT last_name, job_id
+FROM employees
+WHERE job_id IN (&#39;IT_PROT&#39;, &#39;AD_VP&#39;, &#39;AD_PRES&#39;);
 </code></pre>
-<h3 id="is-null"><a class="markdownIt-Anchor" href="#is-null"></a> IS NULL</h3>
-<blockquote>
-<p>= 或 &lt;&gt; 不能用于判断null值
-IS NULL或IS NOT NULL可以判断NULL值</p>
+<h3 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h3><blockquote>
+<p>= 或 &lt;&gt; 不能用于判断null值<br>IS NULL或IS NOT NULL可以判断NULL值</p>
 </blockquote>
 <p><strong>案例</strong>：查询没有奖金的员工名和奖金率</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> last_name, commission_pct
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> commission_pct <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>;
+<pre><code class="lang-SQL">SELECT last_name, commission_pct
+FROM employees
+WHERE commission_pct IS NOT NULL;
 </code></pre>
 <blockquote>
 <p>安全等于 &lt;=&gt;</p>
 </blockquote>
 <p><strong>案例</strong>：查询没有奖金的员工名和奖金率</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> last_name, commission_pct
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> commission_pct <span class="hljs-operator">&lt;=&gt;</span> <span class="hljs-keyword">NULL</span>;
+<pre><code class="lang-SQL">SELECT last_name, commission_pct
+FROM employees
+WHERE commission_pct &lt;=&gt; NULL;
 </code></pre>
-<h3 id="is-null-和-的对比"><a class="markdownIt-Anchor" href="#is-null-和-的对比"></a> IS NULL 和 &lt;=&gt;的对比</h3>
-<p><code>IS NULL</code>: 仅仅可以判断<code>NULL</code>值，建议使用
-<code>&lt;=&gt;</code>: 既可以判断<code>NULL</code>值，也可以判断普通的数值</p>
-<h2 id="排序查询"><a class="markdownIt-Anchor" href="#排序查询"></a> 排序查询</h2>
-<p>语法：</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> 查询列表
-<span class="hljs-keyword">FROM</span> 表
-[<span class="hljs-keyword">WHERE</span> 筛选条件]
-<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> 排序列表 [<span class="hljs-keyword">ASC</span><span class="hljs-operator">|</span><span class="hljs-keyword">DESC</span>];
+<h3 id="IS-NULL-和-lt-gt-的对比"><a href="#IS-NULL-和-lt-gt-的对比" class="headerlink" title="IS NULL 和 &lt;=&gt;的对比"></a>IS NULL 和 &lt;=&gt;的对比</h3><p><code>IS NULL</code>: 仅仅可以判断<code>NULL</code>值，建议使用<br><code>&lt;=&gt;</code>: 既可以判断<code>NULL</code>值，也可以判断普通的数值</p>
+<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><p>语法：</p>
+<pre><code class="lang-SQL">SELECT 查询列表
+FROM 表
+[WHERE 筛选条件]
+ORDER BY 排序列表 [ASC|DESC];
 </code></pre>
-<p>特点：
-- <code>ASC</code>代表升序，<code>DESC</code>代表降序，默认升序
-- <code>ORDER BY</code>子句中可以支持单个字段、多个字段、表达式、函数、别名
-- <code>ORDER BY</code>子句一般是放在查询语句的最后面，<code>LIMIT</code>子句除外</p>
-<p><strong>案例</strong>：查询邮箱中包含e的员工信息，并先按邮箱的字节数降序，再按部门号升序</p>
-<pre class="highlight"><code class="SQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> email <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%e%&#x27;</span>
-<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> LENGTH(email) <span class="hljs-keyword">DESC</span>, department_id <span class="hljs-keyword">ASC</span>;
+<p>特点：</p>
+<pre><code>- `ASC`代表升序，`DESC`代表降序，默认升序
+- `ORDER BY`子句中可以支持单个字段、多个字段、表达式、函数、别名
+- `ORDER BY`子句一般是放在查询语句的最后面，`LIMIT`子句除外
+</code></pre><p><strong>案例</strong>：查询邮箱中包含e的员工信息，并先按邮箱的字节数降序，再按部门号升序</p>
+<pre><code class="lang-SQL">SELECT *
+FROM employees
+WHERE email LIKE &#39;%e%&#39;
+ORDER BY LENGTH(email) DESC, department_id ASC;
 </code></pre>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz">GotoMove</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz/posts/8fbff935.html">https://www.zyfblogs.xyz/posts/8fbff935.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.zyfblogs.xyz" target="_blank">G.M. Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9F%BA%E7%A1%80/">基础</a></div><div class="post_share"><div class="social-share" data-image="/img/main.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2a739b03.html" title="建表"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">建表</div></div></a></div><div class="next-post pull-right"><a href="/posts/49b58c85.html" title="SQL-基础查询"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQL-基础查询</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/49b58c85.html" title="SQL-基础查询"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-29</div><div class="title">SQL-基础查询</div></div></a></div><div><a href="/posts/c6854716.html" title="基本概念"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-29</div><div class="title">基本概念</div></div></a></div><div><a href="/posts/2a739b03.html" title="建表"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-29</div><div class="title">建表</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AD%9B%E9%80%89"><span class="toc-number">1.</span> <span class="toc-text"> 按条件表达式筛选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%80%BB%E8%BE%91%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AD%9B%E9%80%89"><span class="toc-number">2.</span> <span class="toc-text"> 按逻辑表达式筛选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text"> 模糊查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#like"><span class="toc-number">3.1.</span> <span class="toc-text"> LIKE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#between-and"><span class="toc-number">3.2.</span> <span class="toc-text"> BETWEEN AND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in"><span class="toc-number">3.3.</span> <span class="toc-text"> in</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#is-null"><span class="toc-number">3.4.</span> <span class="toc-text"> IS NULL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#is-null-%E5%92%8C-%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">3.5.</span> <span class="toc-text"> IS NULL 和 &lt;&#x3D;&gt;的对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text"> 排序查询</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/29f70fcd.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz">GotoMove</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.zyfblogs.xyz/posts/8fbff935.html">https://www.zyfblogs.xyz/posts/8fbff935.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.zyfblogs.xyz" target="_blank">G.M. Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9F%BA%E7%A1%80/">基础</a></div><div class="post_share"><div class="social-share" data-image="/img/main.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2a739b03.html" title="建表"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">建表</div></div></a></div><div class="next-post pull-right"><a href="/posts/49b58c85.html" title="SQL-基础查询"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQL-基础查询</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/49b58c85.html" title="SQL-基础查询"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-29</div><div class="title">SQL-基础查询</div></div></a></div><div><a href="/posts/c6854716.html" title="基本概念"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-29</div><div class="title">基本概念</div></div></a></div><div><a href="/posts/2a739b03.html" title="建表"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-29</div><div class="title">建表</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/main.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">GotoMove</div><div class="author-info__description">sharing blogs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyufeng0123" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AD%9B%E9%80%89"><span class="toc-number">1.</span> <span class="toc-text">按条件表达式筛选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%80%BB%E8%BE%91%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AD%9B%E9%80%89"><span class="toc-number">2.</span> <span class="toc-text">按逻辑表达式筛选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">模糊查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LIKE"><span class="toc-number">3.1.</span> <span class="toc-text">LIKE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BETWEEN-AND"><span class="toc-number">3.2.</span> <span class="toc-text">BETWEEN AND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in"><span class="toc-number">3.3.</span> <span class="toc-text">in</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IS-NULL"><span class="toc-number">3.4.</span> <span class="toc-text">IS NULL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IS-NULL-%E5%92%8C-lt-gt-%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">3.5.</span> <span class="toc-text">IS NULL 和 &lt;&#x3D;&gt;的对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">排序查询</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107.html" title="Hello World">Hello World</a><time datetime="2023-07-22T14:46:13.228Z" title="发表于 2023-07-22 22:46:13">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/29f70fcd.html" title="AcWing 4741.魔法百合井">AcWing 4741.魔法百合井</a><time datetime="2023-07-22T14:27:56.000Z" title="发表于 2023-07-22 22:27:56">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6c0bb1c.html" title="AcWing 4440.照相">AcWing 4440.照相</a><time datetime="2023-06-15T15:43:02.000Z" title="发表于 2023-06-15 23:43:02">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/e00fa290.html" title="LeetCode 1171.从链表中删去总和值为零的连续节点">LeetCode 1171.从链表中删去总和值为零的连续节点</a><time datetime="2023-06-11T15:12:53.000Z" title="发表于 2023-06-11 23:12:53">2023-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/348193db.html" title="LeetCode 1170.比较字符串最小字母出现频次">LeetCode 1170.比较字符串最小字母出现频次</a><time datetime="2023-06-10T03:05:18.000Z" title="发表于 2023-06-10 11:05:18">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By GotoMove</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],
