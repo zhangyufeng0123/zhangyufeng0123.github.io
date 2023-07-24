@@ -339,9 +339,12 @@ rightside_item_order:
 # (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
 
 # MathJax
+# MathJax Support
 mathjax:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
+  #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # KaTeX
 katex:
